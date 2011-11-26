@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+	<!ENTITY eiciel "Eiciel">
+	<!ENTITY version "@PKG_VERSION@">
+]>
+<!-- <?yelp:chunk-depth 2?>  -->
+<article id="index" lang="en">
+
+<articleinfo>
+<title>&eiciel; &version; - Users guide</title>
+    <copyright> 
+      <year>2005</year> 
+      <holder>Roger Ferrer Ibáñez</holder> 
+    </copyright> 
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+   -->
+    <publisher> 
+      <publishername>Roger Ferrer Ibáñez</publishername> 
+    </publisher> 
+
+    <authorgroup> 
+      <author> 
+		<firstname>Roger</firstname> 
+		<surname>Ferrer Ibáñez</surname> 
+      </author> 
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+     
+      <othercredit role="translator">
+		<firstname>Latin</firstname> 
+		<surname>Translator 1</surname> 
+		<affiliation> 
+	  		<orgname>Latin Translation Team</orgname> 
+	  		<address> <email>translator@gnome.org</email> </address> 
+		</affiliation>
+		<contrib>Latin translation</contrib>
+      </othercredit>
+-->
+      <othercredit role="translator">
+		<firstname>Dani</firstname> 
+		<surname>Armengol Garreta</surname> 
+		<contrib>English assistance and style</contrib>
+      </othercredit>
+    </authorgroup>
+</articleinfo>
+
+<sect1 id="eiciel-intro">
+<title>About &eiciel;</title>
+<para>
+&eiciel; is an application that allows you to modify file ACLs permissions.
+</para>
+
+<sect2 id="que-son-acls">
+<title>What are ACL?</title>
+
+<para>
+Before explaining what ACLs are we have to see how traditional UNIX permissions work.
+</para>
+
+<sect3 id="permisos-tradicionals">
+<title>
+Traditional UNIX permissions.
+</title>
+
+<para>
+Traditionally, in UNIX, files have three kind of permissions associated
+to them. Those permissions, called UGO (from User, Group and Others)
+allow you to set whether a user can read, write or execute a file.
+</para>
+
+<para>
+The access will be granted or denied depending on which user 
+is accessing the file. The owner has his own permissions (User). 
+
+If the user is not the owner but belongs to the group owning the file
+then group permissions are applied (Group).
+
+Finally, if the user is not the owner neither
+belongs to the file's group then Other permissions are applied.
+</para>
+
+<para>
+Read permission allow, in a file, to read it. In a directory
+it permits listing the directory's content.
+
+Write permission in files allows to modify their data. In directories
+it allows creating or deleting their files (or directories).
+
+Execution permission in files allow them to run as programs. 
+In directories it allows to enter them.
+</para>
+
+<para>
+Permissions can only be changed by the owner (or the <emphasis>superuser</emphasis>).
+The following figure briefs UGO permissions.
+</para>
+
+<figure>
+	<title>UGO permissions</title>
+	<imageobject>
+		<imagedata fileref="figures/permisos_ugo.png" format="PNG"/>
+	</imageobject>
+</figure>
+
+
+</sect3>
+
+<sect3 id="permisos-acl">
+<title>
+ACL, Access Control List
+</title>
+
+<para>
+UGO permissions are suitable for most scenarios. 
+However, IEEE POSIX workgroup was conscious that sometimes
+they are too limiting and defined an interface in POSIX 1003.1e DRAFT 17
+intended to manage file ACLs.
+
+That proposal was left out from the standard but is implemented in 
+several BSD (Solaris and FreeBSD 5) and GNU/Linux (as of version 2.6
+of the kernel).
+</para>
+
+<para>
+ACL allow to set permissions in a per-user or per-group fashion.
+For instance, it is not feasible in UGO permissions to have
+two users (bob and alice) where bob can only read, alice can read
+and write and no other user can access the file.
+
+</para>
+
+<figure>
+	<title>ACL permissions</title>
+	<imageobject>
+		<imagedata fileref="figures/permisos_acl.png" format="PNG"/>
+	</imageobject>
+</figure>
+
+</sect3>
+</sect2>
+
+<sect2 id="on-funciona">
+<title>Where can be used &eiciel;</title>
+
+<para>
+&eiciel; is an application for the <application>GNOME</application> environment. 
+To be useful &eiciel; needs an ACL-enabled system.
+</para>
+
+<note>
+<para>
+ACL support is given by the operating system. Nowadays only Linux 2.6 (or 2.4
+with the proper patch) and FreeBSD 5 support ACL. However not all the filesystems
+that can be used on those systems have support for ACL.
+</para>
+<para>
+In Linux 2.6, when writing this documentation, the following filesystems where
+ACL-capable: Ext2/Ext3, XFS, JFS and ReiserFS. ACL must be enabled in the 
+<type>kernel</type>. It is also possible that NFS and CIFS filesystems 
+become ACL-capable in the future.
+</para>
+<para>
+Note also that ACL must be <emphasis>turned on</emphasis>. In Linux 2.6/2.4 you can do 
+it setting the <type>acl</type> option in <filename>/etc/fstab</filename>.
+Consult your distribution documentation 
+</para>
+</note>
+</sect2>
+<sect2 id="what-is-ea">
+<title>What are extended user attributes ?</title>
+<para>
+In the process of adding ACL support for GNU/Linux, developers decided to abstract them
+away in what were named <emphasis>extended attributes</emphasis>. These extended attributes
+are bits of additional information linked to files. They are used, for instance, to implement ACL or
+for storing <emphasis>security labels</emphasis> in SELinux.
+</para>
+<para>
+<emphasis>Extended user attributes</emphasis> brings to users the possibility of storing arbitrary chunks
+of data in their files. For instance, one could create a Revision attribute that would store the date
+of the last revision.
+</para>
+</sect2>
+</sect1>
+
+<sect1 id="utilitzar-eiciel">
+<title>Using &eiciel;</title>
+
+<para>
+&eiciel; can be used either in the <application>Nautilus</application> file explorer 
+or standalone. Both scenarios only differ in the way the files are opened.
+For the rest they are the same.
+</para>
+
+<sect2 id="escollir-fitxer">
+<title>Opening a file</title>
+<para>
+When you start &eiciel; no file is opened. You can open a file pressing 
+<guibutton>Open</guibutton>. A file selection dialog will appear
+where you can choose a file or a directory.
+</para>
+
+<figure>
+	<title>Opening a file</title>
+	<screenshot>
+	<imageobject>
+		<imagedata fileref="figures/obrir_fitxer.png" format="PNG"/>
+	</imageobject>
+	</screenshot>
+</figure>
+
+<important>
+<title>Operation not supported</title>
+<para>
+
+The message <emphasis>Operation not supported</emphasis> means that
+the filesystem where the file is located does not support ACL. 
+See <link linkend="on-funciona">where works</link> &eiciel;
+for further information about the ACL support needed in your system. 
+</para>
+</important>
+
+</sect2>
+
+<sect2 id="escollir-fitxer-nautilus">
+<title>Opening a file in Nautilus</title>
+<para>
+In Nautilus right-clic on the file or directory. Then press <guimenuitem>Properties</guimenuitem> and activate the <guimenuitem>Access Control List</guimenuitem> tab.
+</para>
+
+<figure>
+	<title>Opening a file in Nautilus</title>
+	<screenshot>
+	<imageobject>
+		<imagedata fileref="figures/obrir_fitxer_nautilus.png" format="PNG"/>
+	</imageobject>
+	</screenshot>
+</figure>
+
+</sect2>
+<sect2 id="manipular-acl">
+<title>Modifying entry permissions</title>
+
+<para>
+All entries in the Access Control List have the three permissions
+of reading, writing and executing. You can grant or deny the permission
+simply checking or unchecking the proper checkbox.
+</para>
+
+<figure>
+	<title>ACL entry</title>
+	<screenshot>
+	<imageobject>
+		<imagedata fileref="figures/entrada_acl.png" format="PNG"/>
+	</imageobject>
+	</screenshot>
+</figure>
+
+<para>
+&eiciel; uses icons to show the entry type. The following tables list the icons used.
+</para>
+
+        <table><title>Icons used in &eiciel;</title> 
+          <tgroup cols="2">
+            <tbody>
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/user.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>Owner user.</wordasword> Is the UGO User. 
+				There is always this entry and cannot be removed.
+				</entry>
+              </row>
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/group.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>Owner group.</wordasword> Is the UGO Group.
+				There is always this entry and cannot be removed.
+				</entry>
+			  </row>
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/others.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>Other.</wordasword> Is the UGO Other.
+				There is always this entry and cannot be removed.
+				</entry>
+			  </row>
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/user-acl.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>User.</wordasword> A file can have zero or more entries of this kind.
+				</entry>
+              </row>
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/group-acl.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>Group.</wordasword> A file can have zero or more entries of this kind.
+				</entry>
+			  </row>
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/mask.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>Mask.</wordasword> Contains the maximum permissions that an ACL entry will effectively have.
+				This entry only is available if there are any User or Group entries.
+				</entry>
+			  </row>
+		  </tbody>
+		  </tgroup>
+		  <tgroup cols="2">
+		  <tbody>
+			  <!-- DEFAULT -->
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/user-default.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>Default owner user.</wordasword> Is the User UGO by default in the new files of the directory.
+				There is always this entry and cannot be removed. 
+				This entry only can be found in a directory.
+				</entry>
+              </row>
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/group-default.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>Default owner group.</wordasword> Is the Group UGO by default in the new files of the directory.
+				There is always this entry and cannot be removed. 
+				This entry only can be found in a directory.
+				</entry>
+			  </row>
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/others-default.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>Default Other</wordasword> Is the Other UGO by default in the new files of the directory.
+				There is always this entry and cannot be removed. 
+				This entry only can be found in a directory.
+				</entry>
+			  </row>
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/user-acl-default.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>Default User.</wordasword> A directory can have zero or more entries of this kind. 
+				New files in the directory will have this entry by default.
+				This entry only can be found in a directory.
+				</entry>
+              </row>
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/group-acl-default.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>Default group.</wordasword> A directory can have zero ore more entries of this kind.
+				New files in the directory will have this entry by default.
+				This entry only can be found in a directory.
+				</entry>
+			  </row>
+              <row>
+			  	<entry>
+				<imageobject>
+					<imagedata fileref="figures/mask-default.png" format="PNG"/>
+				</imageobject>
+				</entry>
+			  	<entry>
+				<wordasword>Default Mask.</wordasword> Contains the maximum permissions that a default ACL entry will effectively have.
+				This entry only is available if there are any Default User or Default Group entries.
+
+				</entry>
+			  </row>
+            </tbody>
+          </tgroup>
+        </table>
+
+</sect2>
+
+<sect2 id="afegir-acl">
+<title>Adding an ACL entry</title>
+
+<para>
+Users or groups of your system can be added as ACL entries. Choose the
+kind of entry selecting <guibutton>User</guibutton> or <guibutton>Groups</guibutton>.
+Depending on this the bottom list will show the users or groups of your system.
+</para>
+
+<para>
+You can add the user or group by selecting on the list and pressing
+<guibutton>Add</guibutton>. You can also drag on the top list or double-click
+it to achieve the same effect or press <guibutton>Add</guibutton> in the popup menu that will
+appear right-clicking on the entry. It will appear as a new entry in the top list.
+</para>
+</sect2>
+
+<sect2 id="eliminar-acl">
+<title>Removing an ACL entry </title>
+<para>
+To remove an ACL entry select it from the top list and press <guibutton>Remove</guibutton>. Alternatively
+you can double-click it. You can also press <guibutton>Remove</guibutton> in the popup menu that will appear
+right-clicking on the entry.
+</para>
+</sect2>
+
+<sect2 id="entrades-defecte">
+<title>Default ACL entries</title>
+<para>
+Opening a directory instead of a file enables <guibutton>Default ACL</guibutton>
+and <guibutton>Default</guibutton> buttons.
+</para>
+
+<note>
+<title>Default ACL entries</title>
+<para>
+Directories can have Default ACL entries. Those entries are automatically added 
+to new files created in the directory.
+</para>
+
+<para>
+These entries are different to the own directory entries. &eiciel; uses
+different icons for default ACL entries.
+</para>
+</note>
+
+<para>
+<guibutton>Default ACL</guibutton> can be used to add or remove 
+default ACL entries. When there are no ACL default entries this
+button remains deactivated. Activating it adds basic default ACL entries.
+It will be always activated if there is any default ACL entry. Deactivating
+it implies removing all default ACL entries.
+</para>
+
+<warning>
+<para>
+If you deactivate the <guibutton>Default ACL</guibutton> you wil be
+asked if you want to remove all default ACL entries. If you answer
+affirmatively <emphasis>all</emphasis> default ACL entries will be
+removed.
+</para>
+</warning>
+
+<para>
+<guibutton>Default</guibutton> checkbox can be used to add default ACL entries.
+</para>
+
+</sect2>
+
+<sect2 id="mascara-permisos">
+<title>Permission mask</title>
+<para>
+ACL entries imply an additional entry called <emphasis>mask</emphasis>. The mask
+defines effective permissions that can have user entries (except for the owner),
+group owner and group entries.
+</para>
+
+<para>
+If the mask disallows a permission to be effective &eiciel; puts an exclamation
+mark next to the uneffective permission.
+</para>
+
+<figure>
+	<title>Permission mask example</title>
+	<screenshot>
+	<imageobject>
+		<imagedata fileref="figures/detall_mascara.png" format="PNG"/>
+	</imageobject>
+	</screenshot>
+</figure>
+
+</sect2>
+
+<sect2 id="working-with-ea">
+<title>Working with extended user attributes</title>
+<para>
+Extended user attributes are pairs of attributes and values that can be stored arbitrarily in files.
+For instance one could store the last Revision of a file or a brief Description.
+Eiciel allows to work with extended user attributes both in standalone application and Nautilus property
+page.
+</para>
+<sect3 id="add-ea">
+<title>Adding an attribute</title>
+<para>
+You can add an attribute with <guibutton>Add</guibutton>. A default attribute name and value will be created.
+You can edit them by clicking on the attribute list.
+</para>
+</sect3>
+
+<sect3 id="remove-ea">
+<title>Removing an attribute</title>
+<para>
+To remove an attribute, select it from the list and press <guibutton>Remove</guibutton>.
+</para>
+</sect3>
+
+<figure>
+	<title>Extended user attributes</title>
+	<screenshot>
+	<imageobject>
+		<imagedata fileref="figures/pantalla_ea.png" format="PNG"/>
+	</imageobject>
+	</screenshot>
+</figure>
+
+
+<warning>
+<para>
+Even if extended user attributes are <emphasis>encoding neutral</emphasis> all the data
+that can be introduced in Eiciel will be saved in UTF-8 charset. Remind this if you intend
+to manage these attributes with another application which might not be UTF-8 capable.
+Eiciel might not be useful if you store binary (non printable) data in your user
+attribute values.
+</para>
+</warning>
+
+</sect2>
+
+</sect1>
+
+<glossary>
+<title>Glossary</title>
+
+<glossentry>
+<glossterm>ACL</glossterm>
+<glossdef><para>Access Control List.</para></glossdef>
+</glossentry>
+
+<glossentry>
+<glossterm>UGO</glossterm>
+<glossdef><para>User, Group, Other. A name for traditional UNIX permissions.</para></glossdef>
+</glossentry>
+
+</glossary>
+
+</article>

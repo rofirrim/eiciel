@@ -1,0 +1,24 @@
+# Files to translate
+src/eiciel_container.hpp
+src/acl_manager.hpp
+src/eiciel_container.cpp
+src/acl_manager.cpp
+src/eiciel_xattr_controller.hpp
+src/xattr_list_model.hpp
+src/eiciel_nautilus_page.hpp
+src/eiciel_xattr_window.cpp
+src/acl_element_kind.hpp
+src/eiciel_xattr_controller.cpp
+src/eiciel_standalone.cpp
+src/xattr_manager.hpp
+src/cellrenderer_acl.cpp
+src/eiciel_main_controller.cpp
+src/participant_list.hpp
+src/eiciel_main_controller.hpp
+src/eiciel_main_window.hpp
+src/eiciel_xattr_window.hpp
+src/eiciel_main_window.cpp
+src/eiciel_nautilus_page.cpp
+src/acl_list.hpp
+src/cellrenderer_acl.hpp
+src/xattr_manager.cpp
