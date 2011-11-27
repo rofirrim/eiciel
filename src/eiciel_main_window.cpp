@@ -21,6 +21,9 @@
 // Constructor
 EicielWindow::EicielWindow(EicielMainController* cont) 
 	: Gtk::VBox(),
+    _advanced_features_expander(_("Advanced features")),
+    _participant_entry_label(_("Name of participant")),
+    _participant_entry_query_button(Gtk::Stock::FIND),
 	_rb_acl_user(_("User")),
 	_rb_acl_group(_("Group")),
 	_cb_acl_default(_("Default")),
@@ -38,26 +41,26 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     _warning_icon(Gtk::Stock::DIALOG_WARNING, Gtk::IconSize(Gtk::ICON_SIZE_SMALL_TOOLBAR)),
     _bottom_label(_("There are ineffective permissions")),
 	_readonly_mode(false),
-	_controller(cont) // Assignem el _controller a la _window
+	_controller(cont) // Assign _controller to _window
 {
 	// Set the window to the controller
 	_controller->_window = this;
 
 	set_border_width(4);
 
-	add(_main_area);
-	_main_area.set_spacing(4);
+	add(_main_box);
+	_main_box.set_spacing(4);
 
-	_main_area.add(_top_frame);
-	_main_area.add(_bottom_frame);
+	_main_box.add(_top_frame);
+	_main_box.add(_bottom_frame);
 
-	_top_frame.add(_top_area);
-	_bottom_frame.add(_bottom_area);
+	_top_frame.add(_top_box);
+	_bottom_frame.add(_bottom_box);
 
-	_top_area.set_border_width(4);
-	_top_area.set_spacing(4);
-	_bottom_area.set_border_width(4);
-	_bottom_area.set_spacing(4);
+	_top_box.set_border_width(4);
+	_top_box.set_spacing(4);
+	_bottom_box.set_border_width(4);
+	_bottom_box.set_spacing(4);
 
 #ifndef USING_GNOME2
 	_middle_button_group.set_spacing(2);
@@ -159,7 +162,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
 
 	_listview_acl.set_size_request(100, 150);
 
-	_top_area.add(_listview_acl_container);
+	_top_box.add(_listview_acl_container);
 
 	// Add 'move up' 'move down' buttons
     _middle_button_group.pack_start(_warning_icon, Gtk::PACK_SHRINK, 0);
@@ -168,7 +171,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
 	_middle_button_group.pack_end(_tb_modify_default_acl, Gtk::PACK_SHRINK, 0);
 
 
-	_top_area.pack_start(_middle_button_group, Gtk::PACK_SHRINK, 0);
+	_top_box.pack_start(_middle_button_group, Gtk::PACK_SHRINK, 0);
 
 	// Group buttons of ACL kind
 	Gtk::RadioButton::Group tipusACL = _rb_acl_user.get_group();
@@ -179,7 +182,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
 	_participant_chooser.pack_start(_cb_acl_default, Gtk::PACK_SHRINK, 0);
 	_participant_chooser.pack_end(_b_add_acl, Gtk::PACK_SHRINK, 0);
 
-	_bottom_area.pack_start(_participant_chooser, Gtk::PACK_SHRINK, 0);
+	_bottom_box.pack_start(_participant_chooser, Gtk::PACK_SHRINK, 0);
 
 	// Participants list
 	_ref_participants_list = Gtk::ListStore::create(_participant_list_model);
@@ -191,9 +194,24 @@ EicielWindow::EicielWindow(EicielMainController* cont)
 
 	_listview_participants_container.add(_listview_participants);
 	_listview_participants_container.set_policy(Gtk::POLICY_NEVER, Gtk::POLICY_AUTOMATIC);
+
+    _participant_entry_box.pack_start(_participant_entry_label, Gtk::PACK_SHRINK, 4);
+    _participant_entry_box.pack_start(_participant_entry);
+    _participant_entry_box.pack_start(_participant_entry_query_button, Gtk::PACK_SHRINK, 0);
+
+    _participant_entry.signal_changed().connect(sigc::mem_fun(*this, &EicielWindow::participant_entry_box_changed));
+    _participant_entry.signal_activate().connect(sigc::mem_fun(*this, &EicielWindow::participant_entry_box_activate));
+    _participant_entry_query_button.set_sensitive(false);
+
+    _participant_entry_query_button.signal_clicked().connect(sigc::mem_fun(*this, &EicielWindow::participant_entry_box_activate));
+
+	_advanced_features_box.pack_start(_participant_entry_box, Gtk::PACK_SHRINK, 0);
+	_advanced_features_box.pack_start(_cb_show_system_participants, Gtk::PACK_SHRINK, 0);
+
+    _advanced_features_expander.add(_advanced_features_box);
 	
-	_bottom_area.pack_start(_listview_participants_container);
-	_bottom_area.pack_start(_cb_show_system_participants, Gtk::PACK_SHRINK, 0);
+	_bottom_box.pack_start(_listview_participants_container);
+    _bottom_box.pack_start(_advanced_features_expander);
 
 	_cb_show_system_participants.signal_toggled().connect(sigc::mem_fun(*this, &EicielWindow::toggle_system_show));
 
@@ -376,7 +394,7 @@ void EicielWindow::initialize(string s)
 
 void EicielWindow::set_active(bool b)
 {
-	_main_area.set_sensitive(b);
+	_main_box.set_sensitive(b);
 }
 
 void EicielWindow::set_readonly(bool b)
@@ -386,7 +404,7 @@ void EicielWindow::set_readonly(bool b)
 	{
 		_tb_modify_default_acl.set_sensitive(false);
 	}
-	_bottom_area.set_sensitive(!b);
+	_bottom_box.set_sensitive(!b);
 }
 
 bool EicielWindow::acl_selection_function(const Glib::RefPtr<Gtk::TreeModel>& model,
@@ -397,7 +415,7 @@ bool EicielWindow::acl_selection_function(const Glib::RefPtr<Gtk::TreeModel>& mo
 
 void EicielWindow::there_is_no_file()
 {
-	_main_area.set_sensitive(false);
+	_main_box.set_sensitive(false);
 }
 
 void EicielWindow::empty_acl_list()
@@ -497,20 +515,21 @@ void EicielWindow::add_non_selectable(Glib::ustring title,
 	row[_acl_list_model._removable] = false;
 }
 
-void EicielWindow::add_selectable(Glib::ustring titol, 
+void EicielWindow::add_selectable(Glib::ustring title, 
 		bool reading, bool writing, bool execution, ElementKind e,
 		bool effective_reading, bool effective_writing, bool effective_execution)
 {
 	Gtk::TreeModel::iterator iter = _ref_acl_list->append();
 	Gtk::TreeModel::Row row(*iter);
 
-	add_element(titol, reading, writing, execution, e, row,
+	add_element(title, reading, writing, execution, e, row,
 			effective_reading, effective_writing, effective_execution,
             _controller->is_directory());
 	row[_acl_list_model._removable] = true;
 }
 
-void EicielWindow::add_element(Glib::ustring titol, bool reading, bool writing, bool execution,
+void EicielWindow::add_element(Glib::ustring title, 
+        bool reading, bool writing, bool execution,
 		ElementKind e, Gtk::TreeModel::Row& row,
 		bool effective_reading, 
         bool effective_writing, 
@@ -519,7 +538,7 @@ void EicielWindow::add_element(Glib::ustring titol, bool reading, bool writing, 
 {
     row[_acl_list_model._entry_kind] = e;
     row[_acl_list_model._icon] = get_proper_icon(e);
-    row[_acl_list_model._entry_name] = titol;
+    row[_acl_list_model._entry_name] = title;
     row[_acl_list_model._reading_permission] = reading;
     row[_acl_list_model._writing_permission] = writing;
     row[_acl_list_model._execution_permission] = execution;
@@ -575,9 +594,9 @@ Glib::RefPtr<Gdk::Pixbuf> EicielWindow::get_proper_icon(ElementKind e)
 	}
 }
 
-void EicielWindow::set_filename(string nomF)
+void EicielWindow::set_filename(string filename)
 {
-	_main_area.set_sensitive(true);
+	_main_box.set_sensitive(true);
 }
 
 void EicielWindow::change_permissions(const Glib::ustring& str, PermissionKind p)
@@ -710,6 +729,29 @@ void EicielWindow::choose_acl(string s, ElementKind e)
 	}
 }
 
+bool EicielWindow::enable_participant(string participant_name)
+{
+    Glib::RefPtr<Gtk::TreeModel> list_model = _listview_participants.get_model();
+    Gtk::TreeModel::Children children = list_model->children();
+    bool found = false;
+
+	for(Gtk::TreeModel::Children::iterator iter = children.begin(); 
+			(iter != children.end()) && !found; ++iter)
+	{
+		Gtk::TreeModel::Row row(*iter);
+        if (row[_participant_list_model._participant_name] == participant_name)
+        {
+            found = true;
+            Gtk::TreePath p = list_model->get_path(iter);
+            _listview_participants.set_cursor(p);
+            _listview_participants.scroll_to_row(p, 0.5);
+            _listview_participants.grab_focus();
+        }
+    }
+
+    return found;
+}
+
 
 void EicielWindow::set_value_drag_and_drop(const Glib::RefPtr<Gdk::DragContext>&, 
 		Gtk::SelectionData& selection_data, guint, guint)
@@ -793,3 +835,51 @@ void EicielWindow::recursion_policy_change(const Glib::ustring& path_string, con
     }
 }
 
+void EicielWindow::participant_entry_box_activate()
+{
+    bool participant_exists = false;
+
+    participant_exists = enable_participant(_participant_entry.get_text());
+
+    if (!participant_exists)
+    {
+        // Request for an explicit query in the system database
+        if (_rb_acl_user.get_active()) 
+        {
+            participant_exists = _controller->lookup_user(_participant_entry.get_text());
+            if (participant_exists)
+            {
+                _users_list.insert(_participant_entry.get_text());
+                _rb_acl_user.clicked();
+                enable_participant(_participant_entry.get_text());
+            }
+        }
+
+        if (_rb_acl_group.get_active()) 
+        {
+            participant_exists = _controller->lookup_group(_participant_entry.get_text());
+            if (participant_exists)
+            {
+                _groups_list.insert(_participant_entry.get_text());
+                _rb_acl_group.clicked();
+                enable_participant(_participant_entry.get_text());
+            }
+        }
+    }
+
+    if (!participant_exists)
+    {
+        _participant_entry.set_icon_from_stock(Gtk::Stock::DIALOG_ERROR);
+        _participant_entry.set_icon_activatable(false);
+        _participant_entry.set_icon_tooltip_text(_("Participant not found"));
+    }
+    else
+    {
+        _participant_entry.set_icon_from_pixbuf(Glib::RefPtr<Gdk::Pixbuf>(NULL));
+    }
+}
+
+void EicielWindow::participant_entry_box_changed()
+{
+    _participant_entry_query_button.set_sensitive( _participant_entry.get_text_length() != 0 );
+}

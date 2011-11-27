@@ -45,10 +45,10 @@ class EicielMainController : public sigc::trackable
 		bool _show_system;
 
 		void update_acl_list();
-		void update_acl_entry(ElementKind e, string nom, 
-				bool lectura, bool escriptura, bool execucio);
-		void remove_acl(string nomEntrada, ElementKind e);
-		void add_acl_entry(string s, ElementKind e, bool esDefault);
+		void update_acl_entry(ElementKind e, string name, 
+				bool reading, bool writing, bool execution);
+		void remove_acl(string entry_name, ElementKind e);
+		void add_acl_entry(string s, ElementKind e, bool is_default);
 		void change_default_acl();
 
 		void fill_lists();
@@ -57,6 +57,9 @@ class EicielMainController : public sigc::trackable
 
         set<string> get_users_list();
         set<string> get_groups_list();
+
+        bool lookup_user(const std::string& str);
+        bool lookup_group(const std::string& str);
 
         bool is_directory();
 	public:

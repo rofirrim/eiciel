@@ -38,10 +38,10 @@ class EicielWindow : public Gtk::VBox
 		EicielWindow(EicielMainController* cont);
 		virtual ~EicielWindow();
 
-		void add_non_selectable(Glib::ustring titol, bool lectura, bool escriptura, bool execucio, ElementKind e,
-				bool efectiuLectura = true, bool efectiuEscriptura = true, bool efectiuExecucio = true);
-		void add_selectable(Glib::ustring titol, bool lectura, bool escriptura, bool execucio, ElementKind e,
-				bool efectiuLectura = true, bool efectiuEscriptura = true, bool efectiuExecucio = true);
+		void add_non_selectable(Glib::ustring titol, bool reading, bool writing, bool execution, ElementKind e,
+				bool effective_reading = true, bool effective_writing = true, bool effective_execution = true);
+		void add_selectable(Glib::ustring titol, bool reading, bool writing, bool execution, ElementKind e,
+				bool effective_reading = true, bool effective_writing = true, bool effective_execution = true);
 		void empty_acl_list();
 		void set_filename(string filename);
 		void enable_default_acl_button(bool b);
@@ -62,7 +62,7 @@ class EicielWindow : public Gtk::VBox
 		Glib::ustring last_error();
 
 	private:
-		Gtk::VBox _main_area;
+		Gtk::VBox _main_box;
         
 		Glib::RefPtr<Gtk::ListStore> _ref_acl_list;
 		Gtk::ScrolledWindow _listview_acl_container;
@@ -71,6 +71,13 @@ class EicielWindow : public Gtk::VBox
         Glib::RefPtr<Gtk::ListStore> _ref_participants_list;
         Gtk::ScrolledWindow _listview_participants_container;
         Gtk::TreeView _listview_participants;
+
+        Gtk::Expander _advanced_features_expander;
+        Gtk::VBox _advanced_features_box;
+        Gtk::HBox _participant_entry_box;
+        Gtk::Label _participant_entry_label;
+        Gtk::Entry _participant_entry;
+        Gtk::Button _participant_entry_query_button;
         
         Gtk::HBox _participant_chooser;
 		Gtk::RadioButton _rb_acl_user;
@@ -99,9 +106,9 @@ class EicielWindow : public Gtk::VBox
 		Glib::RefPtr<Gdk::Pixbuf> _default_mask_icon;
 		
 		Gtk::Frame _top_frame;
-		Gtk::VBox _top_area;
+		Gtk::VBox _top_box;
 		Gtk::Frame _bottom_frame;
-		Gtk::VBox _bottom_area;
+		Gtk::VBox _bottom_box;
 		
         Gtk::Image _warning_icon;
 		Gtk::Label _bottom_label;
@@ -138,12 +145,12 @@ class EicielWindow : public Gtk::VBox
                 bool can_be_recursed);
 		void remove_selected_acl();
 		void add_selected_participant();
-		void change_permissions(const Glib::ustring& cadena, PermissionKind p);
+		void change_permissions(const Glib::ustring& str, PermissionKind p);
 
 		void fill_participants(set<string>* participants,
-				ElementKind tipus, 
-				Glib::RefPtr<Gdk::Pixbuf> iconaNormal,
-				Glib::RefPtr<Gdk::Pixbuf> iconaDefecte);
+				ElementKind kind, 
+				Glib::RefPtr<Gdk::Pixbuf> normal_icon,
+				Glib::RefPtr<Gdk::Pixbuf> default_icon);
 
 
 		void participants_list_double_click(const Gtk::TreeModel::Path& p, Gtk::TreeViewColumn* c);
@@ -166,6 +173,10 @@ class EicielWindow : public Gtk::VBox
 
         void recursion_policy_change(const Glib::ustring& path_string, const Glib::ustring& new_text);
         
+        void participant_entry_box_changed();
+        void participant_entry_box_activate();
+
+        bool enable_participant(string participant_name);
 };
 
 #endif

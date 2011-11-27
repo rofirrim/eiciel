@@ -534,3 +534,15 @@ Glib::ustring EicielMainController::last_error()
 {
 	return _last_error_message;
 }
+
+bool EicielMainController::lookup_user(const std::string& str)
+{
+    struct passwd * p = getpwnam(str.c_str());
+    return (p != NULL);
+}
+
+bool EicielMainController::lookup_group(const std::string& str)
+{
+    struct group * g = getgrnam(str.c_str());
+    return (g != NULL);
+}
