@@ -29,6 +29,7 @@ void EicielXAttrController::open_file(const Glib::ustring& filename) throw (XAtt
 	if (_xattr_manager != NULL)
 	{
 		delete _xattr_manager;
+		_xattr_manager = NULL;
 	}
 
 	try
