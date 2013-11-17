@@ -30,15 +30,10 @@ CellRendererACL::CellRendererACL()
 }
 
 // I don't want this in the header
-static int default_indicator_size = 13;
+static int default_indicator_size = 16;
 static const int blank = 4;
 
-void CellRendererACL::get_size_vfunc(Gtk::Widget& widget,
-        const Gdk::Rectangle* cell_area,
-        int * x_offset,
-        int * y_offset,
-        int * width,
-        int * height) const 
+Glib::RefPtr<Gdk::Pixbuf> CellRendererACL::get_warning_icon(Gtk::Widget &widget) const
 {
 #ifdef USING_GNOME2
     Glib::RefPtr<Gdk::Pixbuf> warning_icon = widget.render_icon(Gtk::Stock::DIALOG_WARNING, 
@@ -48,14 +43,35 @@ void CellRendererACL::get_size_vfunc(Gtk::Widget& widget,
     Glib::RefPtr<Gdk::Pixbuf> warning_icon = widget.render_icon_pixbuf(Gtk::Stock::DIALOG_WARNING, 
             Gtk::IconSize(Gtk::ICON_SIZE_SMALL_TOOLBAR));
 #endif
+    return warning_icon;
+}
+
+void CellRendererACL::get_preferred_width_vfunc(
+        Gtk::Widget&  	widget,
+		int &  	minimum_width,
+		int &  	natural_width 
+	) const
+{
+    Glib::RefPtr<Gdk::Pixbuf> warning_icon = get_warning_icon(widget);
 
     const int checkbox_width = default_indicator_size;
-    const int checkbox_height = default_indicator_size;
     const int inner_box_width = warning_icon->get_width() + blank + checkbox_width;
+
+    natural_width = minimum_width = inner_box_width;
+}
+
+void CellRendererACL::get_preferred_height_vfunc(
+        Gtk::Widget&  	widget,
+		int &  	minimum_height,
+		int &  	natural_height 
+	) const
+{
+    Glib::RefPtr<Gdk::Pixbuf> warning_icon = get_warning_icon(widget);
+
+    const int checkbox_height = default_indicator_size;
     const int inner_box_height = std::max(warning_icon->get_height(), checkbox_height);
 
-    *width = inner_box_width;
-    *height = inner_box_height;
+    natural_height = minimum_height = inner_box_height;
 }
 
 void CellRendererACL::render_vfunc (
@@ -67,29 +83,46 @@ void CellRendererACL::render_vfunc (
         Gtk::Widget& widget,
         const Gdk::Rectangle& background_area,
         const Gdk::Rectangle& cell_area,
+#ifdef USING_GNOME2
         const Gdk::Rectangle& expose_area,
+#endif
         Gtk::CellRendererState flags)
 {
+    Glib::RefPtr<Gdk::Pixbuf> warning_icon = this->get_warning_icon(widget);
+
+#ifdef USING_GNOME2
+    Gtk::StateType state = Gtk::STATE_NORMAL; 
+#else
+    Gtk::StateFlags state = this->get_state(widget, flags);
+#endif
+
+#ifdef USING_GNOME2
+    Gtk::ShadowType shadow = Gtk::SHADOW_OUT;
+#endif
+    if (property_active())
+    {
+#ifdef USING_GNOME2
+        shadow = Gtk::SHADOW_IN;
+#else
+        state |= Gtk::STATE_FLAG_ACTIVE;
+#endif
+    }
+
 #ifdef USING_GNOME2
     Glib::RefPtr<Gtk::Style> style = widget.get_style();
     Glib::RefPtr<Gdk::Window> window = Glib::RefPtr<Gdk::Window>::cast_dynamic(drawable);
-
-    Gtk::StateType state = Gtk::STATE_NORMAL; 
-
-    Glib::RefPtr<Gdk::Pixbuf> warning_icon = widget.render_icon(Gtk::Stock::DIALOG_WARNING, 
-            Gtk::IconSize(Gtk::ICON_SIZE_SMALL_TOOLBAR), 
-            "default");
 #else
+    cr->save();
+    cr->rectangle(cell_area.get_x(), cell_area.get_y(), cell_area.get_width(), cell_area.get_height());
+    cr->clip();
+
     Glib::RefPtr<Gtk::StyleContext> style_context = widget.get_style_context();
-
-    style_context->set_state(Gtk::STATE_FLAG_NORMAL);
-
-    Glib::RefPtr<Gdk::Pixbuf> warning_icon = widget.render_icon_pixbuf(Gtk::Stock::DIALOG_WARNING, 
-            Gtk::IconSize(Gtk::ICON_SIZE_SMALL_TOOLBAR));
+    style_context->context_save();
+    style_context->set_state(state);
 #endif
 
     /*
-     * The size of the icon + 4 spacing pixels + checkbox of 13x13
+     * The size of the icon + 4 spacing pixels + checkbox of 16x16
      */
 
     const int checkbox_width = default_indicator_size;
@@ -97,14 +130,14 @@ void CellRendererACL::render_vfunc (
     const int inner_box_width = warning_icon->get_width() + blank + checkbox_width;
     const int inner_box_height = std::max(warning_icon->get_height(), checkbox_height);
 
-    // std::cerr 
-    //     << "--->" << std::endl
-    //     << "inner_box_width= " << inner_box_width << std::endl
-    //     << "inner_box_height= " << inner_box_height << std::endl
-    //     << "cell_area_width= " << cell_area.get_width() << std::endl
-    //     << "cell_area_height= " << cell_area.get_height() << std::endl
-    //     << "<---" << std::endl;
-    //     ;
+//     std::cerr 
+//         << "--->" << std::endl
+//         << "inner_box_width= " << inner_box_width << std::endl
+//         << "inner_box_height= " << inner_box_height << std::endl
+//         << "cell_area_width= " << cell_area.get_width() << std::endl
+//         << "cell_area_height= " << cell_area.get_height() << std::endl
+//         << "<---" << std::endl;
+//         ;
 
     /*
      * Precondition: cell_area.get_width() >= inner_box_width
@@ -122,17 +155,15 @@ void CellRendererACL::render_vfunc (
     inner_x += cell_area.get_x();
     inner_y += cell_area.get_y();
 
-#ifdef USING_GNOME2
-    Gtk::ShadowType shadow = Gtk::SHADOW_OUT;
-    if (property_active())
-    {
-        shadow = Gtk::SHADOW_IN;
-
-    }
-#endif
-
     int checkbox_x = inner_x + warning_icon->get_width() + blank;
     int checkbox_y = inner_y + (warning_icon->get_height() - checkbox_height)/2; 
+
+//     std::cerr 
+//         << "--->" << std::endl
+//         << "checkbox_x = " << checkbox_x << std::endl
+//         << "checkbox_y = " << checkbox_y << std::endl
+//         << "<---" << std::endl;
+//         ;
 
 #ifdef USING_GNOME2
     style->paint_check(
@@ -145,18 +176,24 @@ void CellRendererACL::render_vfunc (
             checkbox_x, checkbox_y, checkbox_width, checkbox_height
             );
 #else
+    style_context->add_class("check");
     style_context->render_check(
             cr,
-            checkbox_x, checkbox_y, checkbox_width, checkbox_height
+            checkbox_x, checkbox_y,
+            checkbox_width, checkbox_height
             );
 #endif
 
+//     std::cerr << "-->" 
+//         << "property = " << (bool)property_active() << std::endl
+//         << "mark-background = " << (bool)_mark_background.get_value() << std::endl
+//         << "<--" << std::endl;
+
     if (property_active() && _mark_background.get_value())
     {
-#ifdef USING_GNOME2
         int icon_x = inner_x;
         int icon_y = inner_y;
-
+#ifdef USING_GNOME2
         Glib::RefPtr<Gdk::GC> graphic_context = Gdk::GC::create(drawable);
 
         drawable->draw_pixbuf(graphic_context,
@@ -167,15 +204,34 @@ void CellRendererACL::render_vfunc (
                 Gdk::RGB_DITHER_NORMAL,
                 0, 0);
 #else
-        Gdk::Cairo::set_source_pixbuf(cr, warning_icon, 0, 0);
+        Gdk::Cairo::set_source_pixbuf(cr, warning_icon, icon_x, icon_y);
         cr->paint();
 #endif
-    }
-}
+   }
 
+#ifdef USING_GNOME2
+    ;
+#else
+    style_context->context_restore();
+    cr->restore();
+#endif
+}
 
 Glib::PropertyProxy<bool> CellRendererACL::mark_background()
 {
     return Glib::PropertyProxy<bool>(this, MARK_BACKGROUND_PROPERTY);
+}
+
+// Compatibility overrides
+void CellRendererACL::get_size_vfunc(Gtk::Widget& widget,
+        const Gdk::Rectangle* cell_area,
+        int * x_offset,
+        int * y_offset,
+        int * width,
+        int * height) const 
+{
+    int dummy = 0;
+    this->get_preferred_width_vfunc(widget, *width, dummy);
+    this->get_preferred_height_vfunc(widget, *height, dummy);
 }
 
