@@ -29,22 +29,8 @@ EicielContainer::EicielContainer()
 
 	set_title("Eiciel");
 	set_border_width(4);
-	
-	std::vector<Glib::RefPtr<Gdk::Pixbuf> > icon_list;
-	Glib::RefPtr<Gdk::Pixbuf> icon;
 
-	icon = Gdk::Pixbuf::create_from_file(PKGDATADIR "/img/icon_eiciel_16.png");
-	icon_list.push_back(icon);
-	icon = Gdk::Pixbuf::create_from_file(PKGDATADIR "/img/icon_eiciel_24.png");
-	icon_list.push_back(icon);
-	icon = Gdk::Pixbuf::create_from_file(PKGDATADIR "/img/icon_eiciel_32.png");
-	icon_list.push_back(icon);
-	icon = Gdk::Pixbuf::create_from_file(PKGDATADIR "/img/icon_eiciel_48.png");
-	icon_list.push_back(icon);
-	icon = Gdk::Pixbuf::create_from_file(PKGDATADIR "/img/icon_eiciel_64.png");
-	icon_list.push_back(icon);
-
-	set_icon_list(icon_list);
+	set_default_icon_name("eiciel");
 
 	add(_main_container);
 
