@@ -61,8 +61,11 @@ libeiciel_nautilus_la_SOURCES += \
 endif
 
 desktopfilesdir=@datadir@/applications
-
 desktopfiles_DATA=eiciel.desktop
+
+
+appdatadir = $(datarootdir)/appdata
+dist_appdata_DATA = eiciel.appdata.xml
 
 eiciel.desktop : eiciel.desktop.in
 	sed -e "s|@DSK_VERSION@|$(VERSION)|;s|@DSK_bindir@|$(bindir)|;s|@DSK_pkgdatadir@|$(pkgdatadir)|" $< > $@
@@ -74,4 +77,5 @@ CLEANFILES =
 CLEANFILES += eiciel.desktop
 
 EXTRA_DIST= \
-	eiciel.desktop.in
+	eiciel.desktop.in \
+	eiciel.appdata.xml
