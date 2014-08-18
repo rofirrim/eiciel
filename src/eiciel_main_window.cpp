@@ -41,6 +41,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     _warning_icon(Gtk::Stock::DIALOG_WARNING, Gtk::IconSize(Gtk::ICON_SIZE_SMALL_TOOLBAR)),
     _bottom_label(_("There are ineffective permissions")),
 	_readonly_mode(false),
+	_pending_filter_updates(0),
 	_controller(cont) // Assign _controller to _window
 {
 	// Set the window to the controller
@@ -177,18 +178,26 @@ EicielWindow::EicielWindow(EicielMainController* cont)
 	Gtk::RadioButton::Group tipusACL = _rb_acl_user.get_group();
 	_rb_acl_group.set_group(tipusACL);
 
+	_filter_entry.set_placeholder_text(_("Filter"));
+	_filter_entry.property_secondary_icon_name() = "gtk-clear";
+	_filter_entry.signal_changed().connect(sigc::mem_fun(*this, &EicielWindow::filter_entry_text_changed));
+	_filter_entry.signal_icon_press().connect(sigc::mem_fun(*this, &EicielWindow::on_clear_icon_pressed));
+
 	_participant_chooser.pack_start(_rb_acl_user, Gtk::PACK_SHRINK, 0);
 	_participant_chooser.pack_start(_rb_acl_group, Gtk::PACK_SHRINK, 0);
 	_participant_chooser.pack_start(_cb_acl_default, Gtk::PACK_SHRINK, 0);
 	_participant_chooser.pack_end(_b_add_acl, Gtk::PACK_SHRINK, 0);
+	_participant_chooser.pack_end(_filter_entry, Gtk::PACK_SHRINK, 0);
 
 	_bottom_box.pack_start(_participant_chooser, Gtk::PACK_SHRINK, 0);
 
 	// Participants list
 	_ref_participants_list = Gtk::ListStore::create(_participant_list_model);
+	_ref_participants_list_filter = Gtk::TreeModelFilter::create(_ref_participants_list);
+	_ref_participants_list_filter->set_visible_func(sigc::mem_fun(*this, &EicielWindow::filter_participant_row));
 
 	_listview_participants.set_reallocate_redraws();
-	_listview_participants.set_model(_ref_participants_list);
+	_listview_participants.set_model(_ref_participants_list_filter);
 	_listview_participants.append_column("", _participant_list_model._icon);
 	_listview_participants.append_column(_("Participant"), _participant_list_model._participant_name);
 
@@ -882,4 +891,39 @@ void EicielWindow::participant_entry_box_activate()
 void EicielWindow::participant_entry_box_changed()
 {
     _participant_entry_query_button.set_sensitive( _participant_entry.get_text_length() != 0 );
+}
+
+bool EicielWindow::refilter()
+{
+	if (g_atomic_int_dec_and_test(&_pending_filter_updates))
+	{
+		_ref_participants_list_filter->refilter();
+	}
+	return false;
+}
+
+void EicielWindow::on_clear_icon_pressed(Gtk::EntryIconPosition icon_position, const GdkEventButton* event)
+{
+	_filter_entry.set_text("");
+}
+
+void EicielWindow::filter_entry_text_changed()
+{
+	// wait filter_delay ms after each change to filter
+	static const unsigned filter_delay = 500;
+
+	g_atomic_int_inc(&_pending_filter_updates);
+	Glib::signal_timeout().connect(sigc::mem_fun(*this, &EicielWindow::refilter), filter_delay);
+}
+
+bool EicielWindow::filter_participant_row(const Gtk::TreeModel::const_iterator& iter)
+{
+	Glib::ustring filter_text = _filter_entry.get_text();
+	if (!filter_text.empty())
+	{
+		Glib::ustring current_text = (*iter)[_participant_list_model._participant_name];
+		// check if current row text starts with filter_text
+		return current_text.find(filter_text) == 0;
+	}
+	return true;
 }

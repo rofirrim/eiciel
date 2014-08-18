@@ -69,6 +69,7 @@ class EicielWindow : public Gtk::VBox
 		Gtk::TreeView _listview_acl;
         
         Glib::RefPtr<Gtk::ListStore> _ref_participants_list;
+        Glib::RefPtr<Gtk::TreeModelFilter> _ref_participants_list_filter;
         Gtk::ScrolledWindow _listview_participants_container;
         Gtk::TreeView _listview_participants;
 
@@ -85,6 +86,7 @@ class EicielWindow : public Gtk::VBox
         Gtk::CheckButton _cb_acl_default;
 		Gtk::ToggleButton _tb_modify_default_acl;
 		Gtk::CheckButton _cb_show_system_participants;
+		Gtk::Entry _filter_entry;
 
 		Gtk::HBox _middle_button_group;
 		Gtk::Button _b_add_acl;
@@ -123,6 +125,7 @@ class EicielWindow : public Gtk::VBox
 		Glib::RefPtr<Gtk::UIManager> _ref_ui_manager;
 
 		bool _readonly_mode;
+		int _pending_filter_updates;
 
 		EicielMainController* _controller;
 
@@ -173,6 +176,11 @@ class EicielWindow : public Gtk::VBox
 
         void recursion_policy_change(const Glib::ustring& path_string, const Glib::ustring& new_text);
         
+        bool refilter();
+        void on_clear_icon_pressed(Gtk::EntryIconPosition icon_position, const GdkEventButton* event);
+        void filter_entry_text_changed();
+        bool filter_participant_row(const Gtk::TreeModel::const_iterator&);
+
         void participant_entry_box_changed();
         void participant_entry_box_activate();
 
