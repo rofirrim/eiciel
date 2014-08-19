@@ -29,7 +29,6 @@ EicielXAttrWindow::EicielXAttrWindow(EicielXAttrController* contr)
 	_controller->_window = this;
 
 	set_border_width(4);
-	_xattr_listview.set_size_request(100, 100);
 
 	_ref_xattr_list->set_sort_column(_xattr_list_model._attribute_name, Gtk::SORT_ASCENDING);
 
@@ -68,6 +67,7 @@ EicielXAttrWindow::EicielXAttrWindow(EicielXAttrController* contr)
 			sigc::mem_fun(*this, &EicielXAttrWindow::set_value_edited_attribute)
 			);
 
+	_xattr_listview_container.set_size_request(-1, 100);
 	_xattr_listview_container.add(_xattr_listview);
 	_xattr_listview_container.set_policy(Gtk::POLICY_AUTOMATIC, Gtk::POLICY_AUTOMATIC);
 
