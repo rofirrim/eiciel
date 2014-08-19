@@ -196,6 +196,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
 	_ref_participants_list_filter = Gtk::TreeModelFilter::create(_ref_participants_list);
 	_ref_participants_list_filter->set_visible_func(sigc::mem_fun(*this, &EicielWindow::filter_participant_row));
 
+    _listview_participants.set_headers_visible(false);
 	_listview_participants.set_reallocate_redraws();
 	_listview_participants.set_model(_ref_participants_list_filter);
 	_listview_participants.append_column("", _participant_list_model._icon);
