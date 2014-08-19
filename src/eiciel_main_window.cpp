@@ -23,6 +23,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     : Gtk::Box(Gtk::ORIENTATION_VERTICAL),
     /* GUI */
     _main_box(Gtk::ORIENTATION_VERTICAL),
+    _label_current_acl("<b>Current entries</b>"),
     _top_box(Gtk::ORIENTATION_VERTICAL),
     _listview_acl_container(),
     _listview_acl(),
@@ -31,6 +32,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     _bottom_label(_("There are ineffective permissions")),
     _b_remove_acl(_("Remove participant")),
     _tb_modify_default_acl(_("Default ACL")),
+    _label_participants("<b>List of participants</b>"),
     _bottom_box(Gtk::ORIENTATION_VERTICAL),
     _participant_chooser(),
     _rb_acl_user(_("User")),
@@ -55,18 +57,31 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     // Set the window to the controller
     _controller->_window = this;
 
-    set_border_width(4);
+    this->set_margin_top(12);
+    this->set_margin_bottom(12);
+    this->set_margin_start(12);
+    this->set_margin_end(12);
 
-    add(_main_box);
+    this->pack_start(_main_box);
     _main_box.set_spacing(4);
 
-    _main_box.add(_top_box);
-    _main_box.add(_bottom_box);
+    _label_current_acl.set_use_markup(true);
+    _label_current_acl.set_alignment(Gtk::ALIGN_START, Gtk::ALIGN_START);
+    _main_box.pack_start(_label_current_acl, Gtk::PACK_SHRINK);
 
+    _top_box.set_margin_start(12);
     _top_box.set_border_width(4);
     _top_box.set_spacing(4);
+    _main_box.pack_start(_top_box);
+
+    _label_participants.set_use_markup(true);
+    _label_participants.set_alignment(Gtk::ALIGN_START, Gtk::ALIGN_START);
+    _main_box.pack_start(_label_participants, Gtk::PACK_SHRINK);
+
+    _bottom_box.set_margin_start(12);
     _bottom_box.set_border_width(4);
     _bottom_box.set_spacing(4);
+    _main_box.pack_start(_bottom_box);
 
 #ifndef USING_GNOME2
     _middle_button_group.set_spacing(2);
@@ -208,9 +223,10 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     _listview_participants_container.add(_listview_participants);
     _listview_participants_container.set_policy(Gtk::POLICY_NEVER, Gtk::POLICY_AUTOMATIC);
 
-    _participant_entry_box.pack_start(_participant_entry_label, Gtk::PACK_SHRINK, 4);
+    _participant_entry_box.set_spacing(4);
+    _participant_entry_box.pack_start(_participant_entry_label, Gtk::PACK_SHRINK);
     _participant_entry_box.pack_start(_participant_entry);
-    _participant_entry_box.pack_start(_participant_entry_query_button, Gtk::PACK_SHRINK, 0);
+    _participant_entry_box.pack_start(_participant_entry_query_button, Gtk::PACK_SHRINK);
 
     _participant_entry.signal_changed().connect(sigc::mem_fun(*this, &EicielWindow::participant_entry_box_changed));
     _participant_entry.signal_activate().connect(sigc::mem_fun(*this, &EicielWindow::participant_entry_box_activate));
@@ -222,6 +238,9 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     _below_participant_list.pack_end(_b_add_acl, Gtk::PACK_SHRINK);
 
     // Row below the add and filter box
+    _advanced_features_box.set_margin_left(12);
+    _advanced_features_box.set_margin_right(12);
+    _advanced_features_box.set_spacing(4);
     _advanced_features_box.pack_start(_participant_entry_box, Gtk::PACK_SHRINK, 0);
     _advanced_features_box.pack_start(_cb_show_system_participants, Gtk::PACK_SHRINK, 0);
     _advanced_features_expander.add(_advanced_features_box);

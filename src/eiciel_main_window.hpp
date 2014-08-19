@@ -64,6 +64,7 @@ class EicielWindow : public Gtk::Box
     private:
         /* GUI components */
         /* |- */ Gtk::Box _main_box;
+        /*       |- */ Gtk::Label _label_current_acl;
         /*       |- */ Gtk::Box _top_box;
         /*       |     |- */ Gtk::ScrolledWindow _listview_acl_container;
         /*       |     |     |- */ Gtk::TreeView _listview_acl;
@@ -72,6 +73,7 @@ class EicielWindow : public Gtk::Box
         /*       |     |     |- */ Gtk::Label _bottom_label;
         /*       |     |     |- */ Gtk::Button _b_remove_acl;
         /*       |     |     |- */ Gtk::ToggleButton _tb_modify_default_acl;
+        /*       |- */ Gtk::Label _label_participants;
         /*       |- */ Gtk::Box _bottom_box;
         /*             |- */ Gtk::Box _participant_chooser;
         /*             |     |- */ Gtk::RadioButton _rb_acl_user;
