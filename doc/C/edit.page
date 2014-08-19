@@ -1,0 +1,30 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="guide"
+      id="edit">
+<info>
+  <link type="guide" xref="index" />
+  <link type="seealso" xref="concepts"/>
+
+  <desc>
+  Once a file has been opened, you can view and edit its ACL.
+  </desc>
+</info>
+<title>Editing ACLs</title>
+
+<p>
+All entries in the Access Control List have the three permissions
+of reading, writing and executing. You can grant or deny the permission
+simply checking or unchecking the proper checkbox.
+</p>
+
+<figure>
+	<title>ACL entry</title>
+    <media type="image" src="figures/entrada_acl.png"/>
+</figure>
+
+<section id="ops">
+    <title>Modifying ACLs</title>
+</section>
+
+</page>
+

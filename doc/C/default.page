@@ -1,0 +1,47 @@
+<page xmlns="http://projectmallard.org/1.0/"
+    type="topic"
+    id="default">
+<info>
+    <link type="guide" xref="edit#ops"/>
+    <desc>A directory may have special <em>default entries</em> in its ACL. These entries are automatically added to new files created in the directory.</desc>
+</info>
+
+<title>Editing default ACL entries</title>
+
+<p>
+Opening a directory instead of a file enables <gui>Default ACL</gui>
+and <gui>Default</gui> buttons.
+</p>
+
+<note>
+<title>Default ACL entries</title>
+<p>
+Only directories can have Default ACL entries. These entries are automatically added 
+to new files created in the directory.
+Default ACL entries are different to the own directory entries. <app>Eiciel</app> uses
+different icons for default ACL entries.
+</p>
+</note>
+
+<p>
+<gui>Edit default ACL</gui> can be used to add or remove 
+default ACL entries. When there are no ACL default entries this
+button remains deactivated. Activating it adds basic default ACL entries.
+It will be always activated if there is any default ACL entry. Deactivating
+it implies removing all default ACL entries.
+</p>
+
+<note style="warning">
+<p>
+If you deactivate the <gui>Edit default ACL</gui> you wil be
+asked if you want to remove all default ACL entries. If you answer
+affirmatively <em>all</em> default ACL entries will be
+removed.
+</p>
+</note>
+
+<p>
+<gui>Default</gui> checkbox can be used to add default ACL entries.
+</p>
+
+</page>

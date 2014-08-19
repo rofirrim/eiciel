@@ -1,0 +1,58 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="open">
+<info>
+  <link type="guide" xref="edit#ops" group="#first" />
+
+  <desc>Before you can view or edit the ACLs of a file you need to open it in Eiciel.</desc>
+</info>
+
+<title>Open a file</title>
+
+<p>
+<app>Eiciel</app> can be used either in the <app>Nautilus</app> file explorer 
+or standalone. Both scenarios only differ in the way the files are opened.
+For the rest they are the same.
+</p>
+
+<section id="open-standalone">
+
+<title>Standalone application</title>
+<p>
+When you start <app>Eiciel</app> no file is opened. You can open a file pressing 
+<gui>Open</gui>. A file selection dialog will appear
+where you can choose a file or a directory.
+</p>
+
+<figure>
+	<title>Opening a file</title>
+    <media type="image" src="figures/obrir_fitxer.png"/>
+</figure>
+
+</section>
+
+<section id="open-nautilus">
+<title>Nautilus</title>
+<p>
+In Nautilus right-clic on the file or directory. Then press <guimenuitem>Properties</guimenuitem> and activate the <guimenuitem>Access Control List</guimenuitem> tab.
+</p>
+
+<figure>
+	<title>Opening a file in Nautilus</title>
+    <media type="image" src="figures/obrir_fitxer_nautilus.png"/>
+</figure> -->
+
+<note style="warning">
+<title>Operation not supported</title>
+<p>
+The message <em>Operation not supported</em> means that
+the filesystem where the file is located does not support ACL. 
+See <app>Eiciel</app>'s <link xref="requirements">requirements</link>
+for further information about the ACL support needed in your system. 
+</p>
+</note>
+</section>
+
+
+</page>
+

@@ -1,0 +1,52 @@
+<page xmlns="http://projectmallard.org/1.0/"
+        type="guide"
+        id="xattr">
+<info>
+    <link type="guide" xref="index"/>
+    <link type="seealso" xref="concepts"/>
+    <desc>
+    Extended user attributes allow to associate named strings to a file.
+    </desc>
+</info>
+
+<title>Editing extended user attributes</title>
+<p>
+Extended user attributes are pairs of attributes and values that can be stored arbitrarily in files.
+For instance one could store the last Revision of a file or a brief Description.
+Eiciel allows to work with extended user attributes both in standalone application and Nautilus property
+page.
+</p>
+
+<figure>
+	<title>Extended user attributes</title>
+    <media type="image" src="figures/pantalla_ea.png"/>
+</figure>
+
+<section id="add-xattr">
+<title>Adding an attribute</title>
+<p>
+You can add an attribute with <gui>Add</gui>. A default attribute name and value will be created.
+You can edit them by clicking on the attribute list.
+</p>
+
+
+<note style="warning">
+<p>
+Even if extended user attributes are <em>encoding neutral</em> all the data
+that can be introduced in Eiciel will be saved in UTF-8 charset. Remind this if you intend
+to manage these attributes with another application which might not be UTF-8 capable.
+Eiciel might not be useful if you store binary (non printable) data in your user
+attribute values.
+</p>
+</note>
+
+</section>
+
+<section id="remove-xattr">
+<title>Removing an attribute</title>
+<p>
+To remove an attribute, select it from the list and press <gui>Remove</gui>.
+</p>
+
+</section>
+</page>

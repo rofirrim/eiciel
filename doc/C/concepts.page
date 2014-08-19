@@ -1,0 +1,115 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="guide"
+      id="concepts">
+<info>
+  <link type="guide" xref="index" />
+
+  <desc>
+    This section explains some of the concepts used in Eiciel:
+    <link xref="concepts#ugo">traditional UNIX permissions</link>,
+    <link xref="concepts#acl">access control lists</link> and
+    <link xref="concepts#xattr">extended user attributes</link>.
+ </desc>
+
+</info>
+<title>Concepts</title>
+
+<section id="ugo">
+<title>Traditional UNIX permissions </title>
+
+<p>
+Traditionally, in UNIX, files have three kind of permissions associated
+to them. Those permissions, called UGO (from User, Group and Others)
+allow you to set whether a user can read, write or execute a file.
+</p>
+
+<p>
+The access will be granted or denied depending on which user 
+is accessing the file. The owner has his own permissions (User). 
+</p>
+
+<p>
+If the user is not the owner but belongs to the group owning the file
+then group permissions are applied (Group).
+</p>
+
+<p>
+Finally, if the user is not the owner neither
+belongs to the file's group then Other permissions are applied.
+</p>
+
+<p>
+Read permission allow, in a file, to read it. In a directory
+it permits listing the directory's content.
+</p>
+
+<p>
+Write permission in files allows to modify their data. In directories
+it allows creating or deleting their files (or directories).
+</p>
+
+<p>
+Execution permission in files allow them to run as programs. 
+In directories it allows to enter them.
+</p>
+
+<p>
+Permissions can only be changed by the owner (or the <em>superuser</em>).
+The following figure briefs UGO permissions.
+</p>
+
+<figure>
+	<title>UGO permissions</title>
+    <media type="image" src="figures/permisos_ugo.png"/>
+</figure>
+
+</section>
+
+<section id="acl">
+<title>Access Control Lists</title>
+
+<p>
+UGO permissions are suitable for most scenarios. 
+However, IEEE POSIX workgroup was conscious that sometimes
+they are too limiting and defined an interface in POSIX 1003.1e DRAFT 17
+intended to manage file ACLs.
+</p>
+
+<p>
+That proposal was left out from the standard but is implemented in 
+several BSD (Solaris and FreeBSD 5) and GNU/Linux (as of version 2.6
+of the kernel).
+</p>
+
+<p>
+ACL allow to set permissions in a per-user or per-group fashion.
+For instance, it is not feasible in UGO permissions to have
+two users (bob and alice) where bob can only read, alice can read
+and write and no other user can access the file.
+</p>
+
+<figure>
+	<title>ACL permissions</title>
+    <media type="image" src="figures/permisos_acl.png"/>
+</figure>
+
+</section>
+
+<section id="xattr">
+<title>Extended user attributes</title>
+
+<p>
+In the process of adding ACL support for GNU/Linux, developers decided to abstract them
+away in what were named <em>extended attributes</em>. These extended attributes
+are bits of additional information linked to files. They are used, for instance, to implement ACL or
+for storing <em>security labels</em> in SELinux.
+</p>
+<p>
+<em>Extended user attributes</em> brings to users the possibility of storing arbitrary chunks
+of data in their files. For instance, one could create a Revision attribute that would store the date
+of the last revision.
+</p>
+
+</section>
+
+</page>

@@ -1,0 +1,23 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="guide"
+      id="index">
+
+<info>
+    <credit type="author">
+      <name>Roger Ferrer Ibáñez</name>
+      <email>rofirrim@gmail.com</email>
+      <years>2004-2014</years>
+    </credit>
+    <credit type="collaborator">
+      <name>Daniel Armengol Garreta</name>
+      <email>dani@pinchito.com</email>
+      <years>2005</years>
+    </credit>
+</info>
+<title>Eiciel Help</title>
+
+<p>
+<app>Eiciel</app> is an application that allows you to graphically view and modify file ACLs permissions.
+</p>
+
+</page>

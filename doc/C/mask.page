@@ -1,0 +1,28 @@
+<page xmlns="http://projectmallard.org/1.0/"
+    type="topic"
+    id="mask">
+<info>
+    <link type="guide" xref="edit#ops"/>
+    <desc>The permission mask allows to revoke permissions without changing the ACL entry.</desc>
+</info>
+
+<title>Permission mask</title>
+
+<p>
+ACL entries imply an additional entry called <em>mask</em>. The mask
+defines effective permissions that can have user entries (except for the owner),
+group owner and group entries.
+</p>
+
+<p>
+If the mask disallows a permission to be effective <app>Eiciel</app> puts an exclamation
+mark next to the uneffective permission.
+</p>
+
+<figure>
+	<title>Permission mask example</title>
+    <media type="image" src="figures/detall_mascara.png" />
+</figure>
+
+
+</page>

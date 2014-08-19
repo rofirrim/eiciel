@@ -1,0 +1,24 @@
+<page xmlns="http://projectmallard.org/1.0/"
+        type="topic"
+        id="add">
+<info>
+    <link type="guide" xref="edit#ops"/>
+    <desc>Add an ACL entry to grant permissions to a user or group</desc>
+</info>
+<title>Adding an ACL entry</title>
+
+<p>
+Users or groups, called collectively as <em>Participants</em> of your system can be added as ACL entries.
+Choose the kind of entry selecting <gui style="button">User</gui> or <gui>Groups</gui>.
+Depending on this the bottom list will show the users or groups of your system.
+</p>
+
+<p>
+You can add the user or group by selecting on the list and pressing <gui style="button">Add participant to ACL</gui>.
+You can also drag on the top list or double-click it to achieve the same
+effect. After that, the participant, will appear as a new entry in the top
+list.
+</p>
+
+
+</page>

@@ -1,0 +1,37 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="guide"
+      id="requirements">
+<info>
+    <link type="guide" xref="index" />
+    <desc>
+    Support required by your system when running <app>Eiciel</app>.
+    </desc>
+</info>
+
+<title>Requirements</title>
+
+<p>
+<app>Eiciel</app> is an application for the <app>GNOME</app> environment. 
+To be useful <app>Eiciel</app> needs an ACL-enabled system.
+</p>
+
+<note style="advanced">
+<p>
+ACL support is given by the operating system. Nowadays only Linux 2.6 (or 2.4
+with the proper patch) and FreeBSD 5 support ACL. However not all the filesystems
+that can be used on those systems have support for ACL.
+</p>
+<p>
+In Linux 2.6, when writing this documentation, the following filesystems where
+ACL-capable: Ext2/Ext3, XFS, JFS and ReiserFS. ACL must be enabled in the 
+<sys>kernel</sys>. It is also possible that NFS and CIFS filesystems 
+become ACL-capable in the future.
+</p>
+<p>
+Note also that ACL must be <em>turned on</em>. In Linux 2.6/2.4 you can do 
+it setting the <sys>acl</sys> option in <file>/etc/fstab</file>.
+Consult your distribution documentation 
+</p>
+</note>
+
+</page>
