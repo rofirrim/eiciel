@@ -42,15 +42,15 @@ class CellRendererACL : public Gtk::CellRendererToggle
                 );
 
         virtual void get_preferred_width_vfunc(
-                Gtk::Widget&  	widget,
-                int &  	minimum_width,
-                int &  	natural_width 
+                Gtk::Widget&    widget,
+                int &   minimum_width,
+                int &   natural_width 
                 ) const;
 
         virtual void get_preferred_height_vfunc(
-                Gtk::Widget&  	widget,
-                int &  	minimum_width,
-                int &  	natural_width 
+                Gtk::Widget&    widget,
+                int &   minimum_width,
+                int &   natural_width 
                 ) const;
 
     private:

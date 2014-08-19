@@ -27,53 +27,53 @@
 int main(int argc, char* argv[])
 {
 #ifdef ENABLE_NLS
-	setlocale(LC_ALL, "");
-	bindtextdomain("eiciel", DATADIR "/locale");
-	textdomain("eiciel");
+    setlocale(LC_ALL, "");
+    bindtextdomain("eiciel", DATADIR "/locale");
+    textdomain("eiciel");
 
-	// We want translations in UTF-8
-	bind_textdomain_codeset ("eiciel", "UTF-8");
+    // We want translations in UTF-8
+    bind_textdomain_codeset ("eiciel", "UTF-8");
 #endif
 #ifdef USING_GNOME2
-	GnomeProgram *my_app;
-	my_app = gnome_program_init(PACKAGE, VERSION,
+    GnomeProgram *my_app;
+    my_app = gnome_program_init(PACKAGE, VERSION,
             LIBGNOME_MODULE, argc, argv, 
             GNOME_PARAM_HUMAN_READABLE_NAME, "Eiciel",
             GNOME_PARAM_APP_DATADIR, DATADIR,
             NULL);
 #else
-	bool version_called = false;
-	Glib::OptionEntry version_entry;
-	version_entry.set_long_name("version");
-	version_entry.set_short_name('v');
-	version_entry.set_description(_("Print version information"));
+    bool version_called = false;
+    Glib::OptionEntry version_entry;
+    version_entry.set_long_name("version");
+    version_entry.set_short_name('v');
+    version_entry.set_description(_("Print version information"));
 
-	Glib::OptionGroup main_group("Eiciel", _("Access control list editor"));
-	main_group.add_entry(version_entry, version_called);
-	Glib::OptionGroup gtk_group(gtk_get_option_group(TRUE));
+    Glib::OptionGroup main_group("Eiciel", _("Access control list editor"));
+    main_group.add_entry(version_entry, version_called);
+    Glib::OptionGroup gtk_group(gtk_get_option_group(TRUE));
 
-	Glib::OptionContext oc("[FILE]");
-	oc.set_main_group(main_group);
-	oc.add_group(gtk_group);
-	oc.parse(argc, argv);
-	if (version_called)
-	{
-		std::cerr << "GNOME " PACKAGE " " VERSION << std::endl;
-		return 0;
-	}
+    Glib::OptionContext oc("[FILE]");
+    oc.set_main_group(main_group);
+    oc.add_group(gtk_group);
+    oc.parse(argc, argv);
+    if (version_called)
+    {
+        std::cerr << "GNOME " PACKAGE " " VERSION << std::endl;
+        return 0;
+    }
 #endif
 
-	Gtk::Main kit(argc, argv);
+    Gtk::Main kit(argc, argv);
 
-	EicielContainer w;
+    EicielContainer w;
 
-	if (argc > 1)
-	{
-		w.open_file(argv[1]);
-	}
+    if (argc > 1)
+    {
+        w.open_file(argv[1]);
+    }
 
-	kit.run(w);
+    kit.run(w);
 
-	return 0;
+    return 0;
 }
 

@@ -24,41 +24,41 @@
 
 class ACLListModel : public Gtk::TreeModel::ColumnRecord
 {
-	public:
+    public:
 
-		ACLListModel()
-		{ 
-			add(_icon);
-			add(_entry_name); 
-			add(_reading_permission);
-			add(_writing_permission);
-			add(_execution_permission);
-			add(_removable);
-			add(_entry_kind);
-			add(_reading_ineffective);
-			add(_writing_ineffective);
-			add(_execution_ineffective);
-			add(_current_recursion_policy);
+        ACLListModel()
+        { 
+            add(_icon);
+            add(_entry_name); 
+            add(_reading_permission);
+            add(_writing_permission);
+            add(_execution_permission);
+            add(_removable);
+            add(_entry_kind);
+            add(_reading_ineffective);
+            add(_writing_ineffective);
+            add(_execution_ineffective);
+            add(_current_recursion_policy);
             // TODO - Implement recursion policies
 #if 0
-			add(_recursion_policies);
+            add(_recursion_policies);
 #endif
-			add(_empty);
-		}
+            add(_empty);
+        }
 
-		Gtk::TreeModelColumn<Glib::RefPtr<Gdk::Pixbuf> > _icon;
-		Gtk::TreeModelColumn<Glib::ustring> _entry_name;
-		Gtk::TreeModelColumn<bool> _reading_permission;
-		Gtk::TreeModelColumn<bool> _writing_permission;
-		Gtk::TreeModelColumn<bool> _execution_permission;
-		Gtk::TreeModelColumn<bool> _removable;
-		Gtk::TreeModelColumn<ElementKind> _entry_kind;
-		Gtk::TreeModelColumn<bool> _reading_ineffective;
-		Gtk::TreeModelColumn<bool> _writing_ineffective;
-		Gtk::TreeModelColumn<bool> _execution_ineffective;
+        Gtk::TreeModelColumn<Glib::RefPtr<Gdk::Pixbuf> > _icon;
+        Gtk::TreeModelColumn<Glib::ustring> _entry_name;
+        Gtk::TreeModelColumn<bool> _reading_permission;
+        Gtk::TreeModelColumn<bool> _writing_permission;
+        Gtk::TreeModelColumn<bool> _execution_permission;
+        Gtk::TreeModelColumn<bool> _removable;
+        Gtk::TreeModelColumn<ElementKind> _entry_kind;
+        Gtk::TreeModelColumn<bool> _reading_ineffective;
+        Gtk::TreeModelColumn<bool> _writing_ineffective;
+        Gtk::TreeModelColumn<bool> _execution_ineffective;
         Gtk::TreeModelColumn<Glib::ustring> _current_recursion_policy;
         // Gtk::TreeModelColumn<Glib::RefPtr<Gtk::TreeModel> > _recursion_policies;
-		Gtk::TreeModelColumn<Glib::ustring> _empty;
+        Gtk::TreeModelColumn<Glib::ustring> _empty;
 };
 
 class RecursionPolicyModel : public Gtk::TreeModel::ColumnRecord

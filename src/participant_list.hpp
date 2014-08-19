@@ -24,15 +24,15 @@
 
 class ModelLlistaParticipant : public Gtk::TreeModel::ColumnRecord
 {
-	public:
-		ModelLlistaParticipant()
-		{
-			add(_icon);
-			add(_participant_name);
+    public:
+        ModelLlistaParticipant()
+        {
+            add(_icon);
+            add(_participant_name);
             add(_entry_kind);
-		}
-		Gtk::TreeModelColumn<Glib::RefPtr<Gdk::Pixbuf> > _icon;
-		Gtk::TreeModelColumn<Glib::ustring> _participant_name;
+        }
+        Gtk::TreeModelColumn<Glib::RefPtr<Gdk::Pixbuf> > _icon;
+        Gtk::TreeModelColumn<Glib::ustring> _participant_name;
         Gtk::TreeModelColumn<ElementKind> _entry_kind;
 };
 

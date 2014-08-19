@@ -32,28 +32,28 @@ class EicielWindow;
 
 class EicielMainController : public sigc::trackable
 {
-	private:
-		ACLManager* _ACL_manager;
-		EicielWindow* _window;
+    private:
+        ACLManager* _ACL_manager;
+        EicielWindow* _window;
         set<string> _users_list;
         set<string> _groups_list;
-		bool _is_file_opened;
-		bool _updating_window;
-		Glib::ustring _last_error_message;
+        bool _is_file_opened;
+        bool _updating_window;
+        Glib::ustring _last_error_message;
 
-		bool _list_must_be_updated;
-		bool _show_system;
+        bool _list_must_be_updated;
+        bool _show_system;
 
-		void update_acl_list();
-		void update_acl_entry(ElementKind e, string name, 
-				bool reading, bool writing, bool execution);
-		void remove_acl(string entry_name, ElementKind e);
-		void add_acl_entry(string s, ElementKind e, bool is_default);
-		void change_default_acl();
+        void update_acl_list();
+        void update_acl_entry(ElementKind e, string name, 
+                bool reading, bool writing, bool execution);
+        void remove_acl(string entry_name, ElementKind e);
+        void add_acl_entry(string s, ElementKind e, bool is_default);
+        void change_default_acl();
 
-		void fill_lists();
-		void show_system_participants(bool b);
-		void check_editable();
+        void fill_lists();
+        void show_system_participants(bool b);
+        void check_editable();
 
         set<string> get_users_list();
         set<string> get_groups_list();
@@ -62,13 +62,13 @@ class EicielMainController : public sigc::trackable
         bool lookup_group(const std::string& str);
 
         bool is_directory();
-	public:
-		void open_file(string s);
-		Glib::ustring last_error();
-		bool opened_file();
-		friend class EicielWindow; 
-		EicielMainController();
-		~EicielMainController();
+    public:
+        void open_file(string s);
+        Glib::ustring last_error();
+        bool opened_file();
+        friend class EicielWindow; 
+        EicielMainController();
+        ~EicielMainController();
 };
 
 #endif

@@ -39,46 +39,46 @@
 
 class XAttrManagerException
 {
-	public:
-		XAttrManagerException(Glib::ustring missatge) : missatge(missatge) 
-		{
-		}
+    public:
+        XAttrManagerException(Glib::ustring missatge) : missatge(missatge) 
+        {
+        }
 
-		Glib::ustring getMessage() const
-		{ 
-			return missatge; 
-		}
-	private:
-		Glib::ustring missatge;
+        Glib::ustring getMessage() const
+        { 
+            return missatge; 
+        }
+    private:
+        Glib::ustring missatge;
 };
 
 class XAttrManager {
 
-	public:
-		typedef std::map<std::string, std::string> attributes_t;
+    public:
+        typedef std::map<std::string, std::string> attributes_t;
 
-		XAttrManager(const Glib::ustring& filename) throw (XAttrManagerException);
+        XAttrManager(const Glib::ustring& filename) throw (XAttrManagerException);
 
-		attributes_t get_attributes_list();
-		void remove_attribute(std::string attr_name);
-		void set_attribute(attributes_t atributes);
-		void add_attribute(std::string attr_name, std::string attr_value);
-		void change_attribute_name(std::string old_attr_name, std::string new_attr_name);
+        attributes_t get_attributes_list();
+        void remove_attribute(std::string attr_name);
+        void set_attribute(attributes_t atributes);
+        void add_attribute(std::string attr_name, std::string attr_value);
+        void change_attribute_name(std::string old_attr_name, std::string new_attr_name);
 
-		uid_t get_owner_uid()
-		{
-			return this->_owner;
-		}
+        uid_t get_owner_uid()
+        {
+            return this->_owner;
+        }
 
-	private:
-		std::vector<std::string> get_xattr_list() throw (XAttrManagerException);
+    private:
+        std::vector<std::string> get_xattr_list() throw (XAttrManagerException);
         std::string get_attribute_value(const std::string& attr_name) throw (XAttrManagerException);
 
-		void read_test() throw (XAttrManagerException);
+        void read_test() throw (XAttrManagerException);
 
-		Glib::ustring _filename;
+        Glib::ustring _filename;
 
-		uid_t _owner;
+        uid_t _owner;
 }
 ;
 

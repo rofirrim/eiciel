@@ -47,10 +47,10 @@ Glib::RefPtr<Gdk::Pixbuf> CellRendererACL::get_warning_icon(Gtk::Widget &widget)
 }
 
 void CellRendererACL::get_preferred_width_vfunc(
-        Gtk::Widget&  	widget,
-		int &  	minimum_width,
-		int &  	natural_width 
-	) const
+        Gtk::Widget&    widget,
+        int &   minimum_width,
+        int &   natural_width 
+    ) const
 {
     Glib::RefPtr<Gdk::Pixbuf> warning_icon = get_warning_icon(widget);
 
@@ -61,10 +61,10 @@ void CellRendererACL::get_preferred_width_vfunc(
 }
 
 void CellRendererACL::get_preferred_height_vfunc(
-        Gtk::Widget&  	widget,
-		int &  	minimum_height,
-		int &  	natural_height 
-	) const
+        Gtk::Widget&    widget,
+        int &   minimum_height,
+        int &   natural_height 
+    ) const
 {
     Glib::RefPtr<Gdk::Pixbuf> warning_icon = get_warning_icon(widget);
 

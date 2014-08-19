@@ -24,15 +24,15 @@
 
 class XAttrListModel : public Gtk::TreeModel::ColumnRecord
 {
-	public:
-		XAttrListModel()
-		{
-			add(_attribute_name);
-			add(_attribute_value);
-		}
+    public:
+        XAttrListModel()
+        {
+            add(_attribute_name);
+            add(_attribute_value);
+        }
 
-		Gtk::TreeModelColumn<Glib::ustring> _attribute_name;
-		Gtk::TreeModelColumn<Glib::ustring> _attribute_value;
+        Gtk::TreeModelColumn<Glib::ustring> _attribute_name;
+        Gtk::TreeModelColumn<Glib::ustring> _attribute_value;
 };
 
 #endif

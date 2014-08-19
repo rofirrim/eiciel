@@ -20,71 +20,71 @@
 #include "eiciel_xattr_controller.hpp"
 
 EicielXAttrController::EicielXAttrController()
-	: _xattr_manager(NULL), _window(NULL), _opened_file(false)
+    : _xattr_manager(NULL), _window(NULL), _opened_file(false)
 {
 }
 
 void EicielXAttrController::open_file(const Glib::ustring& filename) throw (XAttrManagerException)
 {
-	if (_xattr_manager != NULL)
-	{
-		delete _xattr_manager;
-		_xattr_manager = NULL;
-	}
+    if (_xattr_manager != NULL)
+    {
+        delete _xattr_manager;
+        _xattr_manager = NULL;
+    }
 
-	try
-	{
-		_xattr_manager = new XAttrManager(filename);
-		_opened_file = true;
+    try
+    {
+        _xattr_manager = new XAttrManager(filename);
+        _opened_file = true;
 
-		_window->set_active(true);
+        _window->set_active(true);
 
-		check_editable();
+        check_editable();
 
-		_window->fill_attributes(_xattr_manager->get_attributes_list());
-	}
-	catch (XAttrManagerException e)
-	{
-		delete _xattr_manager;
-		_xattr_manager = NULL;
-		_opened_file = false;
-		_window->set_active(false);
-	}
+        _window->fill_attributes(_xattr_manager->get_attributes_list());
+    }
+    catch (XAttrManagerException e)
+    {
+        delete _xattr_manager;
+        _xattr_manager = NULL;
+        _opened_file = false;
+        _window->set_active(false);
+    }
 }
 
 void EicielXAttrController::remove_attribute(const Glib::ustring& nomAtrib)  throw (XAttrManagerException)
 {
-	_xattr_manager->remove_attribute(nomAtrib);
+    _xattr_manager->remove_attribute(nomAtrib);
 }
 
 void EicielXAttrController::add_attribute(const Glib::ustring& nomAtrib, const Glib::ustring& valorAtrib) throw (XAttrManagerException)
 {
-	_xattr_manager->add_attribute(nomAtrib, valorAtrib);
+    _xattr_manager->add_attribute(nomAtrib, valorAtrib);
 }
 
 void EicielXAttrController::update_attribute_value(const Glib::ustring& nomAtrib, const Glib::ustring& valorNouAtrib) throw (XAttrManagerException) 
 {
-	_xattr_manager->add_attribute(nomAtrib, valorNouAtrib);
+    _xattr_manager->add_attribute(nomAtrib, valorNouAtrib);
 }
 
 void EicielXAttrController::update_attribute_name(const Glib::ustring& nomAnticAtribut, const Glib::ustring& nomNouAtribut) throw (XAttrManagerException)
 {
-	_xattr_manager->change_attribute_name(nomAnticAtribut, nomNouAtribut);
+    _xattr_manager->change_attribute_name(nomAnticAtribut, nomNouAtribut);
 }
 
 void EicielXAttrController::check_editable()
 {
-	/*
-	 * Comprovem que es el propietari o root
-	 */
-	uid_t real_user = getuid();
-	if ((real_user != 0) && (real_user != _xattr_manager->get_owner_uid()))
-	{
-		_window->set_readonly(true);
-	}
-	else
-	{
-		_window->set_readonly(false);
-	}
-	
+    /*
+     * Comprovem que es el propietari o root
+     */
+    uid_t real_user = getuid();
+    if ((real_user != 0) && (real_user != _xattr_manager->get_owner_uid()))
+    {
+        _window->set_readonly(true);
+    }
+    else
+    {
+        _window->set_readonly(false);
+    }
+    
 }

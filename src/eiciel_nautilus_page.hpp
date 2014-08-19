@@ -20,10 +20,10 @@
 #ifndef EICIEL_NAUTILUS_PAGE_HPP
 #define EICIEL_NAUTILUS_PAGE_HPP
 
-#define NAUTILUS_TYPE_EICIEL_PROPERTIES_PAGE	     (nautilus_eiciel_properties_page_get_type ())
-#define NAUTILUS_EICIEL_PROPERTIES_PAGE(obj)	     (GTK_CHECK_CAST ((obj), NAUTILUS_TYPE_EICIEL_PROPERTIES_PAGE, NautilusEicielPropertiesPage))
+#define NAUTILUS_TYPE_EICIEL_PROPERTIES_PAGE         (nautilus_eiciel_properties_page_get_type ())
+#define NAUTILUS_EICIEL_PROPERTIES_PAGE(obj)         (GTK_CHECK_CAST ((obj), NAUTILUS_TYPE_EICIEL_PROPERTIES_PAGE, NautilusEicielPropertiesPage))
 #define NAUTILUS_EICIEL_PROPERTIES_PAGE_CLASS(klass)    (GTK_CHECK_CLASS_CAST ((klass), NAUTILUS_TYPE_EICIEL_PROPERTIES_PAGE, NautilusEicielPropertiesPageClass))
-#define NAUTILUS_IS_EICIEL_PROPERTIES_PAGE(obj)	     (GTK_CHECK_TYPE ((obj), NAUTILUS_TYPE_EICIEL_PROPERTIES_PAGE))
+#define NAUTILUS_IS_EICIEL_PROPERTIES_PAGE(obj)      (GTK_CHECK_TYPE ((obj), NAUTILUS_TYPE_EICIEL_PROPERTIES_PAGE))
 #define NAUTILUS_IS_EICIEL_PROPERTIES_PAGE_CLASS(klass) (GTK_CHECK_CLASS_TYPE ((klass), NAUTILUS_TYPE_EICIEL_PROPERTIES_PAGE))
 
 G_BEGIN_DECLS
@@ -31,11 +31,11 @@ G_BEGIN_DECLS
 typedef struct NautilusEicielPropertiesPageDetails NautilusEicielPropertiesPageDetails;
 
 typedef struct {
-	GtkVBox parent;
+    GtkVBox parent;
 } NautilusEicielPropertiesPage;
 
 typedef struct {
-	GtkVBoxClass parent;
+    GtkVBoxClass parent;
 } NautilusEicielPropertiesPageClass;
 
 G_END_DECLS
