@@ -326,9 +326,23 @@ void EicielMainController::add_acl_entry(string s, ElementKind e, bool is_defaul
     catch (ACLManagerException e)
     {
         Glib::ustring s = _("Could not add ACL entry: ") + e.getMessage();
-        Gtk::MessageDialog add_acl_message(s, false,
-                Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
-        add_acl_message.run();
+        Gtk::Container* toplevel = _window->get_toplevel();
+        if (toplevel == NULL
+                || !toplevel->get_is_toplevel())
+        {
+            Gtk::MessageDialog add_acl_message(
+                    s, false,
+                    Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+            add_acl_message.run();
+        }
+        else
+        {
+            Gtk::MessageDialog add_acl_message(
+                    *(Gtk::Window*)toplevel,
+                    s, false,
+                    Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+            add_acl_message.run();
+        }
         _last_error_message = s;
         return;
     }
@@ -374,9 +388,22 @@ void EicielMainController::remove_acl(string entry_name, ElementKind e)
     catch(ACLManagerException e)
     {
         Glib::ustring s = _("Could not remove ACL entry: ") + e.getMessage();
-        Gtk::MessageDialog remove_acl_message(s, false,
-                Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
-        remove_acl_message.run();
+        Gtk::Container* toplevel = _window->get_toplevel();
+        if (toplevel == NULL
+                || !toplevel->get_is_toplevel())
+        {
+            Gtk::MessageDialog remove_acl_message(s, false,
+                    Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+            remove_acl_message.run();
+        }
+        else
+        {
+            Gtk::MessageDialog remove_acl_message(
+                    *(Gtk::Window*)toplevel,
+                    s, false,
+                    Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+            remove_acl_message.run();
+        }
         _last_error_message = s;
     }
 }
@@ -458,9 +485,22 @@ void EicielMainController::update_acl_entry(ElementKind e, string s,
     catch (ACLManagerException e)
     {
         Glib::ustring s = _("Could not modify ACL entry: ") + e.getMessage();
-        Gtk::MessageDialog modify_acl_message(s, false,
-                Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
-        modify_acl_message.run();
+        Gtk::Container* toplevel = _window->get_toplevel();
+        if (toplevel == NULL
+                || !toplevel->get_is_toplevel())
+        {
+            Gtk::MessageDialog modify_acl_message(s, false,
+                    Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+            modify_acl_message.run();
+        }
+        else
+        {
+            Gtk::MessageDialog modify_acl_message(
+                    *(Gtk::Window*)toplevel,
+                    s, false,
+                    Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+            modify_acl_message.run();
+        }
         _last_error_message = s;
     }
 }
@@ -474,9 +514,23 @@ void EicielMainController::change_default_acl()
         if (!_window->give_default_acl())
         {
             Glib::ustring s(_("Are you sure you want to remove all ACL default entries?"));
-            Gtk::MessageDialog remove_acl_message(s, false,
-                    Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_YES_NO);
-            int result = remove_acl_message.run();
+            Gtk::Container* toplevel = _window->get_toplevel();
+            int result;
+            if (toplevel == NULL
+                    || !toplevel->get_is_toplevel())
+            {
+                Gtk::MessageDialog remove_acl_message(s, false,
+                        Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_YES_NO);
+                result = remove_acl_message.run();
+            }
+            else
+            {
+                Gtk::MessageDialog remove_acl_message(
+                        *(Gtk::Window*)toplevel,
+                        s, false,
+                        Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_YES_NO);
+                result = remove_acl_message.run();
+            }
             if (result == Gtk::RESPONSE_YES)
             {
                 _ACL_manager->clear_default_acl();

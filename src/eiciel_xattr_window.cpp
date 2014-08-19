@@ -174,9 +174,22 @@ void EicielXAttrWindow::set_name_edited_attribute(const Glib::ustring& path, con
         catch (XAttrManagerException e)
         {
             Glib::ustring s = _("Could not rename attribute name: ") + e.getMessage();
-            Gtk::MessageDialog renombrarXAttr(s, false,
-                    Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
-            renombrarXAttr.run();
+            Gtk::Container* toplevel = this->get_toplevel();
+            if (toplevel == NULL
+                    || !toplevel->get_is_toplevel())
+            {
+                Gtk::MessageDialog renameXAttr(s, false,
+                        Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+                renameXAttr.run();
+            }
+            else
+            {
+                Gtk::MessageDialog renameXAttr(
+                        *(Gtk::Window*)toplevel,
+                        s, false,
+                        Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+                renameXAttr.run();
+            }
         }
     }
 }
@@ -196,9 +209,22 @@ void EicielXAttrWindow::set_value_edited_attribute(const Glib::ustring& path, co
         catch (XAttrManagerException e)
         {
             Glib::ustring s = _("Could not change attribute value: ") + e.getMessage();
-            Gtk::MessageDialog editarXAttr(s, false,
-                    Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
-            editarXAttr.run();
+            Gtk::Container* toplevel = this->get_toplevel();
+            if (toplevel == NULL
+                    || !toplevel->get_is_toplevel())
+            {
+                Gtk::MessageDialog editXAttr(s, false,
+                        Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+                editXAttr.run();
+            }
+            else
+            {
+                Gtk::MessageDialog editXAttr(
+                        *(Gtk::Window*)toplevel,
+                        s, false,
+                        Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+                editXAttr.run();
+            }
         }
     }
 }
@@ -220,9 +246,22 @@ void EicielXAttrWindow::remove_selected_attribute()
         catch (XAttrManagerException e)
         {
             Glib::ustring s = _("Could not remove attribute: ") + e.getMessage();
-            Gtk::MessageDialog eliminarXAttr(s, false,
-                    Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
-            eliminarXAttr.run();
+            Gtk::Container* toplevel = this->get_toplevel();
+            if (toplevel == NULL
+                    || !toplevel->get_is_toplevel())
+            {
+                Gtk::MessageDialog removeXAttr(s, false,
+                        Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+                removeXAttr.run();
+            }
+            else
+            {
+                Gtk::MessageDialog removeXAttr(
+                        *(Gtk::Window*)toplevel,
+                        s, false,
+                        Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+                removeXAttr.run();
+            }
         }
     }
 }
@@ -292,9 +331,22 @@ void EicielXAttrWindow::add_selected_attribute()
     {
         _ref_xattr_list->erase(iter);
         Glib::ustring s = _("Could not add attribute: ") + e.getMessage();
-        Gtk::MessageDialog addXAttr_message(s, false,
-                Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
-        addXAttr_message.run();
+        Gtk::Container* toplevel = this->get_toplevel();
+        if (toplevel == NULL
+                || !toplevel->get_is_toplevel())
+        {
+            Gtk::MessageDialog addXAttr_message(s, false,
+                    Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+            addXAttr_message.run();
+        }
+        else
+        {
+            Gtk::MessageDialog addXAttr_message(
+                    *(Gtk::Window*)toplevel,
+                    s, false,
+                    Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
+            addXAttr_message.run();
+        }
     }
 }
 

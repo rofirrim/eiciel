@@ -140,7 +140,9 @@ void EicielContainer::open_file_()
             {
                 if (!this->open_file(dialog.get_filename()))
                 {
-                    Gtk::MessageDialog message(_("Could not open the file \"") 
+                    Gtk::MessageDialog message(
+                            *this,
+                            _("Could not open the file \"") 
                             + Glib::locale_to_utf8(dialog.get_filename()) + Glib::ustring("\" ") 
                             + Glib::ustring("(") + _widget_controller->last_error() + Glib::ustring(")"),
                             false, Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK, true);
