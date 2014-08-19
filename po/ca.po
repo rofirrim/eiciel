@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Eiciel 0.9\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2014-07-17 00:36+0200\n"
+"POT-Creation-Date: 2014-08-19 18:14+0200\n"
 "PO-Revision-Date: 2010-06-02 23:22+0200\n"
 "Last-Translator: Roger Ferrer Ibáñez <rofi@ya.com>\n"
 "Language-Team: Catalan <ca@li.org>\n"
@@ -16,38 +16,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/eiciel_container.cpp:23
+#: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
 msgstr "<b>Nom de fitxer</b>"
 
-#: src/eiciel_container.cpp:24 src/eiciel_container.cpp:178
+#: src/eiciel_container.cpp:27 src/eiciel_container.cpp:183
 msgid "No file opened"
 msgstr "No hi ha cap fitxer obert"
 
-#: src/eiciel_container.cpp:27 src/eiciel_container.cpp:187
-#: src/eiciel_container.cpp:189
+#: src/eiciel_container.cpp:30 src/eiciel_container.cpp:192
+#: src/eiciel_container.cpp:194
 msgid "About..."
 msgstr "Quant a..."
 
-#: src/eiciel_container.cpp:45 src/eiciel_main_window.cpp:39
-#: src/eiciel_nautilus_page.cpp:136
+#: src/eiciel_container.cpp:48 src/eiciel_nautilus_page.cpp:136
 msgid "Access Control List"
 msgstr "Llista de control d'accés"
 
-#: src/eiciel_container.cpp:53 src/eiciel_nautilus_page.cpp:156
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
 msgid "Extended user attributes"
 msgstr "Atributs d'usuari estesos"
 
-#: src/eiciel_container.cpp:97
+#: src/eiciel_container.cpp:100
 #, c-format
 msgid "Could not show the help file: %s"
 msgstr "No s'ha pogut mostrar l'ajuda: %s"
 
-#: src/eiciel_container.cpp:120
+#: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
 msgstr "Escull un fitxer o directori"
 
-#: src/eiciel_container.cpp:140
+#: src/eiciel_container.cpp:145
 msgid "Could not open the file \""
 msgstr "No es pot obrir el fitxer \""
 
@@ -63,11 +62,11 @@ msgstr "La representació textual de l'ACL és incorrecta"
 msgid "Default textual representation of the ACL is wrong"
 msgstr "La representació textual de l'ACL per omissió és incorrecta"
 
-#: src/eiciel_xattr_window.cpp:40
+#: src/eiciel_xattr_window.cpp:39
 msgid "Name"
 msgstr "Nom"
 
-#: src/eiciel_xattr_window.cpp:56
+#: src/eiciel_xattr_window.cpp:55
 msgid "Value"
 msgstr "Valor"
 
@@ -75,23 +74,23 @@ msgstr "Valor"
 msgid "Could not rename attribute name: "
 msgstr "No es pot renombrar l'atribut: "
 
-#: src/eiciel_xattr_window.cpp:198
+#: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
 msgstr "No es pot canviar el valor de l'atribut: "
 
-#: src/eiciel_xattr_window.cpp:222
+#: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
 msgstr "No es pot eliminar l'atribut: "
 
-#: src/eiciel_xattr_window.cpp:241 src/eiciel_xattr_window.cpp:250
+#: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
 msgstr "Atribut nou"
 
-#: src/eiciel_xattr_window.cpp:279
+#: src/eiciel_xattr_window.cpp:318
 msgid "New value"
 msgstr "Nou valor"
 
-#: src/eiciel_xattr_window.cpp:294
+#: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
 msgstr "No he pogut afegir l'atribut: "
 
@@ -123,95 +122,111 @@ msgstr "Altres per defecte"
 msgid "Could not add ACL entry: "
 msgstr "No he pogut afegir l'entrada ACL: "
 
-#: src/eiciel_main_controller.cpp:376
+#: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
 msgstr "No es pot eliminar l'entrada ACL: "
 
-#: src/eiciel_main_controller.cpp:460
+#: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
 msgstr "No es pot modificar l'entrada ACL: "
 
-#: src/eiciel_main_controller.cpp:476
+#: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Esteu segurs de voler eliminar les entrades per defecte de la ACL?"
 
-#: src/eiciel_main_window.cpp:24
-msgid "Advanced features"
-msgstr "Opcions avançades"
+#: src/eiciel_main_window.cpp:26
+msgid "<b>Current participants in ACL</b>"
+msgstr "<b>Participants actuals a l'ACL</b>"
 
-#: src/eiciel_main_window.cpp:25
-msgid "Name of participant"
-msgstr "Nom del participant"
-
-#: src/eiciel_main_window.cpp:27
-msgid "User"
-msgstr "Usuari"
-
-#: src/eiciel_main_window.cpp:28
-msgid "Group"
-msgstr "Grup"
-
-#: src/eiciel_main_window.cpp:29
-msgid "Default"
-msgstr "Per defecte"
-
-#: src/eiciel_main_window.cpp:30
-msgid "Default ACL"
-msgstr "ACL per defecte"
-
-#: src/eiciel_main_window.cpp:31
-msgid "Also show system participants"
-msgstr "Mostrar també participants del sistema"
-
-#: src/eiciel_main_window.cpp:40
-msgid "Participants List"
-msgstr "Llista de participants"
-
-#: src/eiciel_main_window.cpp:42
+#: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
 msgstr "Hi ha permisos inefectius"
 
-#: src/eiciel_main_window.cpp:91
+#: src/eiciel_main_window.cpp:33
+msgid "Remove participant from ACL"
+msgstr "Elimina el participant de l'ACL"
+
+#: src/eiciel_main_window.cpp:34
+msgid "Edit default participants"
+msgstr "Edita els participants per defecte"
+
+#: src/eiciel_main_window.cpp:35
+msgid "<b>Available participants</b>"
+msgstr "<b>Participants disponibles</b>"
+
+#: src/eiciel_main_window.cpp:38
+msgid "User"
+msgstr "Usuari"
+
+#: src/eiciel_main_window.cpp:39
+msgid "Group"
+msgstr "Grup"
+
+#: src/eiciel_main_window.cpp:40
+msgid "Default participant"
+msgstr "Participant per defecte"
+
+#: src/eiciel_main_window.cpp:45
+msgid "Add participant to ACL"
+msgstr "Afegeix el participant a l'ACL"
+
+#: src/eiciel_main_window.cpp:46
+msgid "Advanced features"
+msgstr "Opcions avançades"
+
+#: src/eiciel_main_window.cpp:48
+msgid "Name of participant"
+msgstr "Nom del participant"
+
+#: src/eiciel_main_window.cpp:50
+msgid "Also show system participants"
+msgstr "Mostrar també participants del sistema"
+
+#: src/eiciel_main_window.cpp:112
 msgid "Entry"
 msgstr "Entrada"
 
-#: src/eiciel_main_window.cpp:94
+#: src/eiciel_main_window.cpp:115
 msgid "Read"
 msgstr "Lectura"
 
-#: src/eiciel_main_window.cpp:105
+#: src/eiciel_main_window.cpp:126
 msgid "Write"
 msgstr "Escriptura"
 
-#: src/eiciel_main_window.cpp:115
-msgid "Execution"
+#: src/eiciel_main_window.cpp:136
+msgid "Execute"
 msgstr "Execució"
 
-#: src/eiciel_main_window.cpp:131 src/eiciel_main_window.cpp:141
-#: src/eiciel_main_window.cpp:552
+#: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
+#: src/eiciel_main_window.cpp:590
 msgid "None"
 msgstr "Cap"
 
-#: src/eiciel_main_window.cpp:133
+#: src/eiciel_main_window.cpp:154
 msgid "Only files"
 msgstr "Només fitxers"
 
-#: src/eiciel_main_window.cpp:135
+#: src/eiciel_main_window.cpp:156
 msgid "Only directories"
 msgstr "Només directoris"
 
-#: src/eiciel_main_window.cpp:137
+#: src/eiciel_main_window.cpp:158
 msgid "Both files and directories"
 msgstr "Fitxers i directoris"
 
-#: src/eiciel_main_window.cpp:145
+#: src/eiciel_main_window.cpp:166
 msgid "Recursion"
 msgstr "Recursivitat"
 
-#: src/eiciel_main_window.cpp:193
+#: src/eiciel_main_window.cpp:201
+msgid "Filter participants"
+msgstr "Filtra els participants"
+
+#: src/eiciel_main_window.cpp:222
 msgid "Participant"
 msgstr "Participant"
 
-#: src/eiciel_main_window.cpp:874
+#: src/eiciel_main_window.cpp:912
 msgid "Participant not found"
 msgstr "No s'ha trobat el participant"
