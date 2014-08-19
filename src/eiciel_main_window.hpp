@@ -115,11 +115,12 @@ class EicielWindow : public Gtk::Box
         ACLListModel _acl_list_model;
         ModelLlistaParticipant _participant_list_model;
 
+    // TODO - Implement recursion policies
+#if 0
         RecursionPolicyModel _recursion_policy_model;
         Glib::RefPtr<Gtk::ListStore> _recursion_policy_list;
         Glib::RefPtr<Gtk::ListStore> _dummy_recursion_policy_list;
-
-        Glib::RefPtr<Gtk::UIManager> _ref_ui_manager;
+#endif
 
         bool _readonly_mode;
         int _pending_filter_updates;

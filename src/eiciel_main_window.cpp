@@ -23,26 +23,26 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     : Gtk::Box(Gtk::ORIENTATION_VERTICAL),
     /* GUI */
     _main_box(Gtk::ORIENTATION_VERTICAL),
-    _label_current_acl("<b>Current entries</b>"),
+    _label_current_acl("<b>Current participants in ACL</b>"),
     _top_box(Gtk::ORIENTATION_VERTICAL),
     _listview_acl_container(),
     _listview_acl(),
     _middle_button_group(),
     _warning_icon(Gtk::Stock::DIALOG_WARNING, Gtk::IconSize(Gtk::ICON_SIZE_SMALL_TOOLBAR)),
     _bottom_label(_("There are ineffective permissions")),
-    _b_remove_acl(_("Remove participant")),
-    _tb_modify_default_acl(_("Default ACL")),
-    _label_participants("<b>List of participants</b>"),
+    _b_remove_acl(_("Remove participant from ACL")),
+    _tb_modify_default_acl(_("Edit default participants")),
+    _label_participants("<b>Available participants</b>"),
     _bottom_box(Gtk::ORIENTATION_VERTICAL),
     _participant_chooser(),
     _rb_acl_user(_("User")),
     _rb_acl_group(_("Group")),
-    _cb_acl_default(_("Default")),
+    _cb_acl_default(_("Default participant")),
     _filter_entry(),
     _listview_participants_container(),
     _listview_participants(),
     _below_participant_list(),
-    _b_add_acl(_("Add participant")), 
+    _b_add_acl(_("Add participant to ACL")), 
     _advanced_features_expander(_("Advanced features")),
     _advanced_features_box(Gtk::ORIENTATION_VERTICAL),
     _participant_entry_label(_("Name of participant")),
@@ -133,7 +133,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     }
 
     CellRendererACL* renderExecute = Gtk::manage(new CellRendererACL());
-    numColumns = _listview_acl.append_column(_("Execution"), *renderExecute);
+    numColumns = _listview_acl.append_column(_("Execute"), *renderExecute);
     Gtk::TreeViewColumn* execution_column = _listview_acl.get_column(numColumns - 1);
     if (execution_column != NULL) 
     {
@@ -184,15 +184,15 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     _listview_acl_container.set_size_request(-1, 150);
     _listview_acl_container.set_shadow_type(Gtk::SHADOW_IN);
 
-    _top_box.add(_listview_acl_container);
+    _top_box.pack_start(_listview_acl_container);
 
     // Add 'move up' 'move down' buttons
-    _middle_button_group.pack_start(_warning_icon, Gtk::PACK_SHRINK, 0);
-    _middle_button_group.pack_start(_bottom_label, Gtk::PACK_SHRINK, 0);
-    _middle_button_group.pack_end(_b_remove_acl, Gtk::PACK_SHRINK, 0);
-    _middle_button_group.pack_end(_tb_modify_default_acl, Gtk::PACK_SHRINK, 0);
+    _middle_button_group.pack_start(_warning_icon, Gtk::PACK_SHRINK);
+    _middle_button_group.pack_start(_bottom_label, Gtk::PACK_SHRINK);
+    _middle_button_group.pack_end(_b_remove_acl, Gtk::PACK_SHRINK);
+    _middle_button_group.pack_end(_tb_modify_default_acl, Gtk::PACK_SHRINK);
 
-    _top_box.pack_start(_middle_button_group, Gtk::PACK_SHRINK, 0);
+    _top_box.pack_start(_middle_button_group, Gtk::PACK_SHRINK);
 
     // Group buttons of ACL kind
     Gtk::RadioButton::Group tipusACL = _rb_acl_user.get_group();
@@ -202,12 +202,13 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     _filter_entry.property_secondary_icon_name() = "gtk-clear";
     _filter_entry.signal_changed().connect(sigc::mem_fun(*this, &EicielWindow::filter_entry_text_changed));
     _filter_entry.signal_icon_press().connect(sigc::mem_fun(*this, &EicielWindow::on_clear_icon_pressed));
+    _filter_entry.set_margin_left(12);
 
     // Row above the participants list
-    _participant_chooser.pack_start(_rb_acl_user, Gtk::PACK_SHRINK, 0);
-    _participant_chooser.pack_start(_rb_acl_group, Gtk::PACK_SHRINK, 0);
-    _participant_chooser.pack_start(_cb_acl_default, Gtk::PACK_SHRINK, 0);
-    _participant_chooser.pack_end(_filter_entry, Gtk::PACK_SHRINK, 0);
+    _participant_chooser.pack_start(_rb_acl_user, Gtk::PACK_SHRINK);
+    _participant_chooser.pack_start(_rb_acl_group, Gtk::PACK_SHRINK);
+    _participant_chooser.pack_start(_cb_acl_default, Gtk::PACK_SHRINK);
+    _participant_chooser.pack_end(_filter_entry, Gtk::PACK_SHRINK);
 
     // Participants list
     _ref_participants_list = Gtk::ListStore::create(_participant_list_model);
@@ -237,18 +238,17 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     // Row below the participant list
     _below_participant_list.pack_end(_b_add_acl, Gtk::PACK_SHRINK);
 
-    // Row below the add and filter box
     _advanced_features_box.set_margin_left(12);
     _advanced_features_box.set_margin_right(12);
     _advanced_features_box.set_spacing(4);
-    _advanced_features_box.pack_start(_participant_entry_box, Gtk::PACK_SHRINK, 0);
-    _advanced_features_box.pack_start(_cb_show_system_participants, Gtk::PACK_SHRINK, 0);
+    _advanced_features_box.pack_start(_participant_entry_box, Gtk::PACK_SHRINK);
+    _advanced_features_box.pack_start(_cb_show_system_participants, Gtk::PACK_SHRINK);
     _advanced_features_expander.add(_advanced_features_box);
     
-    _bottom_box.pack_start(_participant_chooser, Gtk::PACK_SHRINK, 0);
+    _bottom_box.pack_start(_participant_chooser, Gtk::PACK_SHRINK);
     _bottom_box.pack_start(_listview_participants_container);
-    _bottom_box.pack_start(_below_participant_list);
-    _bottom_box.pack_start(_advanced_features_expander);
+    _bottom_box.pack_start(_below_participant_list, Gtk::PACK_SHRINK);
+    _bottom_box.pack_start(_advanced_features_expander, Gtk::PACK_SHRINK);
 
     _cb_show_system_participants.signal_toggled().connect(sigc::mem_fun(*this, &EicielWindow::toggle_system_show));
 

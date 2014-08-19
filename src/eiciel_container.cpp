@@ -19,7 +19,10 @@
 #include "eiciel_container.hpp"
 
 EicielContainer::EicielContainer()
-    : _open_file(Gtk::Stock::OPEN), 
+    : _main_container(Gtk::ORIENTATION_VERTICAL),
+    _ACL_tabpage(Gtk::ORIENTATION_VERTICAL),
+    _XAttr_tabpage(Gtk::ORIENTATION_VERTICAL),
+    _open_file(Gtk::Stock::OPEN), 
     _file_label(_("<b>File name</b>")),
     _file_name(_("No file opened")),
     _exit_button(Gtk::Stock::QUIT),
@@ -41,7 +44,7 @@ EicielContainer::EicielContainer()
     _top.pack_start(_open_file, Gtk::PACK_SHRINK, 4);
     _top.set_homogeneous(false);
 
-    _main_container.add(_notebook);
+    _main_container.pack_start(_notebook);
     _notebook.append_page(_ACL_tabpage, _("Access Control List"));
 
     _widget_controller = new EicielMainController();
@@ -59,10 +62,10 @@ EicielContainer::EicielContainer()
 #endif  
 
     _main_container.pack_start(_bottom, Gtk::PACK_SHRINK, 2);
-    _bottom.set_spacing(2);
-    _bottom.add(_about);
-    _bottom.add(_help);
-    _bottom.add(_exit_button);
+    _bottom.set_spacing(4);
+    _bottom.pack_end(_about);
+    _bottom.pack_end(_help);
+    _bottom.pack_end(_exit_button);
 
     _exit_button.signal_clicked().connect(
             sigc::mem_fun(*this, &EicielContainer::quit_application)
