@@ -458,9 +458,9 @@ void EicielMainController::update_acl_entry(ElementKind e, string s,
 	catch (ACLManagerException e)
 	{
 		Glib::ustring s = _("Could not modify ACL entry: ") + e.getMessage();
-		Gtk::MessageDialog modificar_acl_message(s, false,
+		Gtk::MessageDialog modify_acl_message(s, false,
 				Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK);
-		modificar_acl_message.run();
+		modify_acl_message.run();
 		_last_error_message = s;
 	}
 }
