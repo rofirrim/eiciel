@@ -37,8 +37,8 @@ class EicielContainer : public Gtk::Window
 		Gtk::VBox _main_container;
 		Gtk::VBox _ACL_tabpage;
 		Gtk::VBox _XAttr_tabpage;
-		Gtk::HBox _top;
-		Gtk::HBox _bottom;
+		Gtk::Box _top;
+		Gtk::Box _bottom;
 		Gtk::Button _open_file;
 		Gtk::Label _file_label;
 		Gtk::Label _file_name;

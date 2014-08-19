@@ -53,7 +53,7 @@ class EicielXAttrWindow : public Gtk::VBox
 		Gtk::Button _b_add_attribute;
 		Gtk::Button _b_remove_attribute;
 
-		Gtk::HBox _bottom_buttonbox;
+		Gtk::Box _bottom_buttonbox;
 
 		void _xattr_selection_change();
 
