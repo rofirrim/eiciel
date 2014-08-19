@@ -23,7 +23,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     : Gtk::Box(Gtk::ORIENTATION_VERTICAL),
     /* GUI */
     _main_box(Gtk::ORIENTATION_VERTICAL),
-    _label_current_acl("<b>Current participants in ACL</b>"),
+    _label_current_acl(_("<b>Current participants in ACL</b>")),
     _top_box(Gtk::ORIENTATION_VERTICAL),
     _listview_acl_container(),
     _listview_acl(),
@@ -32,7 +32,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     _bottom_label(_("There are ineffective permissions")),
     _b_remove_acl(_("Remove participant from ACL")),
     _tb_modify_default_acl(_("Edit default participants")),
-    _label_participants("<b>Available participants</b>"),
+    _label_participants(_("<b>Available participants</b>")),
     _bottom_box(Gtk::ORIENTATION_VERTICAL),
     _participant_chooser(),
     _rb_acl_user(_("User")),
