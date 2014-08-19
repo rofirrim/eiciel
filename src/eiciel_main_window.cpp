@@ -918,12 +918,12 @@ void EicielWindow::filter_entry_text_changed()
 
 bool EicielWindow::filter_participant_row(const Gtk::TreeModel::const_iterator& iter)
 {
-	Glib::ustring filter_text = _filter_entry.get_text();
-	if (!filter_text.empty())
-	{
-		Glib::ustring current_text = (*iter)[_participant_list_model._participant_name];
-		// check if current row text starts with filter_text
-		return current_text.find(filter_text) == 0;
-	}
-	return true;
+    Glib::ustring filter_text = _filter_entry.get_text();
+    if (!filter_text.empty())
+    {
+        Glib::ustring current_text = (*iter)[_participant_list_model._participant_name];
+        // check if current row text contains filter_text
+        return current_text.find(filter_text) != Glib::ustring::npos;
+    }
+    return true;
 }
