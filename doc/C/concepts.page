@@ -25,33 +25,53 @@ allow you to set whether a user can read, write or execute a file.
 
 <p>
 The access will be granted or denied depending on which user 
-is accessing the file. The owner has his own permissions (User). 
+is accessing the file.
 </p>
 
+<steps>
+<item>
+<p>
+The owner has his own permissions (<em>User</em>).
+</p>
+</item>
+
+<item>
 <p>
 If the user is not the owner but belongs to the group owning the file
-then group permissions are applied (Group).
+then group permissions are applied (<em>Group</em>).
 </p>
+</item>
 
+<item>
 <p>
 Finally, if the user is not the owner neither
 belongs to the file's group then Other permissions are applied.
 </p>
+</item>
+</steps>
 
+<list>
+<item>
 <p>
 Read permission allow, in a file, to read it. In a directory
 it permits listing the directory's content.
 </p>
+</item>
 
+<item>
 <p>
 Write permission in files allows to modify their data. In directories
 it allows creating or deleting their files (or directories).
 </p>
+</item>
 
+<item>
 <p>
 Execution permission in files allow them to run as programs. 
 In directories it allows to enter them.
 </p>
+</item>
+</list>
 
 <p>
 Permissions can only be changed by the owner (or the <em>superuser</em>).
