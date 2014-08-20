@@ -26,7 +26,7 @@ where you can choose a file or a directory.
 
 <figure>
 	<title>Opening a file</title>
-    <media type="image" src="figures/obrir_fitxer.png"/>
+    <media type="image" src="figures/open_file.png"/>
 </figure>
 
 </section>
@@ -34,13 +34,13 @@ where you can choose a file or a directory.
 <section id="open-nautilus">
 <title>Nautilus</title>
 <p>
-In Nautilus right-clic on the file or directory. Then press <guimenuitem>Properties</guimenuitem> and activate the <guimenuitem>Access Control List</guimenuitem> tab.
+In Nautilus right-click on the file or directory. Then press <gui>Properties</gui> and activate the <gui>Access Control List</gui> tab.
 </p>
 
 <figure>
 	<title>Opening a file in Nautilus</title>
-    <media type="image" src="figures/obrir_fitxer_nautilus.png"/>
-</figure> -->
+    <media type="image" src="figures/open_file_nautilus.png"/>
+</figure>
 
 <note style="warning">
 <title>Operation not supported</title>

@@ -60,7 +60,7 @@ The following figure briefs UGO permissions.
 
 <figure>
 	<title>UGO permissions</title>
-    <media type="image" src="figures/permisos_ugo.png"/>
+    <media type="image" src="figures/ugo_permissions.png"/>
 </figure>
 
 </section>
@@ -90,7 +90,7 @@ and write and no other user can access the file.
 
 <figure>
 	<title>ACL permissions</title>
-    <media type="image" src="figures/permisos_acl.png"/>
+    <media type="image" src="figures/acl_permissions.png"/>
 </figure>
 
 </section>

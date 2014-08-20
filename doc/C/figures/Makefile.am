@@ -1,13 +1,13 @@
 eicieldocfiguresdir=$(datadir)/gnome/help/eiciel/C/figures
 
 dist_eicieldocfigures_DATA =  \
-	entrada_acl.png \
-	obrir_fitxer_nautilus.png \
-	obrir_fitxer.png \
-	permisos_acl.png \
-	permisos_ugo.png \
-	detall_mascara.png \
-	pantalla_ea.png \
+	acl_entry.png \
+	acl_permissions.png \
+	mask_detail.png \
+	open_file_nautilus.png \
+	open_file.png \
+	screen_xattr.png \
+	ugo_permissions.png \
 	$(top_srcdir)/img/others-default.png \
 	$(top_srcdir)/img/others.png \
 	$(top_srcdir)/img/group-acl-default.png \
@@ -19,4 +19,6 @@ dist_eicieldocfigures_DATA =  \
 	$(top_srcdir)/img/user-acl-default.png \
 	$(top_srcdir)/img/user-acl.png \
 	$(top_srcdir)/img/user-default.png \
-	$(top_srcdir)/img/user.png
+	$(top_srcdir)/img/user.png \
+	$(END)
+
