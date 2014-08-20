@@ -2,7 +2,7 @@ SUBDIRS=figures
 
 eicieldocdir = $(datadir)/gnome/help/eiciel/C
 
-eicieldoc_DATA = \
+dist_eicieldoc_DATA = \
       add.page \
       concepts.page \
       default.page \
