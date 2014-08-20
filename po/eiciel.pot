@@ -1,5 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# This file is put in the public domain.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -7,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel 0.9.9\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2014-08-19 18:14+0200\n"
+"POT-Creation-Date: 2014-08-20 09:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
