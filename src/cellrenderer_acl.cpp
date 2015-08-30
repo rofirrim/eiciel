@@ -104,7 +104,14 @@ void CellRendererACL::render_vfunc (
 #ifdef USING_GNOME2
         shadow = Gtk::SHADOW_IN;
 #else
+ #ifdef GTK_MINOR_VERSION
+  #if GTK_MINOR_VERSION >= 14
+        // GTK+3.14 adds a new GTK_STATE_FLAG_CHECKED for checkboxes and radios
+        state |= Gtk::STATE_FLAG_CHECKED;
+  #else
         state |= Gtk::STATE_FLAG_ACTIVE;
+  #endif
+ #endif
 #endif
     }
 
