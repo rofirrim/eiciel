@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 15:33+0200\n"
-"PO-Revision-Date: 2015-09-08 10:09\n"
+"PO-Revision-Date: 2015-09-08 10:11\n"
 "Last-Translator: Novell language <language@novell.com>\n"
 "Language-Team: Novell language <language@novell.com>\n"
 "Language: \n"
@@ -16,228 +16,228 @@ msgstr ""
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
-msgstr "<b>Nombre de archivo</b>"
+msgstr "<b>文件名</b>"
 
 #: src/eiciel_container.cpp:27 src/eiciel_container.cpp:183
 msgid "No file opened"
-msgstr "No hay ningún archivo abierto"
+msgstr "没有打开文件"
 
 #: src/eiciel_container.cpp:30 src/eiciel_container.cpp:192
 #: src/eiciel_container.cpp:194
 msgid "About..."
-msgstr "Acerca de..."
+msgstr "关于…"
 
 #: src/eiciel_container.cpp:48 src/eiciel_nautilus_page.cpp:136
 msgid "Access Control List"
-msgstr "Lista de control de acceso"
+msgstr "访问控制列表"
 
 #: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
 msgid "Extended user attributes"
-msgstr "Atributos de usuario extendidos"
+msgstr "扩展的用户特性"
 
 #: src/eiciel_container.cpp:100
 #, c-format
 msgid "Could not show the help file: %s"
-msgstr "No es posible mostrar el archivo de ayuda: %s"
+msgstr "无法显示帮助文件：%s"
 
 #: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
-msgstr "Seleccione un archivo o un directorio"
+msgstr "选择文件或目录"
 
 #: src/eiciel_container.cpp:145
 msgid "Could not open the file \""
-msgstr "No es posible abrir el archivo \""
+msgstr "无法打开文件\""
 
 #: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
-msgstr "Sólo se admiten archivos y directorios normales"
+msgstr "仅支持常规文件或目录"
 
 #: src/acl_manager.cpp:542
 msgid "Textual representation of the ACL is wrong"
-msgstr "La representación textual de la ACL es incorrecta"
+msgstr "ACL 的原文表示错误"
 
 #: src/acl_manager.cpp:564
 msgid "Default textual representation of the ACL is wrong"
-msgstr "La representación textual por defecto de la ACL es incorrecta"
+msgstr "ACL 的默认原文表示错误"
 
 #. Add columns and link them to the model
 #: src/eiciel_xattr_window.cpp:39
 msgid "Name"
-msgstr "Nombre"
+msgstr "名称"
 
 #: src/eiciel_xattr_window.cpp:55
 msgid "Value"
-msgstr "Valor"
+msgstr "值"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "No es posible modificar el nombre del atributo:"
+msgstr "无法重命名特性名："
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "No es posible modificar el valor del atributo:"
+msgstr "无法更改特性值："
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "No es posible eliminar el atributo:"
+msgstr "无法去除特性："
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
-msgstr "Nuevo atributo"
+msgstr "新特性"
 
 #: src/eiciel_xattr_window.cpp:318
 msgid "New value"
-msgstr "NUEVO VALOR"
+msgstr "新值"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "No es posible añadir el atributo:"
+msgstr "无法添加特性："
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
-msgstr "Imprimir información de versión"
+msgstr "打印版本信息"
 
 #: src/eiciel_standalone.cpp:51
 msgid "Access control list editor"
-msgstr "Editor de lista de control de acceso"
+msgstr "访问控制列表编辑器"
 
 #: src/eiciel_main_controller.cpp:172
 msgid "Mask"
-msgstr "Máscara"
+msgstr "掩码"
 
 #: src/eiciel_main_controller.cpp:177
 msgid "Other"
-msgstr "Otros"
+msgstr "其他"
 
 #: src/eiciel_main_controller.cpp:250
 msgid "Default Mask"
-msgstr "Máscara por defecto"
+msgstr "默认掩码"
 
 #: src/eiciel_main_controller.cpp:258
 msgid "Default Other"
-msgstr "Otros por defecto"
+msgstr "默认其它"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "No es posible añadir la entrada de ACL:"
+msgstr "无法添加 ACL 项："
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "No es posible eliminar la entrada de ACL:"
+msgstr "无法删除 ACL 项："
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "No es posible modificar la entrada de ACL:"
+msgstr "无法修改 ACL 项："
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr "¿Seguro que desea eliminar todas las entradas de la ACL por defecto?"
+msgstr "您确定要去除所有 ACL 默认项吗？"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr "<b>Participantes actuales en la ACL</b>"
+msgstr ""
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
-msgstr "Hay permisos que no están vigentes"
+msgstr "存在无效参数"
 
 #: src/eiciel_main_window.cpp:33
+#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "Quitar participante de la ACL"
+msgstr "参与者名称"
 
 #: src/eiciel_main_window.cpp:34
+#, fuzzy
 msgid "Edit default participants"
-msgstr "Editar participantes por defecto"
+msgstr "参与者名称"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr "<b>Participantes disponibles</b>"
+msgstr ""
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
-msgstr "Usuario"
+msgstr "用户"
 
 #: src/eiciel_main_window.cpp:39
 msgid "Group"
-msgstr "Grupo"
+msgstr "组"
 
 #: src/eiciel_main_window.cpp:40
+#, fuzzy
 msgid "Default participant"
-msgstr "Participante por defecto"
+msgstr "参与者名称"
 
 #: src/eiciel_main_window.cpp:45
+#, fuzzy
 msgid "Add participant to ACL"
-msgstr "Añadir participante en la ACL"
+msgstr "参与者列表"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
-msgstr "Funciones avanzadas"
+msgstr "高级功能"
 
 #: src/eiciel_main_window.cpp:48
 msgid "Name of participant"
-msgstr "Nombre del participante"
+msgstr "参与者名称"
 
 #: src/eiciel_main_window.cpp:50
 msgid "Also show system participants"
-msgstr "Mostrar también participantes del sistema"
+msgstr "同时显示系统参与者"
 
 #: src/eiciel_main_window.cpp:112
 msgid "Entry"
-msgstr "Entrada"
+msgstr "项"
 
 #: src/eiciel_main_window.cpp:115
 msgid "Read"
-msgstr "Lectura"
+msgstr "读"
 
 #: src/eiciel_main_window.cpp:126
 msgid "Write"
-msgstr "Escritura"
+msgstr "写"
 
 #: src/eiciel_main_window.cpp:136
+#, fuzzy
 msgid "Execute"
-msgstr "Ejecución"
+msgstr "执行"
 
 #: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
 #: src/eiciel_main_window.cpp:590
 msgid "None"
-msgstr "Ninguno"
+msgstr "无"
 
 #: src/eiciel_main_window.cpp:154
 msgid "Only files"
-msgstr "Solo archivos"
+msgstr "仅文件"
 
 #: src/eiciel_main_window.cpp:156
 msgid "Only directories"
-msgstr "Solo directorios"
+msgstr "仅目录"
 
 #: src/eiciel_main_window.cpp:158
 msgid "Both files and directories"
-msgstr "Archivos y directorios"
+msgstr "文件和目录两者"
 
 #: src/eiciel_main_window.cpp:166
 msgid "Recursion"
-msgstr "Recursión"
+msgstr "递归"
 
 #: src/eiciel_main_window.cpp:201
+#, fuzzy
 msgid "Filter participants"
-msgstr "Filtrar participantes"
+msgstr "参与者名称"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
-msgstr "Participante"
+msgstr "参与者"
 
 #: src/eiciel_main_window.cpp:912
 msgid "Participant not found"
-msgstr "Participante no encontrado"
+msgstr "未找到参与者"
 
 #~ msgid "Default"
-#~ msgstr "Por defecto"
+#~ msgstr "默认"
 
 #~ msgid "Default ACL"
-#~ msgstr "ACL por defecto"
-
-#~ msgid "Participants List"
-#~ msgstr "Lista de participantes"
-
-#~ msgid "Execution"
-#~ msgstr "Ejecución"
+#~ msgstr "默认 ACL"

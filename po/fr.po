@@ -16,228 +16,228 @@ msgstr ""
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
-msgstr "<b>Nombre de archivo</b>"
+msgstr "<b>Nom de fichier</b>"
 
 #: src/eiciel_container.cpp:27 src/eiciel_container.cpp:183
 msgid "No file opened"
-msgstr "No hay ningún archivo abierto"
+msgstr "Aucun fichier ouvert"
 
 #: src/eiciel_container.cpp:30 src/eiciel_container.cpp:192
 #: src/eiciel_container.cpp:194
 msgid "About..."
-msgstr "Acerca de..."
+msgstr "À propos de..."
 
 #: src/eiciel_container.cpp:48 src/eiciel_nautilus_page.cpp:136
 msgid "Access Control List"
-msgstr "Lista de control de acceso"
+msgstr "liste de contrôle d'accès"
 
 #: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
 msgid "Extended user attributes"
-msgstr "Atributos de usuario extendidos"
+msgstr "Attributs étendus de l'utilisateur"
 
 #: src/eiciel_container.cpp:100
 #, c-format
 msgid "Could not show the help file: %s"
-msgstr "No es posible mostrar el archivo de ayuda: %s"
+msgstr "Impossible d'afficher le fichier d'aide : %s"
 
 #: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
-msgstr "Seleccione un archivo o un directorio"
+msgstr "Choisir un fichier ou un répertoire"
 
 #: src/eiciel_container.cpp:145
 msgid "Could not open the file \""
-msgstr "No es posible abrir el archivo \""
+msgstr "Impossible d'ouvrir le fichier \""
 
 #: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
-msgstr "Sólo se admiten archivos y directorios normales"
+msgstr "Seuls les fichiers ou les répertoires standard sont pris en charge"
 
 #: src/acl_manager.cpp:542
 msgid "Textual representation of the ACL is wrong"
-msgstr "La representación textual de la ACL es incorrecta"
+msgstr "La représentation textuelle de l'ACL est erronée"
 
 #: src/acl_manager.cpp:564
 msgid "Default textual representation of the ACL is wrong"
-msgstr "La representación textual por defecto de la ACL es incorrecta"
+msgstr "La représentation textuelle par défaut de l'ACL est erronée"
 
 #. Add columns and link them to the model
 #: src/eiciel_xattr_window.cpp:39
 msgid "Name"
-msgstr "Nombre"
+msgstr "Nom"
 
 #: src/eiciel_xattr_window.cpp:55
 msgid "Value"
-msgstr "Valor"
+msgstr "Valeur"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "No es posible modificar el nombre del atributo:"
+msgstr "Impossible de modifier le nom de l'attribut : "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "No es posible modificar el valor del atributo:"
+msgstr "Impossible de modifier la valeur de l'attribut : "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "No es posible eliminar el atributo:"
+msgstr "Impossible de supprimer l'attribut : "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
-msgstr "Nuevo atributo"
+msgstr "Nouvel attribut"
 
 #: src/eiciel_xattr_window.cpp:318
 msgid "New value"
-msgstr "NUEVO VALOR"
+msgstr "NOUVELLE VALEUR"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "No es posible añadir el atributo:"
+msgstr "Impossible d'ajouter l'attribut : "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
-msgstr "Imprimir información de versión"
+msgstr "Imprimer les informations sur la version"
 
 #: src/eiciel_standalone.cpp:51
 msgid "Access control list editor"
-msgstr "Editor de lista de control de acceso"
+msgstr "Éditeur de liste de contrôle d'accès"
 
 #: src/eiciel_main_controller.cpp:172
 msgid "Mask"
-msgstr "Máscara"
+msgstr "Masque"
 
 #: src/eiciel_main_controller.cpp:177
 msgid "Other"
-msgstr "Otros"
+msgstr "Autre"
 
 #: src/eiciel_main_controller.cpp:250
 msgid "Default Mask"
-msgstr "Máscara por defecto"
+msgstr "Masque par défaut"
 
 #: src/eiciel_main_controller.cpp:258
 msgid "Default Other"
-msgstr "Otros por defecto"
+msgstr "Autre par défaut"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "No es posible añadir la entrada de ACL:"
+msgstr "Impossible d'ajouter une entrée ACL : "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "No es posible eliminar la entrada de ACL:"
+msgstr "Impossible de supprimer une entrée ACL : "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "No es posible modificar la entrada de ACL:"
+msgstr "Impossible de modifier une entrée ACL : "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr "¿Seguro que desea eliminar todas las entradas de la ACL por defecto?"
+msgstr "Voulez-vous vraiment supprimer toutes les entrées ACL par défaut ?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr "<b>Participantes actuales en la ACL</b>"
+msgstr ""
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
-msgstr "Hay permisos que no están vigentes"
+msgstr "Il existe des autorisations inefficaces"
 
 #: src/eiciel_main_window.cpp:33
+#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "Quitar participante de la ACL"
+msgstr "Nom du participant"
 
 #: src/eiciel_main_window.cpp:34
+#, fuzzy
 msgid "Edit default participants"
-msgstr "Editar participantes por defecto"
+msgstr "Nom du participant"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr "<b>Participantes disponibles</b>"
+msgstr ""
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
-msgstr "Usuario"
+msgstr "Utilisateur"
 
 #: src/eiciel_main_window.cpp:39
 msgid "Group"
-msgstr "Grupo"
+msgstr "Groupe"
 
 #: src/eiciel_main_window.cpp:40
+#, fuzzy
 msgid "Default participant"
-msgstr "Participante por defecto"
+msgstr "Nom du participant"
 
 #: src/eiciel_main_window.cpp:45
+#, fuzzy
 msgid "Add participant to ACL"
-msgstr "Añadir participante en la ACL"
+msgstr "Liste des participants"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
-msgstr "Funciones avanzadas"
+msgstr "Fonctionnalités avancées"
 
 #: src/eiciel_main_window.cpp:48
 msgid "Name of participant"
-msgstr "Nombre del participante"
+msgstr "Nom du participant"
 
 #: src/eiciel_main_window.cpp:50
 msgid "Also show system participants"
-msgstr "Mostrar también participantes del sistema"
+msgstr "Afficher également les participants du système"
 
 #: src/eiciel_main_window.cpp:112
 msgid "Entry"
-msgstr "Entrada"
+msgstr "Entrée"
 
 #: src/eiciel_main_window.cpp:115
 msgid "Read"
-msgstr "Lectura"
+msgstr "Lecture"
 
 #: src/eiciel_main_window.cpp:126
 msgid "Write"
-msgstr "Escritura"
+msgstr "Écriture"
 
 #: src/eiciel_main_window.cpp:136
+#, fuzzy
 msgid "Execute"
-msgstr "Ejecución"
+msgstr "Exécution"
 
 #: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
 #: src/eiciel_main_window.cpp:590
 msgid "None"
-msgstr "Ninguno"
+msgstr "Aucun"
 
 #: src/eiciel_main_window.cpp:154
 msgid "Only files"
-msgstr "Solo archivos"
+msgstr "Uniquement les fichiers"
 
 #: src/eiciel_main_window.cpp:156
 msgid "Only directories"
-msgstr "Solo directorios"
+msgstr "Uniquement les répertoires"
 
 #: src/eiciel_main_window.cpp:158
 msgid "Both files and directories"
-msgstr "Archivos y directorios"
+msgstr "Les fichiers et les répertoires"
 
 #: src/eiciel_main_window.cpp:166
 msgid "Recursion"
-msgstr "Recursión"
+msgstr "Récursivité"
 
 #: src/eiciel_main_window.cpp:201
+#, fuzzy
 msgid "Filter participants"
-msgstr "Filtrar participantes"
+msgstr "Nom du participant"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
-msgstr "Participante"
+msgstr "Participant"
 
 #: src/eiciel_main_window.cpp:912
 msgid "Participant not found"
-msgstr "Participante no encontrado"
+msgstr "Participant introuvable"
 
 #~ msgid "Default"
-#~ msgstr "Por defecto"
+#~ msgstr "Par défaut"
 
 #~ msgid "Default ACL"
-#~ msgstr "ACL por defecto"
-
-#~ msgid "Participants List"
-#~ msgstr "Lista de participantes"
-
-#~ msgid "Execution"
-#~ msgstr "Ejecución"
+#~ msgstr "ACL par défaut"

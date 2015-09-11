@@ -1,17 +1,15 @@
-# Swedish translation of eiciel.
-# Copyright (C) 2006 Roger Ferrer Ibáñez
-# This file is distributed under the same license as the eiciel package.
-# Daniel Nylander <po@danielnylander.se>, 2006.
+# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
+# This file is distributed under the same license as the package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eiciel 0.9-1\n"
+"Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2014-08-20 09:53+0200\n"
-"PO-Revision-Date: 2010-06-02 23:23+0200\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
-"Language: sv\n"
+"POT-Creation-Date: 2015-09-11 15:33+0200\n"
+"PO-Revision-Date: 2015-09-08 10:20\n"
+"Last-Translator: Novell language <language@novell.com>\n"
+"Language-Team: Novell language <language@novell.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +20,7 @@ msgstr "<b>Filnamn</b>"
 
 #: src/eiciel_container.cpp:27 src/eiciel_container.cpp:183
 msgid "No file opened"
-msgstr "Ingen fil öppnades"
+msgstr "Ingen fil har öppnats"
 
 #: src/eiciel_container.cpp:30 src/eiciel_container.cpp:192
 #: src/eiciel_container.cpp:194
@@ -31,16 +29,16 @@ msgstr "Om..."
 
 #: src/eiciel_container.cpp:48 src/eiciel_nautilus_page.cpp:136
 msgid "Access Control List"
-msgstr "Tillgångskontrollista"
+msgstr "Åtkomstkontrollista (ACL)"
 
 #: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
 msgid "Extended user attributes"
 msgstr "Utökade användarattribut"
 
 #: src/eiciel_container.cpp:100
-#, fuzzy, c-format
+#, c-format
 msgid "Could not show the help file: %s"
-msgstr "Kunde inte visa hjälpfilen även om den hittades"
+msgstr "Det gick inte att visa hjälpfilen: %s"
 
 #: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
@@ -48,7 +46,7 @@ msgstr "Välj en fil eller en katalog"
 
 #: src/eiciel_container.cpp:145
 msgid "Could not open the file \""
-msgstr "Kunde inte öppna filen \""
+msgstr "Det gick inte att öppna filen \""
 
 #: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
@@ -56,12 +54,13 @@ msgstr "Endast vanliga filer eller kataloger stöds"
 
 #: src/acl_manager.cpp:542
 msgid "Textual representation of the ACL is wrong"
-msgstr "Textrepresentation av tillgångskontrollistan är fel"
+msgstr "Textrepresentationen av ACL är felaktig"
 
 #: src/acl_manager.cpp:564
 msgid "Default textual representation of the ACL is wrong"
-msgstr "Förvald textrepresentation av tillgångkontrollistan är fel"
+msgstr "Standardtextrepresentationen av ACL är felaktig"
 
+#. Add columns and link them to the model
 #: src/eiciel_xattr_window.cpp:39
 msgid "Name"
 msgstr "Namn"
@@ -72,15 +71,15 @@ msgstr "Värde"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "Kunde inte byta namn på attribut: "
+msgstr "Det gick inte att byta namn på attributnamnet:"
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "Kunde inte ändra attributvärde: "
+msgstr "Det gick inte att ändra attributvärdet:"
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "Kunde inte ta bort attribut: "
+msgstr "Det gick inte att ta bort attributet:"
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
@@ -88,20 +87,19 @@ msgstr "Nytt attribut"
 
 #: src/eiciel_xattr_window.cpp:318
 msgid "New value"
-msgstr "Nytt värde"
+msgstr "NYTT VÄRDE"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "Kunde inte lägga till attribut: "
+msgstr "Det gick inte att lägga till attribut:"
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
-msgstr ""
+msgstr "Skriv ut versionsinformation"
 
 #: src/eiciel_standalone.cpp:51
-#, fuzzy
 msgid "Access control list editor"
-msgstr "Tillgångskontrollista"
+msgstr "ACL-redigerare"
 
 #: src/eiciel_main_controller.cpp:172
 msgid "Mask"
@@ -109,32 +107,31 @@ msgstr "Mask"
 
 #: src/eiciel_main_controller.cpp:177
 msgid "Other"
-msgstr "Annat"
+msgstr "Övriga"
 
 #: src/eiciel_main_controller.cpp:250
 msgid "Default Mask"
-msgstr "Förvald mask"
+msgstr "Standardmask"
 
 #: src/eiciel_main_controller.cpp:258
 msgid "Default Other"
-msgstr "Förvald annan"
+msgstr "Annan standard"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "Kunde inte lägga till post i tillgångkontrollista: "
+msgstr "Det gick inte att lägga till ACL-post:"
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "Kunde inte ta bort post i tillgångkontrollista: "
+msgstr "Det gick inte att ta bort ACL-post:"
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "Kunde inte ändra post i tillgångkontrollista: "
+msgstr "Det gick inte att ändra ACL-post:"
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr ""
-"Är du säker att du villa ta bort alla förvalda poster i tillgångkontrollista?"
+msgstr "Är du säker på att du vill ta bort alla ACL-standardposter?"
 
 #: src/eiciel_main_window.cpp:26
 #, fuzzy
@@ -143,7 +140,7 @@ msgstr "Deltagarlista"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
-msgstr ""
+msgstr "Det finns behörigheter utan effekt"
 
 #: src/eiciel_main_window.cpp:33
 #, fuzzy
@@ -180,12 +177,11 @@ msgstr "Deltagarlista"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
-msgstr ""
+msgstr "Avancerade funktioner"
 
 #: src/eiciel_main_window.cpp:48
-#, fuzzy
 msgid "Name of participant"
-msgstr "Deltagare"
+msgstr "Deltagarens namn"
 
 #: src/eiciel_main_window.cpp:50
 msgid "Also show system participants"
@@ -211,25 +207,23 @@ msgstr "Kör"
 #: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
 #: src/eiciel_main_window.cpp:590
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: src/eiciel_main_window.cpp:154
 msgid "Only files"
-msgstr ""
+msgstr "Endast filer"
 
 #: src/eiciel_main_window.cpp:156
 msgid "Only directories"
-msgstr ""
+msgstr "Endast kataloger"
 
 #: src/eiciel_main_window.cpp:158
-#, fuzzy
 msgid "Both files and directories"
-msgstr "Välj en fil eller en katalog"
+msgstr "Både filer och kataloger"
 
 #: src/eiciel_main_window.cpp:166
-#, fuzzy
 msgid "Recursion"
-msgstr "Kör"
+msgstr "Rekursion"
 
 #: src/eiciel_main_window.cpp:201
 #, fuzzy
@@ -241,15 +235,20 @@ msgid "Participant"
 msgstr "Deltagare"
 
 #: src/eiciel_main_window.cpp:912
-#, fuzzy
 msgid "Participant not found"
-msgstr "Deltagare"
+msgstr "Deltagare hittades inte"
 
 #~ msgid "Default"
-#~ msgstr "Förvald"
+#~ msgstr "Standard"
 
 #~ msgid "Default ACL"
-#~ msgstr "Förvald tillgångskontrollista"
+#~ msgstr "Standard-ACL"
+
+#~ msgid "Participants List"
+#~ msgstr "Deltagarlista"
+
+#~ msgid "Execution"
+#~ msgstr "Körning"
 
 #~ msgid "Help file not found"
 #~ msgstr "Hjälpfil hittades inte"
