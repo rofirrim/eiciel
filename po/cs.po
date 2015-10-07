@@ -6,13 +6,15 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:18\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2015-09-12 09:22+0200\n"
+"Last-Translator: Tomáš Chvátal <tchvatal@suse.com>\n"
+"Language-Team: Czech <http://example.com/projects/eiciel/master/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 2.3\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -20,7 +22,7 @@ msgstr "<b>Jméno souboru</b>"
 
 #: src/eiciel_container.cpp:27 src/eiciel_container.cpp:183
 msgid "No file opened"
-msgstr "Nejsou otevřeny žádné soubory."
+msgstr "Není otevřen žádný soubor"
 
 #: src/eiciel_container.cpp:30 src/eiciel_container.cpp:192
 #: src/eiciel_container.cpp:194
@@ -42,7 +44,7 @@ msgstr "Nelze zobrazit soubor nápovědy: %s"
 
 #: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
-msgstr "Vyberte soubor nebo adresář."
+msgstr "Vyberte soubor nebo adresář"
 
 #: src/eiciel_container.cpp:145
 msgid "Could not open the file \""
@@ -50,19 +52,19 @@ msgstr "Nelze otevřít soubor \""
 
 #: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
-msgstr "Jsou podporovány pouze běžné soubory nebo adresáře."
+msgstr "Jsou podporovány pouze běžné soubory nebo adresáře"
 
 #: src/acl_manager.cpp:542
 msgid "Textual representation of the ACL is wrong"
-msgstr "Textová reprezentace ACL je chybná."
+msgstr "Textová reprezentace ACL je chybná"
 
 #: src/acl_manager.cpp:564
 msgid "Default textual representation of the ACL is wrong"
-msgstr "Výchozí textová reprezentace ACL je chybná."
+msgstr "Výchozí textová reprezentace ACL je chybná"
 
 #: src/eiciel_xattr_window.cpp:39
 msgid "Name"
-msgstr "Jméno"
+msgstr "Název"
 
 #: src/eiciel_xattr_window.cpp:55
 msgid "Value"
@@ -70,15 +72,15 @@ msgstr "Hodnota"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "Nelze přejmenovat název atributu."
+msgstr "Nelze přejmenovat název atributu: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "Nelze změnit hodnotu atributu:"
+msgstr "Nelze změnit hodnotu atributu: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "Nelze odstranit atribut."
+msgstr "Nelze odstranit atribut: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
@@ -90,7 +92,7 @@ msgstr "NOVÁ HODNOTA"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "Nelze přidat atribut:"
+msgstr "Nelze přidat atribut: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
@@ -118,15 +120,15 @@ msgstr "Výchozí ostatní"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "Nelze přidat položku ACL:"
+msgstr "Nelze přidat položku ACL: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "Nelze odstranit položku ACL:"
+msgstr "Nelze odstranit položku ACL: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "Nelze odstranit položku ACL:"
+msgstr "Nelze upravit položku ACL: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
@@ -134,25 +136,23 @@ msgstr "Opravdu chcete odstranit všechny výchozí položky ACL?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>Současní účastníci v ACL</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
 msgstr "Existují neplatná oprávnění"
 
 #: src/eiciel_main_window.cpp:33
-#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "Jméno účastníka"
+msgstr "Odebrat účastníka z ACL"
 
 #: src/eiciel_main_window.cpp:34
-#, fuzzy
 msgid "Edit default participants"
-msgstr "Jméno účastníka"
+msgstr "Upravit výchozí účastníky"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>Dostupní účastníci</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
@@ -163,14 +163,12 @@ msgid "Group"
 msgstr "Skupina"
 
 #: src/eiciel_main_window.cpp:40
-#, fuzzy
 msgid "Default participant"
-msgstr "Jméno účastníka"
+msgstr "Výchozí účastník"
 
 #: src/eiciel_main_window.cpp:45
-#, fuzzy
 msgid "Add participant to ACL"
-msgstr "Seznam účastníků"
+msgstr "Přidat účastníka do ACL"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -197,9 +195,8 @@ msgid "Write"
 msgstr "Zápis"
 
 #: src/eiciel_main_window.cpp:136
-#, fuzzy
 msgid "Execute"
-msgstr "Spouštění"
+msgstr "Spustit"
 
 #: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
 #: src/eiciel_main_window.cpp:590
@@ -223,9 +220,8 @@ msgid "Recursion"
 msgstr "Rekurze"
 
 #: src/eiciel_main_window.cpp:201
-#, fuzzy
 msgid "Filter participants"
-msgstr "Jméno účastníka"
+msgstr "Filtrovat účastníky"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
