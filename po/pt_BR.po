@@ -6,13 +6,16 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:10\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2015-10-10 19:32+0200\n"
+"Last-Translator: Ronan Chagas <ronisbr@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://10n.opensuse.org/projects/eiciel/master/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.3\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -134,25 +137,23 @@ msgstr "Tem certeza de que deseja remover todas as entradas padrão de ACL?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>Atuais participantes na ACL</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
 msgstr "Há permissões ineficientes"
 
 #: src/eiciel_main_window.cpp:33
-#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "Nome do participante"
+msgstr "Remover participante da ACL"
 
 #: src/eiciel_main_window.cpp:34
-#, fuzzy
 msgid "Edit default participants"
-msgstr "Nome do participante"
+msgstr "Editar participantes padrões"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>Participantes disponíveis</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
@@ -163,14 +164,12 @@ msgid "Group"
 msgstr "Grupo"
 
 #: src/eiciel_main_window.cpp:40
-#, fuzzy
 msgid "Default participant"
-msgstr "Nome do participante"
+msgstr "Participante padrão"
 
 #: src/eiciel_main_window.cpp:45
-#, fuzzy
 msgid "Add participant to ACL"
-msgstr "Lista de Participantes"
+msgstr "Adicionar participante à ACL"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -197,9 +196,8 @@ msgid "Write"
 msgstr "Gravação"
 
 #: src/eiciel_main_window.cpp:136
-#, fuzzy
 msgid "Execute"
-msgstr "Execução"
+msgstr "Executar"
 
 #: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
 #: src/eiciel_main_window.cpp:590
@@ -223,9 +221,8 @@ msgid "Recursion"
 msgstr "Recursão"
 
 #: src/eiciel_main_window.cpp:201
-#, fuzzy
 msgid "Filter participants"
-msgstr "Nome do participante"
+msgstr "Filtrar participantes"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
