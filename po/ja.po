@@ -6,13 +6,16 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:10\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2015-10-11 02:48+0200\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <http://10n.opensuse.org/projects/eiciel/master/ja/>"
+"\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.3\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -134,25 +137,23 @@ msgstr "ACLデフォルトエントリをすべて削除しますか?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>ACL 内に書かれている現在の参加者</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
 msgstr "無効な許可があります"
 
 #: src/eiciel_main_window.cpp:33
-#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "参加者の名前"
+msgstr "ACL から参加者を削除する"
 
 #: src/eiciel_main_window.cpp:34
-#, fuzzy
 msgid "Edit default participants"
-msgstr "参加者の名前"
+msgstr "既定の参加者を編集する"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>利用可能な参加者</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
@@ -163,14 +164,12 @@ msgid "Group"
 msgstr "グループ"
 
 #: src/eiciel_main_window.cpp:40
-#, fuzzy
 msgid "Default participant"
-msgstr "参加者の名前"
+msgstr "既定の参加者"
 
 #: src/eiciel_main_window.cpp:45
-#, fuzzy
 msgid "Add participant to ACL"
-msgstr "参加者リスト"
+msgstr "ACL に参加者を追加する"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -197,7 +196,6 @@ msgid "Write"
 msgstr "書き込み"
 
 #: src/eiciel_main_window.cpp:136
-#, fuzzy
 msgid "Execute"
 msgstr "実行"
 
@@ -223,9 +221,8 @@ msgid "Recursion"
 msgstr "再帰"
 
 #: src/eiciel_main_window.cpp:201
-#, fuzzy
 msgid "Filter participants"
-msgstr "参加者の名前"
+msgstr "参加者をフィルタする"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
