@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-10-11 02:48+0200\n"
+"PO-Revision-Date: 2015-10-11 02:49+0200\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <http://10n.opensuse.org/projects/eiciel/master/ja/>"
 "\n"
@@ -73,15 +73,15 @@ msgstr "値"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "属性名を変更できません:"
+msgstr "属性名を変更できません: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "属性値を変更できません:"
+msgstr "属性値を変更できません: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "属性を削除できません:"
+msgstr "属性を削除できませんでした: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
@@ -93,7 +93,7 @@ msgstr "新しい値"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "属性を追加できません:"
+msgstr "属性を追加できませんでした: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
@@ -121,15 +121,15 @@ msgstr "デフォルトその他"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "ACLエントリを追加できません:"
+msgstr "ACLエントリを追加できません: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "ACLエントリを削除できません:"
+msgstr "ACLエントリを削除できませんでした: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "ACLエントリを変更できません:"
+msgstr "ACLエントリを変更できませんでした: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
