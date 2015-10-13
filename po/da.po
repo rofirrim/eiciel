@@ -1,0 +1,233 @@
+# Danish translations for eiciel package.
+# Copyright (C) 2015 Free Software Foundation, Inc.
+# This file is distributed under the same license as the eiciel package.
+# Automatically generated, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: eiciel 0.9.11\n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
+"POT-Creation-Date: 2015-09-11 16:48+0200\n"
+"PO-Revision-Date: 2015-09-11 16:48+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/eiciel_container.cpp:26
+msgid "<b>File name</b>"
+msgstr ""
+
+#: src/eiciel_container.cpp:27 src/eiciel_container.cpp:183
+msgid "No file opened"
+msgstr ""
+
+#: src/eiciel_container.cpp:30 src/eiciel_container.cpp:192
+#: src/eiciel_container.cpp:194
+msgid "About..."
+msgstr ""
+
+#: src/eiciel_container.cpp:48 src/eiciel_nautilus_page.cpp:136
+msgid "Access Control List"
+msgstr ""
+
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
+msgid "Extended user attributes"
+msgstr ""
+
+#: src/eiciel_container.cpp:100
+#, c-format
+msgid "Could not show the help file: %s"
+msgstr ""
+
+#: src/eiciel_container.cpp:123
+msgid "Choose a file or a directory"
+msgstr ""
+
+#: src/eiciel_container.cpp:145
+msgid "Could not open the file \""
+msgstr ""
+
+#: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
+msgid "Only regular files or directories supported"
+msgstr ""
+
+#: src/acl_manager.cpp:542
+msgid "Textual representation of the ACL is wrong"
+msgstr ""
+
+#: src/acl_manager.cpp:564
+msgid "Default textual representation of the ACL is wrong"
+msgstr ""
+
+#: src/eiciel_xattr_window.cpp:39
+msgid "Name"
+msgstr ""
+
+#: src/eiciel_xattr_window.cpp:55
+msgid "Value"
+msgstr ""
+
+#: src/eiciel_xattr_window.cpp:176
+msgid "Could not rename attribute name: "
+msgstr ""
+
+#: src/eiciel_xattr_window.cpp:211
+msgid "Could not change attribute value: "
+msgstr ""
+
+#: src/eiciel_xattr_window.cpp:248
+msgid "Could not remove attribute: "
+msgstr ""
+
+#: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
+msgid "New attribute"
+msgstr ""
+
+#: src/eiciel_xattr_window.cpp:318
+msgid "New value"
+msgstr ""
+
+#: src/eiciel_xattr_window.cpp:333
+msgid "Could not add attribute: "
+msgstr ""
+
+#: src/eiciel_standalone.cpp:49
+msgid "Print version information"
+msgstr ""
+
+#: src/eiciel_standalone.cpp:51
+msgid "Access control list editor"
+msgstr ""
+
+#: src/eiciel_main_controller.cpp:172
+msgid "Mask"
+msgstr ""
+
+#: src/eiciel_main_controller.cpp:177
+msgid "Other"
+msgstr ""
+
+#: src/eiciel_main_controller.cpp:250
+msgid "Default Mask"
+msgstr ""
+
+#: src/eiciel_main_controller.cpp:258
+msgid "Default Other"
+msgstr ""
+
+#: src/eiciel_main_controller.cpp:328
+msgid "Could not add ACL entry: "
+msgstr ""
+
+#: src/eiciel_main_controller.cpp:390
+msgid "Could not remove ACL entry: "
+msgstr ""
+
+#: src/eiciel_main_controller.cpp:487
+msgid "Could not modify ACL entry: "
+msgstr ""
+
+#: src/eiciel_main_controller.cpp:516
+msgid "Are you sure you want to remove all ACL default entries?"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:26
+msgid "<b>Current participants in ACL</b>"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:32
+msgid "There are ineffective permissions"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:33
+msgid "Remove participant from ACL"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:34
+msgid "Edit default participants"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:35
+msgid "<b>Available participants</b>"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:38
+msgid "User"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:39
+msgid "Group"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:40
+msgid "Default participant"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:45
+msgid "Add participant to ACL"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:46
+msgid "Advanced features"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:48
+msgid "Name of participant"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:50
+msgid "Also show system participants"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:112
+msgid "Entry"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:115
+msgid "Read"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:126
+msgid "Write"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:136
+msgid "Execute"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
+#: src/eiciel_main_window.cpp:590
+msgid "None"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:154
+msgid "Only files"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:156
+msgid "Only directories"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:158
+msgid "Both files and directories"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:166
+msgid "Recursion"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:201
+msgid "Filter participants"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:222
+msgid "Participant"
+msgstr ""
+
+#: src/eiciel_main_window.cpp:912
+msgid "Participant not found"
+msgstr ""
