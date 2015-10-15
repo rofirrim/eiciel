@@ -8,13 +8,15 @@ msgstr ""
 "Project-Id-Version: Eiciel 0.9\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2010-06-02 23:22+0200\n"
-"Last-Translator: Roger Ferrer Ibáñez <rofi@ya.com>\n"
-"Language-Team: Catalan <ca@li.org>\n"
+"PO-Revision-Date: 2015-10-15 16:13+0200\n"
+"Last-Translator: David Medina <medipas@gmail.com>\n"
+"Language-Team: Catalan <http://10n.opensuse.org/projects/eiciel/master/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.3\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -52,7 +54,7 @@ msgstr "No es pot obrir el fitxer \""
 
 #: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
-msgstr "Només es poden escollir fitxers ordinaris o directoris."
+msgstr "Només s'admeten fitxers o directoris ordinaris"
 
 #: src/acl_manager.cpp:542
 msgid "Textual representation of the ACL is wrong"
