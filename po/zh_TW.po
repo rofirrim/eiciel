@@ -6,13 +6,16 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:11\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2015-10-17 04:19+0200\n"
+"Last-Translator: Ramax Lo <ramaxlo@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) "
+"<http://10n.opensuse.org/projects/eiciel/master/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.3\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -134,25 +137,23 @@ msgstr "您確定要移除所有 ACL 預設項目嗎？"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>目前 ACL 中的關係者</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
 msgstr "具有無效的許可權"
 
 #: src/eiciel_main_window.cpp:33
-#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "參與者名稱"
+msgstr "自 ACL 移除關係者"
 
 #: src/eiciel_main_window.cpp:34
-#, fuzzy
 msgid "Edit default participants"
-msgstr "參與者名稱"
+msgstr "編輯預設的關係者"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>已有的關係者</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
@@ -163,14 +164,12 @@ msgid "Group"
 msgstr "群組"
 
 #: src/eiciel_main_window.cpp:40
-#, fuzzy
 msgid "Default participant"
-msgstr "參與者名稱"
+msgstr "預設關係者"
 
 #: src/eiciel_main_window.cpp:45
-#, fuzzy
 msgid "Add participant to ACL"
-msgstr "參與者清單"
+msgstr "加入關係者至 ACL"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -178,11 +177,11 @@ msgstr "進階功能"
 
 #: src/eiciel_main_window.cpp:48
 msgid "Name of participant"
-msgstr "參與者名稱"
+msgstr "關係者名稱"
 
 #: src/eiciel_main_window.cpp:50
 msgid "Also show system participants"
-msgstr "也顯示系統參與者"
+msgstr "也顯示系統關係者"
 
 #: src/eiciel_main_window.cpp:112
 msgid "Entry"
@@ -197,7 +196,6 @@ msgid "Write"
 msgstr "寫入"
 
 #: src/eiciel_main_window.cpp:136
-#, fuzzy
 msgid "Execute"
 msgstr "執行"
 
@@ -223,17 +221,16 @@ msgid "Recursion"
 msgstr "遞迴"
 
 #: src/eiciel_main_window.cpp:201
-#, fuzzy
 msgid "Filter participants"
-msgstr "參與者名稱"
+msgstr "過濾關係者"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
-msgstr "參與者"
+msgstr "關係者"
 
 #: src/eiciel_main_window.cpp:912
 msgid "Participant not found"
-msgstr "找不到參與者"
+msgstr "找不到關係者"
 
 #~ msgid "Default"
 #~ msgstr "預設值"
