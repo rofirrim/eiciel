@@ -6,13 +6,15 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:09\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2015-10-29 07:32+0200\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
+"Language-Team: Spanish <http://10n.opensuse.org/projects/eiciel/master/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.3\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -58,7 +60,7 @@ msgstr "La representación textual de la ACL es incorrecta"
 
 #: src/acl_manager.cpp:564
 msgid "Default textual representation of the ACL is wrong"
-msgstr "La representación textual por defecto de la ACL es incorrecta"
+msgstr "La representación textual predeterminada de la ACL es incorrecta"
 
 #: src/eiciel_xattr_window.cpp:39
 msgid "Name"
@@ -70,27 +72,27 @@ msgstr "Valor"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "No es posible modificar el nombre del atributo:"
+msgstr "No es posible modificar el nombre del atributo: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "No es posible modificar el valor del atributo:"
+msgstr "No es posible modificar el valor del atributo: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "No es posible eliminar el atributo:"
+msgstr "No es posible quitar el atributo: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
-msgstr "Nuevo atributo"
+msgstr "Atributo nuevo"
 
 #: src/eiciel_xattr_window.cpp:318
 msgid "New value"
-msgstr "NUEVO VALOR"
+msgstr "Valor nuevo"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "No es posible añadir el atributo:"
+msgstr "No es posible añadir el atributo: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
@@ -110,11 +112,11 @@ msgstr "Otros"
 
 #: src/eiciel_main_controller.cpp:250
 msgid "Default Mask"
-msgstr "Máscara por defecto"
+msgstr "Máscara predeterminada"
 
 #: src/eiciel_main_controller.cpp:258
 msgid "Default Other"
-msgstr "Otros por defecto"
+msgstr "Otros predeterminados"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
@@ -122,15 +124,16 @@ msgstr "No es posible añadir la entrada de ACL:"
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "No es posible eliminar la entrada de ACL:"
+msgstr "No es posible quitar la entrada de ACL: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "No es posible modificar la entrada de ACL:"
+msgstr "No es posible modificar la entrada de ACL: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr "¿Seguro que desea eliminar todas las entradas de la ACL por defecto?"
+msgstr ""
+"¿Seguro que desea eliminar todas las entradas predeterminadas de la ACL?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
@@ -146,7 +149,7 @@ msgstr "Quitar participante de la ACL"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit default participants"
-msgstr "Editar participantes por defecto"
+msgstr "Editar participantes predeterminados"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
@@ -162,7 +165,7 @@ msgstr "Grupo"
 
 #: src/eiciel_main_window.cpp:40
 msgid "Default participant"
-msgstr "Participante por defecto"
+msgstr "Participante predeterminado"
 
 #: src/eiciel_main_window.cpp:45
 msgid "Add participant to ACL"
