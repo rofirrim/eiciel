@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-11-04 12:12+0200\n"
+"PO-Revision-Date: 2015-11-04 12:16+0200\n"
 "Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
 "Language-Team: Dutch <http://10n.opensuse.org/projects/eiciel/master/nl/>\n"
 "Language: nl\n"
@@ -72,15 +72,15 @@ msgstr "Waarde"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "Kan de naam van het attribuut niet wijzigen:"
+msgstr "Kan de naam van het attribuut niet wijzigen: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "Kan de waarde van het attribuut niet wijzigen:"
+msgstr "Kan de waarde van het attribuut niet wijzigen: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "Kan het attribuut niet verwijderen:"
+msgstr "Kan het attribuut niet verwijderen: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
@@ -92,7 +92,7 @@ msgstr "NIEUWE WAARDE"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "Kan het attribuut niet toevoegen:"
+msgstr "Kan het attribuut niet toevoegen: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
@@ -120,15 +120,15 @@ msgstr "Standaard overige"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "Kan item niet toevoegen aan toegangscontrolelijst:"
+msgstr "Kan item niet toevoegen aan toegangscontrolelijst: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "Kan item niet verwijderen uit toegangscontrolelijst:"
+msgstr "Kan item niet verwijderen uit toegangscontrolelijst: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "Kan item in toegangscontrolelijst niet wijzigen:"
+msgstr "Kan item in toegangscontrolelijst niet wijzigen: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
@@ -136,7 +136,7 @@ msgstr "Wilt u alle standaarditems uit de toegangscontrolelijst verwijderen?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr "<b>Huidige deelnemers aan ACL</b>"
+msgstr "<b>Huidige deelnemers aan toegangscontrolelijst</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
@@ -144,7 +144,7 @@ msgstr "Er zijn niet-effectieve toestemmingen"
 
 #: src/eiciel_main_window.cpp:33
 msgid "Remove participant from ACL"
-msgstr "Deelnemer verwijderen uit ACL"
+msgstr "Deelnemer verwijderen uit toegangscontrolelijst"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit default participants"
@@ -168,7 +168,7 @@ msgstr "Standaard deelnemer"
 
 #: src/eiciel_main_window.cpp:45
 msgid "Add participant to ACL"
-msgstr "Deelnemer toevoegen aan ACL"
+msgstr "Deelnemer toevoegen aan toegangscontrolelijst"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
