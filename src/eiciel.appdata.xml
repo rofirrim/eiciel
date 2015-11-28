@@ -28,4 +28,8 @@
  </screenshots>
  <url type="homepage">http://rofi.roger-ferrer.org/eiciel/</url>
  <updatecontact>rofirrim@gmail.com</updatecontact>
+ <kudos>
+   <kudo>HiDpiIcon</kudo>
+   <kudo>ModernToolkit</kudo>
+ </kudos>
 </application>
