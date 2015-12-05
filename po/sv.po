@@ -6,13 +6,16 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:20\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2015-12-05 23:23+0200\n"
+"Last-Translator: Jonas Svensson <jonas@ekhorva.se>\n"
+"Language-Team: Swedish <http://l10n.opensuse.org/projects/eiciel/master/sv/>"
+"\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.3\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -133,18 +136,16 @@ msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Är du säker på att du vill ta bort alla ACL-standardposter?"
 
 #: src/eiciel_main_window.cpp:26
-#, fuzzy
 msgid "<b>Current participants in ACL</b>"
-msgstr "Deltagarlista"
+msgstr "<b>Aktuella deltagare i ACL</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
 msgstr "Det finns behörigheter utan effekt"
 
 #: src/eiciel_main_window.cpp:33
-#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "Deltagare"
+msgstr "Ta bort deltagare från ACL"
 
 #: src/eiciel_main_window.cpp:34
 #, fuzzy
