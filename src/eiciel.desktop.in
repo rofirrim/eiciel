@@ -13,3 +13,4 @@ Terminal=false
 Type=Application
 Categories=GNOME;System;FileTools;
 Version=@DSK_VERSION@
+Keyword=access control list;ACL;permissions;editor;

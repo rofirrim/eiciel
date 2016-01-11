@@ -32,4 +32,10 @@
    <kudo>HiDpiIcon</kudo>
    <kudo>ModernToolkit</kudo>
  </kudos>
+ <keywords>
+     <keyword>access control list</keyword>
+     <keyword>ACL</keyword>
+     <keyword>permissions</keyword>
+     <keyword>editor</keyword>
+ </keywords>
 </application>
