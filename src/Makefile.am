@@ -29,11 +29,12 @@ eiciel_SOURCES += \
 	xattr_list_model.hpp
 endif
 
+if ENABLE_NAUTILUS_EXTENSION
 nautilusextdir=@NAUTILUS_EXTENSIONS_DIR@
 nautilusext_LTLIBRARIES=libeiciel-nautilus.la
 libeiciel_nautilus_la_CPPFLAGS = -I@top_srcdir@/lib -DDATADIR="\"$(datadir)\"" -DPKGDATADIR="\"$(pkgdatadir)\"" 
-libeiciel_nautilus_la_CXXFLAGS = @GTKMM_CFLAGS@ -Wall 
-libeiciel_nautilus_la_LDFLAGS =  -module -avoid-version @GTKMM_LIBS@ @ACL_LIBS@
+libeiciel_nautilus_la_CXXFLAGS = @GTKMM_CFLAGS@ @NAUTILUS_EXTENSION_CFLAGS@ -Wall
+libeiciel_nautilus_la_LDFLAGS =  -module -avoid-version @GTKMM_LIBS@ @NAUTILUS_EXTENSION_LIBS@ @ACL_LIBS@
 libeiciel_nautilus_la_SOURCES = \
     acl_manager.cpp \
 	acl_manager.hpp \
@@ -58,6 +59,7 @@ libeiciel_nautilus_la_SOURCES += \
 	eiciel_xattr_controller.cpp \
 	eiciel_xattr_controller.hpp \
 	xattr_list_model.hpp
+endif
 endif
 
 desktopfilesdir=@datadir@/applications

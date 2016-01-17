@@ -51,7 +51,7 @@ AC_ARG_WITH(gnome-version,
 AS_HELP_STRING([--with-gnome-version=VERSION],[GNOME major version (2, 3, or check; default is check)])
 ,
 [
-if test x$withval != x2 -a x$withval != x3 -a x$withval != xchceck;
+if test x$withval != x2 -a x$withval != x3 -a x$withval != xcheck;
 then
   AC_MSG_ERROR([Valid choices for --with-gnome-version= are 2, 3, and check.])
 fi
@@ -61,7 +61,7 @@ fi
 
 if test x$with_gnome_version = xcheck;
 then
-  PKG_CHECK_EXISTS(libnautilus-extension >= 3.0.0,
+  PKG_CHECK_EXISTS(gtkmm-3.0 >= 3.0.0,
   [with_gnome_version=3],
   [with_gnome_version=2])
 else
@@ -69,19 +69,28 @@ else
   PKG_PROG_PKG_CONFIG
 fi
 
+dnl Check if we want to build nautilus extension
+AC_ARG_ENABLE([nautilus-extension],
+  [AS_HELP_STRING([--enable-nautilus-extension], [Build nautilus extension (default is yes)])],
+  [],
+  [enable_nautilus_extension=yes])
+AM_CONDITIONAL([ENABLE_NAUTILUS_EXTENSION], [test "x$enable_nautilus_extension" = "xyes"])
+
 AH_TEMPLATE([USING_GNOME2],[Define to 1 if building eiciel for GNOME 2 (instead of GNOME 3)])
 
+AS_IF([test "x$with_gnome_version" = "x3"], [
 dnl Check for gtkmm-3 and dependencies from GNOME 3 ...
-if test x$with_gnome_version = x3;
-then
   AC_MSG_NOTICE([checking for dependencies for GNOME 3 version of eiciel])
-  PKG_CHECK_MODULES(GTKMM, gtkmm-3.0 >= 3.0.0 libnautilus-extension >= 3.0.0)
-else
+  PKG_CHECK_MODULES(GTKMM, gtkmm-3.0 >= 3.0.0)
+  AM_COND_IF([ENABLE_NAUTILUS_EXTENSION], [PKG_CHECK_MODULES(NAUTILUS_EXTENSION, libnautilus-extension >= 3.0.0)])
+], [
 dnl ... or check for gtkmm-2.4 and dependencies from GNOME 2
   AC_MSG_NOTICE([checking for dependencies for GNOME 2 version of eiciel])
-  PKG_CHECK_MODULES(GTKMM, gtkmm-2.4 >= 2.4.0 libgnome-2.0 >= 2.10.0 libnautilus-extension >= 2.10.0 libnautilus-extension < 2.90, [AC_DEFINE(USING_GNOME2, 1)])
-fi
+  PKG_CHECK_MODULES(GTKMM, gtkmm-2.4 >= 2.4.0 libgnome-2.0 >= 2.10.0, [AC_DEFINE(USING_GNOME2, 1)])
+  AM_COND_IF([ENABLE_NAUTILUS_EXTENSION], [PKG_CHECK_MODULES(NAUTILUS_EXTENSION, libnautilus-extension >= 2.10.0 libnautilus-extension < 2.90)])
+])
 
+AM_COND_IF([ENABLE_NAUTILUS_EXTENSION], [
 AC_MSG_CHECKING([for nautilus extensions directory])
 
 AC_ARG_WITH(nautilus-extensions-dir, 
@@ -108,6 +117,7 @@ fi
   fi
 ]
 )
+])
 
 enable_eua=no
 AC_MSG_CHECKING([for extended user attributes support])
