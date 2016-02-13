@@ -31,7 +31,7 @@ msgstr "Info..."
 
 #: src/eiciel_container.cpp:48 src/eiciel_nautilus_page.cpp:136
 msgid "Access Control List"
-msgstr "Access Control List"
+msgstr "Zugriffssteuerungsliste"
 
 #: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
 msgid "Extended user attributes"
