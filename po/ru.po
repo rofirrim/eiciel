@@ -6,13 +6,17 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:20\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2016-03-30 16:10+0000\n"
+"Last-Translator: Andrei Dziahel <develop7@develop7.info>\n"
+"Language-Team: Russian <http://l10n.opensuse.org/projects/eiciel/master/ru/>"
+"\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.5\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -72,15 +76,15 @@ msgstr "Значение"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "Не удалось переименовать атрибут:"
+msgstr "Не удалось переименовать атрибут: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "Не удалось изменить значение атрибута:"
+msgstr "Не удалось изменить значение атрибута: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "Не удалось удалить атрибут:"
+msgstr "Не удалось удалить атрибут: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
@@ -92,7 +96,7 @@ msgstr "НОВОЕ ЗНАЧЕНИЕ"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "Не удалось добавить атрибут:"
+msgstr "Не удалось добавить атрибут: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
@@ -120,15 +124,15 @@ msgstr "Другое значение по умолчанию"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "Не удается добавить запись ACL:"
+msgstr "Не удается добавить запись ACL: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "Не удается удалить запись ACL:"
+msgstr "Не удается удалить запись ACL: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "Не удается изменить запись ACL:"
+msgstr "Не удается изменить запись ACL: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
@@ -136,25 +140,23 @@ msgstr "Подтверждаете удаление всех записей ACL 
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>Текущие участники ACL</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
 msgstr "Существуют недействующие разрешения"
 
 #: src/eiciel_main_window.cpp:33
-#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "Имя участника"
+msgstr "Удалить участника из ACL"
 
 #: src/eiciel_main_window.cpp:34
-#, fuzzy
 msgid "Edit default participants"
-msgstr "Имя участника"
+msgstr "Редактировать учатсников по умолчанию"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>Доступные участники</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
@@ -165,14 +167,12 @@ msgid "Group"
 msgstr "Группа"
 
 #: src/eiciel_main_window.cpp:40
-#, fuzzy
 msgid "Default participant"
-msgstr "Имя участника"
+msgstr "Участник по умолчанию"
 
 #: src/eiciel_main_window.cpp:45
-#, fuzzy
 msgid "Add participant to ACL"
-msgstr "Список участников"
+msgstr "Добавить участника в ACL"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -199,7 +199,6 @@ msgid "Write"
 msgstr "Запись"
 
 #: src/eiciel_main_window.cpp:136
-#, fuzzy
 msgid "Execute"
 msgstr "Выполнение"
 
@@ -225,7 +224,6 @@ msgid "Recursion"
 msgstr "Рекурсия"
 
 #: src/eiciel_main_window.cpp:201
-#, fuzzy
 msgid "Filter participants"
 msgstr "Имя участника"
 
