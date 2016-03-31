@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2016-03-31 05:56+0000\n"
+"PO-Revision-Date: 2016-03-31 06:16+0000\n"
 "Last-Translator: mohammad alhargan <malham1@gmail.com>\n"
 "Language-Team: Arabic <http://l10n.opensuse.org/projects/eiciel/master/ar/>\n"
 "Language: ar\n"
@@ -45,15 +45,15 @@ msgstr "تعذر إظهار ملف التعليمات: %s"
 
 #: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
-msgstr "اختيار ملف أو دليل"
+msgstr "اختر ملف أو مجلد"
 
 #: src/eiciel_container.cpp:145
 msgid "Could not open the file \""
-msgstr "تعذر فتح الملف /"
+msgstr "تعذر فتح الملف \""
 
 #: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
-msgstr "يتم دعم الملفات أو الدلائل العادية فقط"
+msgstr "يتم دعم الملفات أو المجلدات العادية فقط"
 
 #: src/acl_manager.cpp:542
 msgid "Textual representation of the ACL is wrong"
@@ -61,7 +61,7 @@ msgstr "التمثيل النصي لقوائم التحكم بالوصول (ACL)
 
 #: src/acl_manager.cpp:564
 msgid "Default textual representation of the ACL is wrong"
-msgstr "التمثيل النصي الافتراضي لقوائم التحكم بالوصول (ACL) غير صحيح"
+msgstr "التمثيل النصي الافتراضي لقوائم التحكم بالوصول ACL غير صحيح"
 
 #: src/eiciel_xattr_window.cpp:39
 msgid "Name"
@@ -73,7 +73,7 @@ msgstr "القيمة"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "تعذر تغيير اسم السمة:"
+msgstr "تعذر تغيير اسم السمة: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
@@ -93,11 +93,11 @@ msgstr "قيمة جديدة"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "تعذرت إضافة السمة:"
+msgstr "تعذرت إضافة السمة: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
-msgstr "معلومات إصدار الطباعة"
+msgstr "طباعة معلومات الإصدار"
 
 #: src/eiciel_standalone.cpp:51
 msgid "Access control list editor"
@@ -121,15 +121,15 @@ msgstr "الآخر الافتراضي"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "تعذرت إضافة إدخال قوائم التحكم بالوصول (ACL):"
+msgstr "تعذرت إضافة إدخال ACL: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "تعذرت إزالة إدخال قوائم التحكم بالوصول (ACL):"
+msgstr "تعذر إزالة إدخال قوائم التحكم بالوصول ACL: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "تعذر تعديل إدخال قوائم التحكم بالوصول (ACL):"
+msgstr "تعذر تعديل إدخال قوائم التحكم بالوصول (ACL): "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
@@ -212,11 +212,11 @@ msgstr "ملفات فقط"
 
 #: src/eiciel_main_window.cpp:156
 msgid "Only directories"
-msgstr "دلائل فقط"
+msgstr "مجلدات فقط"
 
 #: src/eiciel_main_window.cpp:158
 msgid "Both files and directories"
-msgstr "الملفات والدلائل معًا"
+msgstr "الملفات والمجلدات معًا"
 
 #: src/eiciel_main_window.cpp:166
 msgid "Recursion"
