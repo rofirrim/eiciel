@@ -6,13 +6,15 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:19\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2016-03-31 16:26+0000\n"
+"Last-Translator: YunSeok Choi <xein@naver.com>\n"
+"Language-Team: Korean <http://l10n.opensuse.org/projects/eiciel/master/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.5\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -42,7 +44,7 @@ msgstr "도움말 파일을 표시할 수 없습니다: %s"
 
 #: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
-msgstr "파일 또는 디렉토리를 선택합니다."
+msgstr "파일 또는 디렉토리를 선택합니다"
 
 #: src/eiciel_container.cpp:145
 msgid "Could not open the file \""
@@ -50,15 +52,15 @@ msgstr "파일을 열 수 없습니다. \""
 
 #: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
-msgstr "일반 파일이나 디렉토리만 지원됩니다."
+msgstr "일반 파일이나 디렉토리만 지원됩니다"
 
 #: src/acl_manager.cpp:542
 msgid "Textual representation of the ACL is wrong"
-msgstr "ACL의 텍스트 표현이 잘못되었습니다."
+msgstr "ACL의 문법이 잘못되었습니다"
 
 #: src/acl_manager.cpp:564
 msgid "Default textual representation of the ACL is wrong"
-msgstr "ACL의 기본 텍스트 표현이 잘못되었습니다."
+msgstr "ACL의 기본 문법이 잘못되었습니다"
 
 #: src/eiciel_xattr_window.cpp:39
 msgid "Name"
@@ -138,7 +140,7 @@ msgstr ""
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
-msgstr "잘못된 권한이 있습니다."
+msgstr "잘못된 권한이 있습니다"
 
 #: src/eiciel_main_window.cpp:33
 #, fuzzy
@@ -233,7 +235,7 @@ msgstr "참가자"
 
 #: src/eiciel_main_window.cpp:912
 msgid "Participant not found"
-msgstr "참가자를 찾을 수 없습니다."
+msgstr "참가자를 찾을 수 없습니다"
 
 #~ msgid "Default"
 #~ msgstr "기본값"
