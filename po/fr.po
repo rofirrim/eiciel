@@ -6,13 +6,15 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:09\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2016-04-20 18:10+0000\n"
+"Last-Translator: Benoît Monin <benoit.monin@gmx.fr>\n"
+"Language-Team: French <http://l10n.opensuse.org/projects/eiciel/master/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.5\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -133,8 +135,9 @@ msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Voulez-vous vraiment supprimer toutes les entrées ACL par défaut ?"
 
 #: src/eiciel_main_window.cpp:26
+#, fuzzy
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>Participants actuels de l'ACL</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
@@ -143,16 +146,17 @@ msgstr "Il existe des autorisations inefficaces"
 #: src/eiciel_main_window.cpp:33
 #, fuzzy
 msgid "Remove participant from ACL"
-msgstr "Nom du participant"
+msgstr "Supprimer un participant de l'ACL"
 
 #: src/eiciel_main_window.cpp:34
 #, fuzzy
 msgid "Edit default participants"
-msgstr "Nom du participant"
+msgstr "Éditer les participants par défaut"
 
 #: src/eiciel_main_window.cpp:35
+#, fuzzy
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>Participants disponibles</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
@@ -165,12 +169,12 @@ msgstr "Groupe"
 #: src/eiciel_main_window.cpp:40
 #, fuzzy
 msgid "Default participant"
-msgstr "Nom du participant"
+msgstr "Participant par défaut"
 
 #: src/eiciel_main_window.cpp:45
 #, fuzzy
 msgid "Add participant to ACL"
-msgstr "Liste des participants"
+msgstr "Ajouter un participant à l'ACL"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -225,7 +229,7 @@ msgstr "Récursivité"
 #: src/eiciel_main_window.cpp:201
 #, fuzzy
 msgid "Filter participants"
-msgstr "Nom du participant"
+msgstr "Filtrer les participants"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
