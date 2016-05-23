@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-12-05 23:23+0200\n"
+"PO-Revision-Date: 2016-05-23 01:37+0000\n"
 "Last-Translator: Jonas Svensson <jonas@ekhorva.se>\n"
 "Language-Team: Swedish <http://l10n.opensuse.org/projects/eiciel/master/sv/>"
 "\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.3\n"
+"X-Generator: Weblate 2.6\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -148,14 +148,12 @@ msgid "Remove participant from ACL"
 msgstr "Ta bort deltagare från ACL"
 
 #: src/eiciel_main_window.cpp:34
-#, fuzzy
 msgid "Edit default participants"
-msgstr "Deltagare"
+msgstr "Redigerar standarddeltagare"
 
 #: src/eiciel_main_window.cpp:35
-#, fuzzy
 msgid "<b>Available participants</b>"
-msgstr "Deltagare"
+msgstr "<b>Tillgängliga deltagare</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
@@ -166,14 +164,12 @@ msgid "Group"
 msgstr "Grupp"
 
 #: src/eiciel_main_window.cpp:40
-#, fuzzy
 msgid "Default participant"
-msgstr "Deltagare"
+msgstr "Standarddeltagare"
 
 #: src/eiciel_main_window.cpp:45
-#, fuzzy
 msgid "Add participant to ACL"
-msgstr "Deltagarlista"
+msgstr "Lägg till deltagare till ACL"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -200,7 +196,6 @@ msgid "Write"
 msgstr "Skriv"
 
 #: src/eiciel_main_window.cpp:136
-#, fuzzy
 msgid "Execute"
 msgstr "Kör"
 
@@ -226,9 +221,8 @@ msgid "Recursion"
 msgstr "Rekursion"
 
 #: src/eiciel_main_window.cpp:201
-#, fuzzy
 msgid "Filter participants"
-msgstr "Deltagare"
+msgstr "Filtrera deltagare"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
