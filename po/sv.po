@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2016-05-23 01:37+0000\n"
+"PO-Revision-Date: 2016-05-23 01:38+0000\n"
 "Last-Translator: Jonas Svensson <jonas@ekhorva.se>\n"
 "Language-Team: Swedish <http://l10n.opensuse.org/projects/eiciel/master/sv/>"
 "\n"
@@ -73,15 +73,15 @@ msgstr "Värde"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "Det gick inte att byta namn på attributnamnet:"
+msgstr "Det gick inte att byta namn på attributnamnet: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "Det gick inte att ändra attributvärdet:"
+msgstr "Det gick inte att ändra attributvärdet: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "Det gick inte att ta bort attributet:"
+msgstr "Det gick inte att ta bort attributet: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
@@ -93,7 +93,7 @@ msgstr "NYTT VÄRDE"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "Det gick inte att lägga till attribut:"
+msgstr "Det gick inte att lägga till attribut: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
@@ -121,15 +121,15 @@ msgstr "Annan standard"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "Det gick inte att lägga till ACL-post:"
+msgstr "Det gick inte att lägga till ACL-post: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "Det gick inte att ta bort ACL-post:"
+msgstr "Det gick inte att ta bort ACL-post: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "Det gick inte att ändra ACL-post:"
+msgstr "Det gick inte att ändra ACL-post: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
