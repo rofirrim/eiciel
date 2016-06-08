@@ -6,13 +6,16 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:11\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2016-06-08 08:24+0000\n"
+"Last-Translator: Marguerite Su <i@marguerite.su>\n"
+"Language-Team: Chinese (China) "
+"<https://l10n.opensuse.org/projects/eiciel/master/zh_CN/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.6\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -20,7 +23,7 @@ msgstr "<b>文件名</b>"
 
 #: src/eiciel_container.cpp:27 src/eiciel_container.cpp:183
 msgid "No file opened"
-msgstr "没有打开文件"
+msgstr "未打开任何文件"
 
 #: src/eiciel_container.cpp:30 src/eiciel_container.cpp:192
 #: src/eiciel_container.cpp:194
@@ -33,7 +36,7 @@ msgstr "访问控制列表"
 
 #: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
 msgid "Extended user attributes"
-msgstr "扩展的用户特性"
+msgstr "扩展用户属性"
 
 #: src/eiciel_container.cpp:100
 #, c-format
@@ -42,23 +45,23 @@ msgstr "无法显示帮助文件：%s"
 
 #: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
-msgstr "选择文件或目录"
+msgstr "选择一个文件或文件夹"
 
 #: src/eiciel_container.cpp:145
 msgid "Could not open the file \""
-msgstr "无法打开文件\""
+msgstr "无法打开文件 \""
 
 #: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
-msgstr "仅支持常规文件或目录"
+msgstr "仅支持常规文件或文件夹"
 
 #: src/acl_manager.cpp:542
 msgid "Textual representation of the ACL is wrong"
-msgstr "ACL 的原文表示错误"
+msgstr "访问控制列表的文本表述错误"
 
 #: src/acl_manager.cpp:564
 msgid "Default textual representation of the ACL is wrong"
-msgstr "ACL 的默认原文表示错误"
+msgstr "访问控制列表的默认文本表述错误"
 
 #: src/eiciel_xattr_window.cpp:39
 msgid "Name"
@@ -70,19 +73,19 @@ msgstr "值"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "无法重命名特性名："
+msgstr "无法重命名属性名称： "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "无法更改特性值："
+msgstr "无法修改属性值： "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "无法去除特性："
+msgstr "无法移除属性： "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
-msgstr "新特性"
+msgstr "新属性"
 
 #: src/eiciel_xattr_window.cpp:318
 msgid "New value"
@@ -90,7 +93,7 @@ msgstr "新值"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "无法添加特性："
+msgstr "无法添加属性： "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
@@ -106,7 +109,7 @@ msgstr "掩码"
 
 #: src/eiciel_main_controller.cpp:177
 msgid "Other"
-msgstr "其他"
+msgstr "其它"
 
 #: src/eiciel_main_controller.cpp:250
 msgid "Default Mask"
@@ -118,41 +121,39 @@ msgstr "默认其它"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "无法添加 ACL 项："
+msgstr "无法添加访问控制列表项： "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "无法删除 ACL 项："
+msgstr "无法移除访问控制列表项： "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "无法修改 ACL 项："
+msgstr "无法修改访问控制列表项： "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr "您确定要去除所有 ACL 默认项吗？"
+msgstr "您确定您想要要移除全部访问控制列表默认项吗？"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>当前访问控制列表中的成员</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
-msgstr "存在无效参数"
+msgstr "存在无效权限"
 
 #: src/eiciel_main_window.cpp:33
-#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "参与者名称"
+msgstr "从访问控制列表中移除成员"
 
 #: src/eiciel_main_window.cpp:34
-#, fuzzy
 msgid "Edit default participants"
-msgstr "参与者名称"
+msgstr "编辑默认成员"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>可用成员</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
@@ -163,14 +164,12 @@ msgid "Group"
 msgstr "组"
 
 #: src/eiciel_main_window.cpp:40
-#, fuzzy
 msgid "Default participant"
-msgstr "参与者名称"
+msgstr "默认成员"
 
 #: src/eiciel_main_window.cpp:45
-#, fuzzy
 msgid "Add participant to ACL"
-msgstr "参与者列表"
+msgstr "向访问控制列表添加成员"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -178,11 +177,11 @@ msgstr "高级功能"
 
 #: src/eiciel_main_window.cpp:48
 msgid "Name of participant"
-msgstr "参与者名称"
+msgstr "成员名称"
 
 #: src/eiciel_main_window.cpp:50
 msgid "Also show system participants"
-msgstr "同时显示系统参与者"
+msgstr "也显示系统成员"
 
 #: src/eiciel_main_window.cpp:112
 msgid "Entry"
@@ -197,7 +196,6 @@ msgid "Write"
 msgstr "写"
 
 #: src/eiciel_main_window.cpp:136
-#, fuzzy
 msgid "Execute"
 msgstr "执行"
 
@@ -212,28 +210,27 @@ msgstr "仅文件"
 
 #: src/eiciel_main_window.cpp:156
 msgid "Only directories"
-msgstr "仅目录"
+msgstr "仅文件夹"
 
 #: src/eiciel_main_window.cpp:158
 msgid "Both files and directories"
-msgstr "文件和目录两者"
+msgstr "文件和文件夹"
 
 #: src/eiciel_main_window.cpp:166
 msgid "Recursion"
 msgstr "递归"
 
 #: src/eiciel_main_window.cpp:201
-#, fuzzy
 msgid "Filter participants"
-msgstr "参与者名称"
+msgstr "过滤器成员"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
-msgstr "参与者"
+msgstr "成员"
 
 #: src/eiciel_main_window.cpp:912
 msgid "Participant not found"
-msgstr "未找到参与者"
+msgstr "未找到成员"
 
 #~ msgid "Default"
 #~ msgstr "默认"
