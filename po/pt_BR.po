@@ -6,16 +6,16 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-10-10 19:33+0200\n"
-"Last-Translator: Ronan Chagas <ronisbr@gmail.com>\n"
+"PO-Revision-Date: 2016-09-27 20:40+0000\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive68@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
-"<http://10n.opensuse.org/projects/eiciel/master/pt_BR/>\n"
+"<https://l10n.opensuse.org/projects/eiciel/master/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.3\n"
+"X-Generator: Weblate 2.6\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -41,7 +41,7 @@ msgstr "Atributos estendidos do usuário"
 #: src/eiciel_container.cpp:100
 #, c-format
 msgid "Could not show the help file: %s"
-msgstr "Impossível mostrar o arquivo de ajuda: %s"
+msgstr "Não foi possível mostrar o arquivo de ajuda: %s"
 
 #: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
@@ -49,7 +49,7 @@ msgstr "Escolha um arquivo ou um diretório"
 
 #: src/eiciel_container.cpp:145
 msgid "Could not open the file \""
-msgstr "Impossível abrir o arquivo \""
+msgstr "Não foi possível abrir o arquivo \""
 
 #: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
@@ -73,15 +73,15 @@ msgstr "Valor"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "Impossível renomear o atributo: "
+msgstr "Não foi possível renomear o atributo: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "Impossível mudar o valor do atributo: "
+msgstr "Não foi possível mudar o valor do atributo: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "Impossível remover o atributo: "
+msgstr "Não foi possível remover o atributo: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
@@ -93,7 +93,7 @@ msgstr "VALOR NOVO"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "Impossível adicionar o atributo: "
+msgstr "Não foi possível adicionar o atributo: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
@@ -121,15 +121,15 @@ msgstr "Outro Padrão"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "Impossível adicionar a entrada de ACL: "
+msgstr "Não foi possível adicionar a entrada de ACL: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "Impossível remover a entrada de ACL: "
+msgstr "Não foi possível remover a entrada de ACL: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "Impossível modificar a entrada de ACL: "
+msgstr "Não foi possível modificar a entrada de ACL: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
