@@ -6,15 +6,16 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2016-11-06 16:22+0330\n"
-"Last-Translator: hayyan <joghdeshab@live.com>\n"
-"Language-Team: Persian <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2016-11-06 12:55+0000\n"
+"Last-Translator: hayyan rostami <hayyan71@yahoo.com>\n"
+"Language-Team: Persian <https://l10n.opensuse.org/projects/eiciel/master/fa/>"
+"\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Weblate 2.6\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -35,7 +36,7 @@ msgstr "لیست کنترل دسترسی"
 
 #: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
 msgid "Extended user attributes"
-msgstr ""
+msgstr "صفات تمدید شده ی کاربر"
 
 #: src/eiciel_container.cpp:100
 #, c-format
@@ -72,15 +73,15 @@ msgstr "مقدار"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "نمیتوان نام صفت را مجددا نامگذاری کرد:"
+msgstr "نمیتوان نام صفت را مجددا نامگذاری کرد: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "نمیتوان مقدار صفت را تغییر داد:"
+msgstr "نمیتوان مقدار صفت را تغییر داد: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "نمیتوان صفت را حذف کرد:"
+msgstr "نمیتوان صفت را حذف کرد: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
@@ -92,7 +93,7 @@ msgstr "مقدار جدید"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "نمیتوان صفت را اضافه کرد:"
+msgstr "نمیتوان صفت را اضافه کرد: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
@@ -120,15 +121,15 @@ msgstr "دیگر پیشفرض"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "نمیتوان ورودی ACL را اضافه کرد:"
+msgstr "نمیتوان ورودی ACL را اضافه کرد: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "نمیتوان ورودی ACL را حذف کرد:"
+msgstr "نمیتوان ورودی ACL را حذف کرد: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "نمیتوان ورودی ACL را دستکاری کرد:"
+msgstr "نمیتوان ورودی ACL را دستکاری کرد: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
