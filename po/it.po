@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2016-11-25 10:14+0000\n"
+"PO-Revision-Date: 2016-11-25 10:19+0000\n"
 "Last-Translator: Alessio Adamo <alessio.adamo@gmail.com>\n"
 "Language-Team: Italian <https://l10n.opensuse.org/projects/eiciel/master/it/>"
 "\n"
@@ -36,7 +36,7 @@ msgstr "Elenco di controllo dell'accesso"
 
 #: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
 msgid "Extended user attributes"
-msgstr "Attributi utente ampliati"
+msgstr "Attributi utente estesi"
 
 #: src/eiciel_container.cpp:100
 #, c-format
@@ -109,7 +109,7 @@ msgstr "Maschera"
 
 #: src/eiciel_main_controller.cpp:177
 msgid "Other"
-msgstr "Altro"
+msgstr "Altri"
 
 #: src/eiciel_main_controller.cpp:250
 msgid "Default Mask"
@@ -117,7 +117,7 @@ msgstr "Maschera predefinita"
 
 #: src/eiciel_main_controller.cpp:258
 msgid "Default Other"
-msgstr "Altro predefinito"
+msgstr "Altri predefinito"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
@@ -145,11 +145,11 @@ msgstr "Presenti autorizzazioni inefficaci"
 
 #: src/eiciel_main_window.cpp:33
 msgid "Remove participant from ACL"
-msgstr "Rimuovere partecipante dall'ACL"
+msgstr "Rimuovi partecipante dall'ACL"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit default participants"
-msgstr "Modificare partecipanti predefiniti"
+msgstr "Modifica partecipanti predefiniti"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
