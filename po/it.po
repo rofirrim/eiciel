@@ -6,13 +6,16 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:09\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2016-11-25 10:14+0000\n"
+"Last-Translator: Alessio Adamo <alessio.adamo@gmail.com>\n"
+"Language-Team: Italian <https://l10n.opensuse.org/projects/eiciel/master/it/>"
+"\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.6\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -70,15 +73,15 @@ msgstr "Valore"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "Impossibile rinominare il nome dell'attributo:"
+msgstr "Impossibile rinominare il nome dell'attributo: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "Impossibile modificare il valore dell'attributo:"
+msgstr "Impossibile modificare il valore dell'attributo: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "Impossibile rimuovere l'attributo:"
+msgstr "Impossibile rimuovere l'attributo: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
@@ -86,11 +89,11 @@ msgstr "Nuovo attributo"
 
 #: src/eiciel_xattr_window.cpp:318
 msgid "New value"
-msgstr "NUOVO VALORE"
+msgstr "Nuovo valore"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "Impossibile aggiungere l'attributo:"
+msgstr "Impossibile aggiungere l'attributo: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
@@ -118,15 +121,15 @@ msgstr "Altro predefinito"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "Impossibile aggiungere la voce ACL:"
+msgstr "Impossibile aggiungere la voce ACL: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "Impossibile rimuovere la voce ACL:"
+msgstr "Impossibile rimuovere la voce ACL: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "Impossibile modificare la voce ACL:"
+msgstr "Impossibile modificare la voce ACL: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
@@ -134,25 +137,23 @@ msgstr "Si desidera rimuovere tutte le voci predefinite ACL?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>Attuali partecipanti all'ACL</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
-msgstr "Autorizzazioni inefficaci"
+msgstr "Presenti autorizzazioni inefficaci"
 
 #: src/eiciel_main_window.cpp:33
-#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "Nome partecipante"
+msgstr "Rimuovere partecipante dall'ACL"
 
 #: src/eiciel_main_window.cpp:34
-#, fuzzy
 msgid "Edit default participants"
-msgstr "Nome partecipante"
+msgstr "Modificare partecipanti predefiniti"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>Partecipanti disponibili</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
@@ -163,14 +164,12 @@ msgid "Group"
 msgstr "Gruppo"
 
 #: src/eiciel_main_window.cpp:40
-#, fuzzy
 msgid "Default participant"
-msgstr "Nome partecipante"
+msgstr "Partecipante predefinito"
 
 #: src/eiciel_main_window.cpp:45
-#, fuzzy
 msgid "Add participant to ACL"
-msgstr "Elenco partecipanti"
+msgstr "Aggiungi partecipante all'ACL"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -190,14 +189,13 @@ msgstr "Voce"
 
 #: src/eiciel_main_window.cpp:115
 msgid "Read"
-msgstr "Leggi"
+msgstr "Lettura"
 
 #: src/eiciel_main_window.cpp:126
 msgid "Write"
-msgstr "Scrivi"
+msgstr "Scrittura"
 
 #: src/eiciel_main_window.cpp:136
-#, fuzzy
 msgid "Execute"
 msgstr "Esecuzione"
 
@@ -223,9 +221,8 @@ msgid "Recursion"
 msgstr "Ricorsione"
 
 #: src/eiciel_main_window.cpp:201
-#, fuzzy
 msgid "Filter participants"
-msgstr "Nome partecipante"
+msgstr "Filtra partecipanti"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
