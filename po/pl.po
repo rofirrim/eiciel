@@ -6,13 +6,17 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:19\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2016-12-23 16:44+0000\n"
+"Last-Translator: Kamil Stańczyk <suszaraa@gmail.com>\n"
+"Language-Team: Polish <https://l10n.opensuse.org/projects/eiciel/master/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.6\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -134,25 +138,23 @@ msgstr "Czy na pewno usunąć wszystkie domyślne wpisy listy ACL?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>Obecnie uczestinczący w ACL</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
 msgstr "Niektóre uprawnienia są nieskuteczne"
 
 #: src/eiciel_main_window.cpp:33
-#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "Nazwa uczestnika"
+msgstr "Usuń uczestnika z ACL"
 
 #: src/eiciel_main_window.cpp:34
-#, fuzzy
 msgid "Edit default participants"
-msgstr "Nazwa uczestnika"
+msgstr "Edytuj domyślnych uczestników"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>Dostępni uczestnicy</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
@@ -163,14 +165,12 @@ msgid "Group"
 msgstr "Grupa"
 
 #: src/eiciel_main_window.cpp:40
-#, fuzzy
 msgid "Default participant"
-msgstr "Nazwa uczestnika"
+msgstr "Domyślny uczestnik"
 
 #: src/eiciel_main_window.cpp:45
-#, fuzzy
 msgid "Add participant to ACL"
-msgstr "Lista uczestników"
+msgstr "Dodaj uczestnika do ACL"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -197,9 +197,8 @@ msgid "Write"
 msgstr "Prawo do zapisu"
 
 #: src/eiciel_main_window.cpp:136
-#, fuzzy
 msgid "Execute"
-msgstr "Wykonywalny"
+msgstr "Wykonaj"
 
 #: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
 #: src/eiciel_main_window.cpp:590
@@ -223,9 +222,8 @@ msgid "Recursion"
 msgstr "Rekurencja"
 
 #: src/eiciel_main_window.cpp:201
-#, fuzzy
 msgid "Filter participants"
-msgstr "Nazwa uczestnika"
+msgstr "Filtruj uczestników"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
