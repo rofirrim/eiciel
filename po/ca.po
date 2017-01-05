@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: Eiciel 0.9\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-10-15 16:13+0200\n"
+"PO-Revision-Date: 2017-01-05 11:53+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
-"Language-Team: Catalan <http://10n.opensuse.org/projects/eiciel/master/ca/>\n"
+"Language-Team: Catalan <https://l10n.opensuse.org/projects/eiciel/master/ca/>"
+"\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.3\n"
+"X-Generator: Weblate 2.6\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -37,7 +38,7 @@ msgstr "Llista de control d'accés"
 
 #: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
 msgid "Extended user attributes"
-msgstr "Atributs d'usuari estesos"
+msgstr "Atributs d'usuari ampliats"
 
 #: src/eiciel_container.cpp:100
 #, c-format
@@ -46,7 +47,7 @@ msgstr "No s'ha pogut mostrar l'ajuda: %s"
 
 #: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
-msgstr "Escull un fitxer o directori"
+msgstr "Trieu un fitxer o directori"
 
 #: src/eiciel_container.cpp:145
 msgid "Could not open the file \""
@@ -90,15 +91,15 @@ msgstr "Atribut nou"
 
 #: src/eiciel_xattr_window.cpp:318
 msgid "New value"
-msgstr "Nou valor"
+msgstr "Valor nou"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr "No he pogut afegir l'atribut: "
+msgstr "No s'ha pogut afegir l'atribut: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
-msgstr "Mostra la informació de versió"
+msgstr "Mostra la informació de la versió"
 
 #: src/eiciel_standalone.cpp:51
 msgid "Access control list editor"
@@ -122,7 +123,7 @@ msgstr "Altres per defecte"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr "No he pogut afegir l'entrada ACL: "
+msgstr "No s'ha pogut afegir l'entrada ACL: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
@@ -134,7 +135,7 @@ msgstr "No es pot modificar l'entrada ACL: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr "Esteu segurs de voler eliminar les entrades per defecte de la ACL?"
+msgstr "Esteu segur que voleu eliminar totes les entrades per defecte d'ACL?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
@@ -142,7 +143,7 @@ msgstr "<b>Participants actuals a l'ACL</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
-msgstr "Hi ha permisos inefectius"
+msgstr "Hi ha permisos no efectius"
 
 #: src/eiciel_main_window.cpp:33
 msgid "Remove participant from ACL"
@@ -182,7 +183,7 @@ msgstr "Nom del participant"
 
 #: src/eiciel_main_window.cpp:50
 msgid "Also show system participants"
-msgstr "Mostrar també participants del sistema"
+msgstr "Mostra també participants del sistema"
 
 #: src/eiciel_main_window.cpp:112
 msgid "Entry"
@@ -190,15 +191,15 @@ msgstr "Entrada"
 
 #: src/eiciel_main_window.cpp:115
 msgid "Read"
-msgstr "Lectura"
+msgstr "Llegeix"
 
 #: src/eiciel_main_window.cpp:126
 msgid "Write"
-msgstr "Escriptura"
+msgstr "Escriu"
 
 #: src/eiciel_main_window.cpp:136
 msgid "Execute"
-msgstr "Execució"
+msgstr "Executa"
 
 #: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
 #: src/eiciel_main_window.cpp:590
