@@ -18,7 +18,6 @@
 */
 #include "config.hpp"
 #include <gtkmm.h>
-#include <glib/gi18n.h>
 #ifdef USING_GNOME2
 #include <libgnome/libgnome.h>
 #endif
