@@ -70,7 +70,7 @@ appdatadir = $(datarootdir)/appdata
 dist_appdata_DATA = eiciel.appdata.xml
 
 eiciel.desktop : eiciel.desktop.in
-	sed -e "s|@DSK_VERSION@|$(VERSION)|;s|@DSK_bindir@|$(bindir)|;s|@DSK_pkgdatadir@|$(pkgdatadir)|" $< > $@
+	$(AM_V_GEN)sed -e "s|@DSK_VERSION@|$(VERSION)|;s|@DSK_bindir@|$(bindir)|;s|@DSK_pkgdatadir@|$(pkgdatadir)|" $< > $@
 
 CLEANFILES = 
 
