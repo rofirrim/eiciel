@@ -1,0 +1,8 @@
+option('user-attributes',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Enables support for editing extended user attributes')
+option('nautilus-extension-dir',
+    type: 'string',
+    value : '',
+    description: 'Override nautilus extension installation directory, otherwise it will be auto-detected')
