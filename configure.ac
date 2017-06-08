@@ -10,10 +10,11 @@ dnl Require autoconf 2.59
 AC_PREREQ(2.59)
 
 dnl Initialize automake
-AM_INIT_AUTOMAKE([dist-bzip2])
+AM_INIT_AUTOMAKE([1.11 dist-bzip2])
+
+AM_SILENT_RULES([yes])
 
 dnl gettext support
-
 GETTEXT_PACKAGE=eiciel
 AC_SUBST([GETTEXT_PACKAGE])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [gettext domain])

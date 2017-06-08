@@ -93,7 +93,7 @@ void EicielContainer::show_help()
 #ifdef USING_GNOME2
     gnome_help_display("eiciel", NULL, &error);
 #else
-    gtk_show_uri(this->get_screen()->gobj(), "ghelp:eiciel", GDK_CURRENT_TIME, &error);
+    gtk_show_uri_on_window(this->gobj(), "ghelp:eiciel", GDK_CURRENT_TIME, &error);
 #endif
     if (error != NULL)
     {
