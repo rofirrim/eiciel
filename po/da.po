@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2016-09-17 21:00+0100\n"
-"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"PO-Revision-Date: 2017-06-08 18:39+0000\n"
+"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish <https://l10n.opensuse.org/projects/eiciel/master/da/>"
 "\n"
 "Language: da\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Weblate 2.6\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -75,7 +75,7 @@ msgstr "Værdi"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "Kunne ikke omdøbe attributnavn:"
+msgstr "Kunne ikke omdøbe attributnavn: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
