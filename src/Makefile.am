@@ -63,13 +63,13 @@ endif
 endif
 
 desktopfilesdir=@datadir@/applications
-desktopfiles_DATA=eiciel.desktop
+desktopfiles_DATA=org.roger-ferrer.Eiciel.desktop
 
 
-appdatadir = $(datarootdir)/appdata
-dist_appdata_DATA = eiciel.appdata.xml
+appdatadir = $(datarootdir)/metainfo
+dist_appdata_DATA = org.roger-ferrer.Eiciel.appdata.xml
 
-eiciel.desktop : eiciel.desktop.in
+org.roger-ferrer.Eiciel.desktop : eiciel.desktop.in
 	$(AM_V_GEN)sed -e "s|@DSK_VERSION@|$(VERSION)|;s|@DSK_bindir@|$(bindir)|;s|@DSK_pkgdatadir@|$(pkgdatadir)|" $< > $@
 
 CLEANFILES = 
@@ -80,4 +80,4 @@ CLEANFILES += eiciel.desktop
 
 EXTRA_DIST= \
 	eiciel.desktop.in \
-	eiciel.appdata.xml
+	org.roger-ferrer.Eiciel.appdata.xml
