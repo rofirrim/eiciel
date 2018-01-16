@@ -70,7 +70,7 @@ appdatadir = $(datarootdir)/metainfo
 dist_appdata_DATA = org.roger-ferrer.Eiciel.appdata.xml
 
 org.roger-ferrer.Eiciel.desktop : eiciel.desktop.in
-	$(AM_V_GEN)sed -e "s|@DSK_VERSION@|$(VERSION)|;s|@DSK_bindir@|$(bindir)|;s|@DSK_pkgdatadir@|$(pkgdatadir)|" $< > $@
+	$(AM_V_GEN)sed -e "s|@DSK_VERSION@|1.1|;s|@DSK_bindir@|$(bindir)|;s|@DSK_pkgdatadir@|$(pkgdatadir)|" $< > $@
 
 CLEANFILES = 
 
