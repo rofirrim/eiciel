@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2016-12-23 16:44+0000\n"
-"Last-Translator: Kamil Stańczyk <suszaraa@gmail.com>\n"
+"PO-Revision-Date: 2018-01-25 12:04+0000\n"
+"Last-Translator: Ewelina Michalowska <ewelina.michalowska@stgambit.com>\n"
 "Language-Team: Polish <https://l10n.opensuse.org/projects/eiciel/master/pl/>"
 "\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.6\n"
+"X-Generator: Weblate 2.18\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -37,7 +37,7 @@ msgstr "Lista kontroli dostępu"
 
 #: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
 msgid "Extended user attributes"
-msgstr "Zaawansowane atrybuty użytkownika"
+msgstr "Atrybuty rozszerzone użytkowników"
 
 #: src/eiciel_container.cpp:100
 #, c-format
@@ -46,7 +46,7 @@ msgstr "Nie można wyświetlić pliku pomocy: %s"
 
 #: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
-msgstr "Proszę wybrać plik lub katalog"
+msgstr "Wybierz plik lub katalog"
 
 #: src/eiciel_container.cpp:145
 msgid "Could not open the file \""
@@ -54,7 +54,7 @@ msgstr "Nie można otworzyć pliku \""
 
 #: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
-msgstr "Obsługiwane są jedynie zwykłe pliki i katalogi"
+msgstr "Obsługiwane są tylko zwykłe pliki i katalogi"
 
 #: src/acl_manager.cpp:542
 msgid "Textual representation of the ACL is wrong"
@@ -90,7 +90,7 @@ msgstr "Nowy atrybut"
 
 #: src/eiciel_xattr_window.cpp:318
 msgid "New value"
-msgstr "NOWA WARTOŚĆ"
+msgstr "Nowa wartość"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
@@ -98,7 +98,7 @@ msgstr "Nie można dodać atrybutu: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
-msgstr "Wyświetl informacje o wersji"
+msgstr "Wydrukuj informacje o wersji"
 
 #: src/eiciel_standalone.cpp:51
 msgid "Access control list editor"
@@ -118,7 +118,7 @@ msgstr "Domyślna maska"
 
 #: src/eiciel_main_controller.cpp:258
 msgid "Default Other"
-msgstr "Domyślne inne"
+msgstr "Inne domyślne"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
@@ -126,19 +126,19 @@ msgstr "Nie można dodać wpisu do listy ACL: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "Nie można usunąć wpisu listy ACL: "
+msgstr "Nie można usunąć wpisu z listy ACL: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr "Nie można zmienić wpisu listy ACL: "
+msgstr "Nie można zmienić wpisu na liście ACL: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr "Czy na pewno usunąć wszystkie domyślne wpisy listy ACL?"
+msgstr "Czy na pewno chcesz usunąć wszystkie domyślne wpisy na liście ACL?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr "<b>Obecnie uczestinczący w ACL</b>"
+msgstr "<b>Bieżący uczestnicy na liście ACL</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
@@ -146,7 +146,7 @@ msgstr "Niektóre uprawnienia są nieskuteczne"
 
 #: src/eiciel_main_window.cpp:33
 msgid "Remove participant from ACL"
-msgstr "Usuń uczestnika z ACL"
+msgstr "Usuń uczestnika z listy ACL"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit default participants"
@@ -170,7 +170,7 @@ msgstr "Domyślny uczestnik"
 
 #: src/eiciel_main_window.cpp:45
 msgid "Add participant to ACL"
-msgstr "Dodaj uczestnika do ACL"
+msgstr "Dodaj uczestnika do listy ACL"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -190,15 +190,15 @@ msgstr "Wpis"
 
 #: src/eiciel_main_window.cpp:115
 msgid "Read"
-msgstr "Prawo do odczytu"
+msgstr "Odczyt"
 
 #: src/eiciel_main_window.cpp:126
 msgid "Write"
-msgstr "Prawo do zapisu"
+msgstr "Zapis"
 
 #: src/eiciel_main_window.cpp:136
 msgid "Execute"
-msgstr "Wykonaj"
+msgstr "Wykonywanie"
 
 #: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
 #: src/eiciel_main_window.cpp:590
@@ -219,7 +219,7 @@ msgstr "Pliki i katalogi"
 
 #: src/eiciel_main_window.cpp:166
 msgid "Recursion"
-msgstr "Rekurencja"
+msgstr "Rekursja"
 
 #: src/eiciel_main_window.cpp:201
 msgid "Filter participants"
