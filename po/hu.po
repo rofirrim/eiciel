@@ -6,13 +6,16 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2015-09-08 10:18\n"
-"Last-Translator: Novell language <language@novell.com>\n"
-"Language-Team: Novell language <language@novell.com>\n"
+"PO-Revision-Date: 2018-01-26 18:03+0000\n"
+"Last-Translator: Robert Taisz <robert.taisz@emerald.hu>\n"
+"Language-Team: Hungarian "
+"<https://l10n.opensuse.org/projects/eiciel/master/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -38,7 +41,7 @@ msgstr "Kiterjesztett felhasználói attribútumok"
 #: src/eiciel_container.cpp:100
 #, c-format
 msgid "Could not show the help file: %s"
-msgstr "A(z) %s súgófájl nem jeleníthető meg."
+msgstr "Az súgófájl nem jeleníthető meg: %s"
 
 #: src/eiciel_container.cpp:123
 msgid "Choose a file or a directory"
