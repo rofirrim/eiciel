@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2018-01-26 18:03+0000\n"
+"PO-Revision-Date: 2018-01-29 17:03+0000\n"
 "Last-Translator: Robert Taisz <robert.taisz@emerald.hu>\n"
 "Language-Team: Hungarian "
 "<https://l10n.opensuse.org/projects/eiciel/master/hu/>\n"
@@ -138,25 +138,23 @@ msgstr ""
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>ACL-listában jelenleg szereplő résztvevők</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
 msgstr "Nem hatályos engedélyek vannak"
 
 #: src/eiciel_main_window.cpp:33
-#, fuzzy
 msgid "Remove participant from ACL"
-msgstr "Résztvevő neve"
+msgstr "Résztvevő eltávolítása az ACL-listáról"
 
 #: src/eiciel_main_window.cpp:34
-#, fuzzy
 msgid "Edit default participants"
-msgstr "Résztvevő neve"
+msgstr "Alapértelmezett résztvevők szerkesztése"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>Elérhető résztvevők</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
@@ -167,14 +165,12 @@ msgid "Group"
 msgstr "Csoport"
 
 #: src/eiciel_main_window.cpp:40
-#, fuzzy
 msgid "Default participant"
-msgstr "Résztvevő neve"
+msgstr "Alapértelmezett résztvevő"
 
 #: src/eiciel_main_window.cpp:45
-#, fuzzy
 msgid "Add participant to ACL"
-msgstr "Résztvevők listája"
+msgstr "Résztvevő hozzáadása az ACL-listához"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
@@ -201,7 +197,6 @@ msgid "Write"
 msgstr "Írás"
 
 #: src/eiciel_main_window.cpp:136
-#, fuzzy
 msgid "Execute"
 msgstr "Végrehajtás"
 
@@ -227,9 +222,8 @@ msgid "Recursion"
 msgstr "Rekurzió"
 
 #: src/eiciel_main_window.cpp:201
-#, fuzzy
 msgid "Filter participants"
-msgstr "Résztvevő neve"
+msgstr "Résztvevők szűrése"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
