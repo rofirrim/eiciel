@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2017-06-08 18:39+0000\n"
+"PO-Revision-Date: 2018-02-21 23:01+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish <https://l10n.opensuse.org/projects/eiciel/master/da/>"
 "\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.6\n"
+"X-Generator: Weblate 2.18\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -79,27 +79,27 @@ msgstr "Kunne ikke omdøbe attributnavn: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr ""
+msgstr "Kunne ikke ændre attributværdi: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr ""
+msgstr "Kunne ikke fjerne attribut: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
-msgstr ""
+msgstr "Ny attribut"
 
 #: src/eiciel_xattr_window.cpp:318
 msgid "New value"
-msgstr ""
+msgstr "Ny værdi"
 
 #: src/eiciel_xattr_window.cpp:333
 msgid "Could not add attribute: "
-msgstr ""
+msgstr "Kunne ikke tilføje attribut: "
 
 #: src/eiciel_standalone.cpp:49
 msgid "Print version information"
-msgstr ""
+msgstr "Print versionsinformation"
 
 #: src/eiciel_standalone.cpp:51
 msgid "Access control list editor"
@@ -107,7 +107,7 @@ msgstr ""
 
 #: src/eiciel_main_controller.cpp:172
 msgid "Mask"
-msgstr ""
+msgstr "Maske"
 
 #: src/eiciel_main_controller.cpp:177
 msgid "Other"
@@ -115,7 +115,7 @@ msgstr ""
 
 #: src/eiciel_main_controller.cpp:250
 msgid "Default Mask"
-msgstr ""
+msgstr "Standardmaske"
 
 #: src/eiciel_main_controller.cpp:258
 msgid "Default Other"
