@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2018-04-06 18:02+0000\n"
+"PO-Revision-Date: 2018-04-07 17:02+0000\n"
 "Last-Translator: Anshul Panwar <caspian7pena@gmail.com>\n"
 "Language-Team: Hindi <https://l10n.opensuse.org/projects/eiciel/master/hi/>\n"
 "Language: hi\n"
@@ -66,11 +66,11 @@ msgstr ""
 
 #: src/eiciel_xattr_window.cpp:39
 msgid "Name"
-msgstr ""
+msgstr "नाम"
 
 #: src/eiciel_xattr_window.cpp:55
 msgid "Value"
-msgstr ""
+msgstr "मान"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
@@ -110,7 +110,7 @@ msgstr ""
 
 #: src/eiciel_main_controller.cpp:177
 msgid "Other"
-msgstr ""
+msgstr "अन्य"
 
 #: src/eiciel_main_controller.cpp:250
 msgid "Default Mask"
