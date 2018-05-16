@@ -156,7 +156,7 @@ fi
 
 if test x$enable_eua = xyes;
 then
-    AC_CHECK_HEADERS([attr/xattr.h], [], AC_MSG_ERROR([This header is mandatory for extended user attributes support]), [])
+    AC_CHECK_HEADERS([sys/xattr.h], [], AC_MSG_ERROR([This header is mandatory for extended user attributes support]), [])
     AC_DEFINE([ENABLE_USER_XATTR], [1], [Enables user extended attributes support])
 fi
 AM_CONDITIONAL(ENABLE_USER_XATTR, test x$enable_eua = xyes)
