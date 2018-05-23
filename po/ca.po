@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Eiciel 0.9\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2017-01-05 11:53+0000\n"
+"PO-Revision-Date: 2018-05-23 17:01+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/eiciel/master/ca/>"
 "\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.6\n"
+"X-Generator: Weblate 2.18\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -83,7 +83,7 @@ msgstr "No es pot canviar el valor de l'atribut: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "No es pot eliminar l'atribut: "
+msgstr "No es pot suprimir l'atribut: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
@@ -127,7 +127,7 @@ msgstr "No s'ha pogut afegir l'entrada ACL: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr "No es pot eliminar l'entrada ACL: "
+msgstr "No es pot suprimir l'entrada ACL: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
@@ -135,7 +135,7 @@ msgstr "No es pot modificar l'entrada ACL: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr "Esteu segur que voleu eliminar totes les entrades per defecte d'ACL?"
+msgstr "Segur que voleu suprimir totes les entrades per defecte d'ACL?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
@@ -147,7 +147,7 @@ msgstr "Hi ha permisos no efectius"
 
 #: src/eiciel_main_window.cpp:33
 msgid "Remove participant from ACL"
-msgstr "Elimina el participant de l'ACL"
+msgstr "Suprimeix el participant de l'ACL"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit default participants"
