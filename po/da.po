@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2018-02-21 23:01+0000\n"
+"PO-Revision-Date: 2018-10-03 11:53+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish <https://l10n.opensuse.org/projects/eiciel/master/da/>"
 "\n"
@@ -103,7 +103,7 @@ msgstr "Print versionsinformation"
 
 #: src/eiciel_standalone.cpp:51
 msgid "Access control list editor"
-msgstr ""
+msgstr "Adgangskontrolliste-editor"
 
 #: src/eiciel_main_controller.cpp:172
 msgid "Mask"
@@ -111,7 +111,7 @@ msgstr "Maske"
 
 #: src/eiciel_main_controller.cpp:177
 msgid "Other"
-msgstr ""
+msgstr "Andet"
 
 #: src/eiciel_main_controller.cpp:250
 msgid "Default Mask"
@@ -119,117 +119,117 @@ msgstr "Standardmaske"
 
 #: src/eiciel_main_controller.cpp:258
 msgid "Default Other"
-msgstr ""
+msgstr "Standard andet"
 
 #: src/eiciel_main_controller.cpp:328
 msgid "Could not add ACL entry: "
-msgstr ""
+msgstr "Kunne ikke tilføje ACL-post: "
 
 #: src/eiciel_main_controller.cpp:390
 msgid "Could not remove ACL entry: "
-msgstr ""
+msgstr "Kunne ikke fjerne ACL-post: "
 
 #: src/eiciel_main_controller.cpp:487
 msgid "Could not modify ACL entry: "
-msgstr ""
+msgstr "Kunne ikke redigere ACL-post: "
 
 #: src/eiciel_main_controller.cpp:516
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr ""
+msgstr "Er du sikker på, at du vil fjerne alle standardposter for ACL?"
 
 #: src/eiciel_main_window.cpp:26
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>Nuværende deltagere i ACL</b>"
 
 #: src/eiciel_main_window.cpp:32
 msgid "There are ineffective permissions"
-msgstr ""
+msgstr "Der er ikke ineffektive tilladelser"
 
 #: src/eiciel_main_window.cpp:33
 msgid "Remove participant from ACL"
-msgstr ""
+msgstr "Fjern deltager fra ACL"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit default participants"
-msgstr ""
+msgstr "Rediger standarddeltagere"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>Tilgængelige deltagere</b>"
 
 #: src/eiciel_main_window.cpp:38
 msgid "User"
-msgstr ""
+msgstr "Bruger"
 
 #: src/eiciel_main_window.cpp:39
 msgid "Group"
-msgstr ""
+msgstr "Gruppe"
 
 #: src/eiciel_main_window.cpp:40
 msgid "Default participant"
-msgstr ""
+msgstr "Standarddeltager"
 
 #: src/eiciel_main_window.cpp:45
 msgid "Add participant to ACL"
-msgstr ""
+msgstr "Tilføj deltager til ACL"
 
 #: src/eiciel_main_window.cpp:46
 msgid "Advanced features"
-msgstr ""
+msgstr "Avancerede funktionaliteter"
 
 #: src/eiciel_main_window.cpp:48
 msgid "Name of participant"
-msgstr ""
+msgstr "Navn på deltager"
 
 #: src/eiciel_main_window.cpp:50
 msgid "Also show system participants"
-msgstr ""
+msgstr "Vis også systemdeltagere"
 
 #: src/eiciel_main_window.cpp:112
 msgid "Entry"
-msgstr ""
+msgstr "Post"
 
 #: src/eiciel_main_window.cpp:115
 msgid "Read"
-msgstr ""
+msgstr "Læs"
 
 #: src/eiciel_main_window.cpp:126
 msgid "Write"
-msgstr ""
+msgstr "Skriv"
 
 #: src/eiciel_main_window.cpp:136
 msgid "Execute"
-msgstr ""
+msgstr "Eksekver"
 
 #: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
 #: src/eiciel_main_window.cpp:590
 msgid "None"
-msgstr ""
+msgstr "Intet"
 
 #: src/eiciel_main_window.cpp:154
 msgid "Only files"
-msgstr ""
+msgstr "Kun filer"
 
 #: src/eiciel_main_window.cpp:156
 msgid "Only directories"
-msgstr ""
+msgstr "Kun mapper"
 
 #: src/eiciel_main_window.cpp:158
 msgid "Both files and directories"
-msgstr ""
+msgstr "Både filer og mapper"
 
 #: src/eiciel_main_window.cpp:166
 msgid "Recursion"
-msgstr ""
+msgstr "Rekursiv"
 
 #: src/eiciel_main_window.cpp:201
 msgid "Filter participants"
-msgstr ""
+msgstr "Filtrér deltagere"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
-msgstr ""
+msgstr "Deltager"
 
 #: src/eiciel_main_window.cpp:912
 msgid "Participant not found"
-msgstr ""
+msgstr "Deltager ikke fundet"
