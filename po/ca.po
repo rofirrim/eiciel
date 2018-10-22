@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Eiciel 0.9\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2018-05-23 17:01+0000\n"
+"PO-Revision-Date: 2018-10-22 18:00+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/eiciel/master/ca/>"
 "\n"
@@ -75,15 +75,15 @@ msgstr "Valor"
 
 #: src/eiciel_xattr_window.cpp:176
 msgid "Could not rename attribute name: "
-msgstr "No es pot renombrar l'atribut: "
+msgstr "No s'ha pogut canviar el nom de l'atribut: "
 
 #: src/eiciel_xattr_window.cpp:211
 msgid "Could not change attribute value: "
-msgstr "No es pot canviar el valor de l'atribut: "
+msgstr "No s'ha pogut canviar el valor de l'atribut: "
 
 #: src/eiciel_xattr_window.cpp:248
 msgid "Could not remove attribute: "
-msgstr "No es pot suprimir l'atribut: "
+msgstr "No s'ha pogut suprimir l'atribut: "
 
 #: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
 msgid "New attribute"
