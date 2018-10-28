@@ -1,13 +1,13 @@
 # Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
 # This file is distributed under the same license as the package.
-#
+# Aleksandr Melentev <minton@opensuse.org>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
 "PO-Revision-Date: 2018-10-28 14:20+0000\n"
-"Last-Translator: Andrei Dziahel <develop7@develop7.info>\n"
+"Last-Translator: Alex Minton <alex239@gmail.com>\n"
 "Language-Team: Russian <https://l10n.opensuse.org/projects/eiciel/master/ru/>"
 "\n"
 "Language: ru\n"
@@ -152,7 +152,7 @@ msgstr "Удалить участника из ACL"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit default participants"
-msgstr "Редактировать учатсников по умолчанию"
+msgstr "Редактировать участников по умолчанию"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
@@ -205,7 +205,7 @@ msgstr "Выполнение"
 #: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
 #: src/eiciel_main_window.cpp:590
 msgid "None"
-msgstr "Никакой"
+msgstr "нет"
 
 #: src/eiciel_main_window.cpp:154
 msgid "Only files"
@@ -225,7 +225,7 @@ msgstr "Рекурсия"
 
 #: src/eiciel_main_window.cpp:201
 msgid "Filter participants"
-msgstr "Имя участника"
+msgstr "Фильтр по участникам"
 
 #: src/eiciel_main_window.cpp:222
 msgid "Participant"
