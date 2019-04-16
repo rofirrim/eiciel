@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2015-09-11 16:48+0200\n"
-"PO-Revision-Date: 2018-02-05 18:01+0000\n"
+"PO-Revision-Date: 2019-04-18 15:58+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.opensuse.org/projects/eiciel/master/cs/>\n"
 "Language: cs\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.3\n"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -148,7 +148,7 @@ msgstr "Odebrat účastníka z ACL"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit default participants"
-msgstr "Upravit výchozí účastníky"
+msgstr "Smazat výchozí účastníky"
 
 #: src/eiciel_main_window.cpp:35
 msgid "<b>Available participants</b>"
@@ -196,7 +196,7 @@ msgstr "Zápis"
 
 #: src/eiciel_main_window.cpp:136
 msgid "Execute"
-msgstr "Spustit"
+msgstr "Spuštění"
 
 #: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
 #: src/eiciel_main_window.cpp:590
