@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2004-2014 Roger Ferrer Ib��ez
+    Copyright (C) 2004-2019 Roger Ferrer Ib��ez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -194,7 +194,7 @@ EicielAboutBox::EicielAboutBox(Gtk::Window& parent)
     : Gtk::Dialog (_("About..."), parent, true),
 #endif
     _title("<span size=\"xx-large\"><b>Eiciel " PACKAGE_VERSION "</b></span>"),
-    _author("<small>Copyright © 2004-2005 Roger Ferrer Ibáñez</small>")
+    _author("<small>Copyright © 2004-2019 Roger Ferrer Ibáñez</small>")
 {
     set_border_width(4);
     get_vbox()->set_spacing(4);
