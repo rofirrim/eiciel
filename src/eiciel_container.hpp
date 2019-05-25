@@ -31,49 +31,48 @@
 #include "eiciel_xattr_window.hpp"
 #endif
 
-class EicielContainer : public Gtk::Window
-{
-    private:
-        Gtk::Box _main_container;
-        Gtk::Box _ACL_tabpage;
-        Gtk::Box _XAttr_tabpage;
-        Gtk::Box _top;
-        Gtk::Box _bottom;
-        Gtk::Button _open_file;
-        Gtk::Label _file_label;
-        Gtk::Label _file_name;
-        Gtk::Button _exit_button;
-        Gtk::Button _help;
-        Gtk::Button _about;
+class EicielContainer : public Gtk::Window {
+private:
+    Gtk::Box _main_container;
+    Gtk::Box _ACL_tabpage;
+    Gtk::Box _XAttr_tabpage;
+    Gtk::Box _top;
+    Gtk::Box _bottom;
+    Gtk::Button _open_file;
+    Gtk::Label _file_label;
+    Gtk::Label _file_name;
+    Gtk::Button _exit_button;
+    Gtk::Button _help;
+    Gtk::Button _about;
 
-        Gtk::Notebook _notebook;
+    Gtk::Notebook _notebook;
 
-        EicielWindow* _main_widget;
-        EicielMainController* _widget_controller;
+    EicielWindow* _main_widget;
+    EicielMainController* _widget_controller;
 
 #ifdef ENABLE_USER_XATTR
-        EicielXAttrWindow* _xattr_widget;
-        EicielXAttrController* _xattr_controller;
+    EicielXAttrWindow* _xattr_widget;
+    EicielXAttrController* _xattr_controller;
 #endif
-        void quit_application();
-        void open_file_();
-        Glib::ustring error_message();
-        void show_about();
-        void show_help();
+    void quit_application();
+    void open_file_();
+    Glib::ustring error_message();
+    void show_about();
+    void show_help();
 
-        // FileChooser stuff
-        void chooser_file_activated(Gtk::FileChooserDialog* dialog);
+    // FileChooser stuff
+    void chooser_file_activated(Gtk::FileChooserDialog* dialog);
 
-    public:
-        EicielContainer();
-        bool open_file(Glib::ustring nom);
+public:
+    EicielContainer();
+    bool open_file(Glib::ustring nom);
 };
 
-class EicielAboutBox : public Gtk::Dialog
-{
-    private:
-        Gtk::Label _title;
-        Gtk::Label _author;
-    public:
-        EicielAboutBox(Gtk::Window& parent);
+class EicielAboutBox : public Gtk::Dialog {
+private:
+    Gtk::Label _title;
+    Gtk::Label _author;
+
+public:
+    EicielAboutBox(Gtk::Window& parent);
 };

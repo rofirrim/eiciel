@@ -18,40 +18,38 @@
 */
 #ifndef LLISTA_ACL_HPP
 #define LLISTA_ACL_HPP
-#include <config.hpp>
 #include "acl_element_kind.hpp"
 #include "cellrenderer_acl.hpp"
+#include <config.hpp>
 
-class ACLListModel : public Gtk::TreeModel::ColumnRecord
-{
-    public:
+class ACLListModel : public Gtk::TreeModel::ColumnRecord {
+public:
+    ACLListModel()
+    {
+        add(_icon);
+        add(_entry_name);
+        add(_reading_permission);
+        add(_writing_permission);
+        add(_execution_permission);
+        add(_removable);
+        add(_entry_kind);
+        add(_reading_ineffective);
+        add(_writing_ineffective);
+        add(_execution_ineffective);
+        add(_empty);
+    }
 
-        ACLListModel()
-        { 
-            add(_icon);
-            add(_entry_name); 
-            add(_reading_permission);
-            add(_writing_permission);
-            add(_execution_permission);
-            add(_removable);
-            add(_entry_kind);
-            add(_reading_ineffective);
-            add(_writing_ineffective);
-            add(_execution_ineffective);
-            add(_empty);
-        }
-
-        Gtk::TreeModelColumn<Glib::RefPtr<Gdk::Pixbuf> > _icon;
-        Gtk::TreeModelColumn<Glib::ustring> _entry_name;
-        Gtk::TreeModelColumn<bool> _reading_permission;
-        Gtk::TreeModelColumn<bool> _writing_permission;
-        Gtk::TreeModelColumn<bool> _execution_permission;
-        Gtk::TreeModelColumn<bool> _removable;
-        Gtk::TreeModelColumn<ElementKind> _entry_kind;
-        Gtk::TreeModelColumn<bool> _reading_ineffective;
-        Gtk::TreeModelColumn<bool> _writing_ineffective;
-        Gtk::TreeModelColumn<bool> _execution_ineffective;
-        Gtk::TreeModelColumn<Glib::ustring> _empty;
+    Gtk::TreeModelColumn<Glib::RefPtr<Gdk::Pixbuf>> _icon;
+    Gtk::TreeModelColumn<Glib::ustring> _entry_name;
+    Gtk::TreeModelColumn<bool> _reading_permission;
+    Gtk::TreeModelColumn<bool> _writing_permission;
+    Gtk::TreeModelColumn<bool> _execution_permission;
+    Gtk::TreeModelColumn<bool> _removable;
+    Gtk::TreeModelColumn<ElementKind> _entry_kind;
+    Gtk::TreeModelColumn<bool> _reading_ineffective;
+    Gtk::TreeModelColumn<bool> _writing_ineffective;
+    Gtk::TreeModelColumn<bool> _execution_ineffective;
+    Gtk::TreeModelColumn<Glib::ustring> _empty;
 };
 
 #endif

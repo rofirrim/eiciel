@@ -19,37 +19,40 @@
 #ifndef EICIEL_XATTR_CONTROLER_HPP
 #define EICIEL_XATTR_CONTROLER_HPP
 
-#include <sys/types.h>
 #include "eiciel_xattr_window.hpp"
 #include "xattr_manager.hpp"
+#include <sys/types.h>
 
 class EicielXAttrWindow;
 
-class EicielXAttrController : public sigc::trackable
-{
-    private:
-        XAttrManager* _xattr_manager;
-        EicielXAttrWindow* _window;
-        bool _opened_file;
+class EicielXAttrController : public sigc::trackable {
+private:
+    XAttrManager* _xattr_manager;
+    EicielXAttrWindow* _window;
+    bool _opened_file;
 
-        void remove_attribute(const Glib::ustring& attrib_name) throw (XAttrManagerException);
+    void remove_attribute(const Glib::ustring& attrib_name) throw(
+        XAttrManagerException);
 
-        void add_attribute(const Glib::ustring& attrib_name, 
-                const Glib::ustring& attrib_value) throw (XAttrManagerException);
-        void update_attribute_value(const Glib::ustring& attrib_name, 
-                const Glib::ustring& attrib_new_value) throw (XAttrManagerException) ;
-        void update_attribute_name(const Glib::ustring& old_attribute_name, 
-                const Glib::ustring& new_attribute_name) throw (XAttrManagerException);
+    void add_attribute(
+        const Glib::ustring& attrib_name,
+        const Glib::ustring& attrib_value) throw(XAttrManagerException);
+    void update_attribute_value(
+        const Glib::ustring& attrib_name,
+        const Glib::ustring& attrib_new_value) throw(XAttrManagerException);
+    void update_attribute_name(
+        const Glib::ustring& old_attribute_name,
+        const Glib::ustring& new_attribute_name) throw(XAttrManagerException);
 
-        void check_editable();
-    public:
-        EicielXAttrController();
-        bool opened_file() { return _opened_file; };
+    void check_editable();
 
-        void open_file(const Glib::ustring& filename) throw (XAttrManagerException);
+public:
+    EicielXAttrController();
+    bool opened_file() { return _opened_file; };
 
-        friend class EicielXAttrWindow;
-}
-;
+    void open_file(const Glib::ustring& filename) throw(XAttrManagerException);
+
+    friend class EicielXAttrWindow;
+};
 
 #endif

@@ -31,15 +31,13 @@ int main(int argc, char* argv[])
     textdomain("eiciel");
 
     // We want translations in UTF-8
-    bind_textdomain_codeset ("eiciel", "UTF-8");
+    bind_textdomain_codeset("eiciel", "UTF-8");
 #endif
 #ifdef USING_GNOME2
-    GnomeProgram *my_app;
-    my_app = gnome_program_init(PACKAGE, VERSION,
-            LIBGNOME_MODULE, argc, argv, 
-            GNOME_PARAM_HUMAN_READABLE_NAME, "Eiciel",
-            GNOME_PARAM_APP_DATADIR, DATADIR,
-            NULL);
+    GnomeProgram* my_app;
+    my_app = gnome_program_init(PACKAGE, VERSION, LIBGNOME_MODULE, argc, argv,
+        GNOME_PARAM_HUMAN_READABLE_NAME, "Eiciel",
+        GNOME_PARAM_APP_DATADIR, DATADIR, NULL);
 #else
     bool version_called = false;
     Glib::OptionEntry version_entry;
@@ -55,8 +53,7 @@ int main(int argc, char* argv[])
     oc.set_main_group(main_group);
     oc.add_group(gtk_group);
     oc.parse(argc, argv);
-    if (version_called)
-    {
+    if (version_called) {
         std::cerr << "GNOME " PACKAGE " " VERSION << std::endl;
         return 0;
     }
@@ -66,8 +63,7 @@ int main(int argc, char* argv[])
 
     EicielContainer w;
 
-    if (argc > 1)
-    {
+    if (argc > 1) {
         w.open_file(argv[1]);
     }
 
@@ -75,4 +71,3 @@ int main(int argc, char* argv[])
 
     return 0;
 }
-

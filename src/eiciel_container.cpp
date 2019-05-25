@@ -19,17 +19,16 @@
 #include "eiciel_container.hpp"
 
 EicielContainer::EicielContainer()
-    : _main_container(Gtk::ORIENTATION_VERTICAL),
-    _ACL_tabpage(Gtk::ORIENTATION_VERTICAL),
-    _XAttr_tabpage(Gtk::ORIENTATION_VERTICAL),
-    _open_file(Gtk::Stock::OPEN), 
-    _file_label(_("<b>File name</b>")),
-    _file_name(_("No file opened")),
-    _exit_button(Gtk::Stock::QUIT),
-    _help(Gtk::Stock::HELP),
-    _about(_("About..."))
+    : _main_container(Gtk::ORIENTATION_VERTICAL)
+    , _ACL_tabpage(Gtk::ORIENTATION_VERTICAL)
+    , _XAttr_tabpage(Gtk::ORIENTATION_VERTICAL)
+    , _open_file(Gtk::Stock::OPEN)
+    , _file_label(_("<b>File name</b>"))
+    , _file_name(_("No file opened"))
+    , _exit_button(Gtk::Stock::QUIT)
+    , _help(Gtk::Stock::HELP)
+    , _about(_("About..."))
 {
-
     set_title("Eiciel");
     set_border_width(4);
 
@@ -59,7 +58,7 @@ EicielContainer::EicielContainer()
     _xattr_widget = new EicielXAttrWindow(_xattr_controller);
 
     _XAttr_tabpage.pack_start(*_xattr_widget, Gtk::PACK_EXPAND_WIDGET, 0);
-#endif  
+#endif
 
     _main_container.pack_start(_bottom, Gtk::PACK_SHRINK, 2);
     _bottom.set_spacing(4);
@@ -68,20 +67,16 @@ EicielContainer::EicielContainer()
     _bottom.pack_end(_exit_button);
 
     _exit_button.signal_clicked().connect(
-            sigc::mem_fun(*this, &EicielContainer::quit_application)
-            );
+        sigc::mem_fun(*this, &EicielContainer::quit_application));
 
-    _about.signal_clicked().connect (
-            sigc::mem_fun(*this, &EicielContainer::show_about)
-            );
+    _about.signal_clicked().connect(
+        sigc::mem_fun(*this, &EicielContainer::show_about));
 
-    _help.signal_clicked().connect (
-             sigc::mem_fun(*this, &EicielContainer::show_help)
-            );
+    _help.signal_clicked().connect(
+        sigc::mem_fun(*this, &EicielContainer::show_help));
 
     _open_file.signal_clicked().connect(
-            sigc::mem_fun(*this, &EicielContainer::open_file_)
-            );
+        sigc::mem_fun(*this, &EicielContainer::open_file_));
 
     show_all_children();
 }
@@ -93,10 +88,10 @@ void EicielContainer::show_help()
 #ifdef USING_GNOME2
     gnome_help_display("eiciel", NULL, &error);
 #else
-    gtk_show_uri_on_window(this->gobj(), "ghelp:eiciel", GDK_CURRENT_TIME, &error);
+    gtk_show_uri_on_window(this->gobj(), "ghelp:eiciel", GDK_CURRENT_TIME,
+        &error);
 #endif
-    if (error != NULL)
-    {
+    if (error != NULL) {
         g_warning(_("Could not show the help file: %s"), error->message);
         g_error_free(error);
     }
@@ -120,44 +115,35 @@ void EicielContainer::chooser_file_activated(Gtk::FileChooserDialog* dialog)
 
 void EicielContainer::open_file_()
 {
-    Gtk::FileChooserDialog dialog(_("Choose a file or a directory"), 
-            Gtk::FILE_CHOOSER_ACTION_OPEN);
+    Gtk::FileChooserDialog dialog(_("Choose a file or a directory"),
+        Gtk::FILE_CHOOSER_ACTION_OPEN);
     dialog.set_local_only(true);
     dialog.add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
     dialog.add_button(Gtk::Stock::OK, Gtk::RESPONSE_NONE);
     dialog.set_transient_for(*this);
 
-    dialog.signal_file_activated().connect(
-            sigc::bind<Gtk::FileChooserDialog*>(
-                sigc::mem_fun(*this, &EicielContainer::chooser_file_activated), &dialog)
-            );
-    
+    dialog.signal_file_activated().connect(sigc::bind<Gtk::FileChooserDialog*>(
+        sigc::mem_fun(*this, &EicielContainer::chooser_file_activated), &dialog));
+
     int result = dialog.run();
     dialog.hide();
-    switch (result)
-    {
-        case(Gtk::RESPONSE_NONE):
-            {
-                if (!this->open_file(dialog.get_filename()))
-                {
-                    Gtk::MessageDialog message(
-                            *this,
-                            _("Could not open the file \"") 
-                            + Glib::locale_to_utf8(dialog.get_filename()) + Glib::ustring("\" ") 
-                            + Glib::ustring("(") + _widget_controller->last_error() + Glib::ustring(")"),
-                            false, Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK, true);
-                    message.run();
-                }
-                break;
-            }
-        case(Gtk::RESPONSE_CANCEL):
-            {
-                break;
-            }
-        default:
-            {
-                break;
-            }
+    switch (result) {
+    case (Gtk::RESPONSE_NONE): {
+        if (!this->open_file(dialog.get_filename())) {
+            Gtk::MessageDialog message(
+                *this,
+                _("Could not open the file \"") + Glib::locale_to_utf8(dialog.get_filename()) + Glib::ustring("\" ") + Glib::ustring("(") + _widget_controller->last_error() + Glib::ustring(")"),
+                false, Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK, true);
+            message.run();
+        }
+        break;
+    }
+    case (Gtk::RESPONSE_CANCEL): {
+        break;
+    }
+    default: {
+        break;
+    }
     }
 }
 
@@ -174,12 +160,9 @@ bool EicielContainer::open_file(Glib::ustring nom)
     result |= _xattr_controller->opened_file();
 #endif
 
-    if (result)
-    {
+    if (result) {
         _file_name.set_text(nom);
-    }
-    else
-    {
+    } else {
         _file_name.set_text(_("No file opened"));
     }
 
@@ -189,12 +172,15 @@ bool EicielContainer::open_file(Glib::ustring nom)
 /* About box */
 EicielAboutBox::EicielAboutBox(Gtk::Window& parent)
 #ifdef USING_GNOME2
-    : Gtk::Dialog (_("About..."), parent, true, true),
+    : Gtk::Dialog(_("About..."), parent, true, true)
+    ,
 #else
-    : Gtk::Dialog (_("About..."), parent, true),
+    : Gtk::Dialog(_("About..."), parent, true)
+    ,
 #endif
-    _title("<span size=\"xx-large\"><b>Eiciel " PACKAGE_VERSION "</b></span>"),
-    _author("<small>Copyright © 2004-2019 Roger Ferrer Ibáñez</small>")
+    _title("<span size=\"xx-large\"><b>Eiciel " PACKAGE_VERSION
+           "</b></span>")
+    , _author("<small>Copyright © 2004-2005 Roger Ferrer Ibáñez</small>")
 {
     set_border_width(4);
     get_vbox()->set_spacing(4);

@@ -18,43 +18,39 @@
 */
 #include "xattr_manager.hpp"
 
-XAttrManager::XAttrManager(const Glib::ustring& filename) throw (XAttrManagerException)
+XAttrManager::XAttrManager(const Glib::ustring& filename) throw(
+    XAttrManagerException)
     : _filename(filename)
 {
     // Check it is an ordinary file or a directory
     struct stat buffer;
-    if (stat(_filename.c_str(), &buffer) == -1)
-    {
+    if (stat(_filename.c_str(), &buffer) == -1) {
         throw XAttrManagerException(Glib::locale_to_utf8(strerror(errno)));
     }
 
-    if (!S_ISREG(buffer.st_mode) && !S_ISDIR(buffer.st_mode))
-    {
-        throw XAttrManagerException(_("Only regular files or directories supported")); 
+    if (!S_ISREG(buffer.st_mode) && !S_ISDIR(buffer.st_mode)) {
+        throw XAttrManagerException(
+            _("Only regular files or directories supported"));
     }
 
     this->_owner = buffer.st_uid;
-    
+
     // FIXME Crappy way to detect if we can modify xattrs,
     // it will thrown a exception if they cannot be read
     read_test();
 }
 
 // We should find better ways to test xattr support
-void XAttrManager::read_test() throw (XAttrManagerException)
+void XAttrManager::read_test() throw(XAttrManagerException)
 {
     Glib::ustring qualified_attr_name = "user.test";
     int buffer_length;
     int size = 30;
     char* buffer = new char[size];
 
-    buffer_length = getxattr (_filename.c_str(), qualified_attr_name.c_str(),
-            buffer, size);
+    buffer_length = getxattr(_filename.c_str(), qualified_attr_name.c_str(), buffer, size);
 
-    if (buffer_length == -1 && 
-            errno != ENOATTR && 
-            errno != ERANGE)
-    {
+    if (buffer_length == -1 && errno != ENOATTR && errno != ERANGE) {
         delete[] buffer;
         throw XAttrManagerException(Glib::locale_to_utf8(strerror(errno)));
     }
@@ -62,99 +58,87 @@ void XAttrManager::read_test() throw (XAttrManagerException)
     delete[] buffer;
 }
 
-std::vector<std::string> XAttrManager::get_xattr_list() throw (XAttrManagerException)
+std::vector<std::string> XAttrManager::get_xattr_list() throw(
+    XAttrManagerException)
 {
     std::vector<std::string> result;
 
     int size = listxattr(_filename.c_str(), NULL, 0);
 
     // Assume at first that the length of every element will be at most 30 chars
-    size = size*30;
+    size = size * 30;
     char* buffer = new char[size];
 
     int num_elems;
     num_elems = listxattr(_filename.c_str(), buffer, size);
 
-    while ((num_elems == -1) && (errno == ERANGE))
-    {
+    while ((num_elems == -1) && (errno == ERANGE)) {
         delete[] buffer;
-        size = size*2;
+        size = size * 2;
         buffer = new char[size];
         num_elems = listxattr(_filename.c_str(), buffer, size);
     }
 
     // num_elems == -1 && errno != ERANGE
-    if (num_elems == -1)
-    {
+    if (num_elems == -1) {
         delete[] buffer;
         throw XAttrManagerException(Glib::locale_to_utf8(strerror(errno)));
     }
 
-    for (int begin = 0, current = 0; current < num_elems; current++)
-    {
-        if (buffer[current] == '\0')
-        {
+    for (int begin = 0, current = 0; current < num_elems; current++) {
+        if (buffer[current] == '\0') {
             // Get the value
             std::string attr_name(&buffer[begin]);
 
             // Some filesystems give too small results
-            if (attr_name.size() > 5)
-            {
-                std::string prefix =  attr_name.substr(0, 5);
+            if (attr_name.size() > 5) {
+                std::string prefix = attr_name.substr(0, 5);
                 std::string postfix = attr_name.substr(5);
 
                 // Check the prefix, we only want user_xattr
-                if (prefix == "user.")
-                {
+                if (prefix == "user.") {
                     bool is_empty = false;
 
-                    try
-                    {
+                    try {
                         std::string attribute_value = get_attribute_value(postfix);
-                    }
-                    catch (XAttrManagerException e)
-                    {
+                    } catch (XAttrManagerException e) {
                         is_empty = true;
                     }
 
-                    if (!is_empty)
-                    {
+                    if (!is_empty) {
                         result.push_back(postfix);
                     }
                 }
             }
-            
+
             begin = current + 1;
         }
     }
-    
+
     delete[] buffer;
 
     return result;
 }
 
-std::string XAttrManager::get_attribute_value(const std::string& attr_name) throw (XAttrManagerException)
+std::string XAttrManager::get_attribute_value(
+    const std::string& attr_name) throw(XAttrManagerException)
 {
     int size = 30;
     char* buffer = new char[size];
 
     std::string qualified_attr_name = "user." + attr_name;
 
-    int length_buffer = getxattr (_filename.c_str(), qualified_attr_name.c_str(),
-            buffer, size);
+    int length_buffer = getxattr(_filename.c_str(), qualified_attr_name.c_str(), buffer, size);
 
-    while ((length_buffer == -1) && (errno == ERANGE))
-    {
+    while ((length_buffer == -1) && (errno == ERANGE)) {
         delete[] buffer;
-        size = size*2;
+        size = size * 2;
         buffer = new char[size];
 
-        length_buffer = getxattr (_filename.c_str(), qualified_attr_name.c_str(),
-                buffer, size);
+        length_buffer = getxattr(_filename.c_str(), qualified_attr_name.c_str(), buffer, size);
     }
 
-    if (length_buffer == -1)
-    {
+    if (length_buffer == -1) {
         delete[] buffer;
         throw XAttrManagerException(Glib::locale_to_utf8(strerror(errno)));
     }
@@ -162,8 +146,7 @@ std::string XAttrManager::get_attribute_value(const std::string& attr_name) thro
     char* new_buffer = new char[length_buffer + 1];
     new_buffer[length_buffer] = '\0';
 
-    for (int i = 0; i < length_buffer; i++)
-    {
+    for (int i = 0; i < length_buffer; i++) {
         new_buffer[i] = buffer[i];
     }
 
@@ -184,8 +167,7 @@ XAttrManager::attributes_t XAttrManager::get_attributes_list()
 
     attributes_t result;
 
-    for (it = attributes.begin(); it != attributes.end(); it++)
-    {
+    for (it = attributes.begin(); it != attributes.end(); it++) {
         std::string attr_value = get_attribute_value(*it);
 
         result[*it] = attr_value;
@@ -197,27 +179,27 @@ XAttrManager::attributes_t XAttrManager::get_attributes_list()
 void XAttrManager::remove_attribute(const std::string& attr_name)
 {
     std::string qualified_name = "user." + attr_name;
-    int result = removexattr (_filename.c_str(), qualified_name.c_str());
+    int result = removexattr(_filename.c_str(), qualified_name.c_str());
 
-    if (result != 0)
-    {
+    if (result != 0) {
         throw XAttrManagerException(Glib::locale_to_utf8(strerror(errno)));
     }
 }
 
-void XAttrManager::add_attribute(const std::string& attr_name, const std::string& attr_value)
+void XAttrManager::add_attribute(const std::string& attr_name,
+    const std::string& attr_value)
 {
     std::string qualified_attr_name = "user." + attr_name;
-    int result = setxattr (_filename.c_str(), qualified_attr_name.c_str(),
-            attr_value.c_str(), attr_value.size(), 0);
+    int result = setxattr(_filename.c_str(), qualified_attr_name.c_str(),
+        attr_value.c_str(), attr_value.size(), 0);
 
-    if (result != 0)
-    {
+    if (result != 0) {
         throw XAttrManagerException(Glib::locale_to_utf8(strerror(errno)));
     }
 }
 
-void XAttrManager::change_attribute_name(const std::string& old_attr_name, const std::string& new_attr_name)
+void XAttrManager::change_attribute_name(const std::string& old_attr_name,
+    const std::string& new_attr_name)
 {
     std::string attribute_value = get_attribute_value(old_attr_name);
     add_attribute(new_attr_name, attribute_value);

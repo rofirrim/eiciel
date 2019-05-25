@@ -16,12 +16,11 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,  USA
 */
-#ifndef TIPUS_ELEMENT_ACL_HPP 
+#ifndef TIPUS_ELEMENT_ACL_HPP
 #define TIPUS_ELEMENT_ACL_HPP
 #include <config.hpp>
 
-enum ElementKind 
-{ 
+enum ElementKind {
     EK_USER,
     EK_GROUP,
     EK_OTHERS,
@@ -36,14 +35,11 @@ enum ElementKind
 
     EK_DEFAULT_ACL_USER,
     EK_DEFAULT_ACL_GROUP,
-    EK_DEFAULT_MASK 
+    EK_DEFAULT_MASK
 };
 
-enum PermissionKind 
-{ 
-    PK_READING,
+enum PermissionKind { PK_READING,
     PK_WRITING,
-    PK_EXECUTION 
-};
+    PK_EXECUTION };
 
 #endif

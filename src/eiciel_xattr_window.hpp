@@ -20,54 +20,54 @@
 #ifndef EICIEL_XATTR_WINDOW_HPP
 #define EICIEL_XATTR_WINDOW_HPP
 
-#include <config.hpp>
-#include <gtkmm.h>
-#include <glib/gi18n-lib.h>
-#include <sstream>
-#include "xattr_manager.hpp"
-#include "xattr_list_model.hpp"
 #include "eiciel_xattr_controller.hpp"
+#include "xattr_list_model.hpp"
+#include "xattr_manager.hpp"
+#include <config.hpp>
+#include <glib/gi18n-lib.h>
+#include <gtkmm.h>
+#include <sstream>
 
 class EicielXAttrController;
 
-class EicielXAttrWindow : public Gtk::VBox
-{
-    public:
-        EicielXAttrWindow(EicielXAttrController* _controller);
-        virtual ~EicielXAttrWindow();
+class EicielXAttrWindow : public Gtk::VBox {
+public:
+    EicielXAttrWindow(EicielXAttrController* _controller);
+    virtual ~EicielXAttrWindow();
 
-        void fill_attributes(XAttrManager::attributes_t llista);
-        void set_readonly(bool b);
+    void fill_attributes(XAttrManager::attributes_t llista);
+    void set_readonly(bool b);
 
-        void set_active(bool b);
+    void set_active(bool b);
 
-    private:
-        EicielXAttrController* _controller;
+private:
+    EicielXAttrController* _controller;
 
-        Glib::RefPtr<Gtk::ListStore> _ref_xattr_list;
-        XAttrListModel _xattr_list_model;
+    Glib::RefPtr<Gtk::ListStore> _ref_xattr_list;
+    XAttrListModel _xattr_list_model;
 
-        Gtk::ScrolledWindow _xattr_listview_container;
-        Gtk::TreeView _xattr_listview;
+    Gtk::ScrolledWindow _xattr_listview_container;
+    Gtk::TreeView _xattr_listview;
 
-        Gtk::Button _b_add_attribute;
-        Gtk::Button _b_remove_attribute;
+    Gtk::Button _b_add_attribute;
+    Gtk::Button _b_remove_attribute;
 
-        Gtk::Box _bottom_buttonbox;
+    Gtk::Box _bottom_buttonbox;
 
-        void _xattr_selection_change();
+    void _xattr_selection_change();
 
-        void there_is_no_xattr_selection();
-        void there_is_xattr_selection();
+    void there_is_no_xattr_selection();
+    void there_is_xattr_selection();
 
-        void set_name_edited_attribute(const Glib::ustring& vell, const Glib::ustring& nou);
-        void set_value_edited_attribute(const Glib::ustring& vell, const Glib::ustring& nou);
+    void set_name_edited_attribute(const Glib::ustring& vell,
+        const Glib::ustring& nou);
+    void set_value_edited_attribute(const Glib::ustring& vell,
+        const Glib::ustring& nou);
 
-        void remove_selected_attribute();
-        void add_selected_attribute();
+    void remove_selected_attribute();
+    void add_selected_attribute();
 
-        bool _readonly;
-}
-;
+    bool _readonly;
+};
 
 #endif

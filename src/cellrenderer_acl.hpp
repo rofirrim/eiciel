@@ -22,55 +22,47 @@
 #include <config.hpp>
 #include <gtkmm.h>
 
-class CellRendererACL : public Gtk::CellRendererToggle
-{
-    protected:
-
-        virtual void render_vfunc (
+class CellRendererACL : public Gtk::CellRendererToggle {
+protected:
+    virtual void render_vfunc(
 #ifdef USING_GNOME2
-                const Glib::RefPtr<Gdk::Drawable>& window,
+        const Glib::RefPtr<Gdk::Drawable>& window,
 #else
-                const Cairo::RefPtr<Cairo::Context>& cr,
+        const Cairo::RefPtr<Cairo::Context>& cr,
 #endif
-                Gtk::Widget& widget,
-                const Gdk::Rectangle& background_area,
-                const Gdk::Rectangle& cell_area,
+        Gtk::Widget& widget,
+        const Gdk::Rectangle& background_area,
+        const Gdk::Rectangle& cell_area,
 #ifdef USING_GNOME2
-                const Gdk::Rectangle& expose_area,
+        const Gdk::Rectangle& expose_area,
 #endif
-                Gtk::CellRendererState flags
-                );
+        Gtk::CellRendererState flags);
 
-        virtual void get_preferred_width_vfunc(
-                Gtk::Widget&    widget,
-                int &   minimum_width,
-                int &   natural_width 
-                ) const;
+    virtual void get_preferred_width_vfunc(Gtk::Widget& widget,
+        int& minimum_width,
+        int& natural_width) const;
 
-        virtual void get_preferred_height_vfunc(
-                Gtk::Widget&    widget,
-                int &   minimum_width,
-                int &   natural_width 
-                ) const;
+    virtual void get_preferred_height_vfunc(Gtk::Widget& widget,
+        int& minimum_width,
+        int& natural_width) const;
 
-    private:
-        Glib::Property<bool> _mark_background;
+private:
+    Glib::Property<bool> _mark_background;
 
-        Glib::RefPtr<Gdk::Pixbuf> get_warning_icon(Gtk::Widget& widget) const;
+    Glib::RefPtr<Gdk::Pixbuf> get_warning_icon(Gtk::Widget& widget) const;
 
-    public:
-        CellRendererACL();
-        Glib::PropertyProxy<bool> mark_background();
+public:
+    CellRendererACL();
+    Glib::PropertyProxy<bool> mark_background();
 
-    protected:
-        // Compatibility overrides
-        virtual void get_size_vfunc(Gtk::Widget& widget,
-                const Gdk::Rectangle* cell_area,
-                int * x_offset,
-                int * y_offset,
-                int * width,
-                int * height) const;
-
+protected:
+    // Compatibility overrides
+    virtual void get_size_vfunc(Gtk::Widget& widget,
+        const Gdk::Rectangle* cell_area,
+        int* x_offset,
+        int* y_offset,
+        int* width,
+        int* height) const;
 };
 
 #endif
