@@ -26,8 +26,6 @@
 #include "acl_manager.hpp"
 #include "acl_element_kind.hpp"
 
-using namespace std;
-
 class EicielWindow;
 
 class EicielMainController : public sigc::trackable
@@ -35,8 +33,8 @@ class EicielMainController : public sigc::trackable
     private:
         ACLManager* _ACL_manager;
         EicielWindow* _window;
-        set<string> _users_list;
-        set<string> _groups_list;
+        std::set<std::string> _users_list;
+        std::set<std::string> _groups_list;
         bool _is_file_opened;
         bool _updating_window;
         Glib::ustring _last_error_message;
@@ -45,25 +43,25 @@ class EicielMainController : public sigc::trackable
         bool _show_system;
 
         void update_acl_list();
-        void update_acl_entry(ElementKind e, string name, 
+        void update_acl_entry(ElementKind e, const std::string& name, 
                 bool reading, bool writing, bool execution);
-        void remove_acl(string entry_name, ElementKind e);
-        void add_acl_entry(string s, ElementKind e, bool is_default);
+        void remove_acl(const std::string& entry_name, ElementKind e);
+        void add_acl_entry(const std::string& s, ElementKind e, bool is_default);
         void change_default_acl();
 
         void fill_lists();
         void show_system_participants(bool b);
         void check_editable();
 
-        set<string> get_users_list();
-        set<string> get_groups_list();
+        std::set<std::string> get_users_list();
+        std::set<std::string> get_groups_list();
 
         bool lookup_user(const std::string& str);
         bool lookup_group(const std::string& str);
 
         bool is_directory();
     public:
-        void open_file(string s);
+        void open_file(const std::string& s);
         Glib::ustring last_error();
         bool opened_file();
         friend class EicielWindow; 

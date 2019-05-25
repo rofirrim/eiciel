@@ -43,8 +43,6 @@
 #include <sstream>
 #include <algorithm>
 
-using namespace std;
-
 #ifdef HAVE_ACL_GET_PERM
    #define ACL_GET_PERM acl_get_perm
 #else 
@@ -95,21 +93,21 @@ struct permissions_t
 struct acl_entry : permissions_t
 {
     int qualifier; // Group or user
-    string name; // Symbolic name of the qualifier
+    std::string name; // Symbolic name of the qualifier
     bool valid_name;
 };
 
 class ACLManager
 {
     private:
-        string _filename;
+        std::string _filename;
         bool _is_directory;
 
         uid_t _uid_owner;
-        string _owner_name;
+        std::string _owner_name;
         permissions_t _owner_perms;
 
-        string _group_name;
+        std::string _group_name;
         permissions_t _group_perms;
 
         permissions_t _others_perms;
@@ -117,10 +115,10 @@ class ACLManager
         bool _there_is_mask;
         permissions_t _mask_acl;
 
-        vector<acl_entry> _user_acl;
-        vector<acl_entry> _group_acl;
-        vector<acl_entry> _default_user_acl;
-        vector<acl_entry> _default_group_acl;
+        std::vector<acl_entry> _user_acl;
+        std::vector<acl_entry> _group_acl;
+        std::vector<acl_entry> _default_user_acl;
+        std::vector<acl_entry> _default_group_acl;
 
         permissions_t _default_user; 
         bool _there_is_default_user;
@@ -134,17 +132,17 @@ class ACLManager
         permissions_t _default_mask;
         bool _there_is_default_mask;
 
-        string _text_acl_access;
-        string _text_acl_default;
+        std::string _text_acl_access;
+        std::string _text_acl_default;
 
         void get_ugo_permissions();
         void get_acl_entries_access();
         void get_acl_entries_default();
         void create_textual_representation();
-        string permission_to_str(permissions_t& p);
-        string write_name(acl_entry& eacl);
-        void set_acl_generic(const string& nom, vector<acl_entry>& llistACL, const permissions_t& perms);
-        void remove_acl_generic(const string& nom, vector<acl_entry>& llistaACL);
+        std::string permission_to_str(permissions_t& p);
+        std::string write_name(acl_entry& eacl);
+        void set_acl_generic(const std::string& nom, std::vector<acl_entry>& llistACL, const permissions_t& perms);
+        void remove_acl_generic(const std::string& nom, std::vector<acl_entry>& llistaACL);
 
         void commit_changes_to_file();
         void calculate_access_mask();
@@ -155,9 +153,9 @@ class ACLManager
         class ACLEquivalence
         {
             private:
-                string _qualifier;
+                std::string _qualifier;
             public:
-                ACLEquivalence(const string& qualif)
+                ACLEquivalence(const std::string& qualif)
                     : _qualifier(qualif) {}
                 bool operator ()(acl_entry& a)
                 {
@@ -169,18 +167,18 @@ class ACLManager
         const static int PERM_WRITE = 1;
         const static int PERM_EXEC = 2;
 
-        ACLManager(const string& filename) throw (ACLManagerException);
+        ACLManager(const std::string& filename) throw (ACLManagerException);
         
-        string get_acl_access() const { return _text_acl_access; }
-        string get_acl_default() const { return _text_acl_default; }
+        std::string get_acl_access() const { return _text_acl_access; }
+        std::string get_acl_default() const { return _text_acl_default; }
         
         bool is_directory() const { return _is_directory; }
         
-        void modify_acl_user(const string& username, const permissions_t& perms);
-        void modify_acl_group(const string& groupname, const permissions_t& perms);
+        void modify_acl_user(const std::string& username, const permissions_t& perms);
+        void modify_acl_group(const std::string& groupname, const permissions_t& perms);
         
-        void modify_acl_default_user(const string& username, const permissions_t& perms);
-        void modify_acl_default_group(const string& groupname, const permissions_t& perms);
+        void modify_acl_default_user(const std::string& username, const permissions_t& perms);
+        void modify_acl_default_group(const std::string& groupname, const permissions_t& perms);
 
         void modify_owner_perms(permissions_t& p);
         void modify_group_perms(permissions_t& p);
@@ -192,20 +190,20 @@ class ACLManager
         void modify_others_perms_default(permissions_t& p);
         void modify_mask_default(permissions_t& p);
         
-        void remove_acl_user(const string& username);
-        void remove_acl_group(const string& groupname);
-        void remove_acl_user_default(const string& username);
-        void remove_acl_group_default(const string& groupname);
+        void remove_acl_user(const std::string& username);
+        void remove_acl_group(const std::string& groupname);
+        void remove_acl_user_default(const std::string& username);
+        void remove_acl_group_default(const std::string& groupname);
 
         void clear_all_acl();
         void clear_default_acl();
 
         void create_default_acl();
 
-        vector<acl_entry> get_acl_user() const { return _user_acl; }
-        vector<acl_entry> get_acl_group() const { return _group_acl; }
-        vector<acl_entry> get_acl_user_default() const { return _default_user_acl; }
-        vector<acl_entry> get_acl_group_default() const { return _default_group_acl; }
+        std::vector<acl_entry> get_acl_user() const { return _user_acl; }
+        std::vector<acl_entry> get_acl_group() const { return _group_acl; }
+        std::vector<acl_entry> get_acl_user_default() const { return _default_user_acl; }
+        std::vector<acl_entry> get_acl_group_default() const { return _default_group_acl; }
         permissions_t get_mask() { return _mask_acl; }
 
         permissions_t get_user() { return _owner_perms; }
@@ -217,8 +215,8 @@ class ACLManager
         permissions_t get_other_default() { return _default_others; }
         permissions_t get_mask_default() { return _default_mask; }
 
-        string get_owner_name() { return _owner_name; }
-        string get_group_name() { return _group_name; }
+        std::string get_owner_name() { return _owner_name; }
+        std::string get_group_name() { return _group_name; }
         uid_t get_owner_uid() { return _uid_owner; }
 
         bool has_mask() const { return _there_is_mask; }

@@ -19,7 +19,7 @@
 #include "acl_manager.hpp"
 
 
-ACLManager::ACLManager(const string& filename) throw (ACLManagerException)
+ACLManager::ACLManager(const std::string& filename) throw (ACLManagerException)
     : _filename(filename) 
 {
     // Get first UGO permissions and info about the file
@@ -59,7 +59,7 @@ void ACLManager::get_ugo_permissions()
 
     if (u == NULL)
     {
-        stringstream ss;
+        std::stringstream ss;
         ss << "(" << buffer.st_uid << ")"; 
         _owner_name = ss.str();
     }
@@ -73,7 +73,7 @@ void ACLManager::get_ugo_permissions()
 
     if (g == NULL)
     {
-        stringstream ss;
+        std::stringstream ss;
         ss << "(" << buffer.st_gid << ")"; 
         _group_name = ss.str();
     }
@@ -125,7 +125,7 @@ void ACLManager::get_acl_entries_access()
                 new_acl.valid_name = (p != NULL);
                 if (p == NULL) 
                 {
-                    stringstream ss;
+                    std::stringstream ss;
                     ss << "(" << *iduser << ")";
                     new_acl.name = ss.str();
                 }
@@ -146,7 +146,7 @@ void ACLManager::get_acl_entries_access()
                 new_acl.valid_name = (g != NULL);
                 if (g == NULL)
                 {
-                    stringstream ss;
+                    std::stringstream ss;
                     ss << "(" << *idgroup << ")";
                     new_acl.name = ss.str();
                 }
@@ -239,7 +239,7 @@ void ACLManager::get_acl_entries_default()
                 new_acl.valid_name = (p != NULL);
                 if (p == NULL) 
                 {
-                    stringstream ss;
+                    std::stringstream ss;
                     ss << "(" << *iduser << ")";
                     new_acl.name = ss.str();
                 }
@@ -260,7 +260,7 @@ void ACLManager::get_acl_entries_default()
                 new_acl.valid_name = (g != NULL);
                 if (g == NULL)
                 {
-                    stringstream ss;
+                    std::stringstream ss;
                     ss << "(" << *idgroup << ")";
                     new_acl.name = ss.str();
                 }
@@ -318,14 +318,14 @@ void ACLManager::create_textual_representation()
     _text_acl_access.clear();
 
     _text_acl_access += "u::" + permission_to_str(_owner_perms) + "\n";
-    for (vector<acl_entry>::iterator i = _user_acl.begin();
+    for (std::vector<acl_entry>::iterator i = _user_acl.begin();
             i != _user_acl.end(); i++)
     {
         _text_acl_access += "u:" + write_name(*i) + ":" + permission_to_str(*i) + "\n";
     }
     
     _text_acl_access += "g::" + permission_to_str(_group_perms) + "\n";
-    for (vector<acl_entry>::iterator i = _group_acl.begin();
+    for (std::vector<acl_entry>::iterator i = _group_acl.begin();
             i != _group_acl.end(); i++)
     {
         _text_acl_access += "g:" + write_name(*i) + ":" + permission_to_str(*i) + "\n";
@@ -353,12 +353,12 @@ void ACLManager::create_textual_representation()
             _text_acl_default += "o::" + permission_to_str(_default_others) + "\n";
         }
 
-        for (vector<acl_entry>::iterator i = _default_user_acl.begin();
+        for (std::vector<acl_entry>::iterator i = _default_user_acl.begin();
                 i != _default_user_acl.end(); i++)
         {
             _text_acl_default += "u:" + write_name(*i) + ":" + permission_to_str(*i) + "\n";
         }
-        for (vector<acl_entry>::iterator i = _default_group_acl.begin();
+        for (std::vector<acl_entry>::iterator i = _default_group_acl.begin();
                 i != _default_group_acl.end(); i++)
         {
             _text_acl_default += "g:" + write_name(*i) + ":" + permission_to_str(*i) + "\n";
@@ -371,7 +371,7 @@ void ACLManager::create_textual_representation()
     }
 }
 
-string ACLManager::write_name(acl_entry& eacl)
+std::string ACLManager::write_name(acl_entry& eacl)
 {
     if (eacl.valid_name)
     {
@@ -379,29 +379,28 @@ string ACLManager::write_name(acl_entry& eacl)
     }
     else
     {
-        stringstream ss;
+        std::stringstream ss;
         ss << eacl.qualifier;
         return ss.str();
     }
 }
 
-string ACLManager::permission_to_str(permissions_t& p)
+std::string ACLManager::permission_to_str(permissions_t& p)
 {
-    string s;
-    s.clear();
+    std::string s;
     s += (p.reading ? "r" : "-");
     s += (p.writing ? "w" : "-");
     s += (p.execution ? "x" : "-");
     return s;
 }
 
-void ACLManager::modify_acl_user(const string& username, const permissions_t& perms)
+void ACLManager::modify_acl_user(const std::string& username, const permissions_t& perms)
 {
     set_acl_generic(username, _user_acl, perms);
     update_changes_acl_access();
 }
 
-void ACLManager::modify_acl_group(const string& groupname, const permissions_t& perms)
+void ACLManager::modify_acl_group(const std::string& groupname, const permissions_t& perms)
 {
     set_acl_generic(groupname, _group_acl, perms);
     update_changes_acl_access();
@@ -425,13 +424,13 @@ void ACLManager::update_changes_acl_access()
     commit_changes_to_file();
 }
 
-void ACLManager::modify_acl_default_user(const string& username, const permissions_t& perms)
+void ACLManager::modify_acl_default_user(const std::string& username, const permissions_t& perms)
 {
     set_acl_generic(username, _default_user_acl, perms);
     update_changes_acl_default();
 }
 
-void ACLManager::modify_acl_default_group(const string& groupname, const permissions_t& perms)
+void ACLManager::modify_acl_default_group(const std::string& groupname, const permissions_t& perms)
 {
     set_acl_generic(groupname, _default_group_acl, perms);
     update_changes_acl_default();
@@ -478,11 +477,11 @@ void ACLManager::fill_needed_acl_default()
     }
 }
 
-void ACLManager::set_acl_generic(const string& name, vector<acl_entry>& acl_list, 
+void ACLManager::set_acl_generic(const std::string& name, std::vector<acl_entry>& acl_list, 
         const permissions_t& perms)
 {
     ACLEquivalence equiv_acl(name);
-    vector<acl_entry>::iterator i = find_if(acl_list.begin(), acl_list.end(), equiv_acl);
+    std::vector<acl_entry>::iterator i = find_if(acl_list.begin(), acl_list.end(), equiv_acl);
     if (i != acl_list.end()) // If already there, update
     {
         i->reading = perms.reading;
@@ -501,31 +500,31 @@ void ACLManager::set_acl_generic(const string& name, vector<acl_entry>& acl_list
     }
 }
 
-void ACLManager::remove_acl_user(const string& username)
+void ACLManager::remove_acl_user(const std::string& username)
 {
     remove_acl_generic(username, _user_acl);
     update_changes_acl_access();
 }
 
-void ACLManager::remove_acl_group(const string& groupname)
+void ACLManager::remove_acl_group(const std::string& groupname)
 {
     remove_acl_generic(groupname, _group_acl);
     update_changes_acl_access();
 }
 
-void ACLManager::remove_acl_user_default(const string& username)
+void ACLManager::remove_acl_user_default(const std::string& username)
 {
     remove_acl_generic(username, _default_user_acl);
     update_changes_acl_default();
 }
 
-void ACLManager::remove_acl_group_default(const string& groupname)
+void ACLManager::remove_acl_group_default(const std::string& groupname)
 {
     remove_acl_generic(groupname, _default_group_acl);
     update_changes_acl_default();
 }
 
-void ACLManager::remove_acl_generic(const string& name, vector<acl_entry>& acl_list)
+void ACLManager::remove_acl_generic(const std::string& name, std::vector<acl_entry>& acl_list)
 {
     ACLEquivalence equiv_acl(name);
     acl_list.erase(remove_if(acl_list.begin(), acl_list.end(), equiv_acl), acl_list.end());
@@ -537,7 +536,7 @@ void ACLManager::commit_changes_to_file()
     acl_t acl_access = acl_from_text(_text_acl_access.c_str());
     if (acl_access == NULL)
     {
-        std::cerr << "ACL is wrong!!!" << endl << _text_acl_access.c_str() << endl;
+        std::cerr << "ACL is wrong!!!" << std::endl << _text_acl_access.c_str() << std::endl;
         
         throw ACLManagerException(_("Textual representation of the ACL is wrong"));
     }
@@ -560,7 +559,7 @@ void ACLManager::commit_changes_to_file()
             acl_t acl_default = acl_from_text(_text_acl_default.c_str());
             if (acl_access == NULL)
             {
-                std::cerr << "Default ACL is wrong!!!" << endl << _text_acl_default.c_str() << endl;
+                std::cerr << "Default ACL is wrong!!!" << std::endl << _text_acl_default.c_str() << std::endl;
                 throw ACLManagerException(_("Default textual representation of the ACL is wrong"));
             }
 

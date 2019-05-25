@@ -25,8 +25,6 @@
 #include "acl_element_kind.hpp"
 
 
-using namespace std;
-
 EicielMainController::EicielMainController() 
     : _ACL_manager(NULL), _is_file_opened(false), 
     _last_error_message(""), _list_must_be_updated(true), 
@@ -83,7 +81,7 @@ void EicielMainController::show_system_participants(bool b)
     }
 }
 
-void EicielMainController::open_file(string s)
+void EicielMainController::open_file(const std::string& s)
 {
     try
     {
@@ -125,11 +123,11 @@ void EicielMainController::update_acl_list()
         effective_permissions = _ACL_manager->get_mask();
     }
     
-    vector<acl_entry> vACL;
+    std::vector<acl_entry> vACL;
     _window->add_non_selectable(Glib::locale_to_utf8(_ACL_manager->get_owner_name()), perms.reading,
             perms.writing, perms.execution, EK_USER);
     vACL = _ACL_manager->get_acl_user();
-    for (vector<acl_entry>::iterator i = vACL.begin(); 
+    for (std::vector<acl_entry>::iterator i = vACL.begin(); 
             i != vACL.end(); i++)
     {
         _window->add_selectable(Glib::locale_to_utf8(i->name), i->reading, 
@@ -153,7 +151,7 @@ void EicielMainController::update_acl_list()
         (!effective_permissions.execution && perms.execution);
 
     vACL = _ACL_manager->get_acl_group();
-    for (vector<acl_entry>::iterator i = vACL.begin(); 
+    for (std::vector<acl_entry>::iterator i = vACL.begin(); 
             i != vACL.end(); i++)
     {
         _window->add_selectable(Glib::locale_to_utf8(i->name), i->reading, 
@@ -200,7 +198,7 @@ void EicielMainController::update_acl_list()
         vACL = _ACL_manager->get_acl_user_default();
 
         there_is_default_acl |= (vACL.size() > 0);
-        for (vector<acl_entry>::iterator i = vACL.begin(); 
+        for (std::vector<acl_entry>::iterator i = vACL.begin(); 
                 i != vACL.end(); i++)
         {
             _window->add_selectable(Glib::locale_to_utf8(i->name), i->reading, 
@@ -231,7 +229,7 @@ void EicielMainController::update_acl_list()
         vACL = _ACL_manager->get_acl_group_default();
 
         there_is_default_acl |= (vACL.size() > 0);
-        for (vector<acl_entry>::iterator i = vACL.begin(); 
+        for (std::vector<acl_entry>::iterator i = vACL.begin(); 
                 i != vACL.end(); i++)
         {
             _window->add_selectable(Glib::locale_to_utf8(i->name), i->reading, 
@@ -275,7 +273,7 @@ bool EicielMainController::is_directory()
     return _ACL_manager->is_directory();
 }
 
-void EicielMainController::add_acl_entry(string s, ElementKind e, bool is_default)
+void EicielMainController::add_acl_entry(const std::string& s, ElementKind e, bool is_default)
 {
     permissions_t p(7);
 
@@ -348,7 +346,7 @@ void EicielMainController::add_acl_entry(string s, ElementKind e, bool is_defaul
     }
 }
 
-void EicielMainController::remove_acl(string entry_name, ElementKind e)
+void EicielMainController::remove_acl(const std::string& entry_name, ElementKind e)
 {
     bool updated = true;
     try
@@ -408,7 +406,7 @@ void EicielMainController::remove_acl(string entry_name, ElementKind e)
     }
 }
 
-void EicielMainController::update_acl_entry(ElementKind e, string s, 
+void EicielMainController::update_acl_entry(ElementKind e, const std::string& s, 
         bool reading, bool writing, bool execution)
 {
     permissions_t p(reading, writing, execution);
@@ -548,13 +546,13 @@ void EicielMainController::change_default_acl()
     }
 }
 
-set<string> EicielMainController::get_users_list()
+std::set<std::string> EicielMainController::get_users_list()
 {
     fill_lists();
     return _users_list;
 }
 
-set<string> EicielMainController::get_groups_list()
+std::set<std::string> EicielMainController::get_groups_list()
 {
     fill_lists();
     return _groups_list;

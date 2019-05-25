@@ -63,10 +63,10 @@ class XAttrManager {
         XAttrManager(const Glib::ustring& filename) throw (XAttrManagerException);
 
         attributes_t get_attributes_list();
-        void remove_attribute(std::string attr_name);
+        void remove_attribute(const std::string& attr_name);
         void set_attribute(attributes_t atributes);
-        void add_attribute(std::string attr_name, std::string attr_value);
-        void change_attribute_name(std::string old_attr_name, std::string new_attr_name);
+        void add_attribute(const std::string &attr_name, const std::string &attr_value);
+        void change_attribute_name(const std::string &old_attr_name, const std::string &new_attr_name);
 
         uid_t get_owner_uid()
         {

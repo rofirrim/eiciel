@@ -337,7 +337,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     _groups_list = _controller->get_groups_list();
 
     _rb_acl_user.signal_clicked().connect(
-            sigc::bind< set<string>*,
+            sigc::bind< std::set<std::string>*,
             ElementKind, 
             Glib::RefPtr<Gdk::Pixbuf>,
             Glib::RefPtr<Gdk::Pixbuf> > (
@@ -349,7 +349,7 @@ EicielWindow::EicielWindow(EicielMainController* cont)
             );
 
     _rb_acl_group.signal_clicked().connect(
-            sigc::bind< set<string>*,
+            sigc::bind< std::set<std::string>*,
             ElementKind, 
             Glib::RefPtr<Gdk::Pixbuf>,
             Glib::RefPtr<Gdk::Pixbuf> > (
@@ -392,7 +392,7 @@ EicielWindow::~EicielWindow()
     delete _controller;
 }
 
-void EicielWindow::initialize(string s)
+void EicielWindow::initialize(const std::string& s)
 {
     _controller->open_file(s);
 }
@@ -586,7 +586,7 @@ Glib::RefPtr<Gdk::Pixbuf> EicielWindow::get_proper_icon(ElementKind e)
     }
 }
 
-void EicielWindow::set_filename(string filename)
+void EicielWindow::set_filename(const std::string& filename)
 {
     _main_box.set_sensitive(true);
 }
@@ -636,7 +636,7 @@ bool EicielWindow::give_default_acl()
     return _tb_modify_default_acl.get_active();
 }
 
-void EicielWindow::fill_participants(set<string>* participants,
+void EicielWindow::fill_participants(std::set<std::string>* participants,
         ElementKind kind, 
         Glib::RefPtr<Gdk::Pixbuf> normal_icon,
         Glib::RefPtr<Gdk::Pixbuf> default_icon)
@@ -646,7 +646,7 @@ void EicielWindow::fill_participants(set<string>* participants,
 
     bool enable_by_default = _cb_acl_default.get_active();
 
-    for (set<string>::iterator i = participants->begin(); i != participants->end(); i++)
+    for (std::set<std::string>::iterator i = participants->begin(); i != participants->end(); i++)
     {
         iter = _ref_participants_list->append();
         Gtk::TreeModel::Row row(*iter);
@@ -700,7 +700,7 @@ void EicielWindow::acl_list_double_click(const Gtk::TreeModel::Path& p,
     }
 }
 
-void EicielWindow::choose_acl(string s, ElementKind e)
+void EicielWindow::choose_acl(const std::string& s, ElementKind e)
 {
     Glib::RefPtr<Gtk::TreeModel> list_model = _listview_acl.get_model();
     Gtk::TreeModel::Children children = list_model->children();
@@ -721,7 +721,7 @@ void EicielWindow::choose_acl(string s, ElementKind e)
     }
 }
 
-bool EicielWindow::enable_participant(string participant_name)
+bool EicielWindow::enable_participant(const std::string& participant_name)
 {
     Glib::RefPtr<Gtk::TreeModel> list_model = _listview_participants.get_model();
     Gtk::TreeModel::Children children = list_model->children();

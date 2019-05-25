@@ -28,8 +28,6 @@
 #include "eiciel_main_controller.hpp"
 #include "acl_element_kind.hpp"
 
-using namespace std;
-
 class EicielMainController;
 
 class EicielWindow : public Gtk::Box 
@@ -43,12 +41,12 @@ class EicielWindow : public Gtk::Box
         void add_selectable(Glib::ustring titol, bool reading, bool writing, bool execution, ElementKind e,
                 bool effective_reading = true, bool effective_writing = true, bool effective_execution = true);
         void empty_acl_list();
-        void set_filename(string filename);
+        void set_filename(const std::string& filename);
         void enable_default_acl_button(bool b);
         void there_is_default_acl(bool b);
         bool give_default_acl();
 
-        void initialize(string s);
+        void initialize(const std::string& s);
         bool opened_file();
 
         void set_active(bool b);
@@ -56,7 +54,7 @@ class EicielWindow : public Gtk::Box
         void set_readonly(bool b);
 
         void show_exclamation_mark(bool b);
-        void choose_acl(string s, ElementKind e);
+        void choose_acl(const std::string& s, ElementKind e);
         void toggle_system_show();
 
         Glib::ustring last_error();
@@ -120,8 +118,8 @@ class EicielWindow : public Gtk::Box
 
         EicielMainController* _controller;
 
-        set<string> _users_list;
-        set<string> _groups_list;
+        std::set<std::string> _users_list;
+        std::set<std::string> _groups_list;
 
         void there_is_no_file();
         void acl_selection_change();
@@ -140,7 +138,7 @@ class EicielWindow : public Gtk::Box
         void add_selected_participant();
         void change_permissions(const Glib::ustring& str, PermissionKind p);
 
-        void fill_participants(set<string>* participants,
+        void fill_participants(std::set<std::string>* participants,
                 ElementKind kind, 
                 Glib::RefPtr<Gdk::Pixbuf> normal_icon,
                 Glib::RefPtr<Gdk::Pixbuf> default_icon);
@@ -172,7 +170,7 @@ class EicielWindow : public Gtk::Box
         void participant_entry_box_changed();
         void participant_entry_box_activate();
 
-        bool enable_participant(string participant_name);
+        bool enable_participant(const std::string& participant_name);
 };
 
 #endif

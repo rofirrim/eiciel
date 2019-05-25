@@ -194,7 +194,7 @@ XAttrManager::attributes_t XAttrManager::get_attributes_list()
     return result;
 }
 
-void XAttrManager::remove_attribute(std::string attr_name)
+void XAttrManager::remove_attribute(const std::string& attr_name)
 {
     std::string qualified_name = "user." + attr_name;
     int result = removexattr (_filename.c_str(), qualified_name.c_str());
@@ -205,7 +205,7 @@ void XAttrManager::remove_attribute(std::string attr_name)
     }
 }
 
-void XAttrManager::add_attribute(std::string attr_name, std::string attr_value)
+void XAttrManager::add_attribute(const std::string& attr_name, const std::string& attr_value)
 {
     std::string qualified_attr_name = "user." + attr_name;
     int result = setxattr (_filename.c_str(), qualified_attr_name.c_str(),
@@ -217,7 +217,7 @@ void XAttrManager::add_attribute(std::string attr_name, std::string attr_value)
     }
 }
 
-void XAttrManager::change_attribute_name(std::string old_attr_name, std::string new_attr_name)
+void XAttrManager::change_attribute_name(const std::string& old_attr_name, const std::string& new_attr_name)
 {
     std::string attribute_value = get_attribute_value(old_attr_name);
     add_attribute(new_attr_name, attribute_value);
