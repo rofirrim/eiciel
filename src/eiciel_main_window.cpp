@@ -281,10 +281,6 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     acl_list_participants_reference->signal_changed().connect(
         sigc::mem_fun(*this, &EicielWindow::change_participant_selection));
 
-    // Double click in ACL list
-    _listview_acl.signal_row_activated().connect(
-        sigc::mem_fun(*this, &EicielWindow::acl_list_double_click));
-
     // Double click in participants list
     _listview_participants.signal_row_activated().connect(
         sigc::mem_fun(*this, &EicielWindow::participants_list_double_click));
@@ -675,24 +671,6 @@ void EicielWindow::participants_list_double_click(const Gtk::TreeModel::Path& p,
             Glib::ustring(row[_participant_list_model._participant_name]),
             ElementKind(row[_participant_list_model._entry_kind]),
             _cb_acl_default.get_active());
-    }
-}
-
-void EicielWindow::acl_list_double_click(const Gtk::TreeModel::Path& p,
-    Gtk::TreeViewColumn* c)
-{
-    Glib::RefPtr<Gtk::TreeModel> list_model = _listview_acl.get_model();
-    Gtk::TreeModel::iterator iter = list_model->get_iter(p);
-
-    if (_readonly_mode)
-        return;
-
-    if (iter) {
-        Gtk::TreeModel::Row row(*iter);
-        if (row[_acl_list_model._removable]) {
-            _controller->remove_acl(Glib::ustring(row[_acl_list_model._entry_name]),
-                ElementKind(row[_acl_list_model._entry_kind]));
-        }
     }
 }
 

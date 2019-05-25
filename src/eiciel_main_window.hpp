@@ -163,8 +163,6 @@ private:
 
     void participants_list_double_click(const Gtk::TreeModel::Path& p,
         Gtk::TreeViewColumn* c);
-    void acl_list_double_click(const Gtk::TreeModel::Path& p,
-        Gtk::TreeViewColumn* c);
 
     bool acl_selection_function(const Glib::RefPtr<Gtk::TreeModel>& model,
         const Gtk::TreeModel::Path& path,
