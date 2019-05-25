@@ -38,11 +38,6 @@ class ACLListModel : public Gtk::TreeModel::ColumnRecord
             add(_reading_ineffective);
             add(_writing_ineffective);
             add(_execution_ineffective);
-            add(_current_recursion_policy);
-            // TODO - Implement recursion policies
-#if 0
-            add(_recursion_policies);
-#endif
             add(_empty);
         }
 
@@ -56,21 +51,7 @@ class ACLListModel : public Gtk::TreeModel::ColumnRecord
         Gtk::TreeModelColumn<bool> _reading_ineffective;
         Gtk::TreeModelColumn<bool> _writing_ineffective;
         Gtk::TreeModelColumn<bool> _execution_ineffective;
-        Gtk::TreeModelColumn<Glib::ustring> _current_recursion_policy;
-        // Gtk::TreeModelColumn<Glib::RefPtr<Gtk::TreeModel> > _recursion_policies;
         Gtk::TreeModelColumn<Glib::ustring> _empty;
-};
-
-class RecursionPolicyModel : public Gtk::TreeModel::ColumnRecord
-{
-    public:
-        RecursionPolicyModel()
-        { 
-            add(_recursion_policy); 
-        }
-
-        // The values from which the user may choose.
-        Gtk::TreeModelColumn<Glib::ustring> _recursion_policy; 
 };
 
 #endif

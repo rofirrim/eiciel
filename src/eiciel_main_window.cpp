@@ -142,39 +142,6 @@ EicielWindow::EicielWindow(EicielMainController* cont)
         execution_column->set_cell_data_func(*renderExecute, mem_fun(*this, &EicielWindow::acl_cell_data_func));
     }
 
-    // TODO - Implement recursion policies
-#if 0
-    // Recursion policy
-    _recursion_policy_list = Gtk::ListStore::create(_recursion_policy_model);
-    _dummy_recursion_policy_list = Gtk::ListStore::create(_recursion_policy_model);
-    {
-        Gtk::TreeModel::Row row = *(_recursion_policy_list->append());
-        row[_recursion_policy_model._recursion_policy] = _("None");
-        row = *(_recursion_policy_list->append());
-        row[_recursion_policy_model._recursion_policy] = _("Only files");
-        row = *(_recursion_policy_list->append());
-        row[_recursion_policy_model._recursion_policy] = _("Only directories");
-        row = *(_recursion_policy_list->append());
-        row[_recursion_policy_model._recursion_policy] = _("Both files and directories");
-
-        // Dummy
-        row = *(_dummy_recursion_policy_list->append());
-        row[_recursion_policy_model._recursion_policy] = _("None");
-    }
-
-    Gtk::CellRendererCombo* renderRecursion = Gtk::manage(new Gtk::CellRendererCombo());
-    numColumns = _listview_acl.append_column(_("Recursion"), *renderRecursion);
-    Gtk::TreeViewColumn* recursion_column = _listview_acl.get_column(numColumns - 1);
-
-    recursion_column->add_attribute(renderRecursion->property_text(), _acl_list_model._current_recursion_policy);
-    recursion_column->add_attribute(renderRecursion->property_model(), _acl_list_model._recursion_policies);
-    renderRecursion->property_text_column() = 0;
-    renderRecursion->property_editable() = true;
-    renderRecursion->property_has_entry() = false;
-
-    renderRecursion->signal_edited().connect( sigc::mem_fun(*this, &EicielWindow::recursion_policy_change) );
-#endif
-  
     // Aesthetic column completely useless
     _listview_acl.append_column("", _acl_list_model._empty);
 
@@ -584,19 +551,6 @@ void EicielWindow::add_element(Glib::ustring title,
     row[_acl_list_model._reading_ineffective] = !effective_reading;
     row[_acl_list_model._writing_ineffective] = !effective_writing;
     row[_acl_list_model._execution_ineffective] = !effective_execution;
-
-    // TODO - Implement recursion policies
-#if 0
-    row[_acl_list_model._current_recursion_policy] = _("None");
-    if (can_be_recursed)
-    {
-        row[_acl_list_model._recursion_policies] = _recursion_policy_list;
-    }
-    else
-    {
-        row[_acl_list_model._recursion_policies] = _dummy_recursion_policy_list;
-    }
-#endif
 }
 
 Glib::RefPtr<Gdk::Pixbuf> EicielWindow::get_proper_icon(ElementKind e)
@@ -859,18 +813,6 @@ void EicielWindow::toggle_system_show()
 void EicielWindow::acl_cell_data_func(Gtk::CellRenderer* rend, 
         const Gtk::TreeModel::iterator& itr)
 {
-}
-
-void EicielWindow::recursion_policy_change(const Glib::ustring& path_string, const Glib::ustring& new_text)
-{
-    Gtk::TreePath path(path_string);
-
-    Gtk::TreeModel::iterator iter = _ref_acl_list->get_iter(path);
-    if (iter)
-    {
-        Gtk::TreeRow row = *iter;
-        row[_acl_list_model._current_recursion_policy] = new_text;
-    }
 }
 
 void EicielWindow::participant_entry_box_activate()

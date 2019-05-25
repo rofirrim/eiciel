@@ -115,13 +115,6 @@ class EicielWindow : public Gtk::Box
         ACLListModel _acl_list_model;
         ModelLlistaParticipant _participant_list_model;
 
-    // TODO - Implement recursion policies
-#if 0
-        RecursionPolicyModel _recursion_policy_model;
-        Glib::RefPtr<Gtk::ListStore> _recursion_policy_list;
-        Glib::RefPtr<Gtk::ListStore> _dummy_recursion_policy_list;
-#endif
-
         bool _readonly_mode;
         int _pending_filter_updates;
 
@@ -171,8 +164,6 @@ class EicielWindow : public Gtk::Box
 
         void change_participant_kind();
 
-        void recursion_policy_change(const Glib::ustring& path_string, const Glib::ustring& new_text);
-        
         bool refilter();
         void on_clear_icon_pressed(Gtk::EntryIconPosition icon_position, const GdkEventButton* event);
         void filter_entry_text_changed();
