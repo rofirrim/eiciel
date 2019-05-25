@@ -36,7 +36,7 @@ public:
     EicielWindow(EicielMainController* cont);
     virtual ~EicielWindow();
 
-    void add_non_selectable(Glib::ustring titol,
+    void add_non_selectable(Glib::ustring title,
         bool reading,
         bool writing,
         bool execution,
@@ -44,7 +44,7 @@ public:
         bool effective_reading = true,
         bool effective_writing = true,
         bool effective_execution = true);
-    void add_selectable(Glib::ustring titol,
+    void add_selectable(Glib::ustring title,
         bool reading,
         bool writing,
         bool execution,
