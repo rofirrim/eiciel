@@ -80,9 +80,7 @@ void EicielXAttrController::update_attribute_name(
 
 void EicielXAttrController::check_editable()
 {
-    /*
-   * Comprovem que es el propietari o root
-   */
+    // Check that it is the owner or root.
     uid_t real_user = getuid();
     if ((real_user != 0) && (real_user != _xattr_manager->get_owner_uid())) {
         _window->set_readonly(true);
