@@ -36,22 +36,20 @@ public:
     EicielWindow(EicielMainController* cont);
     virtual ~EicielWindow();
 
-    void add_non_selectable(Glib::ustring title,
+    void add_non_selectable(
+        Glib::RefPtr<Gtk::ListStore> ref_acl_list,
+        Glib::ustring title,
         bool reading,
         bool writing,
         bool execution,
-        ElementKind e,
-        bool effective_reading = true,
-        bool effective_writing = true,
-        bool effective_execution = true);
-    void add_selectable(Glib::ustring title,
+        ElementKind e);
+    void add_selectable(
+        Glib::RefPtr<Gtk::ListStore> ref_acl_list,
+        Glib::ustring title,
         bool reading,
         bool writing,
         bool execution,
-        ElementKind e,
-        bool effective_reading = true,
-        bool effective_writing = true,
-        bool effective_execution = true);
+        ElementKind e);
     void empty_acl_list();
     void set_filename(const std::string& filename);
     void enable_default_acl_button(bool b);
@@ -65,11 +63,17 @@ public:
 
     void set_readonly(bool b);
 
-    void show_exclamation_mark(bool b);
+    void set_exist_ineffective_permissions(bool b);
     void choose_acl(const std::string& s, ElementKind e);
     void toggle_system_show();
 
     Glib::ustring last_error();
+
+    Glib::RefPtr<Gtk::ListStore> create_acl_list_store();
+    Glib::RefPtr<Gtk::ListStore> get_acl_store();
+    void replace_acl_store(Glib::RefPtr<Gtk::ListStore> ref_acl_list);
+
+    void update_acl_ineffective(permissions_t effective_permissions, permissions_t effective_default_permissions);
 
 private:
     /* GUI components */
@@ -147,11 +151,7 @@ private:
         bool writing,
         bool execution,
         ElementKind e,
-        Gtk::TreeModel::Row& row,
-        bool effective_reading,
-        bool effective_writing,
-        bool effective_execution,
-        bool can_be_recursed);
+        Gtk::TreeModel::Row& row);
     void remove_selected_acl();
     void add_selected_participant();
     void change_permissions(const Glib::ustring& str, PermissionKind p);

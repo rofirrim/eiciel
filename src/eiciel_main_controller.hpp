@@ -43,6 +43,7 @@ private:
     bool _show_system;
 
     void update_acl_list();
+    void redraw_acl_list();
     void update_acl_entry(ElementKind e,
         const std::string& name,
         bool reading,

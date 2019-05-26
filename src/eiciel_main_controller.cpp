@@ -86,7 +86,7 @@ void EicielMainController::open_file(const std::string& s)
         delete _ACL_manager;
         _ACL_manager = new_manager;
 
-        update_acl_list();
+        redraw_acl_list();
         _window->set_filename(s);
         _window->set_active(true);
 
@@ -104,56 +104,67 @@ void EicielMainController::open_file(const std::string& s)
 
 void EicielMainController::update_acl_list()
 {
-    _updating_window = true;
-    _window->empty_acl_list();
-    // The owner user
-    permissions_t perms = _ACL_manager->get_user();
-    bool show_exclamation_mark = false;
-
     permissions_t effective_permissions(7);
     if (_ACL_manager->has_mask()) {
         effective_permissions = _ACL_manager->get_mask();
     }
+    permissions_t effective_default_permissions(7);
+    if (_ACL_manager->has_default_mask()) {
+        effective_default_permissions = _ACL_manager->get_mask_default();
+    }
 
+    _window->update_acl_ineffective(effective_permissions, effective_default_permissions);
+}
+
+void EicielMainController::redraw_acl_list()
+{
+    _updating_window = true;
+
+    Glib::RefPtr<Gtk::ListStore> ref_acl_list = _window->create_acl_list_store();
+
+    permissions_t perms = _ACL_manager->get_user();
     std::vector<acl_entry> vACL;
     _window->add_non_selectable(
+        ref_acl_list,
         Glib::locale_to_utf8(_ACL_manager->get_owner_name()), perms.reading,
         perms.writing, perms.execution, EK_USER);
+
     vACL = _ACL_manager->get_acl_user();
     for (std::vector<acl_entry>::iterator i = vACL.begin(); i != vACL.end();
          i++) {
         _window->add_selectable(
+            ref_acl_list,
             Glib::locale_to_utf8(i->name), i->reading, i->writing, i->execution,
-            EK_ACL_USER, effective_permissions.reading,
-            effective_permissions.writing, effective_permissions.execution);
-        show_exclamation_mark |= (!effective_permissions.reading && i->reading) || (!effective_permissions.writing && i->writing) || (!effective_permissions.execution && i->execution);
+            EK_ACL_USER);
     }
 
     perms = _ACL_manager->get_group();
     _window->add_non_selectable(
+        ref_acl_list,
         Glib::locale_to_utf8(_ACL_manager->get_group_name()), perms.reading,
-        perms.writing, perms.execution, EK_GROUP, effective_permissions.reading,
-        effective_permissions.writing, effective_permissions.execution);
-    show_exclamation_mark |= (!effective_permissions.reading && perms.reading) || (!effective_permissions.writing && perms.writing) || (!effective_permissions.execution && perms.execution);
+        perms.writing, perms.execution, EK_GROUP);
 
     vACL = _ACL_manager->get_acl_group();
     for (std::vector<acl_entry>::iterator i = vACL.begin(); i != vACL.end();
          i++) {
         _window->add_selectable(
+            ref_acl_list,
             Glib::locale_to_utf8(i->name), i->reading, i->writing, i->execution,
-            EK_ACL_GROUP, effective_permissions.reading,
-            effective_permissions.writing, effective_permissions.execution);
-        show_exclamation_mark |= (!effective_permissions.reading && i->reading) || (!effective_permissions.writing && i->writing) || (!effective_permissions.execution && i->execution);
+            EK_ACL_GROUP);
     }
 
     if (_ACL_manager->has_mask()) {
         perms = _ACL_manager->get_mask();
-        _window->add_non_selectable(_("Mask"), perms.reading, perms.writing,
+        _window->add_non_selectable(
+            ref_acl_list,
+            _("Mask"), perms.reading, perms.writing,
             perms.execution, EK_MASK);
     }
 
     perms = _ACL_manager->get_other();
-    _window->add_non_selectable(_("Other"), perms.reading, perms.writing,
+    _window->add_non_selectable(
+        ref_acl_list,
+        _("Other"), perms.reading, perms.writing,
         perms.execution, EK_OTHERS);
 
     _window->enable_default_acl_button(_ACL_manager->is_directory());
@@ -169,6 +180,7 @@ void EicielMainController::update_acl_list()
         if (_ACL_manager->has_default_user()) {
             perms = _ACL_manager->get_user_default();
             _window->add_non_selectable(
+                ref_acl_list,
                 Glib::locale_to_utf8(_ACL_manager->get_owner_name()), perms.reading,
                 perms.writing, perms.execution, EK_DEFAULT_USER);
             there_is_default_acl = true;
@@ -179,23 +191,18 @@ void EicielMainController::update_acl_list()
         there_is_default_acl |= (vACL.size() > 0);
         for (std::vector<acl_entry>::iterator i = vACL.begin(); i != vACL.end();
              i++) {
-            _window->add_selectable(Glib::locale_to_utf8(i->name), i->reading,
-                i->writing, i->execution, EK_DEFAULT_ACL_USER,
-                effective_default_permissions.reading,
-                effective_default_permissions.writing,
-                effective_default_permissions.execution);
-            show_exclamation_mark |= (!effective_default_permissions.reading && i->reading) || (!effective_default_permissions.writing && i->writing) || (!effective_default_permissions.execution && i->execution);
+            _window->add_selectable(
+                ref_acl_list,
+                Glib::locale_to_utf8(i->name), i->reading,
+                i->writing, i->execution, EK_DEFAULT_ACL_USER);
         }
 
         if (_ACL_manager->has_default_group()) {
             perms = _ACL_manager->get_group_default();
             _window->add_non_selectable(
+                ref_acl_list,
                 Glib::locale_to_utf8(_ACL_manager->get_group_name()), perms.reading,
-                perms.writing, perms.execution, EK_DEFAULT_GROUP,
-                effective_default_permissions.reading,
-                effective_default_permissions.writing,
-                effective_default_permissions.execution);
-            show_exclamation_mark |= (!effective_default_permissions.reading && perms.reading) || (!effective_default_permissions.writing && perms.writing) || (!effective_default_permissions.execution && perms.execution);
+                perms.writing, perms.execution, EK_DEFAULT_GROUP);
             there_is_default_acl |= true;
         }
 
@@ -204,17 +211,15 @@ void EicielMainController::update_acl_list()
         there_is_default_acl |= (vACL.size() > 0);
         for (std::vector<acl_entry>::iterator i = vACL.begin(); i != vACL.end();
              i++) {
-            _window->add_selectable(Glib::locale_to_utf8(i->name), i->reading,
-                i->writing, i->execution, EK_DEFAULT_ACL_GROUP,
-                effective_default_permissions.reading,
-                effective_default_permissions.writing,
-                effective_default_permissions.execution);
-            show_exclamation_mark |= (!effective_default_permissions.reading && i->reading) || (!effective_default_permissions.writing && i->writing) || (!effective_default_permissions.execution && i->execution);
+            _window->add_selectable(
+                ref_acl_list,
+                Glib::locale_to_utf8(i->name), i->reading,
+                i->writing, i->execution, EK_DEFAULT_ACL_GROUP);
         }
 
         if (_ACL_manager->has_default_mask()) {
             perms = _ACL_manager->get_mask_default();
-            _window->add_non_selectable(_("Default Mask"), perms.reading,
+            _window->add_non_selectable(ref_acl_list, _("Default Mask"), perms.reading,
                 perms.writing, perms.execution,
                 EK_DEFAULT_MASK);
             there_is_default_acl |= true;
@@ -222,7 +227,7 @@ void EicielMainController::update_acl_list()
 
         if (_ACL_manager->has_default_other()) {
             perms = _ACL_manager->get_other_default();
-            _window->add_non_selectable(_("Default Other"), perms.reading,
+            _window->add_non_selectable(ref_acl_list, _("Default Other"), perms.reading,
                 perms.writing, perms.execution,
                 EK_DEFAULT_OTHERS);
             there_is_default_acl |= true;
@@ -230,7 +235,17 @@ void EicielMainController::update_acl_list()
         _window->there_is_default_acl(there_is_default_acl);
     }
 
-    _window->show_exclamation_mark(show_exclamation_mark);
+    _window->replace_acl_store(ref_acl_list);
+
+    permissions_t effective_permissions(7);
+    if (_ACL_manager->has_mask()) {
+        effective_permissions = _ACL_manager->get_mask();
+    }
+    permissions_t effective_default_permissions(7);
+    if (_ACL_manager->has_default_mask()) {
+        effective_default_permissions = _ACL_manager->get_mask_default();
+    }
+    _window->update_acl_ineffective(effective_permissions, effective_default_permissions);
 
     _updating_window = false;
 }
@@ -279,7 +294,7 @@ void EicielMainController::add_acl_entry(const std::string& s,
             break;
         }
 
-        update_acl_list();
+        redraw_acl_list();
 
         _window->choose_acl(s, e);
     } catch (ACLManagerException e) {
@@ -327,7 +342,7 @@ void EicielMainController::remove_acl(const std::string& entry_name,
         }
 
         if (updated) {
-            update_acl_list();
+            redraw_acl_list();
         }
     } catch (ACLManagerException e) {
         Glib::ustring s = _("Could not remove ACL entry: ") + e.getMessage();
@@ -452,7 +467,7 @@ void EicielMainController::change_default_acl()
         } else {
             _ACL_manager->create_default_acl();
         }
-        update_acl_list();
+        redraw_acl_list();
     } catch (ACLManagerException e) {
         _last_error_message = e.getMessage();
     }

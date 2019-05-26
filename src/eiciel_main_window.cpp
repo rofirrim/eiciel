@@ -106,10 +106,9 @@ EicielWindow::EicielWindow(EicielMainController* cont)
     _default_mask_icon = Gdk::Pixbuf::create_from_file(PKGDATADIR "/img/mask-default.png");
 
     // ACL list
-    _ref_acl_list = Gtk::ListStore::create(_acl_list_model);
+    _ref_acl_list = create_acl_list_store();
 
     // Set columns in the ACL list
-    _listview_acl.set_reallocate_redraws();
     _listview_acl.set_model(_ref_acl_list);
     _listview_acl.append_column("", _acl_list_model._icon);
     _listview_acl.append_column(_("Entry"), _acl_list_model._entry_name);
@@ -358,10 +357,15 @@ EicielWindow::EicielWindow(EicielMainController* cont)
 
     show_all();
 
-    show_exclamation_mark(false);
+    set_exist_ineffective_permissions(false);
 }
 
-void EicielWindow::show_exclamation_mark(bool b)
+Glib::RefPtr<Gtk::ListStore> EicielWindow::create_acl_list_store()
+{
+    return Gtk::ListStore::create(_acl_list_model);
+}
+
+void EicielWindow::set_exist_ineffective_permissions(bool b)
 {
     if (b) {
         _bottom_label.show();
@@ -412,6 +416,17 @@ void EicielWindow::there_is_no_file()
 void EicielWindow::empty_acl_list()
 {
     _ref_acl_list->clear();
+}
+
+void EicielWindow::replace_acl_store(Glib::RefPtr<Gtk::ListStore> ref_acl_list)
+{
+    _listview_acl.set_model(ref_acl_list);
+    _ref_acl_list = ref_acl_list;
+}
+
+Glib::RefPtr<Gtk::ListStore> EicielWindow::get_acl_store()
+{
+    return _ref_acl_list;
 }
 
 void EicielWindow::acl_selection_change()
@@ -486,39 +501,33 @@ void EicielWindow::there_is_participant_selection()
     _b_add_acl.set_sensitive(true);
 }
 
-void EicielWindow::add_non_selectable(Glib::ustring title,
+void EicielWindow::add_non_selectable(
+        Glib::RefPtr<Gtk::ListStore> ref_acl_list,
+        Glib::ustring title,
     bool reading,
     bool writing,
     bool execution,
-    ElementKind e,
-    bool effective_reading,
-    bool effective_writing,
-    bool effective_execution)
+    ElementKind e)
 {
-    Gtk::TreeModel::iterator iter = _ref_acl_list->append();
+    Gtk::TreeModel::iterator iter = ref_acl_list->append();
     Gtk::TreeModel::Row row(*iter);
 
-    add_element(title, reading, writing, execution, e, row, effective_reading,
-        effective_writing, effective_execution,
-        _controller->is_directory());
+    add_element(title, reading, writing, execution, e, row);
     row[_acl_list_model._removable] = false;
 }
 
-void EicielWindow::add_selectable(Glib::ustring title,
+void EicielWindow::add_selectable(
+        Glib::RefPtr<Gtk::ListStore> ref_acl_list,
+        Glib::ustring title,
     bool reading,
     bool writing,
     bool execution,
-    ElementKind e,
-    bool effective_reading,
-    bool effective_writing,
-    bool effective_execution)
+    ElementKind e)
 {
-    Gtk::TreeModel::iterator iter = _ref_acl_list->append();
+    Gtk::TreeModel::iterator iter = ref_acl_list->append();
     Gtk::TreeModel::Row row(*iter);
 
-    add_element(title, reading, writing, execution, e, row, effective_reading,
-        effective_writing, effective_execution,
-        _controller->is_directory());
+    add_element(title, reading, writing, execution, e, row);
     row[_acl_list_model._removable] = true;
 }
 
@@ -527,11 +536,7 @@ void EicielWindow::add_element(Glib::ustring title,
     bool writing,
     bool execution,
     ElementKind e,
-    Gtk::TreeModel::Row& row,
-    bool effective_reading,
-    bool effective_writing,
-    bool effective_execution,
-    bool can_be_recursed)
+    Gtk::TreeModel::Row& row)
 {
     row[_acl_list_model._entry_kind] = e;
     row[_acl_list_model._icon] = get_proper_icon(e);
@@ -539,10 +544,6 @@ void EicielWindow::add_element(Glib::ustring title,
     row[_acl_list_model._reading_permission] = reading;
     row[_acl_list_model._writing_permission] = writing;
     row[_acl_list_model._execution_permission] = execution;
-
-    row[_acl_list_model._reading_ineffective] = !effective_reading;
-    row[_acl_list_model._writing_ineffective] = !effective_writing;
-    row[_acl_list_model._execution_ineffective] = !effective_execution;
 }
 
 Glib::RefPtr<Gdk::Pixbuf> EicielWindow::get_proper_icon(ElementKind e)
@@ -585,11 +586,11 @@ void EicielWindow::set_filename(const std::string& filename)
 void EicielWindow::change_permissions(const Glib::ustring& str,
     PermissionKind p)
 {
-    Gtk::TreeModel::iterator i = _ref_acl_list->get_iter(str);
-    Gtk::TreeModel::Row row(*i);
-
     if (_readonly_mode)
         return;
+
+    Gtk::TreeModel::iterator i = _ref_acl_list->get_iter(str);
+    Gtk::TreeModel::Row row(*i);
 
     switch (p) {
     case PK_READING:
@@ -647,6 +648,43 @@ void EicielWindow::fill_participants(std::set<std::string>* participants,
         row[_participant_list_model._participant_name] = *i;
         row[_participant_list_model._entry_kind] = kind;
     }
+}
+
+void EicielWindow::update_acl_ineffective(permissions_t effective_permissions, permissions_t effective_default_permissions)
+{
+    Gtk::TreeModel::Children children = _ref_acl_list->children();
+
+    bool exist_ineffective_permissions = false;
+    for (Gtk::TreeModel::iterator iter = children.begin(); iter != children.end(); iter++) {
+        Gtk::TreeModel::Row row(*iter);
+        switch (row[_acl_list_model._entry_kind]) {
+        case EK_GROUP:
+        case EK_ACL_USER:
+        case EK_ACL_GROUP:
+            row[_acl_list_model._reading_ineffective] = !effective_permissions.reading;
+            row[_acl_list_model._writing_ineffective] = !effective_permissions.writing;
+            row[_acl_list_model._execution_ineffective] = !effective_permissions.execution;
+            exist_ineffective_permissions = exist_ineffective_permissions || ((!effective_permissions.reading && row[_acl_list_model._reading_permission]) || (!effective_permissions.writing && row[_acl_list_model._writing_permission]) || (!effective_permissions.execution && row[_acl_list_model._execution_permission]));
+            break;
+        case EK_DEFAULT_GROUP:
+        case EK_DEFAULT_ACL_USER:
+        case EK_DEFAULT_ACL_GROUP:
+            row[_acl_list_model._reading_ineffective] = !effective_default_permissions.reading;
+            row[_acl_list_model._writing_ineffective] = !effective_default_permissions.writing;
+            row[_acl_list_model._execution_ineffective] = !effective_default_permissions.execution;
+            exist_ineffective_permissions = exist_ineffective_permissions || ((!effective_default_permissions.reading && row[_acl_list_model._reading_permission]) || (!effective_default_permissions.writing && row[_acl_list_model._writing_permission]) || (!effective_default_permissions.execution && row[_acl_list_model._execution_permission]));
+            break;
+        // These don't change
+        case EK_USER:
+        case EK_OTHERS:
+        case EK_MASK:
+        case EK_DEFAULT_USER:
+        case EK_DEFAULT_MASK:
+        case EK_DEFAULT_OTHERS:
+            break;
+        }
+    }
+    set_exist_ineffective_permissions(exist_ineffective_permissions);
 }
 
 bool EicielWindow::opened_file()
