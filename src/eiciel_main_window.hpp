@@ -127,7 +127,7 @@ private:
     Glib::RefPtr<Gtk::TreeModelFilter> _ref_participants_list_filter;
 
     ACLListModel _acl_list_model;
-    ModelLlistaParticipant _participant_list_model;
+    ParticipantListModel _participant_list_model;
 
     bool _readonly_mode;
     int _pending_filter_updates;

@@ -22,9 +22,9 @@
 
 #include "acl_element_kind.hpp"
 
-class ModelLlistaParticipant : public Gtk::TreeModel::ColumnRecord {
+class ParticipantListModel : public Gtk::TreeModel::ColumnRecord {
 public:
-    ModelLlistaParticipant()
+    ParticipantListModel()
     {
         add(_icon);
         add(_participant_name);
