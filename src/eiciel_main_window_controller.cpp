@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2004-2019 Roger Ferrer Ib·Òez
+    Copyright (C) 2004-2019 Roger Ferrer Ib√°√±ez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -17,67 +17,27 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,  USA
 */
 #include "config.hpp"
-#include <grp.h>
-#include <iostream>
-#include <pwd.h>
 
 #include "acl_element_kind.hpp"
-#include "eiciel_main_controller.hpp"
+#include "eiciel_enclosed_editor_window.hpp"
+#include "eiciel_enclosed_editor_window_controller.hpp"
+#include "eiciel_main_window_controller.hpp"
+#include <giomm.h>
+#include <thread>
 
-EicielMainController::EicielMainController()
+EicielACLWindowController::EicielACLWindowController()
     : _ACL_manager(NULL)
     , _is_file_opened(false)
     , _last_error_message("")
-    , _list_must_be_updated(true)
-    , _show_system(false)
 {
-    fill_lists();
 }
 
-EicielMainController::~EicielMainController()
+EicielACLWindowController::~EicielACLWindowController()
 {
     delete _ACL_manager;
 }
 
-void EicielMainController::fill_lists()
-{
-    if (!_list_must_be_updated)
-        return;
-
-    // Create the list of users
-    _users_list.clear();
-    struct passwd* u;
-    setpwent();
-    while ((u = getpwent()) != NULL) {
-        if (_show_system || (u->pw_uid >= 1000)) {
-            _users_list.insert(u->pw_name);
-        }
-    }
-    endpwent();
-
-    // Create the list of groups
-    _groups_list.clear();
-    struct group* g;
-    setgrent();
-    while ((g = getgrent()) != NULL) {
-        if (_show_system || (g->gr_gid >= 1000)) {
-            _groups_list.insert(g->gr_name);
-        }
-    }
-    endgrent();
-
-    _list_must_be_updated = false;
-}
-
-void EicielMainController::show_system_participants(bool b)
-{
-    if (b != _show_system) {
-        _show_system = b;
-        _list_must_be_updated = true;
-    }
-}
-
-void EicielMainController::open_file(const std::string& s)
+void EicielACLWindowController::open_file(const std::string& s)
 {
     try {
         ACLManager* new_manager;
@@ -88,21 +48,23 @@ void EicielMainController::open_file(const std::string& s)
 
         redraw_acl_list();
         _window->set_filename(s);
-        _window->set_active(true);
 
-        // This checks if file can be edited
+        set_active(true);
+
         check_editable();
 
         _is_file_opened = true;
+        _current_filename = s;
     } catch (ACLManagerException e) {
         _is_file_opened = false;
-        _window->set_active(false);
-        _window->empty_acl_list();
+        _current_filename.clear();
+        set_active(false);
+        this->empty_acl_list();
         _last_error_message = e.getMessage();
     }
 }
 
-void EicielMainController::update_acl_list()
+void EicielACLWindowController::update_acl_list()
 {
     permissions_t effective_permissions(7);
     if (_ACL_manager->has_mask()) {
@@ -113,18 +75,14 @@ void EicielMainController::update_acl_list()
         effective_default_permissions = _ACL_manager->get_mask_default();
     }
 
-    _window->update_acl_ineffective(effective_permissions, effective_default_permissions);
+    this->update_acl_ineffective(effective_permissions, effective_default_permissions);
 }
 
-void EicielMainController::redraw_acl_list()
+void EicielACLWindowController::fill_acl_list(Glib::RefPtr<Gtk::ListStore> ref_acl_list, bool include_default_entries)
 {
-    _updating_window = true;
-
-    Glib::RefPtr<Gtk::ListStore> ref_acl_list = _window->create_acl_list_store();
-
     permissions_t perms = _ACL_manager->get_user();
     std::vector<acl_entry> vACL;
-    _window->add_non_selectable(
+    this->add_non_selectable(
         ref_acl_list,
         Glib::locale_to_utf8(_ACL_manager->get_owner_name()), perms.reading,
         perms.writing, perms.execution, EK_USER);
@@ -132,14 +90,14 @@ void EicielMainController::redraw_acl_list()
     vACL = _ACL_manager->get_acl_user();
     for (std::vector<acl_entry>::iterator i = vACL.begin(); i != vACL.end();
          i++) {
-        _window->add_selectable(
+        this->add_selectable(
             ref_acl_list,
             Glib::locale_to_utf8(i->name), i->reading, i->writing, i->execution,
             EK_ACL_USER);
     }
 
     perms = _ACL_manager->get_group();
-    _window->add_non_selectable(
+    this->add_non_selectable(
         ref_acl_list,
         Glib::locale_to_utf8(_ACL_manager->get_group_name()), perms.reading,
         perms.writing, perms.execution, EK_GROUP);
@@ -147,7 +105,7 @@ void EicielMainController::redraw_acl_list()
     vACL = _ACL_manager->get_acl_group();
     for (std::vector<acl_entry>::iterator i = vACL.begin(); i != vACL.end();
          i++) {
-        _window->add_selectable(
+        this->add_selectable(
             ref_acl_list,
             Glib::locale_to_utf8(i->name), i->reading, i->writing, i->execution,
             EK_ACL_GROUP);
@@ -155,22 +113,24 @@ void EicielMainController::redraw_acl_list()
 
     if (_ACL_manager->has_mask()) {
         perms = _ACL_manager->get_mask();
-        _window->add_non_selectable(
+        this->add_non_selectable(
             ref_acl_list,
             _("Mask"), perms.reading, perms.writing,
             perms.execution, EK_MASK);
     }
 
     perms = _ACL_manager->get_other();
-    _window->add_non_selectable(
+    this->add_non_selectable(
         ref_acl_list,
         _("Other"), perms.reading, perms.writing,
         perms.execution, EK_OTHERS);
 
-    _window->enable_default_acl_button(_ACL_manager->is_directory());
-    _window->there_is_default_acl(false);
+    this->EicielACLListController::can_edit_default_acl(_ACL_manager->is_directory());
+    can_edit_enclosed_files(_ACL_manager->is_directory());
+    this->EicielParticipantListController::can_edit_default_acl(_ACL_manager->is_directory());
+    this->default_acl_are_being_edited(false);
 
-    if (_ACL_manager->is_directory()) {
+    if (include_default_entries && _ACL_manager->is_directory()) {
         bool there_is_default_acl = false;
         permissions_t effective_default_permissions(7);
         if (_ACL_manager->has_default_mask()) {
@@ -179,7 +139,7 @@ void EicielMainController::redraw_acl_list()
 
         if (_ACL_manager->has_default_user()) {
             perms = _ACL_manager->get_user_default();
-            _window->add_non_selectable(
+            this->add_non_selectable(
                 ref_acl_list,
                 Glib::locale_to_utf8(_ACL_manager->get_owner_name()), perms.reading,
                 perms.writing, perms.execution, EK_DEFAULT_USER);
@@ -191,7 +151,7 @@ void EicielMainController::redraw_acl_list()
         there_is_default_acl |= (vACL.size() > 0);
         for (std::vector<acl_entry>::iterator i = vACL.begin(); i != vACL.end();
              i++) {
-            _window->add_selectable(
+            this->add_selectable(
                 ref_acl_list,
                 Glib::locale_to_utf8(i->name), i->reading,
                 i->writing, i->execution, EK_DEFAULT_ACL_USER);
@@ -199,7 +159,7 @@ void EicielMainController::redraw_acl_list()
 
         if (_ACL_manager->has_default_group()) {
             perms = _ACL_manager->get_group_default();
-            _window->add_non_selectable(
+            this->add_non_selectable(
                 ref_acl_list,
                 Glib::locale_to_utf8(_ACL_manager->get_group_name()), perms.reading,
                 perms.writing, perms.execution, EK_DEFAULT_GROUP);
@@ -211,7 +171,7 @@ void EicielMainController::redraw_acl_list()
         there_is_default_acl |= (vACL.size() > 0);
         for (std::vector<acl_entry>::iterator i = vACL.begin(); i != vACL.end();
              i++) {
-            _window->add_selectable(
+            this->add_selectable(
                 ref_acl_list,
                 Glib::locale_to_utf8(i->name), i->reading,
                 i->writing, i->execution, EK_DEFAULT_ACL_GROUP);
@@ -219,7 +179,7 @@ void EicielMainController::redraw_acl_list()
 
         if (_ACL_manager->has_default_mask()) {
             perms = _ACL_manager->get_mask_default();
-            _window->add_non_selectable(ref_acl_list, _("Default Mask"), perms.reading,
+            this->add_non_selectable(ref_acl_list, _("Default Mask"), perms.reading,
                 perms.writing, perms.execution,
                 EK_DEFAULT_MASK);
             there_is_default_acl |= true;
@@ -227,15 +187,22 @@ void EicielMainController::redraw_acl_list()
 
         if (_ACL_manager->has_default_other()) {
             perms = _ACL_manager->get_other_default();
-            _window->add_non_selectable(ref_acl_list, _("Default Other"), perms.reading,
+            this->add_non_selectable(ref_acl_list, _("Default Other"), perms.reading,
                 perms.writing, perms.execution,
                 EK_DEFAULT_OTHERS);
             there_is_default_acl |= true;
         }
-        _window->there_is_default_acl(there_is_default_acl);
+        this->default_acl_are_being_edited(there_is_default_acl);
     }
+}
 
-    _window->replace_acl_store(ref_acl_list);
+void EicielACLWindowController::redraw_acl_list()
+{
+    Glib::RefPtr<Gtk::ListStore> ref_acl_list = this->create_acl_list_store();
+
+    fill_acl_list(ref_acl_list, /* include_default_entries */ true);
+
+    this->replace_acl_store(ref_acl_list);
 
     permissions_t effective_permissions(7);
     if (_ACL_manager->has_mask()) {
@@ -245,12 +212,10 @@ void EicielMainController::redraw_acl_list()
     if (_ACL_manager->has_default_mask()) {
         effective_default_permissions = _ACL_manager->get_mask_default();
     }
-    _window->update_acl_ineffective(effective_permissions, effective_default_permissions);
-
-    _updating_window = false;
+    this->update_acl_ineffective(effective_permissions, effective_default_permissions);
 }
 
-bool EicielMainController::is_directory()
+bool EicielACLWindowController::is_directory()
 {
     if (_ACL_manager == NULL)
         return false;
@@ -258,9 +223,10 @@ bool EicielMainController::is_directory()
     return _ACL_manager->is_directory();
 }
 
-void EicielMainController::add_acl_entry(const std::string& s,
-    ElementKind e,
-    bool is_default)
+void EicielACLWindowController::add_acl_entry(AddParticipantTarget target,
+        const std::string& s,
+        ElementKind e,
+        bool is_default)
 {
     permissions_t p(7);
 
@@ -296,7 +262,7 @@ void EicielMainController::add_acl_entry(const std::string& s,
 
         redraw_acl_list();
 
-        _window->choose_acl(s, e);
+        this->choose_acl(s, e);
     } catch (ACLManagerException e) {
         Glib::ustring s = _("Could not add ACL entry: ") + e.getMessage();
         Gtk::Container* toplevel = _window->get_toplevel();
@@ -314,7 +280,7 @@ void EicielMainController::add_acl_entry(const std::string& s,
     }
 }
 
-void EicielMainController::remove_acl(const std::string& entry_name,
+void EicielACLWindowController::remove_acl(const std::string& entry_name,
     ElementKind e)
 {
     bool updated = true;
@@ -361,7 +327,7 @@ void EicielMainController::remove_acl(const std::string& entry_name,
     }
 }
 
-void EicielMainController::update_acl_entry(ElementKind e,
+void EicielACLWindowController::update_acl_entry(ElementKind e,
     const std::string& s,
     bool reading,
     bool writing,
@@ -440,13 +406,144 @@ void EicielMainController::update_acl_entry(ElementKind e,
     }
 }
 
-void EicielMainController::change_default_acl()
+typedef std::pair<std::string, bool> FileListItem;
+
+static std::vector<FileListItem> get_all_files_recursively(Glib::RefPtr<Gio::File> directory)
 {
-    if (_updating_window)
+    std::vector<FileListItem> result;
+    if (!directory)
+        return result;
+
+    result.push_back(std::make_pair(directory->get_path(), true));
+
+    Glib::RefPtr<Gio::FileEnumerator> file_enumerator = directory->enumerate_children(G_FILE_ATTRIBUTE_STANDARD_NAME, Gio::FILE_QUERY_INFO_NOFOLLOW_SYMLINKS);
+    for (Glib::RefPtr<Gio::FileInfo> file_info = file_enumerator->next_file(); file_info; file_info = file_enumerator->next_file()) {
+        bool is_dir = file_info->get_file_type() == Gio::FILE_TYPE_DIRECTORY;
+        Glib::RefPtr<Gio::File> child = directory->get_child(file_info->get_name());
+        if (!child)
+            continue;
+        if (is_dir) {
+            std::vector<std::pair<std::string, bool>> result_children = get_all_files_recursively(child);
+            result.insert(result.end(), result_children.begin(), result_children.end());
+        } else {
+            result.push_back(std::make_pair(child->get_path(), is_dir));
+        }
+    }
+    return result;
+}
+
+void EicielACLWindowController::can_edit_enclosed_files(bool b)
+{
+    _window->can_edit_enclosed_files(b);
+}
+
+void EicielACLWindowController::edit_enclosed_files()
+{
+    EicielEnclosedEditorController enclosed_editor_controller;
+
+    Gtk::Window* toplevel_window = (Gtk::Window*)_window->get_toplevel();
+    EicielEnclosedEditor enclosed_editor(*toplevel_window, &enclosed_editor_controller);
+
+    {
+        EicielACLListController* acl_list_directory_controller = enclosed_editor_controller.get_acl_list_directory_controller();
+        Glib::RefPtr<Gtk::ListStore> ref_acl_list_dirs = acl_list_directory_controller->create_acl_list_store();
+        fill_acl_list(ref_acl_list_dirs, /* include_default_entries */ true);
+        acl_list_directory_controller->replace_acl_store(ref_acl_list_dirs);
+
+        permissions_t effective_permissions(7);
+        if (_ACL_manager->has_mask()) {
+            effective_permissions = _ACL_manager->get_mask();
+        }
+        permissions_t effective_default_permissions(7);
+        if (_ACL_manager->has_default_mask()) {
+            effective_default_permissions = _ACL_manager->get_mask_default();
+        }
+        acl_list_directory_controller->update_acl_ineffective(effective_permissions, effective_default_permissions);
+        acl_list_directory_controller->can_edit_default_acl(true);
+    }
+    {
+        EicielACLListController* acl_list_files_controller = enclosed_editor_controller.get_acl_list_file_controller();
+        Glib::RefPtr<Gtk::ListStore> ref_acl_list_files = acl_list_files_controller->create_acl_list_store();
+        fill_acl_list(ref_acl_list_files, /* include_default_entries */ false);
+        acl_list_files_controller->replace_acl_store(ref_acl_list_files);
+
+        permissions_t effective_permissions(7);
+        if (_ACL_manager->has_mask()) {
+            effective_permissions = _ACL_manager->get_mask();
+        }
+        permissions_t effective_default_permissions(7);
+        if (_ACL_manager->has_default_mask()) {
+            effective_default_permissions = _ACL_manager->get_mask_default();
+        }
+        acl_list_files_controller->update_acl_ineffective(effective_permissions, effective_default_permissions);
+        acl_list_files_controller->can_edit_default_acl(false);
+    }
+
+    int response = enclosed_editor.run();
+    if (response != Gtk::RESPONSE_APPLY)
         return;
 
+    std::string directory_access_acl_text = enclosed_editor_controller.get_directory_access_acl_text();
+    std::string directory_default_acl_text = enclosed_editor_controller.get_directory_default_acl_text();
+    std::string file_access_acl_text = enclosed_editor_controller.get_file_access_acl_text();
+
+    Glib::RefPtr<Gdk::Display> display = toplevel_window->get_display();
+    Glib::RefPtr<Gdk::Cursor> clock_cursor = Gdk::Cursor::create(display, "wait");
+    toplevel_window->get_window()->set_cursor(clock_cursor);
+    set_active(false);
+
+    _window->show_info_bar();
+
+    std::thread apply_changes_thread(
+        [this, toplevel_window, directory_access_acl_text, directory_default_acl_text, file_access_acl_text]() {
+            // Now iterate all the files
+            Glib::RefPtr<Gio::File> current_dir = Gio::File::create_for_path(_current_filename);
+            if (!current_dir)
+                return;
+
+            // Recursively build list (including _current_filename)
+            std::vector<FileListItem> all_filenames = get_all_files_recursively(current_dir);
+
+            int current_file_num = 1, num_files = all_filenames.size();
+            for (std::vector<FileListItem>::iterator it = all_filenames.begin();
+                 it != all_filenames.end();
+                 it++, current_file_num++) {
+                std::string& filename = it->first;
+                bool is_directory = it->second;
+                try {
+                    if (is_directory) {
+                        ACLManager::set_file_acl(filename, directory_access_acl_text, directory_default_acl_text);
+                    } else {
+                        ACLManager::set_file_acl(filename, file_access_acl_text, "");
+                    }
+                } catch (ACLManagerException e) {
+                    // FIXME: Can't do much here
+                    std::cerr << "Exception when setting ACL of file '" << filename << "': " << e.getMessage() << "\n";
+                } catch (...) {
+                    // Catch-all to avoid crashing nautilus
+                    ;
+                }
+
+                double percentage = (double)current_file_num / (double)num_files;
+                Glib::signal_idle().connect_once([this, percentage]() {
+                    _window->set_recursive_progress(percentage);
+                });
+            }
+            Glib::signal_idle().connect_once([this, toplevel_window]() {
+                toplevel_window->get_window()->set_cursor();
+                // Update file
+                open_file(_current_filename);
+                _window->hide_info_bar();
+            });
+        });
+    apply_changes_thread.detach();
+}
+
+// Returns true if the changed happened
+bool EicielACLWindowController::toggle_edit_default_acl(bool default_acl_were_being_edited)
+{
     try {
-        if (!_window->give_default_acl()) {
+        if (default_acl_were_being_edited) {
             Glib::ustring s(
                 _("Are you sure you want to remove all ACL default entries?"));
             Gtk::Container* toplevel = _window->get_toplevel();
@@ -461,36 +558,32 @@ void EicielMainController::change_default_acl()
                     Gtk::BUTTONS_YES_NO);
                 result = remove_acl_message.run();
             }
-            if (result == Gtk::RESPONSE_YES) {
-                _ACL_manager->clear_default_acl();
-            }
+            if (result == Gtk::RESPONSE_NO)
+                return false;
+            _ACL_manager->clear_default_acl();
         } else {
             _ACL_manager->create_default_acl();
         }
         redraw_acl_list();
+        return true;
     } catch (ACLManagerException e) {
         _last_error_message = e.getMessage();
+        return false;
     }
 }
 
-std::set<std::string> EicielMainController::get_users_list()
-{
-    fill_lists();
-    return _users_list;
-}
-
-std::set<std::string> EicielMainController::get_groups_list()
-{
-    fill_lists();
-    return _groups_list;
-}
-
-bool EicielMainController::opened_file()
+bool EicielACLWindowController::opened_file()
 {
     return _is_file_opened;
 }
 
-void EicielMainController::check_editable()
+void EicielACLWindowController::set_readonly(bool b)
+{
+    this->EicielACLListController::set_readonly(b);
+    this->EicielParticipantListController::set_readonly(b);
+}
+
+void EicielACLWindowController::check_editable()
 {
     /*
    * In Linux we should check CAP_FOWNER capability. At the moment give a
@@ -500,25 +593,20 @@ void EicielMainController::check_editable()
    */
     uid_t real_user = getuid();
     if ((real_user != 0) && (real_user != _ACL_manager->get_owner_uid())) {
-        _window->set_readonly(true);
+        this->set_readonly(true);
     } else {
-        _window->set_readonly(false);
+        this->set_readonly(false);
     }
 }
 
-Glib::ustring EicielMainController::last_error()
+Glib::ustring EicielACLWindowController::last_error()
 {
     return _last_error_message;
 }
 
-bool EicielMainController::lookup_user(const std::string& str)
+void EicielACLWindowController::set_active(bool b)
 {
-    struct passwd* p = getpwnam(str.c_str());
-    return (p != NULL);
-}
-
-bool EicielMainController::lookup_group(const std::string& str)
-{
-    struct group* g = getgrnam(str.c_str());
-    return (g != NULL);
+    EicielACLListController::set_active(b);
+    EicielParticipantListController::set_active(b);
+    _window->set_active(b);
 }

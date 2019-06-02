@@ -52,6 +52,8 @@ public:
 
     void open_file(const Glib::ustring& filename) throw(XAttrManagerException);
 
+    void set_active(bool b);
+
     friend class EicielXAttrWindow;
 };
 

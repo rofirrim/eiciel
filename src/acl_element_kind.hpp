@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2004-2019 Roger Ferrer Ib·Òez
+    Copyright (C) 2004-2019 Roger Ferrer Ib√°√±ez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

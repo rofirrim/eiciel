@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2004-2019 Roger Ferrer Ib·Òez
+    Copyright (C) 2004-2019 Roger Ferrer Ib√°√±ez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -518,7 +518,7 @@ void ACLManager::clear_all_acl()
 
 void ACLManager::calculate_access_mask()
 {
-    // De moment afegirem una m‡scara laxa
+    // De moment afegirem una m√†scara laxa
     _there_is_mask = true;
     _mask_acl = permissions_t(7);
     create_textual_representation();

@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2004-2019 Roger Ferrer Ib·Òez
+    Copyright (C) 2004-2019 Roger Ferrer Ib√°√±ez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 #endif
 #include <glib/gi18n-lib.h>
 
-#include "eiciel_main_controller.hpp"
+#include "eiciel_main_window_controller.hpp"
 #include "eiciel_main_window.hpp"
 
 #ifdef ENABLE_USER_XATTR
@@ -50,8 +50,8 @@ private:
 
     Gtk::Notebook _notebook;
 
-    EicielWindow* _main_widget;
-    EicielMainController* _widget_controller;
+    EicielACLWindow* _main_widget;
+    EicielACLWindowController* _widget_controller;
 
 #ifdef ENABLE_USER_XATTR
     EicielXAttrWindow* _xattr_widget;

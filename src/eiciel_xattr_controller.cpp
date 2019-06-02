@@ -38,7 +38,7 @@ void EicielXAttrController::open_file(const Glib::ustring& filename) throw(
         _xattr_manager = new XAttrManager(filename);
         _opened_file = true;
 
-        _window->set_active(true);
+        set_active(true);
 
         check_editable();
 
@@ -47,7 +47,7 @@ void EicielXAttrController::open_file(const Glib::ustring& filename) throw(
         delete _xattr_manager;
         _xattr_manager = NULL;
         _opened_file = false;
-        _window->set_active(false);
+        set_active(false);
     }
 }
 
@@ -87,4 +87,9 @@ void EicielXAttrController::check_editable()
     } else {
         _window->set_readonly(false);
     }
+}
+
+void EicielXAttrController::set_active(bool b)
+{
+    _window->set_active(b);
 }

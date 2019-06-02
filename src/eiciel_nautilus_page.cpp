@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2004-2019 Roger Ferrer Ib·Òez
+    Copyright (C) 2004-2019 Roger Ferrer Ib√°√±ez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,8 +25,8 @@
 #include <libnautilus-extension/nautilus-property-page-provider.h>
 #include <libnautilus-extension/nautilus-property-page.h>
 
-#include "eiciel_main_controller.hpp"
 #include "eiciel_main_window.hpp"
+#include "eiciel_main_window_controller.hpp"
 #include "eiciel_nautilus_page.hpp"
 
 #ifdef ENABLE_USER_XATTR
@@ -116,8 +116,8 @@ static GList* nautilus_get_property_pages(
     Gtk::Main::init_gtkmm_internals();
 
     // Now create the controller and the view
-    EicielMainController* main_controller = new EicielMainController();
-    EicielWindow* eiciel_window = Gtk::manage(new EicielWindow(main_controller));
+    EicielACLWindowController* main_controller = new EicielACLWindowController();
+    EicielACLWindow* eiciel_window = Gtk::manage(new EicielACLWindow(main_controller));
     // and open the file
     main_controller->open_file(std::string(local_file));
 
@@ -186,9 +186,9 @@ static void nautilus_eiciel_register_type(GTypeModule* module)
  */
 extern void nautilus_module_initialize(GTypeModule* module)
 {
-    // g_print ("Initializing Eiciel property page\n");
+    g_print ("Initializing Eiciel property page\n");
     nautilus_eiciel_register_type(module);
-    // g_print ("Initialization done\n");
+    g_print ("Initialization done\n");
 #ifdef ENABLE_NLS
     setlocale(LC_ALL, "");
     bindtextdomain("eiciel", DATADIR "/locale");
@@ -202,7 +202,7 @@ extern void nautilus_module_initialize(GTypeModule* module)
 /* Perform module-specific shutdown. */
 extern void nautilus_module_shutdown(void)
 {
-    // g_print ("Ending Eiciel property page\n");
+    g_print ("Ending Eiciel property page\n");
 }
 
 /* List all the extension types.  */

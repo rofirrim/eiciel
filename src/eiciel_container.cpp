@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2004-2019 Roger Ferrer Ib��ez
+    Copyright (C) 2004-2019 Roger Ferrer Ibáñez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -46,8 +46,9 @@ EicielContainer::EicielContainer()
     _main_container.pack_start(_notebook);
     _notebook.append_page(_ACL_tabpage, _("Access Control List"));
 
-    _widget_controller = new EicielMainController();
-    _main_widget = new EicielWindow(_widget_controller);
+    _widget_controller = new EicielACLWindowController();
+    _main_widget = new EicielACLWindow(_widget_controller);
+    _widget_controller->set_active(false);
 
     _ACL_tabpage.pack_start(*_main_widget, Gtk::PACK_EXPAND_WIDGET, 0);
 
@@ -56,6 +57,7 @@ EicielContainer::EicielContainer()
 
     _xattr_controller = new EicielXAttrController();
     _xattr_widget = new EicielXAttrWindow(_xattr_controller);
+    _xattr_controller->set_active(false);
 
     _XAttr_tabpage.pack_start(*_xattr_widget, Gtk::PACK_EXPAND_WIDGET, 0);
 #endif
@@ -78,7 +80,7 @@ EicielContainer::EicielContainer()
     _open_file.signal_clicked().connect(
         sigc::mem_fun(*this, &EicielContainer::open_file_));
 
-    show_all_children();
+    show_all();
 }
 
 void EicielContainer::show_help()
@@ -180,7 +182,7 @@ EicielAboutBox::EicielAboutBox(Gtk::Window& parent)
 #endif
     _title("<span size=\"xx-large\"><b>Eiciel " PACKAGE_VERSION
            "</b></span>")
-    , _author("<small>Copyright © 2004-2005 Roger Ferrer Ibáñez</small>")
+    , _author("<small>Copyright Â© 2004-2005 Roger Ferrer IbÃ¡Ã±ez</small>")
 {
     set_border_width(4);
     get_vbox()->set_spacing(4);
@@ -189,5 +191,5 @@ EicielAboutBox::EicielAboutBox(Gtk::Window& parent)
     get_vbox()->add(_title);
     get_vbox()->add(_author);
     add_button(Gtk::Stock::OK, 0);
-    show_all_children();
+    show_all();
 }
