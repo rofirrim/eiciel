@@ -16,6 +16,9 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,  USA
 */
+#ifndef EICIEL_CONTAINER_HPP
+#define EICIEL_CONTAINER_HPP
+
 #include <config.hpp>
 #include <gtkmm.h>
 #ifdef USING_GNOME2
@@ -76,3 +79,5 @@ private:
 public:
     EicielAboutBox(Gtk::Window& parent);
 };
+
+#endif // EICIEL_CONTAINER_HPP
