@@ -82,12 +82,12 @@ AH_TEMPLATE([USING_GNOME2],[Define to 1 if building eiciel for GNOME 2 (instead 
 AS_IF([test "x$with_gnome_version" = "x3"], [
 dnl Check for gtkmm-3 and dependencies from GNOME 3 ...
   AC_MSG_NOTICE([checking for dependencies for GNOME 3 version of eiciel])
-  PKG_CHECK_MODULES(GTKMM, gtkmm-3.0 >= 3.0.0)
+  PKG_CHECK_MODULES(GTKMM, gtkmm-3.0 >= 3.0.0 giomm-2.4 >= 2.50.0)
   AM_COND_IF([ENABLE_NAUTILUS_EXTENSION], [PKG_CHECK_MODULES(NAUTILUS_EXTENSION, libnautilus-extension >= 3.0.0)])
 ], [
 dnl ... or check for gtkmm-2.4 and dependencies from GNOME 2
   AC_MSG_NOTICE([checking for dependencies for GNOME 2 version of eiciel])
-  PKG_CHECK_MODULES(GTKMM, gtkmm-2.4 >= 2.4.0 libgnome-2.0 >= 2.10.0, [AC_DEFINE(USING_GNOME2, 1)])
+  PKG_CHECK_MODULES(GTKMM, gtkmm-2.4 >= 2.4.0 libgnome-2.0 >= 2.10.0 giomm-2.4 >= 2.50.0, [AC_DEFINE(USING_GNOME2, 1)])
   AM_COND_IF([ENABLE_NAUTILUS_EXTENSION], [PKG_CHECK_MODULES(NAUTILUS_EXTENSION, libnautilus-extension >= 2.10.0 libnautilus-extension < 2.90)])
 ])
 
