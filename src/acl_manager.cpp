@@ -472,7 +472,9 @@ void ACLManager::commit_changes_to_file()
         throw ACLManagerException(_("Textual representation of the ACL is wrong"));
     }
     if (acl_set_file(_filename.c_str(), ACL_TYPE_ACCESS, acl_access) != 0) {
-        throw ACLManagerException(Glib::locale_to_utf8(strerror(errno)));
+        Glib::ustring err_msg = Glib::locale_to_utf8(strerror(errno));
+        acl_free(acl_access);
+        throw ACLManagerException(err_msg);
     }
 
     if (_is_directory) {
@@ -484,7 +486,7 @@ void ACLManager::commit_changes_to_file()
         // if there is something we set it, this avoids problems with FreeBSD 5.x
         if (_text_acl_default.size() > 0) {
             acl_t acl_default = acl_from_text(_text_acl_default.c_str());
-            if (acl_access == NULL) {
+            if (acl_default == NULL) {
                 std::cerr << "Default ACL is wrong!!!" << std::endl
                           << _text_acl_default.c_str() << std::endl;
                 throw ACLManagerException(
@@ -492,8 +494,11 @@ void ACLManager::commit_changes_to_file()
             }
 
             if (acl_set_file(_filename.c_str(), ACL_TYPE_DEFAULT, acl_default) != 0) {
-                throw ACLManagerException(Glib::locale_to_utf8(strerror(errno)));
+                Glib::ustring err_msg = Glib::locale_to_utf8(strerror(errno));
+                acl_free(acl_default);
+                throw ACLManagerException(err_msg);
             }
+            acl_free(acl_default);
         }
     }
     acl_free(acl_access);
