@@ -139,7 +139,6 @@ private:
     void get_acl_entries_access();
     void get_acl_entries_default();
     void create_textual_representation();
-    std::string permission_to_str(permissions_t& p);
     std::string write_name(acl_entry& eacl);
     void set_acl_generic(const std::string& nom,
         std::vector<acl_entry>& llistACL,
@@ -239,6 +238,18 @@ public:
     bool has_default_group() const { return _there_is_default_group; }
     bool has_default_other() const { return _there_is_default_others; }
     bool has_default_mask() const { return _there_is_default_mask; }
+
+    // Convenience function used for recursive operation
+    static void set_file_acl(const std::string& filename, const std::string& access_acl_text, const std::string& default_acl_text);
+
+    static std::string permission_to_str(const permissions_t& p)
+    {
+        std::string s;
+        s += (p.reading ? "r" : "-");
+        s += (p.writing ? "w" : "-");
+        s += (p.execution ? "x" : "-");
+        return s;
+    }
 };
 
 #endif

@@ -318,15 +318,6 @@ std::string ACLManager::write_name(acl_entry& eacl)
     }
 }
 
-std::string ACLManager::permission_to_str(permissions_t& p)
-{
-    std::string s;
-    s += (p.reading ? "r" : "-");
-    s += (p.writing ? "w" : "-");
-    s += (p.execution ? "x" : "-");
-    return s;
-}
-
 void ACLManager::modify_acl_user(const std::string& username,
     const permissions_t& perms)
 {
@@ -594,4 +585,12 @@ void ACLManager::create_default_acl()
 {
     fill_needed_acl_default();
     update_changes_acl_default();
+}
+
+void ACLManager::set_file_acl(const std::string& filename, const std::string& access_acl_text, const std::string& default_acl_text)
+{
+    ACLManager tmp(filename);
+    tmp._text_acl_access = access_acl_text;
+    tmp._text_acl_default = default_acl_text;
+    tmp.commit_changes_to_file();
 }
