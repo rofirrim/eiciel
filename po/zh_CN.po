@@ -5,11 +5,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2015-09-11 16:48+0200\n"
+"POT-Creation-Date: 2019-06-16 14:58+0200\n"
 "PO-Revision-Date: 2016-06-08 08:24+0000\n"
 "Last-Translator: Marguerite Su <i@marguerite.su>\n"
-"Language-Team: Chinese (China) "
-"<https://l10n.opensuse.org/projects/eiciel/master/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/eiciel/"
+"master/zh_CN/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,53 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.6\n"
 
-#: src/eiciel_container.cpp:26
-msgid "<b>File name</b>"
-msgstr "<b>文件名</b>"
-
-#: src/eiciel_container.cpp:27 src/eiciel_container.cpp:183
-msgid "No file opened"
-msgstr "未打开任何文件"
-
-#: src/eiciel_container.cpp:30 src/eiciel_container.cpp:192
-#: src/eiciel_container.cpp:194
-msgid "About..."
-msgstr "关于…"
-
-#: src/eiciel_container.cpp:48 src/eiciel_nautilus_page.cpp:136
-msgid "Access Control List"
-msgstr "访问控制列表"
-
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
-msgid "Extended user attributes"
-msgstr "扩展用户属性"
-
-#: src/eiciel_container.cpp:100
-#, c-format
-msgid "Could not show the help file: %s"
-msgstr "无法显示帮助文件：%s"
-
-#: src/eiciel_container.cpp:123
-msgid "Choose a file or a directory"
-msgstr "选择一个文件或文件夹"
-
-#: src/eiciel_container.cpp:145
-msgid "Could not open the file \""
-msgstr "无法打开文件 \""
-
-#: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
-msgid "Only regular files or directories supported"
-msgstr "仅支持常规文件或文件夹"
-
-#: src/acl_manager.cpp:542
-msgid "Textual representation of the ACL is wrong"
-msgstr "访问控制列表的文本表述错误"
-
-#: src/acl_manager.cpp:564
-msgid "Default textual representation of the ACL is wrong"
-msgstr "访问控制列表的默认文本表述错误"
-
-#: src/eiciel_xattr_window.cpp:39
+#: src/eiciel_xattr_window.cpp:40
 msgid "Name"
 msgstr "名称"
 
@@ -71,166 +25,242 @@ msgstr "名称"
 msgid "Value"
 msgstr "值"
 
-#: src/eiciel_xattr_window.cpp:176
+#: src/eiciel_xattr_window.cpp:163
 msgid "Could not rename attribute name: "
 msgstr "无法重命名属性名称： "
 
-#: src/eiciel_xattr_window.cpp:211
+#: src/eiciel_xattr_window.cpp:190
 msgid "Could not change attribute value: "
 msgstr "无法修改属性值： "
 
-#: src/eiciel_xattr_window.cpp:248
+#: src/eiciel_xattr_window.cpp:217
 msgid "Could not remove attribute: "
 msgstr "无法移除属性： "
 
-#: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
+#: src/eiciel_xattr_window.cpp:242 src/eiciel_xattr_window.cpp:249
 msgid "New attribute"
 msgstr "新属性"
 
-#: src/eiciel_xattr_window.cpp:318
+#: src/eiciel_xattr_window.cpp:275
 msgid "New value"
 msgstr "新值"
 
-#: src/eiciel_xattr_window.cpp:333
+#: src/eiciel_xattr_window.cpp:287
 msgid "Could not add attribute: "
 msgstr "无法添加属性： "
 
-#: src/eiciel_standalone.cpp:49
-msgid "Print version information"
-msgstr "打印版本信息"
-
-#: src/eiciel_standalone.cpp:51
-msgid "Access control list editor"
-msgstr "访问控制列表编辑器"
-
-#: src/eiciel_main_controller.cpp:172
+#: src/eiciel_main_window_controller.cpp:118 src/eiciel_acl_list.cpp:366
 msgid "Mask"
 msgstr "掩码"
 
-#: src/eiciel_main_controller.cpp:177
+#: src/eiciel_main_window_controller.cpp:125
 msgid "Other"
 msgstr "其它"
 
-#: src/eiciel_main_controller.cpp:250
+#: src/eiciel_main_window_controller.cpp:182 src/eiciel_acl_list.cpp:399
 msgid "Default Mask"
 msgstr "默认掩码"
 
-#: src/eiciel_main_controller.cpp:258
+#: src/eiciel_main_window_controller.cpp:190 src/eiciel_acl_list.cpp:393
 msgid "Default Other"
 msgstr "默认其它"
 
-#: src/eiciel_main_controller.cpp:328
+#: src/eiciel_main_window_controller.cpp:267
 msgid "Could not add ACL entry: "
 msgstr "无法添加访问控制列表项： "
 
-#: src/eiciel_main_controller.cpp:390
+#: src/eiciel_main_window_controller.cpp:314
 msgid "Could not remove ACL entry: "
 msgstr "无法移除访问控制列表项： "
 
-#: src/eiciel_main_controller.cpp:487
+#: src/eiciel_main_window_controller.cpp:393
 msgid "Could not modify ACL entry: "
 msgstr "无法修改访问控制列表项： "
 
-#: src/eiciel_main_controller.cpp:516
+#: src/eiciel_main_window_controller.cpp:544
+#: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "您确定您想要要移除全部访问控制列表默认项吗？"
 
-#: src/eiciel_main_window.cpp:26
-msgid "<b>Current participants in ACL</b>"
+#: src/eiciel_container.cpp:26
+msgid "<b>File name</b>"
+msgstr "<b>文件名</b>"
+
+#: src/eiciel_container.cpp:27 src/eiciel_container.cpp:168
+msgid "No file opened"
+msgstr "未打开任何文件"
+
+#: src/eiciel_container.cpp:30 src/eiciel_container.cpp:177
+#: src/eiciel_container.cpp:180
+msgid "About..."
+msgstr "关于…"
+
+#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
+msgid "Access Control List"
+msgstr "访问控制列表"
+
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
+msgid "Extended user attributes"
+msgstr "扩展用户属性"
+
+#: src/eiciel_container.cpp:97
+#, c-format
+msgid "Could not show the help file: %s"
+msgstr "无法显示帮助文件：%s"
+
+#: src/eiciel_container.cpp:120
+msgid "Choose a file or a directory"
+msgstr "选择一个文件或文件夹"
+
+#: src/eiciel_container.cpp:137
+msgid "Could not open the file \""
+msgstr "无法打开文件 \""
+
+#: src/eiciel_standalone.cpp:46
+msgid "Print version information"
+msgstr "打印版本信息"
+
+#: src/eiciel_standalone.cpp:48
+msgid "Access control list editor"
+msgstr "访问控制列表编辑器"
+
+#: src/eiciel_enclosed_editor_window.cpp:24
+msgid "Edit ACLs for enclosed files"
+msgstr ""
+
+#: src/eiciel_enclosed_editor_window.cpp:25
+msgid "_Cancel"
+msgstr ""
+
+#: src/eiciel_enclosed_editor_window.cpp:26
+msgid "_Apply"
+msgstr ""
+
+#: src/eiciel_enclosed_editor_window.cpp:30
+msgid "<b>Participants in ACL for enclosed directories</b>"
+msgstr ""
+
+#: src/eiciel_enclosed_editor_window.cpp:33
+#, fuzzy
+msgid "<b>Participants in ACL for enclosed files</b>"
 msgstr "<b>当前访问控制列表中的成员</b>"
 
-#: src/eiciel_main_window.cpp:32
-msgid "There are ineffective permissions"
-msgstr "存在无效权限"
-
-#: src/eiciel_main_window.cpp:33
-msgid "Remove participant from ACL"
-msgstr "从访问控制列表中移除成员"
-
-#: src/eiciel_main_window.cpp:34
-msgid "Edit default participants"
-msgstr "编辑默认成员"
-
-#: src/eiciel_main_window.cpp:35
+#: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
 msgid "<b>Available participants</b>"
 msgstr "<b>可用成员</b>"
 
-#: src/eiciel_main_window.cpp:38
+#: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
+msgid "Only regular files or directories supported"
+msgstr "仅支持常规文件或文件夹"
+
+#: src/acl_manager.cpp:463
+msgid "Textual representation of the ACL is wrong"
+msgstr "访问控制列表的文本表述错误"
+
+#: src/acl_manager.cpp:484
+msgid "Default textual representation of the ACL is wrong"
+msgstr "访问控制列表的默认文本表述错误"
+
+#: src/eiciel_main_window.cpp:30
+msgid "<b>Current participants in ACL</b>"
+msgstr "<b>当前访问控制列表中的成员</b>"
+
+#: src/eiciel_main_window.cpp:34
+msgid "Edit ACLs for enclosed files..."
+msgstr ""
+
+#: src/eiciel_participant_list.cpp:30
 msgid "User"
 msgstr "用户"
 
-#: src/eiciel_main_window.cpp:39
+#: src/eiciel_participant_list.cpp:31
 msgid "Group"
 msgstr "组"
 
-#: src/eiciel_main_window.cpp:40
+#: src/eiciel_participant_list.cpp:32
 msgid "Default participant"
 msgstr "默认成员"
 
-#: src/eiciel_main_window.cpp:45
+#: src/eiciel_participant_list.cpp:37
 msgid "Add participant to ACL"
 msgstr "向访问控制列表添加成员"
 
-#: src/eiciel_main_window.cpp:46
+#: src/eiciel_participant_list.cpp:38
+#, fuzzy
+msgid "Add participant to directory ACL"
+msgstr "向访问控制列表添加成员"
+
+#: src/eiciel_participant_list.cpp:39
+#, fuzzy
+msgid "Add participant to file ACL"
+msgstr "向访问控制列表添加成员"
+
+#: src/eiciel_participant_list.cpp:40
 msgid "Advanced features"
 msgstr "高级功能"
 
-#: src/eiciel_main_window.cpp:48
+#: src/eiciel_participant_list.cpp:42
 msgid "Name of participant"
 msgstr "成员名称"
 
-#: src/eiciel_main_window.cpp:50
+#: src/eiciel_participant_list.cpp:44
 msgid "Also show system participants"
 msgstr "也显示系统成员"
 
-#: src/eiciel_main_window.cpp:112
-msgid "Entry"
-msgstr "项"
-
-#: src/eiciel_main_window.cpp:115
-msgid "Read"
-msgstr "读"
-
-#: src/eiciel_main_window.cpp:126
-msgid "Write"
-msgstr "写"
-
-#: src/eiciel_main_window.cpp:136
-msgid "Execute"
-msgstr "执行"
-
-#: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
-#: src/eiciel_main_window.cpp:590
-msgid "None"
-msgstr "无"
-
-#: src/eiciel_main_window.cpp:154
-msgid "Only files"
-msgstr "仅文件"
-
-#: src/eiciel_main_window.cpp:156
-msgid "Only directories"
-msgstr "仅文件夹"
-
-#: src/eiciel_main_window.cpp:158
-msgid "Both files and directories"
-msgstr "文件和文件夹"
-
-#: src/eiciel_main_window.cpp:166
-msgid "Recursion"
-msgstr "递归"
-
-#: src/eiciel_main_window.cpp:201
+#: src/eiciel_participant_list.cpp:80
 msgid "Filter participants"
 msgstr "过滤器成员"
 
-#: src/eiciel_main_window.cpp:222
+#: src/eiciel_participant_list.cpp:105
 msgid "Participant"
 msgstr "成员"
 
-#: src/eiciel_main_window.cpp:912
+#: src/eiciel_participant_list.cpp:422
 msgid "Participant not found"
 msgstr "未找到成员"
+
+#: src/eiciel_acl_list.cpp:33
+msgid "There are ineffective permissions"
+msgstr "存在无效权限"
+
+#: src/eiciel_acl_list.cpp:35
+msgid "Remove participant from ACL"
+msgstr "从访问控制列表中移除成员"
+
+#: src/eiciel_acl_list.cpp:36
+msgid "Edit default participants"
+msgstr "编辑默认成员"
+
+#: src/eiciel_acl_list.cpp:79
+msgid "Entry"
+msgstr "项"
+
+#: src/eiciel_acl_list.cpp:82
+msgid "Read"
+msgstr "读"
+
+#: src/eiciel_acl_list.cpp:95
+msgid "Write"
+msgstr "写"
+
+#: src/eiciel_acl_list.cpp:107
+msgid "Execute"
+msgstr "执行"
+
+#~ msgid "None"
+#~ msgstr "无"
+
+#~ msgid "Only files"
+#~ msgstr "仅文件"
+
+#~ msgid "Only directories"
+#~ msgstr "仅文件夹"
+
+#~ msgid "Both files and directories"
+#~ msgstr "文件和文件夹"
+
+#~ msgid "Recursion"
+#~ msgstr "递归"
 
 #~ msgid "Default"
 #~ msgstr "默认"

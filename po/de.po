@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2015-09-11 16:48+0200\n"
+"POT-Creation-Date: 2019-06-16 14:58+0200\n"
 "PO-Revision-Date: 2016-02-13 09:00+0200\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <http://l10n.opensuse.org/projects/eiciel/master/de/>\n"
@@ -16,53 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.3\n"
 
-#: src/eiciel_container.cpp:26
-msgid "<b>File name</b>"
-msgstr "<b>Dateiname</b>"
-
-#: src/eiciel_container.cpp:27 src/eiciel_container.cpp:183
-msgid "No file opened"
-msgstr "Keine Datei geöffnet"
-
-#: src/eiciel_container.cpp:30 src/eiciel_container.cpp:192
-#: src/eiciel_container.cpp:194
-msgid "About..."
-msgstr "Info..."
-
-#: src/eiciel_container.cpp:48 src/eiciel_nautilus_page.cpp:136
-msgid "Access Control List"
-msgstr "Zugriffssteuerungsliste"
-
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:156
-msgid "Extended user attributes"
-msgstr "Erweiterte Benutzerattribute"
-
-#: src/eiciel_container.cpp:100
-#, c-format
-msgid "Could not show the help file: %s"
-msgstr "Hilfedatei konnte nicht angezeigt werden: %s"
-
-#: src/eiciel_container.cpp:123
-msgid "Choose a file or a directory"
-msgstr "Datei oder Verzeichnis auswählen"
-
-#: src/eiciel_container.cpp:145
-msgid "Could not open the file \""
-msgstr "Datei konnte nicht geöffnet werden \""
-
-#: src/acl_manager.cpp:50 src/xattr_manager.cpp:33
-msgid "Only regular files or directories supported"
-msgstr "Es werden nur reguläre Dateien bzw. Verzeichnisse unterstützt"
-
-#: src/acl_manager.cpp:542
-msgid "Textual representation of the ACL is wrong"
-msgstr "Textdarstellung der ACL ist falsch"
-
-#: src/acl_manager.cpp:564
-msgid "Default textual representation of the ACL is wrong"
-msgstr "Standardmäßige Textdarstellung der ACL ist falsch"
-
-#: src/eiciel_xattr_window.cpp:39
+#: src/eiciel_xattr_window.cpp:40
 msgid "Name"
 msgstr "Name"
 
@@ -70,167 +24,243 @@ msgstr "Name"
 msgid "Value"
 msgstr "Wert"
 
-#: src/eiciel_xattr_window.cpp:176
+#: src/eiciel_xattr_window.cpp:163
 msgid "Could not rename attribute name: "
 msgstr "Es konnte kein anderer Attributname vergeben werden: "
 
-#: src/eiciel_xattr_window.cpp:211
+#: src/eiciel_xattr_window.cpp:190
 msgid "Could not change attribute value: "
 msgstr "Attributwert konnte nicht geändert werden: "
 
-#: src/eiciel_xattr_window.cpp:248
+#: src/eiciel_xattr_window.cpp:217
 msgid "Could not remove attribute: "
 msgstr "Attribut konnte nicht entfernt werden: "
 
-#: src/eiciel_xattr_window.cpp:280 src/eiciel_xattr_window.cpp:289
+#: src/eiciel_xattr_window.cpp:242 src/eiciel_xattr_window.cpp:249
 msgid "New attribute"
 msgstr "Neues Attribut"
 
-#: src/eiciel_xattr_window.cpp:318
+#: src/eiciel_xattr_window.cpp:275
 msgid "New value"
 msgstr "Neuer Wert"
 
-#: src/eiciel_xattr_window.cpp:333
+#: src/eiciel_xattr_window.cpp:287
 msgid "Could not add attribute: "
 msgstr "Attribut konnte nicht hinzugefügt werden: "
 
-#: src/eiciel_standalone.cpp:49
-msgid "Print version information"
-msgstr "Versionsinformationen drucken"
-
-#: src/eiciel_standalone.cpp:51
-msgid "Access control list editor"
-msgstr "ACL-Editor"
-
-#: src/eiciel_main_controller.cpp:172
+#: src/eiciel_main_window_controller.cpp:118 src/eiciel_acl_list.cpp:366
 msgid "Mask"
 msgstr "Maske"
 
-#: src/eiciel_main_controller.cpp:177
+#: src/eiciel_main_window_controller.cpp:125
 msgid "Other"
 msgstr "Andere"
 
-#: src/eiciel_main_controller.cpp:250
+#: src/eiciel_main_window_controller.cpp:182 src/eiciel_acl_list.cpp:399
 msgid "Default Mask"
 msgstr "Standardmaske"
 
-#: src/eiciel_main_controller.cpp:258
+#: src/eiciel_main_window_controller.cpp:190 src/eiciel_acl_list.cpp:393
 msgid "Default Other"
 msgstr "Standard - Sonstiges"
 
-#: src/eiciel_main_controller.cpp:328
+#: src/eiciel_main_window_controller.cpp:267
 msgid "Could not add ACL entry: "
 msgstr "ACL-Eintrag konnte nicht hinzugefügt werden: "
 
-#: src/eiciel_main_controller.cpp:390
+#: src/eiciel_main_window_controller.cpp:314
 msgid "Could not remove ACL entry: "
 msgstr "ACL-Eintrag konnte nicht entfernt werden: "
 
-#: src/eiciel_main_controller.cpp:487
+#: src/eiciel_main_window_controller.cpp:393
 msgid "Could not modify ACL entry: "
 msgstr "ACL-Eintrag konnte nicht bearbeitet werden: "
 
-#: src/eiciel_main_controller.cpp:516
+#: src/eiciel_main_window_controller.cpp:544
+#: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr ""
 "Sind Sie sicher, dass alle ACL-Standardeinträge entfernt werden sollen?"
 
-#: src/eiciel_main_window.cpp:26
-msgid "<b>Current participants in ACL</b>"
+#: src/eiciel_container.cpp:26
+msgid "<b>File name</b>"
+msgstr "<b>Dateiname</b>"
+
+#: src/eiciel_container.cpp:27 src/eiciel_container.cpp:168
+msgid "No file opened"
+msgstr "Keine Datei geöffnet"
+
+#: src/eiciel_container.cpp:30 src/eiciel_container.cpp:177
+#: src/eiciel_container.cpp:180
+msgid "About..."
+msgstr "Info..."
+
+#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
+msgid "Access Control List"
+msgstr "Zugriffssteuerungsliste"
+
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
+msgid "Extended user attributes"
+msgstr "Erweiterte Benutzerattribute"
+
+#: src/eiciel_container.cpp:97
+#, c-format
+msgid "Could not show the help file: %s"
+msgstr "Hilfedatei konnte nicht angezeigt werden: %s"
+
+#: src/eiciel_container.cpp:120
+msgid "Choose a file or a directory"
+msgstr "Datei oder Verzeichnis auswählen"
+
+#: src/eiciel_container.cpp:137
+msgid "Could not open the file \""
+msgstr "Datei konnte nicht geöffnet werden \""
+
+#: src/eiciel_standalone.cpp:46
+msgid "Print version information"
+msgstr "Versionsinformationen drucken"
+
+#: src/eiciel_standalone.cpp:48
+msgid "Access control list editor"
+msgstr "ACL-Editor"
+
+#: src/eiciel_enclosed_editor_window.cpp:24
+msgid "Edit ACLs for enclosed files"
+msgstr ""
+
+#: src/eiciel_enclosed_editor_window.cpp:25
+msgid "_Cancel"
+msgstr ""
+
+#: src/eiciel_enclosed_editor_window.cpp:26
+msgid "_Apply"
+msgstr ""
+
+#: src/eiciel_enclosed_editor_window.cpp:30
+msgid "<b>Participants in ACL for enclosed directories</b>"
+msgstr ""
+
+#: src/eiciel_enclosed_editor_window.cpp:33
+#, fuzzy
+msgid "<b>Participants in ACL for enclosed files</b>"
 msgstr "<b>Bisherige Teilnehmer in ACL</b>"
 
-#: src/eiciel_main_window.cpp:32
-msgid "There are ineffective permissions"
-msgstr "Es gibt ineffektive Zugriffsberechtigungen"
-
-#: src/eiciel_main_window.cpp:33
-msgid "Remove participant from ACL"
-msgstr "Teilnehmer aus ACL löschen"
-
-#: src/eiciel_main_window.cpp:34
-msgid "Edit default participants"
-msgstr "Standardmäßige Teilnehmer editieren"
-
-#: src/eiciel_main_window.cpp:35
+#: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
 msgid "<b>Available participants</b>"
 msgstr "<b>Verfügbare Teilnehmer</b>"
 
-#: src/eiciel_main_window.cpp:38
+#: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
+msgid "Only regular files or directories supported"
+msgstr "Es werden nur reguläre Dateien bzw. Verzeichnisse unterstützt"
+
+#: src/acl_manager.cpp:463
+msgid "Textual representation of the ACL is wrong"
+msgstr "Textdarstellung der ACL ist falsch"
+
+#: src/acl_manager.cpp:484
+msgid "Default textual representation of the ACL is wrong"
+msgstr "Standardmäßige Textdarstellung der ACL ist falsch"
+
+#: src/eiciel_main_window.cpp:30
+msgid "<b>Current participants in ACL</b>"
+msgstr "<b>Bisherige Teilnehmer in ACL</b>"
+
+#: src/eiciel_main_window.cpp:34
+msgid "Edit ACLs for enclosed files..."
+msgstr ""
+
+#: src/eiciel_participant_list.cpp:30
 msgid "User"
 msgstr "Benutzer"
 
-#: src/eiciel_main_window.cpp:39
+#: src/eiciel_participant_list.cpp:31
 msgid "Group"
 msgstr "Gruppe"
 
-#: src/eiciel_main_window.cpp:40
+#: src/eiciel_participant_list.cpp:32
 msgid "Default participant"
 msgstr "Standard-Teilnehmer"
 
-#: src/eiciel_main_window.cpp:45
+#: src/eiciel_participant_list.cpp:37
 msgid "Add participant to ACL"
 msgstr "Teilnehmer der ACL hinzufügen"
 
-#: src/eiciel_main_window.cpp:46
+#: src/eiciel_participant_list.cpp:38
+#, fuzzy
+msgid "Add participant to directory ACL"
+msgstr "Teilnehmer der ACL hinzufügen"
+
+#: src/eiciel_participant_list.cpp:39
+#, fuzzy
+msgid "Add participant to file ACL"
+msgstr "Teilnehmer der ACL hinzufügen"
+
+#: src/eiciel_participant_list.cpp:40
 msgid "Advanced features"
 msgstr "Erweiterte Funktionen"
 
-#: src/eiciel_main_window.cpp:48
+#: src/eiciel_participant_list.cpp:42
 msgid "Name of participant"
 msgstr "Name des Teilnehmers"
 
-#: src/eiciel_main_window.cpp:50
+#: src/eiciel_participant_list.cpp:44
 msgid "Also show system participants"
 msgstr "Auch Systemteilnehmer anzeigen"
 
-#: src/eiciel_main_window.cpp:112
-msgid "Entry"
-msgstr "Eintrag"
-
-#: src/eiciel_main_window.cpp:115
-msgid "Read"
-msgstr "Lesen"
-
-#: src/eiciel_main_window.cpp:126
-msgid "Write"
-msgstr "Schreiben"
-
-#: src/eiciel_main_window.cpp:136
-msgid "Execute"
-msgstr "Ausführen"
-
-#: src/eiciel_main_window.cpp:152 src/eiciel_main_window.cpp:162
-#: src/eiciel_main_window.cpp:590
-msgid "None"
-msgstr "Keine"
-
-#: src/eiciel_main_window.cpp:154
-msgid "Only files"
-msgstr "Nur Dateien"
-
-#: src/eiciel_main_window.cpp:156
-msgid "Only directories"
-msgstr "Nur Verzeichnisse"
-
-#: src/eiciel_main_window.cpp:158
-msgid "Both files and directories"
-msgstr "Beide Dateien und Verzeichnisse"
-
-#: src/eiciel_main_window.cpp:166
-msgid "Recursion"
-msgstr "Rekursion"
-
-#: src/eiciel_main_window.cpp:201
+#: src/eiciel_participant_list.cpp:80
 msgid "Filter participants"
 msgstr "Teilnehmer filtern"
 
-#: src/eiciel_main_window.cpp:222
+#: src/eiciel_participant_list.cpp:105
 msgid "Participant"
 msgstr "Teilnehmer"
 
-#: src/eiciel_main_window.cpp:912
+#: src/eiciel_participant_list.cpp:422
 msgid "Participant not found"
 msgstr "Teilnehmer nicht gefunden"
+
+#: src/eiciel_acl_list.cpp:33
+msgid "There are ineffective permissions"
+msgstr "Es gibt ineffektive Zugriffsberechtigungen"
+
+#: src/eiciel_acl_list.cpp:35
+msgid "Remove participant from ACL"
+msgstr "Teilnehmer aus ACL löschen"
+
+#: src/eiciel_acl_list.cpp:36
+msgid "Edit default participants"
+msgstr "Standardmäßige Teilnehmer editieren"
+
+#: src/eiciel_acl_list.cpp:79
+msgid "Entry"
+msgstr "Eintrag"
+
+#: src/eiciel_acl_list.cpp:82
+msgid "Read"
+msgstr "Lesen"
+
+#: src/eiciel_acl_list.cpp:95
+msgid "Write"
+msgstr "Schreiben"
+
+#: src/eiciel_acl_list.cpp:107
+msgid "Execute"
+msgstr "Ausführen"
+
+#~ msgid "None"
+#~ msgstr "Keine"
+
+#~ msgid "Only files"
+#~ msgstr "Nur Dateien"
+
+#~ msgid "Only directories"
+#~ msgstr "Nur Verzeichnisse"
+
+#~ msgid "Both files and directories"
+#~ msgstr "Beide Dateien und Verzeichnisse"
+
+#~ msgid "Recursion"
+#~ msgstr "Rekursion"
 
 #~ msgid "Default"
 #~ msgstr "Standard"
