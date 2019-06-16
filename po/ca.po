@@ -128,24 +128,23 @@ msgstr "Llista de control d'accés"
 
 #: src/eiciel_enclosed_editor_window.cpp:24
 msgid "Edit ACLs for enclosed files"
-msgstr ""
+msgstr "Edita ACLs dels fitxers continguts"
 
 #: src/eiciel_enclosed_editor_window.cpp:25
 msgid "_Cancel"
-msgstr ""
+msgstr "Anul·la"
 
 #: src/eiciel_enclosed_editor_window.cpp:26
 msgid "_Apply"
-msgstr ""
+msgstr "Aplica"
 
 #: src/eiciel_enclosed_editor_window.cpp:30
 msgid "<b>Participants in ACL for enclosed directories</b>"
-msgstr ""
+msgstr "<b>Participants a l'ACL dels directoris continguts</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:33
-#, fuzzy
 msgid "<b>Participants in ACL for enclosed files</b>"
-msgstr "<b>Participants actuals a l'ACL</b>"
+msgstr "<b>Participants a l'ACL dels fitxers continguts</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
 msgid "<b>Available participants</b>"
@@ -169,7 +168,7 @@ msgstr "<b>Participants actuals a l'ACL</b>"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit ACLs for enclosed files..."
-msgstr ""
+msgstr "Edita els ACL dels fitxers continguts..."
 
 #: src/eiciel_participant_list.cpp:30
 msgid "User"
@@ -188,14 +187,12 @@ msgid "Add participant to ACL"
 msgstr "Afegeix el participant a l'ACL"
 
 #: src/eiciel_participant_list.cpp:38
-#, fuzzy
 msgid "Add participant to directory ACL"
-msgstr "Afegeix el participant a l'ACL"
+msgstr "Afegeix el participant a l'ACL dels directoris"
 
 #: src/eiciel_participant_list.cpp:39
-#, fuzzy
 msgid "Add participant to file ACL"
-msgstr "Afegeix el participant a l'ACL"
+msgstr "Afegeix el participant a l'ACL dels fitxers"
 
 #: src/eiciel_participant_list.cpp:40
 msgid "Advanced features"
