@@ -126,24 +126,23 @@ msgstr "Editor de lista de control de acceso"
 
 #: src/eiciel_enclosed_editor_window.cpp:24
 msgid "Edit ACLs for enclosed files"
-msgstr ""
+msgstr "Editar ACLs de los ficheros contenidos"
 
 #: src/eiciel_enclosed_editor_window.cpp:25
 msgid "_Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: src/eiciel_enclosed_editor_window.cpp:26
 msgid "_Apply"
-msgstr ""
+msgstr "Aplicar"
 
 #: src/eiciel_enclosed_editor_window.cpp:30
 msgid "<b>Participants in ACL for enclosed directories</b>"
-msgstr ""
+msgstr "<b>Participantes en la ACL de los directorios contenidos</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:33
-#, fuzzy
 msgid "<b>Participants in ACL for enclosed files</b>"
-msgstr "<b>Participantes actuales en la ACL</b>"
+msgstr "<b>Participantes en la ACL de los ficheros contenidos</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
 msgid "<b>Available participants</b>"
@@ -167,7 +166,7 @@ msgstr "<b>Participantes actuales en la ACL</b>"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit ACLs for enclosed files..."
-msgstr ""
+msgstr "Editar ACLs de los ficheros contenidos..."
 
 #: src/eiciel_participant_list.cpp:30
 msgid "User"
@@ -186,14 +185,12 @@ msgid "Add participant to ACL"
 msgstr "Añadir participante en la ACL"
 
 #: src/eiciel_participant_list.cpp:38
-#, fuzzy
 msgid "Add participant to directory ACL"
-msgstr "Añadir participante en la ACL"
+msgstr "Añadir participante en la ACL de directorio"
 
 #: src/eiciel_participant_list.cpp:39
-#, fuzzy
 msgid "Add participant to file ACL"
-msgstr "Añadir participante en la ACL"
+msgstr "Añadir participante en la ACL de fichero"
 
 #: src/eiciel_participant_list.cpp:40
 msgid "Advanced features"
