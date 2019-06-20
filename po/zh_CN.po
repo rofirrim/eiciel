@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2019-06-16 14:58+0200\n"
-"PO-Revision-Date: 2016-06-08 08:24+0000\n"
+"PO-Revision-Date: 2019-06-20 13:49+0000\n"
 "Last-Translator: Marguerite Su <i@marguerite.su>\n"
 "Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/eiciel/"
 "master/zh_CN/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.6\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #: src/eiciel_xattr_window.cpp:40
 msgid "Name"
@@ -126,24 +126,23 @@ msgstr "访问控制列表编辑器"
 
 #: src/eiciel_enclosed_editor_window.cpp:24
 msgid "Edit ACLs for enclosed files"
-msgstr ""
+msgstr "编辑隔离文件的访问控制列表"
 
 #: src/eiciel_enclosed_editor_window.cpp:25
 msgid "_Cancel"
-msgstr ""
+msgstr "取消(_C)"
 
 #: src/eiciel_enclosed_editor_window.cpp:26
 msgid "_Apply"
-msgstr ""
+msgstr "应用(_A)"
 
 #: src/eiciel_enclosed_editor_window.cpp:30
 msgid "<b>Participants in ACL for enclosed directories</b>"
-msgstr ""
+msgstr "<b>隔离文件夹访问控制列表中的成员</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:33
-#, fuzzy
 msgid "<b>Participants in ACL for enclosed files</b>"
-msgstr "<b>当前访问控制列表中的成员</b>"
+msgstr "<b>隔离文件访问控制列表中的成员</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
 msgid "<b>Available participants</b>"
@@ -167,7 +166,7 @@ msgstr "<b>当前访问控制列表中的成员</b>"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit ACLs for enclosed files..."
-msgstr ""
+msgstr "编辑隔离文件的访问控制列表..."
 
 #: src/eiciel_participant_list.cpp:30
 msgid "User"
@@ -186,14 +185,12 @@ msgid "Add participant to ACL"
 msgstr "向访问控制列表添加成员"
 
 #: src/eiciel_participant_list.cpp:38
-#, fuzzy
 msgid "Add participant to directory ACL"
-msgstr "向访问控制列表添加成员"
+msgstr "向文件夹的访问控制列表中添加成员"
 
 #: src/eiciel_participant_list.cpp:39
-#, fuzzy
 msgid "Add participant to file ACL"
-msgstr "向访问控制列表添加成员"
+msgstr "向文件的访问控制列表中添加成员"
 
 #: src/eiciel_participant_list.cpp:40
 msgid "Advanced features"
