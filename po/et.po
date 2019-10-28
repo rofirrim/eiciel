@@ -8,237 +8,240 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.12.1\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2019-06-16 14:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2019-10-28 14:53+0000\n"
+"Last-Translator: Jaanus Ojangu <jaanus.ojangu@gmail.com>\n"
+"Language-Team: Estonian <https://l10n.opensuse.org/projects/eiciel/master/et/"
+">\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #: src/eiciel_xattr_window.cpp:40
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #: src/eiciel_xattr_window.cpp:55
 msgid "Value"
-msgstr ""
+msgstr "Väärtus"
 
 #: src/eiciel_xattr_window.cpp:163
 msgid "Could not rename attribute name: "
-msgstr ""
+msgstr "Atribuudi nime ei saanud ümber nimetada: "
 
 #: src/eiciel_xattr_window.cpp:190
 msgid "Could not change attribute value: "
-msgstr ""
+msgstr "Atribuudi väärtust ei saanud muuta: "
 
 #: src/eiciel_xattr_window.cpp:217
 msgid "Could not remove attribute: "
-msgstr ""
+msgstr "Atribuuti ei saanud eemaldada: "
 
 #: src/eiciel_xattr_window.cpp:242 src/eiciel_xattr_window.cpp:249
 msgid "New attribute"
-msgstr ""
+msgstr "Uus atribuut"
 
 #: src/eiciel_xattr_window.cpp:275
 msgid "New value"
-msgstr ""
+msgstr "Uus väärtus"
 
 #: src/eiciel_xattr_window.cpp:287
 msgid "Could not add attribute: "
-msgstr ""
+msgstr "Ei saanud lisada atribuuti: "
 
 #: src/eiciel_main_window_controller.cpp:118 src/eiciel_acl_list.cpp:366
 msgid "Mask"
-msgstr ""
+msgstr "Mask - filter"
 
 #: src/eiciel_main_window_controller.cpp:125
 msgid "Other"
-msgstr ""
+msgstr "Muud"
 
 #: src/eiciel_main_window_controller.cpp:182 src/eiciel_acl_list.cpp:399
 msgid "Default Mask"
-msgstr ""
+msgstr "Vaikimisi mask"
 
 #: src/eiciel_main_window_controller.cpp:190 src/eiciel_acl_list.cpp:393
 msgid "Default Other"
-msgstr ""
+msgstr "Muu vaikeväärtus"
 
 #: src/eiciel_main_window_controller.cpp:267
 msgid "Could not add ACL entry: "
-msgstr ""
+msgstr "Ei saanud lisada ACL-i kirjet: "
 
 #: src/eiciel_main_window_controller.cpp:314
 msgid "Could not remove ACL entry: "
-msgstr ""
+msgstr "Ei saanud eemaldada ACL kirjet: "
 
 #: src/eiciel_main_window_controller.cpp:393
 msgid "Could not modify ACL entry: "
-msgstr ""
+msgstr "Ei saanud muuta ACL kirjet: "
 
 #: src/eiciel_main_window_controller.cpp:544
 #: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr ""
+msgstr "Olete Te kindel, soovite eemaldada kõik ACL-i vaikekirjed?"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
-msgstr ""
+msgstr "<b>Faili nimi</b>"
 
 #: src/eiciel_container.cpp:27 src/eiciel_container.cpp:168
 msgid "No file opened"
-msgstr ""
+msgstr "Ühtegi faili ei avatud"
 
 #: src/eiciel_container.cpp:30 src/eiciel_container.cpp:177
 #: src/eiciel_container.cpp:180
 msgid "About..."
-msgstr ""
+msgstr "Selle kohta..."
 
 #: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
 msgid "Access Control List"
-msgstr ""
+msgstr "Juurdepääsu nimekiri"
 
 #: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
 msgid "Extended user attributes"
-msgstr ""
+msgstr "Kasutaja laiendatud  atribuudid"
 
 #: src/eiciel_container.cpp:97
 #, c-format
 msgid "Could not show the help file: %s"
-msgstr ""
+msgstr "Abifaili ei saanud näidata: %s"
 
 #: src/eiciel_container.cpp:120
 msgid "Choose a file or a directory"
-msgstr ""
+msgstr "Valige fail või kataloog"
 
 #: src/eiciel_container.cpp:137
 msgid "Could not open the file \""
-msgstr ""
+msgstr "Ei saa avada faili \""
 
 #: src/eiciel_standalone.cpp:46
 msgid "Print version information"
-msgstr ""
+msgstr "Trükiversiooni teave"
 
 #: src/eiciel_standalone.cpp:48
 msgid "Access control list editor"
-msgstr ""
+msgstr "Juurdepääsunimekirja redigeerija"
 
 #: src/eiciel_enclosed_editor_window.cpp:24
 msgid "Edit ACLs for enclosed files"
-msgstr ""
+msgstr "Muutke suletud failide ACL-e"
 
 #: src/eiciel_enclosed_editor_window.cpp:25
 msgid "_Cancel"
-msgstr ""
+msgstr "_Katkesta"
 
 #: src/eiciel_enclosed_editor_window.cpp:26
 msgid "_Apply"
-msgstr ""
+msgstr "_Rakenda"
 
 #: src/eiciel_enclosed_editor_window.cpp:30
 msgid "<b>Participants in ACL for enclosed directories</b>"
-msgstr ""
+msgstr "<b> ACL-is osalejad suletud kataloogidele  </b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:33
 msgid "<b>Participants in ACL for enclosed files</b>"
-msgstr ""
+msgstr "<b>ACL-is osalejad suletud failidele</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
 msgid "<b>Available participants</b>"
-msgstr ""
+msgstr "<b>Võimalikud osalejad</b>"
 
 #: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
-msgstr ""
+msgstr "Toetatud on ainult tavalised failid või kataloogid"
 
 #: src/acl_manager.cpp:463
 msgid "Textual representation of the ACL is wrong"
-msgstr ""
+msgstr "ACL-i tekstiline esitus on vale"
 
 #: src/acl_manager.cpp:484
 msgid "Default textual representation of the ACL is wrong"
-msgstr ""
+msgstr "ACL-i tekstiline esitus on vale"
 
 #: src/eiciel_main_window.cpp:30
 msgid "<b>Current participants in ACL</b>"
-msgstr ""
+msgstr "<b>Praegused osalejad ACL-i</b>"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit ACLs for enclosed files..."
-msgstr ""
+msgstr "Suletud failide ACL-ide muutmine ..."
 
 #: src/eiciel_participant_list.cpp:30
 msgid "User"
-msgstr ""
+msgstr "Kasutaja"
 
 #: src/eiciel_participant_list.cpp:31
 msgid "Group"
-msgstr ""
+msgstr "Grupp"
 
 #: src/eiciel_participant_list.cpp:32
 msgid "Default participant"
-msgstr ""
+msgstr "Vaikimisi osaleja"
 
 #: src/eiciel_participant_list.cpp:37
 msgid "Add participant to ACL"
-msgstr ""
+msgstr "Lisa osaleja ACL-i"
 
 #: src/eiciel_participant_list.cpp:38
 msgid "Add participant to directory ACL"
-msgstr ""
+msgstr "Lisa osaleja kataloogi ACL-i"
 
 #: src/eiciel_participant_list.cpp:39
 msgid "Add participant to file ACL"
-msgstr ""
+msgstr "Lisa osaleja faili ACL-i"
 
 #: src/eiciel_participant_list.cpp:40
 msgid "Advanced features"
-msgstr ""
+msgstr "Täpsemad funktsioonid"
 
 #: src/eiciel_participant_list.cpp:42
 msgid "Name of participant"
-msgstr ""
+msgstr "Osaleja nimi"
 
 #: src/eiciel_participant_list.cpp:44
 msgid "Also show system participants"
-msgstr ""
+msgstr "Näita ka süsteemi osalejaid"
 
 #: src/eiciel_participant_list.cpp:80
 msgid "Filter participants"
-msgstr ""
+msgstr "Osalejate filter"
 
 #: src/eiciel_participant_list.cpp:105
 msgid "Participant"
-msgstr ""
+msgstr "Osaleja"
 
 #: src/eiciel_participant_list.cpp:422
 msgid "Participant not found"
-msgstr ""
+msgstr "Osalejat ei leitud"
 
 #: src/eiciel_acl_list.cpp:33
 msgid "There are ineffective permissions"
-msgstr ""
+msgstr "Mittetoimivad õigused"
 
 #: src/eiciel_acl_list.cpp:35
 msgid "Remove participant from ACL"
-msgstr ""
+msgstr "Eemalda kasutaja ACL-st"
 
 #: src/eiciel_acl_list.cpp:36
 msgid "Edit default participants"
-msgstr ""
+msgstr "Muuda vaikimisi osalejaid"
 
 #: src/eiciel_acl_list.cpp:79
 msgid "Entry"
-msgstr ""
+msgstr "Sissekanne"
 
 #: src/eiciel_acl_list.cpp:82
 msgid "Read"
-msgstr ""
+msgstr "Loe"
 
 #: src/eiciel_acl_list.cpp:95
 msgid "Write"
-msgstr ""
+msgstr "Kirjuta"
 
 #: src/eiciel_acl_list.cpp:107
 msgid "Execute"
-msgstr ""
+msgstr "Käivita"
