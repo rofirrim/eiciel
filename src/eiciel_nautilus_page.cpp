@@ -22,8 +22,9 @@
 #include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 #include <gtkmm.h>
-#include <libnautilus-extension/nautilus-property-page-provider.h>
-#include <libnautilus-extension/nautilus-property-page.h>
+extern "C" {
+#include <nautilus-extension.h>
+}
 
 #include "eiciel_main_window.hpp"
 #include "eiciel_main_window_controller.hpp"
