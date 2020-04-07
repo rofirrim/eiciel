@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2019-06-16 14:58+0200\n"
-"PO-Revision-Date: 2018-10-03 11:53+0000\n"
+"PO-Revision-Date: 2020-05-02 19:50+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
-"Language-Team: Danish <https://l10n.opensuse.org/projects/eiciel/master/da/"
-">\n"
+"Language-Team: Danish <https://l10n.opensuse.org/projects/eiciel/master/da/>"
+"\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #: src/eiciel_xattr_window.cpp:40
 msgid "Name"
@@ -128,24 +128,23 @@ msgstr "Adgangskontrolliste-editor"
 
 #: src/eiciel_enclosed_editor_window.cpp:24
 msgid "Edit ACLs for enclosed files"
-msgstr ""
+msgstr "Rediger ACL'er for vedlagte filer"
 
 #: src/eiciel_enclosed_editor_window.cpp:25
 msgid "_Cancel"
-msgstr ""
+msgstr "_Annuller"
 
 #: src/eiciel_enclosed_editor_window.cpp:26
 msgid "_Apply"
-msgstr ""
+msgstr "_Anvend"
 
 #: src/eiciel_enclosed_editor_window.cpp:30
 msgid "<b>Participants in ACL for enclosed directories</b>"
-msgstr ""
+msgstr "<b>Deltagere i ACL for vedlagte mapper</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:33
-#, fuzzy
 msgid "<b>Participants in ACL for enclosed files</b>"
-msgstr "<b>Nuværende deltagere i ACL</b>"
+msgstr "<b>Deltagere i ACL for vedlagte filer</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
 msgid "<b>Available participants</b>"
@@ -169,7 +168,7 @@ msgstr "<b>Nuværende deltagere i ACL</b>"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit ACLs for enclosed files..."
-msgstr ""
+msgstr "Rediger ACL'er for vedlagte filer ..."
 
 #: src/eiciel_participant_list.cpp:30
 msgid "User"
@@ -188,14 +187,12 @@ msgid "Add participant to ACL"
 msgstr "Tilføj deltager til ACL"
 
 #: src/eiciel_participant_list.cpp:38
-#, fuzzy
 msgid "Add participant to directory ACL"
-msgstr "Tilføj deltager til ACL"
+msgstr "Tilføj deltager til mappe-ACL"
 
 #: src/eiciel_participant_list.cpp:39
-#, fuzzy
 msgid "Add participant to file ACL"
-msgstr "Tilføj deltager til ACL"
+msgstr "Tilføj deltager til fil-ACL"
 
 #: src/eiciel_participant_list.cpp:40
 msgid "Advanced features"
