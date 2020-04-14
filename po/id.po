@@ -7,13 +7,16 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2019-06-16 14:58+0200\n"
-"PO-Revision-Date: 2016-08-25 23:09+0700\n"
-"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-05-02 19:51+0000\n"
+"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
+"Language-Team: Indonesian <https://l10n.opensuse.org/projects/eiciel/master/"
+"id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #: src/eiciel_xattr_window.cpp:40
 msgid "Name"
@@ -57,11 +60,11 @@ msgstr "Lainnya"
 
 #: src/eiciel_main_window_controller.cpp:182 src/eiciel_acl_list.cpp:399
 msgid "Default Mask"
-msgstr "Dafault Masker"
+msgstr "Masker bawaan"
 
 #: src/eiciel_main_window_controller.cpp:190 src/eiciel_acl_list.cpp:393
 msgid "Default Other"
-msgstr "Default Lainnya"
+msgstr "Bawaan Lainnya"
 
 #: src/eiciel_main_window_controller.cpp:267
 msgid "Could not add ACL entry: "
@@ -124,24 +127,23 @@ msgstr "Penyunting daftar kontrol akses"
 
 #: src/eiciel_enclosed_editor_window.cpp:24
 msgid "Edit ACLs for enclosed files"
-msgstr ""
+msgstr "Sunting ACL untuk berkas terlampir"
 
 #: src/eiciel_enclosed_editor_window.cpp:25
 msgid "_Cancel"
-msgstr ""
+msgstr "_Batal"
 
 #: src/eiciel_enclosed_editor_window.cpp:26
 msgid "_Apply"
-msgstr ""
+msgstr "Ter_apkan"
 
 #: src/eiciel_enclosed_editor_window.cpp:30
 msgid "<b>Participants in ACL for enclosed directories</b>"
-msgstr ""
+msgstr "<b>Pasrtisipan ACL untuk direktori terlampir</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:33
-#, fuzzy
 msgid "<b>Participants in ACL for enclosed files</b>"
-msgstr "<b>Partisipan saat ini di ACL</b>"
+msgstr "<b>Partisipan ACL untuk berkas terlampir</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
 msgid "<b>Available participants</b>"
@@ -157,7 +159,7 @@ msgstr "Representasi tekstual ACL salah"
 
 #: src/acl_manager.cpp:484
 msgid "Default textual representation of the ACL is wrong"
-msgstr "Representasi tekstual default ACL salah"
+msgstr "Representasi tekstual bawaan ACL salah"
 
 #: src/eiciel_main_window.cpp:30
 msgid "<b>Current participants in ACL</b>"
@@ -165,7 +167,7 @@ msgstr "<b>Partisipan saat ini di ACL</b>"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit ACLs for enclosed files..."
-msgstr ""
+msgstr "Sunting ACL untuk berkas terlampir..."
 
 #: src/eiciel_participant_list.cpp:30
 msgid "User"
@@ -177,21 +179,19 @@ msgstr "Grup"
 
 #: src/eiciel_participant_list.cpp:32
 msgid "Default participant"
-msgstr "Partisipan default"
+msgstr "Partisipan bawaan"
 
 #: src/eiciel_participant_list.cpp:37
 msgid "Add participant to ACL"
 msgstr "Tambah partisipan di ACL"
 
 #: src/eiciel_participant_list.cpp:38
-#, fuzzy
 msgid "Add participant to directory ACL"
-msgstr "Tambah partisipan di ACL"
+msgstr "Tambahkan partisipan ke direktori ACL"
 
 #: src/eiciel_participant_list.cpp:39
-#, fuzzy
 msgid "Add participant to file ACL"
-msgstr "Tambah partisipan di ACL"
+msgstr "Tambahkan partisipan ke berkas ACL"
 
 #: src/eiciel_participant_list.cpp:40
 msgid "Advanced features"
@@ -227,7 +227,7 @@ msgstr "Hapus partisipan dari ACL"
 
 #: src/eiciel_acl_list.cpp:36
 msgid "Edit default participants"
-msgstr "Sunting partisipan default"
+msgstr "Sunting partisipan bawaan"
 
 #: src/eiciel_acl_list.cpp:79
 msgid "Entry"
