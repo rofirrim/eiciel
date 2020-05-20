@@ -6,15 +6,16 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2019-06-16 14:58+0200\n"
-"PO-Revision-Date: 2015-10-29 07:32+0200\n"
+"PO-Revision-Date: 2020-05-26 14:40+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
-"Language-Team: Spanish <http://10n.opensuse.org/projects/eiciel/master/es/>\n"
+"Language-Team: Spanish <https://l10n.opensuse.org/projects/eiciel/master/es/>"
+"\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.3\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #: src/eiciel_xattr_window.cpp:40
 msgid "Name"
@@ -66,7 +67,7 @@ msgstr "Otros predeterminados"
 
 #: src/eiciel_main_window_controller.cpp:267
 msgid "Could not add ACL entry: "
-msgstr "No es posible añadir la entrada de ACL:"
+msgstr "No es posible añadir la entrada de ACL: "
 
 #: src/eiciel_main_window_controller.cpp:314
 msgid "Could not remove ACL entry: "
@@ -80,7 +81,7 @@ msgstr "No es posible modificar la entrada de ACL: "
 #: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr ""
-"¿Seguro que desea eliminar todas las entradas predeterminadas de la ACL?"
+"¿Confirma que quiere eliminar todas las entradas predeterminadas de la ACL?"
 
 #: src/eiciel_container.cpp:26
 msgid "<b>File name</b>"
@@ -88,12 +89,12 @@ msgstr "<b>Nombre de archivo</b>"
 
 #: src/eiciel_container.cpp:27 src/eiciel_container.cpp:168
 msgid "No file opened"
-msgstr "No hay ningún archivo abierto"
+msgstr "No se abrió ningún archivo"
 
 #: src/eiciel_container.cpp:30 src/eiciel_container.cpp:177
 #: src/eiciel_container.cpp:180
 msgid "About..."
-msgstr "Acerca de..."
+msgstr "Acerca de…"
 
 #: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
 msgid "Access Control List"
@@ -114,7 +115,7 @@ msgstr "Seleccione un archivo o un directorio"
 
 #: src/eiciel_container.cpp:137
 msgid "Could not open the file \""
-msgstr "No es posible abrir el archivo \""
+msgstr "No es posible abrir el archivo «"
 
 #: src/eiciel_standalone.cpp:46
 msgid "Print version information"
@@ -126,15 +127,15 @@ msgstr "Editor de lista de control de acceso"
 
 #: src/eiciel_enclosed_editor_window.cpp:24
 msgid "Edit ACLs for enclosed files"
-msgstr "Editar ACLs de los ficheros contenidos"
+msgstr "Editar los ACL de los archivos contenidos"
 
 #: src/eiciel_enclosed_editor_window.cpp:25
 msgid "_Cancel"
-msgstr "Cancelar"
+msgstr "_Cancelar"
 
 #: src/eiciel_enclosed_editor_window.cpp:26
 msgid "_Apply"
-msgstr "Aplicar"
+msgstr "_Aplicar"
 
 #: src/eiciel_enclosed_editor_window.cpp:30
 msgid "<b>Participants in ACL for enclosed directories</b>"
@@ -150,7 +151,7 @@ msgstr "<b>Participantes disponibles</b>"
 
 #: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
 msgid "Only regular files or directories supported"
-msgstr "Sólo se admiten archivos y directorios normales"
+msgstr "Solo se admiten archivos y directorios normales"
 
 #: src/acl_manager.cpp:463
 msgid "Textual representation of the ACL is wrong"
@@ -166,7 +167,7 @@ msgstr "<b>Participantes actuales en la ACL</b>"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit ACLs for enclosed files..."
-msgstr "Editar ACLs de los ficheros contenidos..."
+msgstr "Editar los ACL de los archivos contenidos…"
 
 #: src/eiciel_participant_list.cpp:30
 msgid "User"
@@ -190,7 +191,7 @@ msgstr "Añadir participante en la ACL de directorio"
 
 #: src/eiciel_participant_list.cpp:39
 msgid "Add participant to file ACL"
-msgstr "Añadir participante en la ACL de fichero"
+msgstr "Añadir participante en la ACL de archivo"
 
 #: src/eiciel_participant_list.cpp:40
 msgid "Advanced features"
