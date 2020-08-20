@@ -26,8 +26,7 @@ EicielXAttrController::EicielXAttrController()
 {
 }
 
-void EicielXAttrController::open_file(const Glib::ustring& filename) throw(
-    XAttrManagerException)
+void EicielXAttrController::open_file(const Glib::ustring& filename)
 {
     if (_xattr_manager != NULL) {
         delete _xattr_manager;
@@ -51,29 +50,28 @@ void EicielXAttrController::open_file(const Glib::ustring& filename) throw(
     }
 }
 
-void EicielXAttrController::remove_attribute(
-    const Glib::ustring& nomAtrib) throw(XAttrManagerException)
+void EicielXAttrController::remove_attribute(const Glib::ustring& nomAtrib)
 {
     _xattr_manager->remove_attribute(nomAtrib);
 }
 
 void EicielXAttrController::add_attribute(
     const Glib::ustring& nomAtrib,
-    const Glib::ustring& valorAtrib) throw(XAttrManagerException)
+    const Glib::ustring& valorAtrib)
 {
     _xattr_manager->add_attribute(nomAtrib, valorAtrib);
 }
 
 void EicielXAttrController::update_attribute_value(
     const Glib::ustring& nomAtrib,
-    const Glib::ustring& valorNouAtrib) throw(XAttrManagerException)
+    const Glib::ustring& valorNouAtrib)
 {
     _xattr_manager->add_attribute(nomAtrib, valorNouAtrib);
 }
 
 void EicielXAttrController::update_attribute_name(
     const Glib::ustring& nomAnticAtribut,
-    const Glib::ustring& nomNouAtribut) throw(XAttrManagerException)
+    const Glib::ustring& nomNouAtribut)
 {
     _xattr_manager->change_attribute_name(nomAnticAtribut, nomNouAtribut);
 }

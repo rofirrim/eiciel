@@ -31,18 +31,17 @@ private:
     EicielXAttrWindow* _window;
     bool _opened_file;
 
-    void remove_attribute(const Glib::ustring& attrib_name) throw(
-        XAttrManagerException);
+    void remove_attribute(const Glib::ustring& attrib_name);
 
     void add_attribute(
         const Glib::ustring& attrib_name,
-        const Glib::ustring& attrib_value) throw(XAttrManagerException);
+        const Glib::ustring& attrib_value);
     void update_attribute_value(
         const Glib::ustring& attrib_name,
-        const Glib::ustring& attrib_new_value) throw(XAttrManagerException);
+        const Glib::ustring& attrib_new_value);
     void update_attribute_name(
         const Glib::ustring& old_attribute_name,
-        const Glib::ustring& new_attribute_name) throw(XAttrManagerException);
+        const Glib::ustring& new_attribute_name);
 
     void check_editable();
 
@@ -50,7 +49,7 @@ public:
     EicielXAttrController();
     bool opened_file() { return _opened_file; };
 
-    void open_file(const Glib::ustring& filename) throw(XAttrManagerException);
+    void open_file(const Glib::ustring& filename);
 
     void set_active(bool b);
 

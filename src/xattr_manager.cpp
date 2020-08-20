@@ -18,8 +18,7 @@
 */
 #include "xattr_manager.hpp"
 
-XAttrManager::XAttrManager(const Glib::ustring& filename) throw(
-    XAttrManagerException)
+XAttrManager::XAttrManager(const Glib::ustring& filename)
     : _filename(filename)
 {
     // Check it is an ordinary file or a directory
@@ -41,7 +40,7 @@ XAttrManager::XAttrManager(const Glib::ustring& filename) throw(
 }
 
 // We should find better ways to test xattr support
-void XAttrManager::read_test() throw(XAttrManagerException)
+void XAttrManager::read_test()
 {
     Glib::ustring qualified_attr_name = "user.test";
     int buffer_length;
@@ -58,8 +57,7 @@ void XAttrManager::read_test() throw(XAttrManagerException)
     delete[] buffer;
 }
 
-std::vector<std::string> XAttrManager::get_xattr_list() throw(
-    XAttrManagerException)
+std::vector<std::string> XAttrManager::get_xattr_list()
 {
     std::vector<std::string> result;
 
@@ -120,8 +118,7 @@ std::vector<std::string> XAttrManager::get_xattr_list() throw(
     return result;
 }
 
-std::string XAttrManager::get_attribute_value(
-    const std::string& attr_name) throw(XAttrManagerException)
+std::string XAttrManager::get_attribute_value(const std::string& attr_name)
 {
     int size = 30;
     char* buffer = new char[size];

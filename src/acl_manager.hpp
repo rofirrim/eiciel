@@ -172,7 +172,7 @@ public:
     const static int PERM_WRITE = 1;
     const static int PERM_EXEC = 2;
 
-    ACLManager(const std::string& filename) throw(ACLManagerException);
+    ACLManager(const std::string& filename);
 
     std::string get_acl_access() const { return _text_acl_access; }
     std::string get_acl_default() const { return _text_acl_default; }

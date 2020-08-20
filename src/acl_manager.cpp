@@ -18,7 +18,7 @@
 */
 #include "acl_manager.hpp"
 
-ACLManager::ACLManager(const std::string& filename) throw(ACLManagerException)
+ACLManager::ACLManager(const std::string& filename)
     : _filename(filename)
 {
     // Get first UGO permissions and info about the file
