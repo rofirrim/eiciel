@@ -50,30 +50,30 @@ void EicielXAttrController::open_file(const Glib::ustring& filename)
     }
 }
 
-void EicielXAttrController::remove_attribute(const Glib::ustring& nomAtrib)
+void EicielXAttrController::remove_attribute(const Glib::ustring& attrib_name)
 {
-    _xattr_manager->remove_attribute(nomAtrib);
+    _xattr_manager->remove_attribute(attrib_name);
 }
 
 void EicielXAttrController::add_attribute(
-    const Glib::ustring& nomAtrib,
-    const Glib::ustring& valorAtrib)
+    const Glib::ustring& attrib_name,
+    const Glib::ustring& attrib_value)
 {
-    _xattr_manager->add_attribute(nomAtrib, valorAtrib);
+    _xattr_manager->add_attribute(attrib_name, attrib_value);
 }
 
 void EicielXAttrController::update_attribute_value(
-    const Glib::ustring& nomAtrib,
-    const Glib::ustring& valorNouAtrib)
+    const Glib::ustring& attrib_name,
+    const Glib::ustring& attrib_new_value)
 {
-    _xattr_manager->add_attribute(nomAtrib, valorNouAtrib);
+    _xattr_manager->add_attribute(attrib_name, attrib_new_value);
 }
 
 void EicielXAttrController::update_attribute_name(
-    const Glib::ustring& nomAnticAtribut,
-    const Glib::ustring& nomNouAtribut)
+    const Glib::ustring& old_attribute_name,
+    const Glib::ustring& new_attribute_name)
 {
-    _xattr_manager->change_attribute_name(nomAnticAtribut, nomNouAtribut);
+    _xattr_manager->change_attribute_name(old_attribute_name, new_attribute_name);
 }
 
 void EicielXAttrController::check_editable()

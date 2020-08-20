@@ -140,10 +140,10 @@ private:
     void get_acl_entries_default();
     void create_textual_representation();
     std::string write_name(acl_entry& eacl);
-    void set_acl_generic(const std::string& nom,
+    void set_acl_generic(const std::string& name,
         std::vector<acl_entry>& llistACL,
         const permissions_t& perms);
-    void remove_acl_generic(const std::string& nom,
+    void remove_acl_generic(const std::string& name,
         std::vector<acl_entry>& llistaACL);
 
     void commit_changes_to_file();

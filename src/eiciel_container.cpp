@@ -149,21 +149,21 @@ void EicielContainer::open_file_()
     }
 }
 
-bool EicielContainer::open_file(Glib::ustring nom)
+bool EicielContainer::open_file(Glib::ustring name)
 {
     bool result;
-    _widget_controller->open_file(nom);
+    _widget_controller->open_file(name);
 
     result = _widget_controller->opened_file();
 
 #ifdef ENABLE_USER_XATTR
-    _xattr_controller->open_file(nom);
+    _xattr_controller->open_file(name);
 
     result |= _xattr_controller->opened_file();
 #endif
 
     if (result) {
-        _file_name.set_text(nom);
+        _file_name.set_text(name);
     } else {
         _file_name.set_text(_("No file opened"));
     }

@@ -68,7 +68,7 @@ private:
 
 public:
     EicielContainer();
-    bool open_file(Glib::ustring nom);
+    bool open_file(Glib::ustring name);
 };
 
 class EicielAboutBox : public Gtk::Dialog {
