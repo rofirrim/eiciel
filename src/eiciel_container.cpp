@@ -182,7 +182,7 @@ EicielAboutBox::EicielAboutBox(Gtk::Window& parent)
 #endif
     _title("<span size=\"xx-large\"><b>Eiciel " PACKAGE_VERSION
            "</b></span>")
-    , _author("<small>Copyright Â© 2004-2005 Roger Ferrer IbÃ¡Ã±ez</small>")
+    , _author("<small>Copyright © 2004-2020 Roger Ferrer Ibáñez</small>")
 {
     set_border_width(4);
     get_vbox()->set_spacing(4);
