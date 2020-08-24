@@ -1,6 +1,6 @@
 # Eiciel
 project('eiciel', 'cpp',
-    version : '0.9.12',
+    version : '0.9.13',
     meson_version : '>=0.54',
     license: 'GPL2+')
 

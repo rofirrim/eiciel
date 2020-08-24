@@ -1,5 +1,5 @@
 dnl Set package name and maintainer
-AC_INIT([eiciel],[0.9.12.1],[rofirrim@gmail.com])
+AC_INIT([eiciel],[0.9.13],[rofirrim@gmail.com])
 
 dnl Where are we
 AC_CANONICAL_BUILD
