@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2019-06-16 14:58+0200\n"
+"POT-Creation-Date: 2020-08-24 15:11+0200\n"
 "PO-Revision-Date: 2019-06-20 13:49+0000\n"
 "Last-Translator: Marguerite Su <i@marguerite.su>\n"
 "Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/eiciel/"
@@ -77,7 +77,7 @@ msgstr "无法移除访问控制列表项： "
 msgid "Could not modify ACL entry: "
 msgstr "无法修改访问控制列表项： "
 
-#: src/eiciel_main_window_controller.cpp:544
+#: src/eiciel_main_window_controller.cpp:548
 #: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "您确定您想要要移除全部访问控制列表默认项吗？"
@@ -95,11 +95,11 @@ msgstr "未打开任何文件"
 msgid "About..."
 msgstr "关于…"
 
-#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
+#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:129
 msgid "Access Control List"
 msgstr "访问控制列表"
 
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:145
 msgid "Extended user attributes"
 msgstr "扩展用户属性"
 
@@ -148,7 +148,7 @@ msgstr "<b>隔离文件访问控制列表中的成员</b>"
 msgid "<b>Available participants</b>"
 msgstr "<b>可用成员</b>"
 
-#: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
+#: src/acl_manager.cpp:46 src/xattr_manager.cpp:32
 msgid "Only regular files or directories supported"
 msgstr "仅支持常规文件或文件夹"
 

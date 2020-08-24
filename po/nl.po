@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2019-06-16 14:58+0200\n"
+"POT-Creation-Date: 2020-08-24 15:11+0200\n"
 "PO-Revision-Date: 2019-06-16 19:10+0000\n"
 "Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
 "Language-Team: Dutch <https://l10n.opensuse.org/projects/eiciel/master/nl/>\n"
@@ -76,7 +76,7 @@ msgstr "Kan item niet verwijderen uit toegangscontrolelijst: "
 msgid "Could not modify ACL entry: "
 msgstr "Kan item in toegangscontrolelijst niet wijzigen: "
 
-#: src/eiciel_main_window_controller.cpp:544
+#: src/eiciel_main_window_controller.cpp:548
 #: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Wilt u alle standaarditems uit de toegangscontrolelijst verwijderen?"
@@ -94,11 +94,11 @@ msgstr "Geen bestand geopend"
 msgid "About..."
 msgstr "Info..."
 
-#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
+#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:129
 msgid "Access Control List"
 msgstr "Toegangscontrolelijst"
 
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:145
 msgid "Extended user attributes"
 msgstr "Uitgebreide gebruikersattributen"
 
@@ -147,7 +147,7 @@ msgstr "<b>Deelnemers in ACL voor ingesloten bestanden</b>"
 msgid "<b>Available participants</b>"
 msgstr "<b>Beschikbare deelnemers</b>"
 
-#: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
+#: src/acl_manager.cpp:46 src/xattr_manager.cpp:32
 msgid "Only regular files or directories supported"
 msgstr "Alleen normale bestanden of directory's worden ondersteund"
 

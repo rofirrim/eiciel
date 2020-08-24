@@ -5,11 +5,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2019-06-16 14:58+0200\n"
+"POT-Creation-Date: 2020-08-24 15:11+0200\n"
 "PO-Revision-Date: 2020-05-02 19:50+0000\n"
 "Last-Translator: mohammad alhargan <malham1@gmail.com>\n"
-"Language-Team: Arabic <https://l10n.opensuse.org/projects/eiciel/master/ar/>"
-"\n"
+"Language-Team: Arabic <https://l10n.opensuse.org/projects/eiciel/master/ar/"
+">\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,7 +78,7 @@ msgstr "تعذر إزالة إدخال قوائم التحكم بالوصول AC
 msgid "Could not modify ACL entry: "
 msgstr "تعذر تعديل إدخال قوائم التحكم بالوصول (ACL): "
 
-#: src/eiciel_main_window_controller.cpp:544
+#: src/eiciel_main_window_controller.cpp:548
 #: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr ""
@@ -98,11 +98,11 @@ msgstr "لا يوجد ملف مفتوح"
 msgid "About..."
 msgstr "حول..."
 
-#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
+#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:129
 msgid "Access Control List"
 msgstr "قائمة التحكم بالوصول"
 
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:145
 msgid "Extended user attributes"
 msgstr "سمات موسعة للمستخدم"
 
@@ -151,7 +151,7 @@ msgstr "<b>المشاركون حالياً في الملفات المغلقة AC
 msgid "<b>Available participants</b>"
 msgstr "<b>المشاركون المتوفرون</b>"
 
-#: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
+#: src/acl_manager.cpp:46 src/xattr_manager.cpp:32
 msgid "Only regular files or directories supported"
 msgstr "يتم دعم الملفات أو المجلدات العادية فقط"
 

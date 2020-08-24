@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Eiciel 0.9\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2019-06-16 14:58+0200\n"
+"POT-Creation-Date: 2020-08-24 15:11+0200\n"
 "PO-Revision-Date: 2018-10-22 18:00+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/eiciel/master/ca/"
@@ -79,7 +79,7 @@ msgstr "No es pot suprimir l'entrada ACL: "
 msgid "Could not modify ACL entry: "
 msgstr "No es pot modificar l'entrada ACL: "
 
-#: src/eiciel_main_window_controller.cpp:544
+#: src/eiciel_main_window_controller.cpp:548
 #: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Segur que voleu suprimir totes les entrades per defecte d'ACL?"
@@ -97,11 +97,11 @@ msgstr "No hi ha cap fitxer obert"
 msgid "About..."
 msgstr "Quant a..."
 
-#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
+#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:129
 msgid "Access Control List"
 msgstr "Llista de control d'accés"
 
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:145
 msgid "Extended user attributes"
 msgstr "Atributs d'usuari ampliats"
 
@@ -150,7 +150,7 @@ msgstr "<b>Participants a l'ACL dels fitxers continguts</b>"
 msgid "<b>Available participants</b>"
 msgstr "<b>Participants disponibles</b>"
 
-#: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
+#: src/acl_manager.cpp:46 src/xattr_manager.cpp:32
 msgid "Only regular files or directories supported"
 msgstr "Només s'admeten fitxers o directoris ordinaris"
 

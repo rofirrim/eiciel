@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2019-06-16 14:58+0200\n"
+"POT-Creation-Date: 2020-08-24 15:11+0200\n"
 "PO-Revision-Date: 2020-05-02 19:51+0000\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/eiciel/master/"
@@ -78,7 +78,7 @@ msgstr "Tidak dapat menghapus ACL entri: "
 msgid "Could not modify ACL entry: "
 msgstr "Tidak dapat mengubah ACL entri: "
 
-#: src/eiciel_main_window_controller.cpp:544
+#: src/eiciel_main_window_controller.cpp:548
 #: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Apakah Anda yakin ingin menghapus semua entri dafault ACL?"
@@ -96,11 +96,11 @@ msgstr "Tidak ada berkas yang terbuka"
 msgid "About..."
 msgstr "Tentang..."
 
-#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
+#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:129
 msgid "Access Control List"
 msgstr "Daftar Kontrol Akses"
 
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:145
 msgid "Extended user attributes"
 msgstr "Atribut pengguna yang diperluas"
 
@@ -149,7 +149,7 @@ msgstr "<b>Partisipan ACL untuk berkas terlampir</b>"
 msgid "<b>Available participants</b>"
 msgstr "<b>Partisipan yang tersedia</b>"
 
-#: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
+#: src/acl_manager.cpp:46 src/xattr_manager.cpp:32
 msgid "Only regular files or directories supported"
 msgstr "Hanya mendukung berkas reguler atau direktori"
 

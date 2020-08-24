@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2019-06-16 14:58+0200\n"
+"POT-Creation-Date: 2020-08-24 15:11+0200\n"
 "PO-Revision-Date: 2015-12-04 16:25+0200\n"
 "Last-Translator: Andriy Bandura <andriykopanytsia@gmail.com>\n"
 "Language-Team: Ukrainian <http://l10n.opensuse.org/projects/eiciel/master/uk/"
@@ -80,7 +80,7 @@ msgstr "Не вдалося вилучити запис списку управ�
 msgid "Could not modify ACL entry: "
 msgstr "Не вдалося змінити запис списку управління доступом: "
 
-#: src/eiciel_main_window_controller.cpp:544
+#: src/eiciel_main_window_controller.cpp:548
 #: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr ""
@@ -99,11 +99,11 @@ msgstr "Не має відкритих файлів"
 msgid "About..."
 msgstr "Про…"
 
-#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
+#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:129
 msgid "Access Control List"
 msgstr "Список управління доступом"
 
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:145
 msgid "Extended user attributes"
 msgstr "Додаткові атрибути користувача"
 
@@ -153,7 +153,7 @@ msgstr "<b>Поточні учасники у СУД</b>"
 msgid "<b>Available participants</b>"
 msgstr "<b>Доступні учасники</b>"
 
-#: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
+#: src/acl_manager.cpp:46 src/xattr_manager.cpp:32
 msgid "Only regular files or directories supported"
 msgstr "Підтримуються лише звичайні файли або каталоги"
 

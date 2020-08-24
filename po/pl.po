@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2019-06-16 14:58+0200\n"
+"POT-Creation-Date: 2020-08-24 15:11+0200\n"
 "PO-Revision-Date: 2018-01-25 12:04+0000\n"
 "Last-Translator: Ewelina Michalowska <ewelina.michalowska@stgambit.com>\n"
 "Language-Team: Polish <https://l10n.opensuse.org/projects/eiciel/master/pl/"
@@ -78,7 +78,7 @@ msgstr "Nie można usunąć wpisu z listy ACL: "
 msgid "Could not modify ACL entry: "
 msgstr "Nie można zmienić wpisu na liście ACL: "
 
-#: src/eiciel_main_window_controller.cpp:544
+#: src/eiciel_main_window_controller.cpp:548
 #: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Czy na pewno chcesz usunąć wszystkie domyślne wpisy na liście ACL?"
@@ -96,11 +96,11 @@ msgstr "Brak otwartych plików"
 msgid "About..."
 msgstr "Informacje..."
 
-#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
+#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:129
 msgid "Access Control List"
 msgstr "Lista kontroli dostępu"
 
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:145
 msgid "Extended user attributes"
 msgstr "Atrybuty rozszerzone użytkowników"
 
@@ -150,7 +150,7 @@ msgstr "<b>Bieżący uczestnicy na liście ACL</b>"
 msgid "<b>Available participants</b>"
 msgstr "<b>Dostępni uczestnicy</b>"
 
-#: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
+#: src/acl_manager.cpp:46 src/xattr_manager.cpp:32
 msgid "Only regular files or directories supported"
 msgstr "Obsługiwane są tylko zwykłe pliki i katalogi"
 

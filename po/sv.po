@@ -5,11 +5,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2019-06-16 14:58+0200\n"
+"POT-Creation-Date: 2020-08-24 15:11+0200\n"
 "PO-Revision-Date: 2020-05-02 19:51+0000\n"
 "Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
-"Language-Team: Swedish <https://l10n.opensuse.org/projects/eiciel/master/sv/>"
-"\n"
+"Language-Team: Swedish <https://l10n.opensuse.org/projects/eiciel/master/sv/"
+">\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,7 +77,7 @@ msgstr "Det gick inte att ta bort ACL-post: "
 msgid "Could not modify ACL entry: "
 msgstr "Det gick inte att ändra ACL-post: "
 
-#: src/eiciel_main_window_controller.cpp:544
+#: src/eiciel_main_window_controller.cpp:548
 #: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Är du säker på att du vill ta bort alla ACL-standardposter?"
@@ -95,11 +95,11 @@ msgstr "Ingen fil har öppnats"
 msgid "About..."
 msgstr "Om..."
 
-#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
+#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:129
 msgid "Access Control List"
 msgstr "Åtkomstkontrollista (ACL)"
 
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:145
 msgid "Extended user attributes"
 msgstr "Utökade användarattribut"
 
@@ -149,7 +149,7 @@ msgstr "<b>Aktuella deltagare i ACL</b>"
 msgid "<b>Available participants</b>"
 msgstr "<b>Tillgängliga deltagare</b>"
 
-#: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
+#: src/acl_manager.cpp:46 src/xattr_manager.cpp:32
 msgid "Only regular files or directories supported"
 msgstr "Endast vanliga filer eller kataloger stöds"
 

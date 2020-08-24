@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2019-06-16 14:58+0200\n"
+"POT-Creation-Date: 2020-08-24 15:11+0200\n"
 "PO-Revision-Date: 2019-06-16 19:10+0000\n"
 "Last-Translator: Aleš Kastner <alkas@volny.cz>\n"
 "Language-Team: Czech <https://l10n.opensuse.org/projects/eiciel/master/cs/>\n"
@@ -76,7 +76,7 @@ msgstr "Nedaří se odstranit položku ACL: "
 msgid "Could not modify ACL entry: "
 msgstr "Nedaří se upravit položku ACL: "
 
-#: src/eiciel_main_window_controller.cpp:544
+#: src/eiciel_main_window_controller.cpp:548
 #: src/eiciel_enclosed_editor_window_controller.cpp:33
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Opravdu chcete odstranit všechny výchozí položky ACL?"
@@ -94,11 +94,11 @@ msgstr "Není otevřen žádný soubor"
 msgid "About..."
 msgstr "O aplikaci…"
 
-#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:128
+#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:129
 msgid "Access Control List"
 msgstr "Seznam řízení přístupu (ACL)"
 
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:144
+#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:145
 msgid "Extended user attributes"
 msgstr "Rozšířené uživatelské atributy"
 
@@ -147,7 +147,7 @@ msgstr "<b>Účastníci v ACL pro připojené adresáře</b>"
 msgid "<b>Available participants</b>"
 msgstr "<b>Dostupní účastníci</b>"
 
-#: src/acl_manager.cpp:46 src/xattr_manager.cpp:33
+#: src/acl_manager.cpp:46 src/xattr_manager.cpp:32
 msgid "Only regular files or directories supported"
 msgstr "Podporované jsou pouze obyčejné soubory nebo složky"
 
