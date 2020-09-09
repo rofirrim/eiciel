@@ -5,17 +5,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2020-08-24 15:11+0200\n"
-"PO-Revision-Date: 2016-11-06 12:55+0000\n"
+"POT-Creation-Date: 2019-06-16 14:58+0200\n"
+"PO-Revision-Date: 2020-08-24 00:40+0000\n"
 "Last-Translator: hayyan rostami <hayyan71@yahoo.com>\n"
-"Language-Team: Persian <https://l10n.opensuse.org/projects/eiciel/master/fa/"
-">\n"
+"Language-Team: Persian <https://l10n.opensuse.org/projects/eiciel/master/fa/>"
+"\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.6\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #: src/eiciel_xattr_window.cpp:40
 msgid "Name"
@@ -126,24 +126,23 @@ msgstr "ویرایشگر لیست کنترل دسترسی"
 
 #: src/eiciel_enclosed_editor_window.cpp:24
 msgid "Edit ACLs for enclosed files"
-msgstr ""
+msgstr "ویرایش ACL ها برای پرونده‌های محصور شده"
 
 #: src/eiciel_enclosed_editor_window.cpp:25
 msgid "_Cancel"
-msgstr ""
+msgstr "لغو"
 
 #: src/eiciel_enclosed_editor_window.cpp:26
 msgid "_Apply"
-msgstr ""
+msgstr "اعمال"
 
 #: src/eiciel_enclosed_editor_window.cpp:30
 msgid "<b>Participants in ACL for enclosed directories</b>"
-msgstr ""
+msgstr "<b>مشارکت کردن در ACL ها برای مسیر‌های محصور شده</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:33
-#, fuzzy
 msgid "<b>Participants in ACL for enclosed files</b>"
-msgstr "<b>شرکت کنندگان کنونی در ACL</b>"
+msgstr "<b>مشارکت‌کنندگان در ACL های پرونده‌های محصور شده</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
 msgid "<b>Available participants</b>"
@@ -167,7 +166,7 @@ msgstr "<b>شرکت کنندگان کنونی در ACL</b>"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit ACLs for enclosed files..."
-msgstr ""
+msgstr "ویرایش ACL ها برای پرونده‌های محصور شده..."
 
 #: src/eiciel_participant_list.cpp:30
 msgid "User"
@@ -186,14 +185,12 @@ msgid "Add participant to ACL"
 msgstr "اضافه کردن شرکت کننده در ACL"
 
 #: src/eiciel_participant_list.cpp:38
-#, fuzzy
 msgid "Add participant to directory ACL"
-msgstr "اضافه کردن شرکت کننده در ACL"
+msgstr "اضافه کردن شرکت کننده در ACL مسیر"
 
 #: src/eiciel_participant_list.cpp:39
-#, fuzzy
 msgid "Add participant to file ACL"
-msgstr "اضافه کردن شرکت کننده در ACL"
+msgstr "اضافه کردن شرکت‌کننده در ACL پرونده"
 
 #: src/eiciel_participant_list.cpp:40
 msgid "Advanced features"
