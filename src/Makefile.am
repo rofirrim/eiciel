@@ -13,6 +13,7 @@ common_sources = \
 				 eiciel_participant_list.hpp \
 				 eiciel_participant_list_controller.cpp \
 				 eiciel_participant_list_controller.hpp \
+				 eiciel_participant_target.hpp \
 				 eiciel_enclosed_editor_window_controller.hpp \
 				 eiciel_enclosed_editor_window_controller.cpp \
 				 eiciel_enclosed_editor_window.hpp \
