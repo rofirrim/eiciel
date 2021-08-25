@@ -193,6 +193,15 @@ AC_CHECK_LIB(acl, acl_get_perm,
    AC_SUBST(ACL_LIBS, [-lacl])
  ],)
 
+# This must be easier, right?
+OLDCXXFLAGS="$CXXFLAGS"
+OLDCPPFLAGS="$CPPFLAGS"
+CXXFLAGS="$CXXFLAGS ${GTKMM_CFLAGS} ${NAUTILUS_EXTENSION_CFLAGS}"
+CPPFLAGS="$CXXFLAGS ${GTKMM_CFLAGS} ${NAUTILUS_EXTENSION_CFLAGS}"
+AC_CHECK_HEADERS([nautilus/nautilus-extension.h], [], [], [])
+CXXFLAGS="$OLDCXXFLAGS"
+CPPFLAGS="$OLDCPPFLAGS"
+
 dnl Output files
 AC_CONFIG_FILES([Makefile
 		src/Makefile

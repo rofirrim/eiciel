@@ -2,7 +2,8 @@
 project('eiciel', 'cpp',
   version : '0.9.13',
   meson_version : '>=0.54',
-  license: 'GPL2+')
+  license: 'GPL2+',
+  default_options: ['cpp_std=c++11'])
 
 package_name = 'eiciel'
 email = 'rofirrim@gmail.com'
@@ -48,6 +49,10 @@ conf_data.set('HAVE_ACL_GET_PERM', has_acl_get_perm)
 has_acl_get_perm_np = compiler.has_function('acl_get_perm_np',
                                             dependencies: libacl)
 conf_data.set('HAVE_ACL_GET_PERM_NP', has_acl_get_perm_np)
+
+has_nautilus_extension_h = compiler.has_header('nautilus/nautilus-extension.h',
+         dependencies: [libnautilus_extensions3, gtkmm3])
+conf_data.set('HAVE_NAUTILUS_NAUTILUS_EXTENSION_H', has_nautilus_extension_h)
 
 # Internationalization
 i18n = import('i18n')

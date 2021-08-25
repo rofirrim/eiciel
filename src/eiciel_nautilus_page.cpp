@@ -22,8 +22,14 @@
 #include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 #include <gtkmm.h>
+
 extern "C" {
+#ifdef HAVE_NAUTILUS_NAUTILUS_EXTENSION_H
 #include <nautilus-extension.h>
+#else
+#include <libnautilus-extension/nautilus-property-page-provider.h>
+#include <libnautilus-extension/nautilus-property-page.h>
+#endif
 }
 
 #include "eiciel_main_window.hpp"
