@@ -79,6 +79,7 @@ common_sources = [
   'src/eiciel_participant_list.hpp',
   'src/eiciel_participant_list_controller.cpp',
   'src/eiciel_participant_list_controller.hpp',
+  'src/eiciel_participant_target.hpp',
   'src/eiciel_enclosed_editor_window_controller.hpp',
   'src/eiciel_enclosed_editor_window_controller.cpp',
   'src/eiciel_enclosed_editor_window.hpp',
