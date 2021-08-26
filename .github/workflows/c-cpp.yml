@@ -1,0 +1,24 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup dependencies
+      run: |
+        apt install -y build-essential libacl1-dev libattr1-dev libgtkmm-3.0-dev
+    - name: Bootstrap autotools
+      run: autoreconf -fiv
+    - name: Configure
+      run: ./configure
+    - name: Build
+      run: make -j$(nproc)
+    - name: Test distributable
+      run: DISTCHECK_CONFIGURE_FLAGS="--with-nautilus-extensions-dir=/tmp/nautilus-extensions" make distcheck
