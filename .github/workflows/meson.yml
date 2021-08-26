@@ -17,10 +17,11 @@ jobs:
         sudo apt install -y build-essential python3-pip libacl1-dev libattr1-dev libgtkmm-3.0-dev libnautilus-extension-dev gettext ninja-build
         pip3 install --user meson
     - name: Setup meson
-      run: |
-        mkdir build
-        cd build && meson .. 
+      working-directory: ./build
+      run: meson ..
     - name: Build
-      run: cd build && meson compile
+      working-directory: ./build
+      run: meson compile
     - name: Test distributable
-        cd build && meson dist
+      working-directory: ./build
+      run: meson dist
