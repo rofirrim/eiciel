@@ -35,8 +35,10 @@ common_sources += \
 	xattr_list_model.hpp
 endif
 
+eicieldocdir_ = $(datadir)/gnome/help/eiciel/C
+
 bin_PROGRAMS = eiciel
-eiciel_CPPFLAGS = -I@top_srcdir@/lib -DDATADIR="\"$(datadir)\"" -DPKGDATADIR="\"$(pkgdatadir)\"" 
+eiciel_CPPFLAGS = -I@top_srcdir@/lib -DDATADIR="\"$(datadir)\"" -DPKGDATADIR="\"$(pkgdatadir)\"" -DEICIELDOCDIR="\"$(eicieldocdir_)\""
 eiciel_CXXFLAGS = @GTKMM_CFLAGS@ -Wall 
 eiciel_LDFLAGS = @GTKMM_LIBS@ @ACL_LIBS@
 eiciel_SOURCES = \

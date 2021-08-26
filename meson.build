@@ -17,6 +17,13 @@ conf_data.set_quoted('PACKAGE', package_name)
 pkgdatadir = get_option('prefix') / get_option('datadir') / package_name
 conf_data.set_quoted('PKGDATADIR', pkgdatadir)
 
+# This ignores translations but otherwise it seems impossible to tell
+# yelp where to find the help, specially if installed in a nonstandard
+# location.
+eicieldocdir = get_option('datadir') / 'gnome' / 'help' / 'eiciel' / 'C'
+abs_eicieldocdir =  get_option('prefix') / eicieldocdir
+conf_data.set_quoted('EICIELDOCDIR', abs_eicieldocdir)
+
 # Dependencies
 gtkmm3 = dependency('gtkmm-3.0', version: '>= 3.0.0')
 giomm = dependency('giomm-2.4', version: '>= 2.50.0')
@@ -186,8 +193,6 @@ meson.add_install_script('img/install_icons.sh',
 install_man('man/eiciel.1')
 
 # Documents
-eicieldocdir = get_option('datadir') / 'gnome' / 'help' / 'eiciel' / 'C'
-
 install_data(
   'doc/C/add.page',
   'doc/C/concepts.page',
