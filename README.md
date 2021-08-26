@@ -17,5 +17,22 @@ Just like you would pronounce ACL in English :)
 ```
 $ autoreconf -vif
 $ ./configure
+$ make
 # make install
+```
+
+Eiciel is migrating its build system from
+[Autotools](https://en.wikipedia.org/wiki/GNU_Autotools) to
+[Meson](https://mesonbuild.com/).
+
+If you want to build using Meson, you will need Meson 0.54 or later
+installed (it can be installed using `pip`) and then follow these steps
+after you have cloned the repository.
+
+```
+$ mkdir build
+$ cd build
+$ meson ..
+$ meson compile
+$ meson install
 ```
