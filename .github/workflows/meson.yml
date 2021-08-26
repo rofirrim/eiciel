@@ -22,3 +22,5 @@ jobs:
         cd build && meson .. 
     - name: Build
       run: cd build && meson compile
+    - name: Test distributable
+        cd build && meson dist
