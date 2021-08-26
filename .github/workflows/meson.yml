@@ -14,7 +14,8 @@ jobs:
     - name: Setup dependencies
       run: |
         sudo apt update -y
-        sudo apt install -y build-essential meson libacl1-dev libattr1-dev libgtkmm-3.0-dev libnautilus-extension-dev gettext
+        sudo apt install -y build-essential python3-pip libacl1-dev libattr1-dev libgtkmm-3.0-dev libnautilus-extension-dev gettext ninja-build
+        pip3 install --user meson
     - name: Setup meson
       run: |
         mkdir build
