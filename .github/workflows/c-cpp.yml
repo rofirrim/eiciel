@@ -14,7 +14,7 @@ jobs:
     - name: Setup dependencies
       run: |
         sudo apt update -y
-        sudo apt install -y build-essential autopoint automake autoconf libtool libacl1-dev libattr1-dev libgtkmm-3.0-dev
+        sudo apt install -y build-essential autopoint automake autoconf libtool libacl1-dev libattr1-dev libgtkmm-3.0-dev libnautilus-extension-dev
     - name: Bootstrap autotools
       run: autoreconf -fiv
     - name: Configure
