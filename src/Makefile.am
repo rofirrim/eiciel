@@ -72,7 +72,7 @@ CLEANFILES =
 
 # Since 'make' built it, 'make clean' should clean it
 # see http://sources.redhat.com/automake/automake.html#Clean
-CLEANFILES += eiciel.desktop
+CLEANFILES += org.roger-ferrer.Eiciel.desktop
 
 EXTRA_DIST= \
 	eiciel.desktop.in \
