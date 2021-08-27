@@ -10,7 +10,7 @@ dnl Require autoconf 2.59
 AC_PREREQ(2.59)
 
 dnl Initialize automake
-AM_INIT_AUTOMAKE([1.11 dist-bzip2])
+AM_INIT_AUTOMAKE([1.11 dist-bzip2 foreign -Wportability])
 
 AM_SILENT_RULES([yes])
 
