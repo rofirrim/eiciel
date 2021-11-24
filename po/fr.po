@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2020-08-24 15:11+0200\n"
-"PO-Revision-Date: 2021-11-24 23:15+0000\n"
+"PO-Revision-Date: 2021-11-25 02:13+0000\n"
 "Last-Translator: jérôme Brichese <malck0@protonmail.com>\n"
 "Language-Team: French <https://l10n.opensuse.org/projects/eiciel/master/fr/>"
 "\n"
@@ -138,12 +138,11 @@ msgstr "_Appliquer"
 
 #: src/eiciel_enclosed_editor_window.cpp:30
 msgid "<b>Participants in ACL for enclosed directories</b>"
-msgstr ""
+msgstr "<b>Participants à l'ACL pour les répertoires fermés</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:33
-#, fuzzy
 msgid "<b>Participants in ACL for enclosed files</b>"
-msgstr "<b>Participants actuels de l'ACL</b>"
+msgstr "<b>Participants à l'ACL pour les répertoires fermés</b>"
 
 #: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
 msgid "<b>Available participants</b>"
@@ -167,7 +166,7 @@ msgstr "<b>Participants actuels de l'ACL</b>"
 
 #: src/eiciel_main_window.cpp:34
 msgid "Edit ACLs for enclosed files..."
-msgstr ""
+msgstr "Modifier les ACLs pour les fichiers joints..."
 
 #: src/eiciel_participant_list.cpp:30
 msgid "User"
@@ -186,14 +185,12 @@ msgid "Add participant to ACL"
 msgstr "Ajouter un participant à l'ACL"
 
 #: src/eiciel_participant_list.cpp:38
-#, fuzzy
 msgid "Add participant to directory ACL"
-msgstr "Ajouter un participant à l'ACL"
+msgstr "Ajouter un participant au répertoire ACL"
 
 #: src/eiciel_participant_list.cpp:39
-#, fuzzy
 msgid "Add participant to file ACL"
-msgstr "Ajouter un participant à l'ACL"
+msgstr "Ajouter un participant au fichier ACL"
 
 #: src/eiciel_participant_list.cpp:40
 msgid "Advanced features"
