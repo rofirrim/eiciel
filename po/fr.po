@@ -6,16 +6,16 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2020-08-24 15:11+0200\n"
-"PO-Revision-Date: 2016-09-25 13:29+0000\n"
-"Last-Translator: Benoît Monin <benoit.monin@gmx.fr>\n"
-"Language-Team: French <https://l10n.opensuse.org/projects/eiciel/master/fr/"
-">\n"
+"PO-Revision-Date: 2021-11-24 23:15+0000\n"
+"Last-Translator: jérôme Brichese <malck0@protonmail.com>\n"
+"Language-Team: French <https://l10n.opensuse.org/projects/eiciel/master/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.6\n"
+"X-Generator: Weblate 4.8.1\n"
 
 #: src/eiciel_xattr_window.cpp:40
 msgid "Name"
@@ -126,15 +126,15 @@ msgstr "Éditeur de liste de contrôle d'accès"
 
 #: src/eiciel_enclosed_editor_window.cpp:24
 msgid "Edit ACLs for enclosed files"
-msgstr ""
+msgstr "Modifier les ACL pour les fichiers joints"
 
 #: src/eiciel_enclosed_editor_window.cpp:25
 msgid "_Cancel"
-msgstr ""
+msgstr "_Annuler"
 
 #: src/eiciel_enclosed_editor_window.cpp:26
 msgid "_Apply"
-msgstr ""
+msgstr "_Appliquer"
 
 #: src/eiciel_enclosed_editor_window.cpp:30
 msgid "<b>Participants in ACL for enclosed directories</b>"
