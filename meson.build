@@ -27,8 +27,8 @@ conf_data.set_quoted('EICIELDOCDIR', abs_eicieldocdir)
 # Dependencies
 gtkmm3 = dependency('gtkmm-3.0', version: '>= 3.0.0')
 giomm = dependency('giomm-2.4', version: '>= 2.50.0')
-libnautilus_extensions3 = dependency('libnautilus-extension',
-                                     version: '>= 3.0.0')
+# libnautilus_extensions3 = dependency('libnautilus-extension',
+#                                      version: '>= 3.0.0')
 thread_dep = dependency('threads')
 
 # Compiler
@@ -134,7 +134,7 @@ standalone_sources += [
 executable('eiciel',
   standalone_sources,
   install : true,
-  dependencies : [gtkmm3, giomm, libnautilus_extensions3, libacl, thread_dep])
+  dependencies : [gtkmm3, giomm, libacl, thread_dep])
 
 
 # Plugin for nautilus

@@ -1,0 +1,55 @@
+app-id: org.roger_ferrer.Eiciel
+runtime: org.gnome.Platform
+runtime-version: '42'
+sdk: org.gnome.Sdk
+command: eiciel
+modules:
+  - name: mm-common
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/mm-common/0.9/mm-common-0.9.12.tar.xz
+        sha256: ceffdcce1e5b52742884c233ec604bf6fded12eea9da077ce7a62c02c87e7c0b
+  - name: libsigcxx
+    buildsystem: meson
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/libsigc%2B%2B/2.10/libsigc%2B%2B-2.10.8.tar.xz
+        sha256: 235a40bec7346c7b82b6a8caae0456353dc06e71f14bc414bcc858af1838719a
+  - name: cairomm
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/cairomm/1.12/cairomm-1.12.0.tar.xz
+        sha256: a54ada8394a86182525c0762e6f50db6b9212a2109280d13ec6a0b29bfd1afe6
+  - name: glibmm
+    buildsystem: meson
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/glibmm/2.64/glibmm-2.64.5.tar.xz
+        sha256: 508fc86e2c9141198aa16c225b16fd6b911917c0d3817602652844d0973ea386
+  - name: pangomm
+    buildsystem: meson
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/pangomm/2.42/pangomm-2.42.2.tar.xz
+        sha256: 1b24c92624ae1275ccb57758175d35f7c39ad3342d8c0b4ba60f0d9849d2d08a
+      - type: patch
+        path: contrib/fix-build-pangomm.patch
+  - name: atkmm
+    buildsystem: meson
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.3.tar.xz
+        sha256: 7c2088b486a909be8da2b18304e56c5f90884d1343c8da7367ea5cd3258b9969
+  - name: gtkmm
+    buildsystem: meson
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.6.tar.xz
+        sha256: 4b3e142e944e1633bba008900605c341a93cfd755a7fa2a00b05d041341f11d6
+  - name: eiciel
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: /home/roger/eiciel/eiciel-src

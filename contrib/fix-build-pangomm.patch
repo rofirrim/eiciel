@@ -1,0 +1,13 @@
+diff --git a/untracked/pango/pangomm/attrlist.cc b/untracked/pango/pangomm/attrlist.cc
+index 76c3341..2cd1424 100644
+--- a/untracked/pango/pangomm/attrlist.cc
++++ b/untracked/pango/pangomm/attrlist.cc
+@@ -3,6 +3,7 @@
+ 
+ #include <glibmm.h>
+ 
++#include <pango/pango-markup.h>
+ #include <pangomm/attrlist.h>
+ #include <pangomm/private/attrlist_p.h>
+ 
+

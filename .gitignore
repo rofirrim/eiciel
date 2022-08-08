@@ -31,3 +31,6 @@ Makefile
 .libs/
 po/*.gmo
 po/Makevars.template
+build-dir
+build
+.flatpak-builder
