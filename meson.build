@@ -57,9 +57,15 @@ has_acl_get_perm_np = compiler.has_function('acl_get_perm_np',
                                             dependencies: libacl)
 conf_data.set('HAVE_ACL_GET_PERM_NP', has_acl_get_perm_np)
 
-has_nautilus_extension_h = compiler.has_header('nautilus/nautilus-extension.h',
-         dependencies: [libnautilus_extensions3, gtkmm3])
-conf_data.set('HAVE_NAUTILUS_NAUTILUS_EXTENSION_H', has_nautilus_extension_h)
+# I need to learn how to to build against a flatpak :-?
+warning('This branch still does not support nautilus extensions')
+
+# FIXME: Enable this when we figure this out.
+# has_nautilus_extension_h = compiler.has_header('nautilus/nautilus-extension.h',
+#          dependencies: [libnautilus_extensions3, gtkmm3])
+# if has_nautilus_extension_h
+#   # conf_data.set('HAVE_NAUTILUS_NAUTILUS_EXTENSION_H', has_nautilus_extension_h)
+# endif
 
 # Internationalization
 i18n = import('i18n')
@@ -132,22 +138,24 @@ executable('eiciel',
 
 
 # Plugin for nautilus
-plugin_sources = common_sources
-plugin_sources += ['src/eiciel_nautilus_page.hpp',
-                   'src/eiciel_nautilus_page.cpp']
+# FIXME: Enable this when we figure this out.
 
-nautilusextensiondir = get_option('nautilus-extension-dir')
-if nautilusextensiondir == ''
-  r = run_command(pkg_config.path(), '--variable=extensiondir',
-                  'libnautilus-extension')
-  nautilusextensiondir = r.stdout().strip()
-endif
+# plugin_sources = common_sources
+# plugin_sources += ['src/eiciel_nautilus_page.hpp',
+#                    'src/eiciel_nautilus_page.cpp']
+# 
+# nautilusextensiondir = get_option('nautilus-extension-dir')
+# if nautilusextensiondir == ''
+#   r = run_command(pkg_config.path(), '--variable=extensiondir',
+#                   'libnautilus-extension')
+#   nautilusextensiondir = r.stdout().strip()
+# endif
 
-shared_module('eiciel-nautilus',
-  plugin_sources,
-  install : true,
-  install_dir : nautilusextensiondir,
-  dependencies : [gtkmm3, giomm, libnautilus_extensions3, libacl, thread_dep])
+# shared_module('eiciel-nautilus',
+#   plugin_sources,
+#   install : true,
+#   install_dir : nautilusextensiondir,
+#   dependencies : [gtkmm3, giomm, libnautilus_extensions3, libacl, thread_dep])
 
 # Desktop file
 desktop_file_data = configuration_data()
@@ -234,7 +242,7 @@ install_data(
 summary(
   {
     'bindir': get_option('prefix') / get_option('bindir'),
-    'nautilus-extension-dir': nautilusextensiondir
+    # 'nautilus-extension-dir': nautilusextensiondir
   },
   section: 'Directories')
 
