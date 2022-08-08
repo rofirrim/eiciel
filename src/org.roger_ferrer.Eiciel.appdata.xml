@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2018 Roger Ferrer <rofirrim@gmail.com> -->
 <component type="desktop-application">
-    <id>org.roger-ferrer.Eiciel</id>
+    <id>org.roger_ferrer.Eiciel</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-2.0+</project_license>
     <name>Eiciel</name>
@@ -23,7 +23,7 @@
             before using Eiciel.
         </p>
     </description>
-    <launchable type="desktop-id">org.roger-ferrer.Eiciel.desktop</launchable>
+    <launchable type="desktop-id">org.roger_ferrer.Eiciel.desktop</launchable>
  <screenshots>
   <screenshot type="default" width="1168" height="657">http://rofi.roger-ferrer.org/eiciel/gfx/shots/screenshot-appdata.png</screenshot>
  </screenshots>

@@ -154,7 +154,7 @@ desktop_file_data = configuration_data()
 desktop_file_data.set('DSK_VERSION', '1.1')
 desktop_file_data.set('DSK_bindir', get_option('prefix') / get_option('bindir'))
 desktop_file_data.set('DSK_pkgdatadir', pkgdatadir)
-desktop_file = configure_file(output: 'org.roger-ferrer.Eiciel.desktop',
+desktop_file = configure_file(output: 'org.roger_ferrer.Eiciel.desktop',
         input: 'src/eiciel.desktop.in',
         configuration: desktop_file_data)
 
@@ -164,7 +164,7 @@ install_data(desktop_file,
 
 # Appdata
 appdatadir = get_option('datadir') / 'metainfo'
-install_data('src/org.roger-ferrer.Eiciel.appdata.xml',
+install_data('src/org.roger_ferrer.Eiciel.appdata.xml',
              install_dir : appdatadir)
 
 # Images
