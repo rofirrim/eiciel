@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkApplicationWindow" id="app_window">
+    <property name="title" translatable="yes">Eiciel</property>
+    <property name="default-width">400</property>
+    <property name="default-height">600</property>
+    <property name="hide-on-close">True</property>
+    <child>
+      <object class="GtkBox" id="content_box">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkStack" id="stack"/>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

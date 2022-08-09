@@ -20,8 +20,8 @@
 
 #include "eiciel_application.h"
 #include "eiciel_app_window.h"
-
-// Based on the gtkmm4 documentation example.
+#include <exception>
+#include <iostream>
 
 EicielApplication::EicielApplication()
     : Gtk::Application("org.roger_ferrer.Eiciel",
@@ -33,7 +33,7 @@ Glib::RefPtr<EicielApplication> EicielApplication::create() {
 }
 
 EicielAppWindow *EicielApplication::create_appwindow() {
-  auto appwindow = new EicielAppWindow();
+  auto appwindow = EicielAppWindow::create();
 
   // Make sure that the application runs for as long this window is still open.
   add_window(*appwindow);
@@ -51,9 +51,19 @@ EicielAppWindow *EicielApplication::create_appwindow() {
 }
 
 void EicielApplication::on_activate() {
-  // The application has been started, so let's show a window.
-  auto appwindow = create_appwindow();
-  appwindow->present();
+  try {
+    // The application has been started, so let's show a window.
+    auto appwindow = create_appwindow();
+    appwindow->present();
+  }
+  // If create_appwindow() throws an exception (perhaps from Gtk::Builder),
+  // no window has been created, no window has been added to the application,
+  // and therefore the application will stop running.
+  catch (const Glib::Error &ex) {
+    std::cerr << "EicielApplication::on_activate(): " << ex.what() << std::endl;
+  } catch (const std::exception &ex) {
+    std::cerr << "EicielApplication::on_activate(): " << ex.what() << std::endl;
+  }
 }
 
 void EicielApplication::on_open(const Gio::Application::type_vec_files &files,
@@ -65,13 +75,19 @@ void EicielApplication::on_open(const Gio::Application::type_vec_files &files,
   if (windows.size() > 0)
     appwindow = dynamic_cast<EicielAppWindow *>(windows[0]);
 
-  if (!appwindow)
-    appwindow = create_appwindow();
+  try {
+    if (!appwindow)
+      appwindow = create_appwindow();
 
-  for (const auto &file : files)
-    appwindow->open_file_view(file);
+    for (const auto &file : files)
+      appwindow->open_file_view(file);
 
-  appwindow->present();
+    appwindow->present();
+  } catch (const Glib::Error &ex) {
+    std::cerr << "EicielApplication::on_open(): " << ex.what() << std::endl;
+  } catch (const std::exception &ex) {
+    std::cerr << "EicielApplication::on_open(): " << ex.what() << std::endl;
+  }
 }
 
 void EicielApplication::on_hide_window(Gtk::Window *window) { delete window; }

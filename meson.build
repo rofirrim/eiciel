@@ -96,6 +96,12 @@ if user_attributes_feature.enabled()
   common_sources += xattr_sources
 endif
 
+gnome = import('gnome')
+eiciel_resources = gnome.compile_resources(
+  'eiciel-resources',
+  'src/eiciel.gresource.xml',
+  source_dir: 'src')
+
 # Standalone binary
 standalone_sources = common_sources
 standalone_sources += [
@@ -107,7 +113,7 @@ standalone_sources += [
 ]
 
 executable('eiciel',
-  standalone_sources,
+  [standalone_sources, eiciel_resources],
   install : true,
   dependencies : [gtkmm4, giomm, libacl, thread_dep])
 

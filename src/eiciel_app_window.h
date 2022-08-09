@@ -27,7 +27,15 @@ class EicielAppWindow : public Gtk::ApplicationWindow {
 public:
   EicielAppWindow();
 
+  EicielAppWindow(BaseObjectType *cobject,
+                  const Glib::RefPtr<Gtk::Builder> &refBuilder);
+
+  static EicielAppWindow *create();
+
   void open_file_view(const Glib::RefPtr<Gio::File> &file);
+
+protected:
+  Glib::RefPtr<Gtk::Builder> m_refBuilder;
 };
 
 #endif /* EICIEL_APP_WINDOW_HPP */
