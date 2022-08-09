@@ -1,0 +1,88 @@
+{
+  "id": "org.roger_ferrer.Eiciel",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "42",
+  "sdk": "org.gnome.Sdk",
+  "command": "eiciel",
+  "finish-args": [
+    "--socket=fallback-x11",
+    "--socket=wayland",
+    "--share=ipc",
+    "--device=dri"
+  ],
+  "cleanup": [
+    "/include",
+    "/share/doc",
+    "*.la",
+    "*.a",
+    "*.m4",
+    "*.h"
+  ],
+  "modules": [
+    {
+      "name": "libsigcxx",
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/libsigc%2B%2B/3.2/libsigc%2B%2B-3.2.0.tar.xz",
+          "sha256": "8cdcb986e3f0a7c5b4474aa3c833d676e62469509f4899110ddf118f04082651"
+        }
+      ]
+    },
+    {
+      "name": "glibmm",
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/glibmm/2.72/glibmm-2.72.1.tar.xz",
+          "sha256": "2a7649a28ab5dc53ac4dabb76c9f61599fbc628923ab6a7dd74bf675d9155cd8"
+        }
+      ]
+    },
+    {
+      "name": "cairomm",
+      "buildsystem": "autotools",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/cairomm/1.15/cairomm-1.15.4.tar.xz",
+          "sha256": "4cd9fd959538953dfa606aaa7a31381e3193eebf14d814d97ef928684ee9feb5"
+        }
+      ]
+    },
+    {
+      "name": "pangomm",
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/pangomm/2.50/pangomm-2.50.0.tar.xz",
+          "sha256": "a27aa77e017b9afce9e751d85bd1cf890abbb3a58bf59d0fac917eef82db3b5b"
+        }
+      ]
+    },
+    {
+      "name": "gtkmm",
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/gtkmm/4.6/gtkmm-4.6.1.tar.xz",
+          "sha256": "0d5efeca9ec64fdd530bb8226c6310ac99549b3dd9604d6e367639791af3d1e0"
+        }
+      ]
+    },
+    {
+      "name": "eiciel",
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "type": "dir",
+          "path": "."
+        }
+      ]
+    }
+  ]
+}

@@ -20,7 +20,7 @@
 #ifndef GESTOR_XATTR_HPP
 #define GESTOR_XATTR_HPP
 
-#include <config.hpp>
+#include <config.h>
 
 #include <sys/stat.h>
 #include <sys/types.h>

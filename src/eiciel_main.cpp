@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2019 Roger Ferrer Ibáñez
+    Copyright (C) 2022 Roger Ferrer Ibáñez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,14 +16,10 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,  USA
 */
+#include "eiciel_application.h"
 
-#ifndef EICIEL_PARTICIPANT_TARGET_HPP
-#define EICIEL_PARTICIPANT_TARGET_HPP
-
-enum class AddParticipantTarget {
-  ADD_PARTICIPANT = 0,
-  ADD_PARTICIPANT_TO_DIRECTORY,
-  ADD_PARTICIPANT_TO_FILE,
-};
-
-#endif // EICIEL_PARTICIPANT_TARGET_HPP
+int main(int argc, char* argv[])
+{
+    auto app = EicielApplication::create();
+    return app->run(argc, argv);
+}

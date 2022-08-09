@@ -16,7 +16,7 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,  USA
 */
-#include "acl_manager.hpp"
+#include "acl_manager.h"
 
 ACLManager::ACLManager(const std::string& filename)
     : _filename(filename)

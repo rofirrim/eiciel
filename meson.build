@@ -1,9 +1,9 @@
 # Eiciel
 project('eiciel', 'cpp',
-  version : '0.9.13.1',
+  version : '0.99.1',
   meson_version : '>=0.54',
   license: 'GPL2+',
-  default_options: ['cpp_std=c++11'])
+  default_options: ['cpp_std=c++17'])
 
 package_name = 'eiciel'
 email = 'rofirrim@gmail.com'
@@ -25,8 +25,8 @@ abs_eicieldocdir =  get_option('prefix') / eicieldocdir
 conf_data.set_quoted('EICIELDOCDIR', abs_eicieldocdir)
 
 # Dependencies
-gtkmm3 = dependency('gtkmm-3.0', version: '>= 3.0.0')
-giomm = dependency('giomm-2.4', version: '>= 2.50.0')
+gtkmm4 = dependency('gtkmm-4.0', version: '>= 4.6')
+giomm = dependency('giomm-2.68', version: '>= 2.68')
 # libnautilus_extensions3 = dependency('libnautilus-extension',
 #                                      version: '>= 3.0.0')
 thread_dep = dependency('threads')
@@ -62,7 +62,7 @@ warning('This branch still does not support nautilus extensions')
 
 # FIXME: Enable this when we figure this out.
 # has_nautilus_extension_h = compiler.has_header('nautilus/nautilus-extension.h',
-#          dependencies: [libnautilus_extensions3, gtkmm3])
+#          dependencies: [libnautilus_extensions3, gtkmm4])
 # if has_nautilus_extension_h
 #   # conf_data.set('HAVE_NAUTILUS_NAUTILUS_EXTENSION_H', has_nautilus_extension_h)
 # endif
@@ -73,7 +73,7 @@ subdir('po')
 conf_data.set_quoted('GETTEXT_PACKAGE', package_name)
 
 # Configuration file
-configure_file(output: 'config.hpp',
+configure_file(output: 'config.h',
                configuration: conf_data)
 
 # Programs
@@ -84,39 +84,12 @@ install_program = find_program('install')
 # Common sources
 common_sources = [
   'src/acl_manager.cpp',
-  'src/acl_manager.hpp',
-  'src/eiciel_main_window.cpp',
-  'src/eiciel_main_window.hpp',
-  'src/eiciel_main_window_controller.cpp',
-  'src/eiciel_main_window_controller.hpp',
-  'src/eiciel_acl_list.cpp',
-  'src/eiciel_acl_list.hpp',
-  'src/eiciel_acl_list_controller.cpp',
-  'src/eiciel_acl_list_controller.hpp',
-  'src/eiciel_participant_list.cpp',
-  'src/eiciel_participant_list.hpp',
-  'src/eiciel_participant_list_controller.cpp',
-  'src/eiciel_participant_list_controller.hpp',
-  'src/eiciel_participant_target.hpp',
-  'src/eiciel_enclosed_editor_window_controller.hpp',
-  'src/eiciel_enclosed_editor_window_controller.cpp',
-  'src/eiciel_enclosed_editor_window.hpp',
-  'src/eiciel_enclosed_editor_window.cpp',
-  'src/acl_list.hpp',
-  'src/participant_list.hpp',
-  'src/acl_element_kind.hpp',
-  'src/cellrenderer_acl.hpp',
-  'src/cellrenderer_acl.cpp'
+  'src/acl_manager.h',
 ]
 
 xattr_sources = [
-  'src/xattr_manager.hpp',
+  'src/xattr_manager.h',
   'src/xattr_manager.cpp',
-  'src/eiciel_xattr_window.cpp',
-  'src/eiciel_xattr_window.hpp',
-  'src/eiciel_xattr_controller.cpp',
-  'src/eiciel_xattr_controller.hpp',
-  'src/xattr_list_model.hpp'
 ]
 
 if user_attributes_feature.enabled()
@@ -126,22 +99,24 @@ endif
 # Standalone binary
 standalone_sources = common_sources
 standalone_sources += [
-  'src/eiciel_standalone.cpp',
-  'src/eiciel_container.hpp',
-  'src/eiciel_container.cpp'
+  'src/eiciel_app_window.h',
+  'src/eiciel_app_window.cpp',
+  'src/eiciel_application.h',
+  'src/eiciel_application.cpp',
+  'src/eiciel_main.cpp',
 ]
 
 executable('eiciel',
   standalone_sources,
   install : true,
-  dependencies : [gtkmm3, giomm, libacl, thread_dep])
+  dependencies : [gtkmm4, giomm, libacl, thread_dep])
 
 
 # Plugin for nautilus
 # FIXME: Enable this when we figure this out.
 
 # plugin_sources = common_sources
-# plugin_sources += ['src/eiciel_nautilus_page.hpp',
+# plugin_sources += ['src/eiciel_nautilus_page.h',
 #                    'src/eiciel_nautilus_page.cpp']
 # 
 # nautilusextensiondir = get_option('nautilus-extension-dir')
@@ -155,7 +130,7 @@ executable('eiciel',
 #   plugin_sources,
 #   install : true,
 #   install_dir : nautilusextensiondir,
-#   dependencies : [gtkmm3, giomm, libnautilus_extensions3, libacl, thread_dep])
+#   dependencies : [gtkmm4, giomm, libnautilus_extensions3, libacl, thread_dep])
 
 # Desktop file
 desktop_file_data = configuration_data()

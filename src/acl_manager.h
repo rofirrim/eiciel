@@ -19,7 +19,7 @@
 #ifndef GESTOR_ACL_HPP
 #define GESTOR_ACL_HPP
 
-#include <config.hpp>
+#include <config.h>
 
 #include <cstring>
 #include <iostream>
