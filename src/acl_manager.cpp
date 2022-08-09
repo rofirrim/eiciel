@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2004-2019 Roger Ferrer Ibáñez
+    Copyright (C) 2004-2022 Roger Ferrer Ibáñez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,7 +16,9 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,  USA
 */
-#include "acl_manager.h"
+#include "eiciel/acl_manager.h"
+
+namespace eiciel {
 
 ACLManager::ACLManager(const std::string& filename)
     : _filename(filename)
@@ -593,4 +595,6 @@ void ACLManager::set_file_acl(const std::string& filename, const std::string& ac
     tmp._text_acl_access = access_acl_text;
     tmp._text_acl_default = default_acl_text;
     tmp.commit_changes_to_file();
+}
+
 }

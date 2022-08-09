@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2022 Roger Ferrer Ibáñez
+    Copyright (C) 2004-2022 Roger Ferrer Ibáñez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -17,25 +17,32 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,
    USA
 */
+#ifndef EICIEL_ACL_ELEMENT_KIND_H
+#define EICIEL_ACL_ELEMENT_KIND_H
+#include "config.h"
 
-#ifndef EICIEL_APP_WINDOW_HPP
-#define EICIEL_APP_WINDOW_HPP
+namespace eiciel {
 
-#include <gtkmm.h>
+enum class ElementKind {
+  user,
+  group,
+  others,
 
-class EicielAppWindow : public Gtk::ApplicationWindow {
-public:
-  EicielAppWindow();
+  acl_user,
+  acl_group,
+  mask,
 
-  EicielAppWindow(BaseObjectType *cobject,
-                  const Glib::RefPtr<Gtk::Builder> &refBuilder);
+  default_user,
+  default_group,
+  default_others,
 
-  static EicielAppWindow *create();
-
-  void open_file_view(const Glib::RefPtr<Gio::File> &file);
-
-protected:
-  Glib::RefPtr<Gtk::Builder> m_refBuilder;
+  default_acl_user,
+  default_acl_group,
+  default_mask
 };
 
-#endif /* EICIEL_APP_WINDOW_HPP */
+enum class PermissionKind { reading, writing, execution };
+
+} // namespace eiciel
+
+#endif // EICIEL_ACL_ELEMENT_KIND

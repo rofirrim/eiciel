@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2004-2019 Roger Ferrer Ibáñez
+    Copyright (C) 2004-2022 Roger Ferrer Ibáñez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,  USA
 */
 
-#ifndef GESTOR_XATTR_HPP
-#define GESTOR_XATTR_HPP
+#ifndef EICIEL_XATTR_MANAGER_H
+#define EICIEL_XATTR_MANAGER_H
 
 #include <config.h>
 
@@ -38,6 +38,8 @@
 #include <map>
 #include <string>
 #include <vector>
+
+namespace eiciel {
 
 class XAttrManagerException {
 public:
@@ -79,4 +81,6 @@ private:
     uid_t _owner;
 };
 
-#endif
+}
+
+#endif // EICIEL_XATTR_MANAGER_H

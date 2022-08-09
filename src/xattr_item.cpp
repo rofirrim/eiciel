@@ -18,26 +18,10 @@
    USA
 */
 
-#include "eiciel_app_window.h"
-#include <stdexcept>
+#include "eiciel/xattr_item.h"
 
-EicielAppWindow::EicielAppWindow(BaseObjectType *cobject,
-                                 const Glib::RefPtr<Gtk::Builder> &refBuilder)
-    : Gtk::ApplicationWindow(cobject), m_refBuilder(refBuilder) {}
+namespace eiciel {
 
-// static
-EicielAppWindow *EicielAppWindow::create() {
-  // Load the Builder file and instantiate its widgets.
-  auto refBuilder = Gtk::Builder::create_from_resource(
-      "/org/roger_ferrer/eiciel/app_window.ui");
+GType XAttrItem::gtype = 0;
 
-  auto window = Gtk::Builder::get_widget_derived<EicielAppWindow>(refBuilder,
-                                                                  "app_window");
-  if (!window)
-    throw std::runtime_error("No \"app_window\" object app_in app_window.ui");
-
-  return window;
 }
-
-void EicielAppWindow::open_file_view(
-    const Glib::RefPtr<Gio::File> & /* file */) {}

@@ -31,8 +31,10 @@ Makefile
 .libs/
 po/*.gmo
 po/Makevars.template
+builddir
 build-dir
 build
 .vscode
 .flatpak
 .flatpak-builder
+img/svg/png

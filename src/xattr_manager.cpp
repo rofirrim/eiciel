@@ -1,6 +1,6 @@
 /*
     Eiciel - GNOME editor of ACL file permissions.
-    Copyright (C) 2004-2019 Roger Ferrer Ibáñez
+    Copyright (C) 2004-2022 Roger Ferrer Ibáñez
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,7 +16,9 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,  USA
 */
-#include "xattr_manager.h"
+#include "eiciel/xattr_manager.h"
+
+namespace eiciel {
 
 XAttrManager::XAttrManager(const Glib::ustring& filename)
     : _filename(filename)
@@ -201,4 +203,6 @@ void XAttrManager::change_attribute_name(const std::string& old_attr_name,
     std::string attribute_value = get_attribute_value(old_attr_name);
     add_attribute(new_attr_name, attribute_value);
     remove_attribute(old_attr_name);
+}
+
 }

@@ -17,25 +17,40 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,
    USA
 */
+
+#ifndef EICIEL_APPLICATION_H
+#define EICIEL_APPLICATION_H
+
 #include "config.h"
-#include <gtkmm.h>
+#include <giomm/application.h>
+#include <glibmm/refptr.h>
+#include <glibmm/ustring.h>
+#include <gtkmm/application.h>
+#include <gtkmm/window.h>
 
-class EicielAppWindow;
+namespace eiciel {
 
-class EicielApplication : public Gtk::Application {
+class AppWindow;
+
+class Application : public Gtk::Application {
 protected:
-  EicielApplication();
+  Application();
 
 public:
-  static Glib::RefPtr<EicielApplication> create();
+  static Glib::RefPtr<Application> create();
 
 protected:
   // Override default signal handlers:
   void on_activate() override;
+  void on_startup() override;
   void on_open(const Gio::Application::type_vec_files &files,
                const Glib::ustring &hint) override;
 
 private:
-  EicielAppWindow *create_appwindow();
+  AppWindow *create_appwindow();
   void on_hide_window(Gtk::Window *window);
 };
+
+} // namespace eiciel
+
+#endif // EICIEL_APPLICATION_H

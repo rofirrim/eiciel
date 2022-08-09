@@ -14,12 +14,14 @@
 
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,  USA
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,
+   USA
 */
-#include "eiciel_application.h"
 
-int main(int argc, char* argv[])
-{
-    auto app = EicielApplication::create();
-    return app->run(argc, argv);
+#include "eiciel/acl_item.h"
+
+namespace eiciel {
+
+GType ACLItem::gtype = 0;
+
 }

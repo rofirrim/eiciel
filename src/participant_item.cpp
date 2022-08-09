@@ -14,21 +14,14 @@
 
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,  USA
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,
+   USA
 */
 
-#ifndef EICIEL_MAIN_HPP
-#define EICIEL_MAIN_HPP
+#include "eiciel/participant_item.h"
 
-#include <gtkmm.h>
+namespace eiciel {
 
+GType ParticipantItem::gtype = 0;
 
-class EicielAppWindow : public Gtk::ApplicationWindow
-{
-public:
-  EicielAppWindow();
-
-  void open_file_view(const Glib::RefPtr<Gio::File>& file);
-};
-
-#endif // EICIEL_MAIN_HPP
+}

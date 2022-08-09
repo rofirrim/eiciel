@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkBox" id="top-level">
+    <property name="orientation">vertical</property>
+    <property name="spacing">8</property>
+    <child>
+      <object class="GtkInfoBar" id="info-bar">
+        <property name="visible">false</property>
+        <child>
+          <object class="GtkBox">
+             <property name="orientation">vertical</property>
+             <child>
+                <object class="GtkLabel" id="info-bar-label">
+                  <property name="xalign">0</property>
+                  <property name="label">Applying ACLs to enclosed files</property>
+                </object>
+             </child>
+             <child>
+                <object class="GtkProgressBar" id="info-bar-progress">
+                  <property name="fraction">0.0</property>
+                  <property name="hexpand">True</property>
+                </object>
+             </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="main-editor-box">
+        <property name="orientation">vertical</property>
+        <property name="spacing">8</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label">Current participants in ACL</property>
+            <property name="xalign">0</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="box-for-acl-list">
+            <property name="orientation">vertical</property>
+            <property name="vexpand">True</property>
+            <!-- We fill this manually during the creation of the editor -->
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label">Available participants</property>
+            <property name="xalign">0</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="box-for-participant-list">
+            <property name="orientation">vertical</property>
+            <!-- We fill this manually during the creation of the editor -->
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="edit-enclosed-files">
+            <property name="label">Edit ACLs for enclosed files...</property>
+            <property name="halign">start</property>
+            <property name="hexpand">0</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

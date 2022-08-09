@@ -1,5 +1,5 @@
 /*
-    Eiciel - GNOME editor of ACL file permissions.
+     - GNOME editor of ACL file permissions.
     Copyright (C) 2022 Roger Ferrer Ibáñez
 
     This program is free software; you can redistribute it and/or modify
@@ -18,22 +18,26 @@
    USA
 */
 
-#include "eiciel_application.h"
-#include "eiciel_app_window.h"
+#include "eiciel/application.h"
+#include "eiciel/app_window.h"
+#include "eiciel/acl_list_widget.h"
+#include "eiciel/participant_list_widget.h"
 #include <exception>
 #include <iostream>
 
-EicielApplication::EicielApplication()
+namespace eiciel {
+
+Application::Application()
     : Gtk::Application("org.roger_ferrer.Eiciel",
                        Gio::Application::Flags::HANDLES_OPEN) {}
 
-Glib::RefPtr<EicielApplication> EicielApplication::create() {
-  return Glib::make_refptr_for_instance<EicielApplication>(
-      new EicielApplication());
+Glib::RefPtr<Application> Application::create() {
+  return Glib::make_refptr_for_instance<Application>(
+      new Application());
 }
 
-EicielAppWindow *EicielApplication::create_appwindow() {
-  auto appwindow = EicielAppWindow::create();
+AppWindow *Application::create_appwindow() {
+  auto appwindow = AppWindow::create();
 
   // Make sure that the application runs for as long this window is still open.
   add_window(*appwindow);
@@ -45,12 +49,13 @@ EicielAppWindow *EicielApplication::create_appwindow() {
 
   // Delete the window when it is hidden.
   appwindow->signal_hide().connect(sigc::bind(
-      sigc::mem_fun(*this, &EicielApplication::on_hide_window), appwindow));
+      sigc::mem_fun(*this, &Application::on_hide_window), appwindow));
 
   return appwindow;
 }
 
-void EicielApplication::on_activate() {
+void Application::on_activate() {
+
   try {
     // The application has been started, so let's show a window.
     auto appwindow = create_appwindow();
@@ -60,34 +65,42 @@ void EicielApplication::on_activate() {
   // no window has been created, no window has been added to the application,
   // and therefore the application will stop running.
   catch (const Glib::Error &ex) {
-    std::cerr << "EicielApplication::on_activate(): " << ex.what() << std::endl;
+    std::cerr << "Application::on_activate(): " << ex.what() << std::endl;
   } catch (const std::exception &ex) {
-    std::cerr << "EicielApplication::on_activate(): " << ex.what() << std::endl;
+    std::cerr << "Application::on_activate(): " << ex.what() << std::endl;
   }
 }
 
-void EicielApplication::on_open(const Gio::Application::type_vec_files &files,
+void Application::on_startup() {
+  Gtk::Application::on_startup();
+}
+
+void Application::on_open(const Gio::Application::type_vec_files &files,
                                 const Glib::ustring & /* hint */) {
   // The application has been asked to open some files,
   // so let's open a new view for each one.
-  EicielAppWindow *appwindow = nullptr;
+  AppWindow *appwindow = nullptr;
   auto windows = get_windows();
   if (windows.size() > 0)
-    appwindow = dynamic_cast<EicielAppWindow *>(windows[0]);
+    appwindow = dynamic_cast<AppWindow *>(windows[0]);
 
   try {
     if (!appwindow)
       appwindow = create_appwindow();
 
-    for (const auto &file : files)
-      appwindow->open_file_view(file);
+    for (const auto &file : files) {
+      appwindow->open_file(file);
+      break;
+    }
 
     appwindow->present();
   } catch (const Glib::Error &ex) {
-    std::cerr << "EicielApplication::on_open(): " << ex.what() << std::endl;
+    std::cerr << "Application::on_open(): " << ex.what() << std::endl;
   } catch (const std::exception &ex) {
-    std::cerr << "EicielApplication::on_open(): " << ex.what() << std::endl;
+    std::cerr << "Application::on_open(): " << ex.what() << std::endl;
   }
 }
 
-void EicielApplication::on_hide_window(Gtk::Window *window) { delete window; }
+void Application::on_hide_window(Gtk::Window *window) { delete window; }
+
+}

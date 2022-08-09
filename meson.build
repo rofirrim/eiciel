@@ -72,6 +72,9 @@ i18n = import('i18n')
 subdir('po')
 conf_data.set_quoted('GETTEXT_PACKAGE', package_name)
 
+# Include dirs
+incdir = include_directories('include')
+
 # Configuration file
 configure_file(output: 'config.h',
                configuration: conf_data)
@@ -83,13 +86,24 @@ install_program = find_program('install')
 
 # Common sources
 common_sources = [
+  'src/acl_item.cpp',
+  'src/participant_item.cpp',
   'src/acl_manager.cpp',
-  'src/acl_manager.h',
+  'src/acl_list_widget.cpp',
+  'src/acl_list_controller.cpp',
+  'src/acl_editor_widget.cpp',
+  'src/enclosed_acl_editor_widget.cpp',
+  'src/acl_editor_controller.cpp',
+  'src/enclosed_acl_editor_controller.cpp',
+  'src/participant_list_widget.cpp',
+  'src/participant_list_controller.cpp',
 ]
 
 xattr_sources = [
-  'src/xattr_manager.h',
+  'src/xattr_item.cpp',
   'src/xattr_manager.cpp',
+  'src/xattr_editor_widget.cpp',
+  'src/xattr_editor_controller.cpp',
 ]
 
 if user_attributes_feature.enabled()
@@ -100,21 +114,20 @@ gnome = import('gnome')
 eiciel_resources = gnome.compile_resources(
   'eiciel-resources',
   'src/eiciel.gresource.xml',
-  source_dir: 'src')
+  source_dir: ['src', 'img'])
 
 # Standalone binary
 standalone_sources = common_sources
 standalone_sources += [
-  'src/eiciel_app_window.h',
-  'src/eiciel_app_window.cpp',
-  'src/eiciel_application.h',
-  'src/eiciel_application.cpp',
-  'src/eiciel_main.cpp',
+  'src/app_window.cpp',
+  'src/application.cpp',
+  'src/main.cpp',
 ]
 
 executable('eiciel',
   [standalone_sources, eiciel_resources],
   install : true,
+  include_directories : incdir,
   dependencies : [gtkmm4, giomm, libacl, thread_dep])
 
 

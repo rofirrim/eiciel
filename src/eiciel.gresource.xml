@@ -2,5 +2,23 @@
 <gresources>
   <gresource prefix="/org/roger_ferrer/eiciel">
     <file preprocess="xml-stripblanks">app_window.ui</file>
+    <file preprocess="xml-stripblanks">acl_editor_widget.ui</file>
+    <file preprocess="xml-stripblanks">acl_list_widget.ui</file>
+    <file preprocess="xml-stripblanks">participant_list_widget.ui</file>
+    <file preprocess="xml-stripblanks">enclosed_acl_editor_widget.ui</file>
+    <file preprocess="xml-stripblanks">xattr_editor_widget.ui</file>
+
+    <file>user.png</file>
+    <file>user-acl.png</file>
+    <file>group.png</file>
+    <file>group-acl.png</file>
+    <file>others.png</file>
+    <file>mask.png</file>
+    <file>user-default.png</file>
+    <file>user-acl-default.png</file>
+    <file>group-default.png</file>
+    <file>group-acl-default.png</file>
+    <file>mask-default.png</file>
+    <file>others-default.png</file>
   </gresource>
 </gresources>

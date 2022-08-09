@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkBox" id="top-level">
+    <property name="orientation">vertical</property>
+    <property name="spacing">8</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">horizontal</property>
+        <property name="spacing">8</property>
+        <child>
+          <object class="GtkCheckButton" id="participant-kind-user">
+            <property name="label">User</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="participant-kind-group">
+            <property name="label">Group</property>
+            <property name="group">participant-kind-user</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="cb-acl-default">
+            <property name="label">Default participant</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEntry" id="filter-text">
+            <property name="placeholder-text">Filter participants</property>
+            <property name="secondary-icon-name">edit-clear-symbolic</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkScrolledWindow">
+        <property name="vscrollbar-policy">always</property>
+        <property name="hscrollbar-policy">never</property>
+        <property name="width-request">-1</property>
+        <property name="height-request">150</property>
+        <child>
+          <object class="GtkColumnView" id="column-view">
+            <property name="reorderable">False</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">False</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkExpander">
+        <property name="label">Advanced features</property>
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">horizontal</property>
+                <property name="spacing">8</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Name of participant</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="searched-participant">
+                    <property name="activates-default">True</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="search-participant">
+                    <property name="label">Search</property>
+                    <property name="halign">start</property>
+                    <property name="hexpand">0</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="show-system-participants">
+                <property name="label">Show system participants</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
