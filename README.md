@@ -18,7 +18,7 @@ only supports GNOME 43 onwards.
 
 3. First steps after you have cloned the repository
 
-Uou will need Meson 0.54 or later installed (it can be installed using `pip`)
+You will need Meson 0.54 or later installed (it can be installed using `pip`)
 and then follow these steps after you have cloned the repository.
 
 ```
