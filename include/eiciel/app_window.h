@@ -22,6 +22,7 @@
 #define EICIEL_APP_WINDOW_HPP
 
 #include "eiciel/acl_editor_controller.h"
+#include "eiciel/application.h"
 #include "eiciel/xattr_editor_controller.h"
 #include <giomm/file.h>
 #include <glibmm/refptr.h>
@@ -37,21 +38,25 @@ public:
   AppWindow(BaseObjectType *cobject,
             const Glib::RefPtr<Gtk::Builder> &refBuilder,
             ACLEditorController *acl_editor_cont,
-            XAttrEditorController *xattr_editor_cont);
+            XAttrEditorController *xattr_editor_cont,
+            Application::FromNautilus mode);
 
-  static AppWindow *create();
+  static AppWindow *create(Application::FromNautilus mode);
 
   void choose_file_to_open();
   void choose_directory_to_open();
   void open_file(const Glib::RefPtr<Gio::File> &file);
+
 protected:
   void choose_file_impl(const Glib::ustring &title,
                         Gtk::FileChooser::Action action);
 
   Glib::RefPtr<Gtk::Builder> m_refBuilder;
-  ACLEditorController* acl_editor_controller;
-  XAttrEditorController* xattr_editor_controller;
+  ACLEditorController *acl_editor_controller;
+  XAttrEditorController *xattr_editor_controller;
   Glib::RefPtr<Gtk::Label> filename_label;
+
+  Application::FromNautilus mode = Application::FromNautilus::NONE;
 };
 
 } // namespace eiciel

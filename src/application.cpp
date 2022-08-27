@@ -29,7 +29,8 @@ namespace eiciel {
 
 Application::Application()
     : Gtk::Application("org.roger_ferrer.Eiciel",
-                       Gio::Application::Flags::HANDLES_OPEN) {}
+                       Gio::Application::Flags::NON_UNIQUE |
+                           Gio::Application::Flags::HANDLES_OPEN) {}
 
 Glib::RefPtr<Application> Application::create() {
   return Glib::make_refptr_for_instance<Application>(
@@ -37,7 +38,7 @@ Glib::RefPtr<Application> Application::create() {
 }
 
 AppWindow *Application::create_appwindow() {
-  auto appwindow = AppWindow::create();
+  auto appwindow = AppWindow::create(from_nautilus);
 
   // Make sure that the application runs for as long this window is still open.
   add_window(*appwindow);
@@ -80,13 +81,9 @@ void Application::on_open(const Gio::Application::type_vec_files &files,
   // The application has been asked to open some files,
   // so let's open a new view for each one.
   AppWindow *appwindow = nullptr;
-  auto windows = get_windows();
-  if (windows.size() > 0)
-    appwindow = dynamic_cast<AppWindow *>(windows[0]);
 
   try {
-    if (!appwindow)
-      appwindow = create_appwindow();
+    appwindow = create_appwindow();
 
     for (const auto &file : files) {
       appwindow->open_file(file);

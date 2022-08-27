@@ -39,6 +39,11 @@ protected:
 public:
   static Glib::RefPtr<Application> create();
 
+  enum class FromNautilus { NONE, ACL, XATTR };
+  void set_from_nautilus(FromNautilus v) {
+    from_nautilus = v;
+  }
+
 protected:
   // Override default signal handlers:
   void on_activate() override;
@@ -49,6 +54,8 @@ protected:
 private:
   AppWindow *create_appwindow();
   void on_hide_window(Gtk::Window *window);
+
+  FromNautilus from_nautilus = FromNautilus::NONE;
 };
 
 } // namespace eiciel

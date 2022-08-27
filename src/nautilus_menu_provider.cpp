@@ -75,7 +75,19 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
     char *local_file = g_file_get_path(location);
     g_return_if_fail(local_file);
     g_object_unref(location);
-    g_warning("Invoke ACL to '%s'!", local_file);
+
+    gchar* quoted_local_file = g_shell_quote(local_file);
+
+    GString *cmd = g_string_new("eiciel");
+    g_string_append_printf(cmd, " --from-nautilus=acl ");
+    g_string_append_printf(cmd, quoted_local_file);
+
+    g_print("EXEC: %s\n", cmd->str);
+    g_spawn_command_line_async(cmd->str, NULL);
+
+    g_string_free(cmd, TRUE);
+    g_free(quoted_local_file);
+    g_free(local_file);
   };
   g_signal_connect_object(
       new_menu_item, "activate",
@@ -92,7 +104,19 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
     char *local_file = g_file_get_path(location);
     g_return_if_fail(local_file);
     g_object_unref(location);
-    g_warning("Invoke XAttr to '%s'!", local_file);
+
+    gchar* quoted_local_file = g_shell_quote(local_file);
+
+    GString *cmd = g_string_new("eiciel");
+    g_string_append_printf(cmd, " --from-nautilus=xattr ");
+    g_string_append_printf(cmd, quoted_local_file);
+    
+    g_print ("EXEC: %s\n", cmd->str);
+    g_spawn_command_line_async (cmd->str, NULL);
+
+    g_string_free(cmd, TRUE);
+    g_free(quoted_local_file);
+    g_free(local_file);
   };
   g_signal_connect_object(
       new_menu_item, "activate",
