@@ -33,6 +33,7 @@ po/*.gmo
 po/Makevars.template
 builddir
 build-dir
+installdir
 build
 .vscode
 .flatpak

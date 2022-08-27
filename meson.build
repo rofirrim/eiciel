@@ -27,8 +27,8 @@ conf_data.set_quoted('EICIELDOCDIR', abs_eicieldocdir)
 # Dependencies
 gtkmm4 = dependency('gtkmm-4.0', version: '>= 4.6')
 giomm = dependency('giomm-2.68', version: '>= 2.68')
-# libnautilus_extensions3 = dependency('libnautilus-extension',
-#                                      version: '>= 3.0.0')
+libnautilus_extensions4 = dependency('libnautilus-extension-4',
+                                      version: '>= 43.rc')
 thread_dep = dependency('threads')
 
 # Compiler
@@ -134,22 +134,21 @@ executable('eiciel',
 # Plugin for nautilus
 # FIXME: Enable this when we figure this out.
 
-# plugin_sources = common_sources
-# plugin_sources += ['src/eiciel_nautilus_page.h',
-#                    'src/eiciel_nautilus_page.cpp']
-# 
-# nautilusextensiondir = get_option('nautilus-extension-dir')
-# if nautilusextensiondir == ''
-#   r = run_command(pkg_config.path(), '--variable=extensiondir',
-#                   'libnautilus-extension')
-#   nautilusextensiondir = r.stdout().strip()
-# endif
+plugin_sources = common_sources
+plugin_sources += ['src/nautilus_menu_provider.cpp',
+                   'src/nautilus_extension.cpp']
 
-# shared_module('eiciel-nautilus',
-#   plugin_sources,
-#   install : true,
-#   install_dir : nautilusextensiondir,
-#   dependencies : [gtkmm4, giomm, libnautilus_extensions3, libacl, thread_dep])
+nautilusextensiondir = get_option('nautilus-extension-dir')
+if nautilusextensiondir == '' 
+  nautilusextensiondir = libnautilus_extensions4.get_variable(pkgconfig : 'extensiondir')
+endif
+
+shared_module('eiciel-nautilus',
+  plugin_sources,
+  install : true,
+  install_dir : nautilusextensiondir,
+  include_directories : incdir,
+  dependencies : [gtkmm4, giomm, libnautilus_extensions4, libacl, thread_dep])
 
 # Desktop file
 desktop_file_data = configuration_data()
@@ -236,7 +235,7 @@ install_data(
 summary(
   {
     'bindir': get_option('prefix') / get_option('bindir'),
-    # 'nautilus-extension-dir': nautilusextensiondir
+    'nautilus-extension-dir': nautilusextensiondir
   },
   section: 'Directories')
 
