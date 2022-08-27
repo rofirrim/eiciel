@@ -136,6 +136,8 @@ executable('eiciel',
 
 plugin_sources = common_sources
 plugin_sources += ['src/nautilus_menu_provider.cpp',
+                   'src/nautilus_acl_model.cpp',
+                   'src/nautilus_model_provider.cpp',
                    'src/nautilus_extension.cpp']
 
 nautilusextensiondir = get_option('nautilus-extension-dir')

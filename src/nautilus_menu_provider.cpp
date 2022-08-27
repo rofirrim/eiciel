@@ -37,53 +37,31 @@ G_DEFINE_TYPE_WITH_CODE(
     G_IMPLEMENT_INTERFACE(NAUTILUS_TYPE_MENU_PROVIDER,
                           eiciel_menu_provider_interface_init))
 
-#define MY_TRACE                                                               \
-  do {                                                                         \
-    g_warning("%s:%d: invoked '%s'\n", __FILE__, __LINE__, __FUNCTION__);      \
-  } while (0)
-
 static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
                                                   GList *files) {
-  MY_TRACE;
-
-  g_list_foreach(
-      files,
-      (GFunc)(void (*)(NautilusFileInfo *, gpointer))[](NautilusFileInfo * info,
-                                                        gpointer user_data) {
-        g_warning("Eiciel -> '%s' '%s'", nautilus_file_info_get_name(info),
-                  nautilus_file_info_get_uri_scheme(info));
-      },
-      nullptr);
-
   if (files == nullptr || files->next != nullptr) {
-    g_warning("Just one file is allowed");
-    return nullptr;
-  }
-
-  if (!nautilus_file_info_can_write((NautilusFileInfo *)files->data)) {
-    g_warning("We can't write this file");
-    return nullptr;
-  }
-
-  if (strcmp(nautilus_file_info_get_uri_scheme((NautilusFileInfo *)files->data),
-             "file") != 0) {
-    g_warning("Not a file");
     return nullptr;
   }
 
   NautilusFileInfo *file_info = (NautilusFileInfo *)files->data;
+
+  if (!nautilus_file_info_can_write(file_info)) {
+    return nullptr;
+  }
+
+  if (strcmp(nautilus_file_info_get_uri_scheme(file_info), "file") != 0) {
+    return nullptr;
+  }
+
   GFile *location = nautilus_file_info_get_location(file_info);
   char *local_file = g_file_get_path(location);
   g_object_unref(location);
 
   // Well, some files are local but do not have a real file behind them
   if (local_file == NULL) {
-    g_warning("Not a local file we can use");
     return NULL;
   }
   g_free(local_file);
-
-  g_warning("We can return a menu here");
 
   GList *result = nullptr;
   NautilusMenuItem *new_menu_item;
@@ -127,7 +105,6 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
 GList *
 eiciel_menu_provider_get_background_items(EicielMenuProvider *provider,
                                           NautilusFileInfo *current_folder) {
-  MY_TRACE;
   return nullptr;
 }
 
@@ -139,12 +116,6 @@ eiciel_menu_provider_interface_init(NautilusMenuProviderInterface *iface) {
       eiciel_menu_provider_get_background_items;
 }
 
-static void eiciel_menu_provider_class_init(EicielMenuProviderClass *self) {
-  // Not sure what I should do here?
-  MY_TRACE;
-}
+static void eiciel_menu_provider_class_init(EicielMenuProviderClass *self) {}
 
-static void eiciel_menu_provider_init(EicielMenuProvider *self) {
-  // Not sure what I should do here?
-  MY_TRACE;
-}
+static void eiciel_menu_provider_init(EicielMenuProvider *self) {}

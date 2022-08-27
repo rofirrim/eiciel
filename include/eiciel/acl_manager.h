@@ -79,6 +79,10 @@ struct permissions_t {
   permissions_t(bool rd, bool wr, bool ex)
       : reading(rd), writing(wr), execution(ex) {}
   permissions_t() : reading(false), writing(false), execution(false) {}
+
+  int to_int() const {
+    return execution | (writing << 1) | (reading << 2);
+  }
 };
 
 struct acl_entry : permissions_t {

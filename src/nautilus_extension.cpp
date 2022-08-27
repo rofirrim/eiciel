@@ -19,12 +19,13 @@
 */
 
 #include "eiciel/nautilus_menu_provider.h"
+#include "eiciel/nautilus_model_provider.h"
 extern "C" {
 #include <nautilus-extension.h>
 }
 
 void nautilus_module_initialize(GTypeModule *module) {
-  g_warning("Initializing Eiciel extension");
+  g_debug("Initializing Eiciel extension");
 }
 /**
  * nautilus_module_shutdown: (skip)
@@ -32,7 +33,7 @@ void nautilus_module_initialize(GTypeModule *module) {
  * Called when the extension is being unloaded.
  */
 void nautilus_module_shutdown(void) {
-  g_warning("Shutting down Eiciel extension");
+  g_debug("Shutting down Eiciel extension");
 }
 /**
  * nautilus_module_list_types: (skip)
@@ -43,7 +44,7 @@ void nautilus_module_shutdown(void) {
  * types it exports, to load them into Nautilus.
  */
 void nautilus_module_list_types(const GType **types, int *num_types) {
-  GType type_list[] = {EICIEL_TYPE_MENU_PROVIDER};
+  static GType type_list[] = {EICIEL_TYPE_MENU_PROVIDER, EICIEL_TYPE_MODEL_PROVIDER};
 
   *num_types = sizeof(type_list) / sizeof(*type_list);
   *types = type_list;
