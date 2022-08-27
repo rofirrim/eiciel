@@ -1,4 +1,3 @@
-[![C/C++ CI Autotools](https://github.com/rofirrim/eiciel/actions/workflows/autotools.yml/badge.svg)](https://github.com/rofirrim/eiciel/actions/workflows/autotools.yml)
 [![C/C++ CI Meson](https://github.com/rofirrim/eiciel/actions/workflows/meson.yml/badge.svg)](https://github.com/rofirrim/eiciel/actions/workflows/meson.yml)
 
 # About
@@ -12,27 +11,19 @@ of files and directories.
 
 Just like you would pronounce ACL in English :)
 
-2. First steps after you have cloned the repository
+2. What happened to gtk3 version?
+
+Use an earlier release of eiciel when using GNOME 42 or earlier. This branch
+only supports GNOME 43 onwards.
+
+3. First steps after you have cloned the repository
+
+Uou will need Meson 0.54 or later installed (it can be installed using `pip`)
+and then follow these steps after you have cloned the repository.
 
 ```
-$ autoreconf -vif
-$ ./configure
-$ make
-# make install
-```
-
-Eiciel is migrating its build system from
-[Autotools](https://en.wikipedia.org/wiki/GNU_Autotools) to
-[Meson](https://mesonbuild.com/).
-
-If you want to build using Meson, you will need Meson 0.54 or later
-installed (it can be installed using `pip`) and then follow these steps
-after you have cloned the repository.
-
-```
-$ mkdir build
-$ cd build
-$ meson ..
+$ meson setup builddir
+$ cd builddir
 $ meson compile
 $ meson install
 ```
