@@ -30,7 +30,6 @@ int main(int argc, char *argv[]) {
 
   app->signal_handle_local_options().connect(
       [app](const Glib::RefPtr<Glib::VariantDict> &variant_dict) -> int {
-        g_print("Parsing options");
         if (variant_dict->contains("from-nautilus")) {
           Glib::ustring from_nautilus;
           variant_dict->lookup_value("from-nautilus", from_nautilus);

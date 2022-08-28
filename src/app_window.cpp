@@ -87,14 +87,17 @@ AppWindow::AppWindow(BaseObjectType *cobject,
   if (mode != Application::FromNautilus::NONE) {
     open_file->set_visible(false);
     open_directory->set_visible(false);
-    filename_label->set_visible(false);
     stack_switcher->set_visible(false);
 
+    Glib::ustring title = "Eiciel - ";
     if (mode == Application::FromNautilus::ACL) {
+      title += "Access Control List";
       main_stack->get_pages()->select_item(0, true);
     } else if (mode == Application::FromNautilus::XATTR) {
+      title += "Extended attributes";
       main_stack->get_pages()->select_item(1, true);
     }
+    set_title(title);
   }
 }
 
@@ -140,8 +143,10 @@ void AppWindow::open_file(const Glib::RefPtr<Gio::File> &file) {
   }
   if (!result) {
     filename_label->set_text(_("No file opened"));
+    filename_label->set_selectable(false);
   } else {
-    filename_label->set_text(file->get_basename());
+    filename_label->set_text(file->get_path());
+    filename_label->set_selectable(true);
   }
 }
 

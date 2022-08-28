@@ -78,11 +78,12 @@ static void add_to_list(GListStore *store, const char *name,
 }
 
 NautilusPropertiesModel *eiciel_acl_model_new(const char *file_name_path) {
-  GListStore *acl_model =
-      (GListStore *)g_list_store_new(NAUTILUS_TYPE_PROPERTIES_ITEM);
 
   try {
     eiciel::ACLManager acl_manager(file_name_path);
+
+    GListStore *acl_model =
+        (GListStore *)g_list_store_new(NAUTILUS_TYPE_PROPERTIES_ITEM);
 
     add_to_list(acl_model, _("User owner"),
                 permissions_to_name(acl_manager.is_directory(),
@@ -100,7 +101,7 @@ NautilusPropertiesModel *eiciel_acl_model_new(const char *file_name_path) {
       auto users = acl_manager.get_acl_user();
       for (const auto &entry : users) {
         add_to_list(
-            acl_model, g_strdup_printf("User ACL: %s", entry.name.c_str()),
+            acl_model, g_strdup_printf("User ACL: ‘%s’", entry.name.c_str()),
             permissions_to_name(acl_manager.is_directory(), entry, mask));
       }
     }
@@ -109,7 +110,7 @@ NautilusPropertiesModel *eiciel_acl_model_new(const char *file_name_path) {
       auto groups = acl_manager.get_acl_group();
       for (const auto &entry : groups) {
         add_to_list(
-            acl_model, g_strdup_printf("Group ACL: %s", entry.name.c_str()),
+            acl_model, g_strdup_printf("Group ACL: ‘%s’", entry.name.c_str()),
             permissions_to_name(acl_manager.is_directory(), entry, mask));
       }
     }
@@ -146,7 +147,7 @@ NautilusPropertiesModel *eiciel_acl_model_new(const char *file_name_path) {
         auto users = acl_manager.get_acl_user_default();
         for (const auto &entry : users) {
           add_to_list(acl_model,
-                      g_strdup_printf("New files will have User ACL: %s",
+                      g_strdup_printf("New files will have User ACL: ‘%s’",
                                       entry.name.c_str()),
                       permissions_to_name(acl_manager.is_directory(), entry,
                                           default_mask));
@@ -157,7 +158,7 @@ NautilusPropertiesModel *eiciel_acl_model_new(const char *file_name_path) {
         auto groups = acl_manager.get_acl_group_default();
         for (const auto &entry : groups) {
           add_to_list(acl_model,
-                      g_strdup_printf("New files will have Group ACL: %s",
+                      g_strdup_printf("New files will have Group ACL: ‘%s‘",
                                       entry.name.c_str()),
                       permissions_to_name(acl_manager.is_directory(), entry,
                                           default_mask));
@@ -174,11 +175,11 @@ NautilusPropertiesModel *eiciel_acl_model_new(const char *file_name_path) {
                                         acl_manager.get_other_default()));
       }
     }
+    return nautilus_properties_model_new(_("Access Control List"),
+                                         (GListModel *)acl_model);
 
   } catch (...) {
     // Catch all to avoid crashing nautilus.
   }
-
-  return nautilus_properties_model_new(_("Access Control List"),
-                                       (GListModel *)acl_model);
+  return nullptr;
 }

@@ -79,8 +79,8 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
     gchar* quoted_local_file = g_shell_quote(local_file);
 
     GString *cmd = g_string_new("eiciel");
-    g_string_append_printf(cmd, " --from-nautilus=acl ");
-    g_string_append_printf(cmd, quoted_local_file);
+    g_string_append(cmd, " --from-nautilus=acl ");
+    g_string_append(cmd, quoted_local_file);
 
     g_print("EXEC: %s\n", cmd->str);
     g_spawn_command_line_async(cmd->str, NULL);
@@ -108,8 +108,8 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
     gchar* quoted_local_file = g_shell_quote(local_file);
 
     GString *cmd = g_string_new("eiciel");
-    g_string_append_printf(cmd, " --from-nautilus=xattr ");
-    g_string_append_printf(cmd, quoted_local_file);
+    g_string_append(cmd, " --from-nautilus=xattr ");
+    g_string_append(cmd, quoted_local_file);
     
     g_print ("EXEC: %s\n", cmd->str);
     g_spawn_command_line_async (cmd->str, NULL);

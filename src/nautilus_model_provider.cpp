@@ -20,6 +20,7 @@
 
 #include "eiciel/nautilus_model_provider.h"
 #include "eiciel/nautilus_acl_model.h"
+#include "eiciel/nautilus_xattr_model.h"
 extern "C" {
 #include <nautilus-extension.h>
 }
@@ -64,7 +65,10 @@ static GList *eiciel_model_get_models(EicielModelProvider *provider,
   }
 
   GList *result = nullptr;
-  result = g_list_append(result, eiciel_acl_model_new(local_file));
+  if (NautilusPropertiesModel *acl_model = eiciel_acl_model_new(local_file))
+    result = g_list_append(result, acl_model);
+  if (NautilusPropertiesModel *xattr_model = eiciel_xattr_model_new(local_file))
+    result = g_list_append(result, xattr_model);
 
   return result;
 }
