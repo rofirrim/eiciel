@@ -143,10 +143,8 @@ void AppWindow::open_file(const Glib::RefPtr<Gio::File> &file) {
   }
   if (!result) {
     filename_label->set_text(_("No file opened"));
-    filename_label->set_selectable(false);
   } else {
     filename_label->set_text(file->get_path());
-    filename_label->set_selectable(true);
   }
 }
 
