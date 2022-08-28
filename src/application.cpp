@@ -29,16 +29,53 @@ namespace eiciel {
 
 Application::Application()
     : Gtk::Application("org.roger_ferrer.Eiciel",
-                       Gio::Application::Flags::NON_UNIQUE |
+                       Gio::Application::Flags::HANDLES_COMMAND_LINE |
                            Gio::Application::Flags::HANDLES_OPEN) {}
 
+#define EDIT_MODE_FLAG "edit-mode"
+#define EDIT_MODE_FLAG_SHORT 'm'
+
 Glib::RefPtr<Application> Application::create() {
-  return Glib::make_refptr_for_instance<Application>(
-      new Application());
+  auto app = Glib::make_refptr_for_instance<Application>(new Application());
+
+  app->add_main_option_entry(Gio::Application::OptionType::STRING,
+                             EDIT_MODE_FLAG, EDIT_MODE_FLAG_SHORT,
+                             "Initial edit mode (default otherwise)", "acl|xattr",
+                             Glib::OptionEntry::Flags::HIDDEN);
+
+  app->signal_command_line().connect(
+      [app](const Glib::RefPtr<Gio::ApplicationCommandLine> &cmdline) -> int {
+        Glib::RefPtr<Glib::VariantDict> options_dict =
+            cmdline->get_options_dict();
+        Glib::ustring edit_mode;
+        if (options_dict->contains(EDIT_MODE_FLAG)) {
+          options_dict->lookup_value(EDIT_MODE_FLAG, edit_mode);
+          if (edit_mode != "acl" && edit_mode != "xattr") {
+            Glib::ustring error_message =
+                "Invalid value for " EDIT_MODE_FLAG " option. Valid options are "
+                "'acl' or 'xattr'\n";
+            cmdline->printerr(error_message);
+            return EXIT_FAILURE;
+          }
+        }
+
+        int argc;
+        char **argv = cmdline->get_arguments(argc);
+
+        for (int i = 1; i < argc; i++) {
+          Glib::RefPtr<Gio::File> file = cmdline->create_file_for_arg(argv[i]);
+          app->open(file, edit_mode);
+        }
+
+        return EXIT_SUCCESS;
+      },
+      /* after */ false);
+
+  return app;
 }
 
-AppWindow *Application::create_appwindow() {
-  auto appwindow = AppWindow::create(from_nautilus);
+AppWindow *Application::create_appwindow(EditMode mode) {
+  auto appwindow = AppWindow::create(mode);
 
   // Make sure that the application runs for as long this window is still open.
   add_window(*appwindow);
@@ -59,7 +96,7 @@ void Application::on_activate() {
 
   try {
     // The application has been started, so let's show a window.
-    auto appwindow = create_appwindow();
+    auto appwindow = create_appwindow(EditMode::DEFAULT);
     appwindow->present();
   }
   // If create_appwindow() throws an exception (perhaps from Gtk::Builder),
@@ -77,13 +114,20 @@ void Application::on_startup() {
 }
 
 void Application::on_open(const Gio::Application::type_vec_files &files,
-                                const Glib::ustring & /* hint */) {
+                                const Glib::ustring & hint) {
   // The application has been asked to open some files,
   // so let's open a new view for each one.
   AppWindow *appwindow = nullptr;
 
+  g_return_if_fail(hint.empty() || hint == "acl" || hint == "xattr");
+
+  EditMode mode = EditMode::DEFAULT;
+  if (!hint.empty()) {
+    mode = hint == "acl" ? EditMode::ACL : EditMode::XATTR;
+  }
+
   try {
-    appwindow = create_appwindow();
+    appwindow = create_appwindow(mode);
 
     for (const auto &file : files) {
       appwindow->open_file(file);

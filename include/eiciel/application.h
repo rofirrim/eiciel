@@ -39,10 +39,7 @@ protected:
 public:
   static Glib::RefPtr<Application> create();
 
-  enum class FromNautilus { NONE, ACL, XATTR };
-  void set_from_nautilus(FromNautilus v) {
-    from_nautilus = v;
-  }
+  enum class EditMode { DEFAULT, ACL, XATTR };
 
 protected:
   // Override default signal handlers:
@@ -52,10 +49,8 @@ protected:
                const Glib::ustring &hint) override;
 
 private:
-  AppWindow *create_appwindow();
+  AppWindow *create_appwindow(EditMode edit_mode);
   void on_hide_window(Gtk::Window *window);
-
-  FromNautilus from_nautilus = FromNautilus::NONE;
 };
 
 } // namespace eiciel

@@ -31,7 +31,7 @@
 namespace eiciel {
 
 // static
-AppWindow *AppWindow::create(Application::FromNautilus mode) {
+AppWindow *AppWindow::create(Application::EditMode mode) {
   // Load the Builder file and instantiate its widgets.
   auto refBuilder = Gtk::Builder::create_from_resource(
       "/org/roger_ferrer/eiciel/app_window.ui");
@@ -51,10 +51,10 @@ AppWindow::AppWindow(BaseObjectType *cobject,
                      const Glib::RefPtr<Gtk::Builder> &refBuilder,
                      ACLEditorController *acl_editor_cont,
                      XAttrEditorController *xattr_editor_cont,
-                     Application::FromNautilus mode)
+                     Application::EditMode mode)
     : Gtk::ApplicationWindow(cobject), m_refBuilder(refBuilder),
       acl_editor_controller(acl_editor_cont),
-      xattr_editor_controller(xattr_editor_cont), mode(mode) {
+      xattr_editor_controller(xattr_editor_cont) {
   auto open_file = refBuilder->get_object<Gtk::Button>("open-file");
   open_file->set_sensitive(true);
   open_file->signal_clicked().connect(
@@ -84,16 +84,16 @@ AppWindow::AppWindow(BaseObjectType *cobject,
   Glib::RefPtr<Gtk::StackSwitcher> stack_switcher =
       refBuilder->get_object<Gtk::StackSwitcher>("stack-switcher");
 
-  if (mode != Application::FromNautilus::NONE) {
+  if (mode != Application::EditMode::DEFAULT) {
     open_file->set_visible(false);
     open_directory->set_visible(false);
     stack_switcher->set_visible(false);
 
     Glib::ustring title = "Eiciel - ";
-    if (mode == Application::FromNautilus::ACL) {
+    if (mode == Application::EditMode::ACL) {
       title += "Access Control List";
       main_stack->get_pages()->select_item(0, true);
-    } else if (mode == Application::FromNautilus::XATTR) {
+    } else if (mode == Application::EditMode::XATTR) {
       title += "Extended attributes";
       main_stack->get_pages()->select_item(1, true);
     }

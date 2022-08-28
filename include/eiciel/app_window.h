@@ -39,9 +39,9 @@ public:
             const Glib::RefPtr<Gtk::Builder> &refBuilder,
             ACLEditorController *acl_editor_cont,
             XAttrEditorController *xattr_editor_cont,
-            Application::FromNautilus mode);
+            Application::EditMode mode);
 
-  static AppWindow *create(Application::FromNautilus mode);
+  static AppWindow *create(Application::EditMode mode);
 
   void choose_file_to_open();
   void choose_directory_to_open();
@@ -55,8 +55,6 @@ protected:
   ACLEditorController *acl_editor_controller;
   XAttrEditorController *xattr_editor_controller;
   Glib::RefPtr<Gtk::Label> filename_label;
-
-  Application::FromNautilus mode = Application::FromNautilus::NONE;
 };
 
 } // namespace eiciel
