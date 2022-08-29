@@ -40,8 +40,8 @@ Glib::RefPtr<Application> Application::create() {
 
   app->add_main_option_entry(Gio::Application::OptionType::STRING,
                              EDIT_MODE_FLAG, EDIT_MODE_FLAG_SHORT,
-                             "Initial edit mode (default otherwise)", "acl|xattr",
-                             Glib::OptionEntry::Flags::HIDDEN);
+                             "Initial edit mode (default otherwise)",
+                             "acl|xattr", Glib::OptionEntry::Flags::HIDDEN);
 
   app->signal_command_line().connect(
       [app](const Glib::RefPtr<Gio::ApplicationCommandLine> &cmdline) -> int {
@@ -51,9 +51,9 @@ Glib::RefPtr<Application> Application::create() {
         if (options_dict->contains(EDIT_MODE_FLAG)) {
           options_dict->lookup_value(EDIT_MODE_FLAG, edit_mode);
           if (edit_mode != "acl" && edit_mode != "xattr") {
-            Glib::ustring error_message =
-                "Invalid value for " EDIT_MODE_FLAG " option. Valid options are "
-                "'acl' or 'xattr'\n";
+            Glib::ustring error_message = "Invalid value for " EDIT_MODE_FLAG
+                                          " option. Valid options are "
+                                          "'acl' or 'xattr'\n";
             cmdline->printerr(error_message);
             return EXIT_FAILURE;
           }
@@ -62,9 +62,14 @@ Glib::RefPtr<Application> Application::create() {
         int argc;
         char **argv = cmdline->get_arguments(argc);
 
-        for (int i = 1; i < argc; i++) {
-          Glib::RefPtr<Gio::File> file = cmdline->create_file_for_arg(argv[i]);
-          app->open(file, edit_mode);
+        if (argc <= 1) {
+          app->activate();
+        } else {
+          for (int i = 1; i < argc; i++) {
+            Glib::RefPtr<Gio::File> file =
+                cmdline->create_file_for_arg(argv[i]);
+            app->open(file, edit_mode);
+          }
         }
 
         return EXIT_SUCCESS;
