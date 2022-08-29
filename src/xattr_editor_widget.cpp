@@ -66,7 +66,10 @@ XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
 
   auto entry_value_cb = [](GtkEntry * /* instance */,
                            XAttrEditorWidget *user_data) {
-    user_data->button_add->activate();
+    if (user_data->button_add->is_sensitive()) {
+      user_data->button_add->activate();
+      user_data->entry_name->grab_focus();
+    }
   };
   // We need to disconnect the signal later, so keep the connection around.
   entry_value_signal_activate = g_signal_connect(
