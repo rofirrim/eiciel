@@ -20,5 +20,6 @@
     <file>group-acl-default.png</file>
     <file>mask-default.png</file>
     <file>others-default.png</file>
+    <file>icon_eiciel_128.png</file>
   </gresource>
 </gresources>

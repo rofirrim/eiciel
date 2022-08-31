@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -14,10 +12,10 @@
    height="25.600000pt"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.48.4 r9939"
-   inkscape:export-filename="/home/roger/eiciel/eiciel-src/img/icon_eiciel_96.png"
-   inkscape:export-xdpi="270"
-   inkscape:export-ydpi="270"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   inkscape:export-filename="/home/roger/eiciel/eiciel-src/img/icon_eiciel_128.png"
+   inkscape:export-xdpi="359.99997"
+   inkscape:export-ydpi="359.99997"
    sodipodi:docname="icon_eiciel.svg"
    version="1.1">
   <defs
@@ -501,18 +499,19 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="10.54956"
-     inkscape:cx="15.412838"
+     inkscape:cx="-7.1947399"
      inkscape:cy="6.9260146"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1152"
-     inkscape:window-height="814"
+     inkscape:window-width="1920"
+     inkscape:window-height="1136"
      inkscape:window-x="0"
      inkscape:window-y="27"
      showgrid="false"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="1"
+     inkscape:document-rotation="0" />
   <metadata
      id="metadata4">
     <rdf:RDF>
@@ -521,7 +520,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
