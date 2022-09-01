@@ -62,7 +62,8 @@ plugin_sources += ['nautilus_menu_provider.cpp',
                    'nautilus_acl_model.cpp',
                    'nautilus_xattr_model.cpp',
                    'nautilus_model_provider.cpp',
-                   'nautilus_extension.cpp']
+                   'nautilus_extension.cpp',
+                   'i18n.cpp']
 
 nautilusextensiondir = get_option('nautilus-extension-dir')
 if nautilusextensiondir == '' 
