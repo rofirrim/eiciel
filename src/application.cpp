@@ -117,6 +117,11 @@ Glib::RefPtr<Application> Application::create() {
     about->present();
   });
 
+  Glib::RefPtr<Gio::SimpleAction> quit_action = app->add_action("quit");
+
+  quit_action->signal_activate().connect(
+      [app](const Glib::VariantBase &) { app->quit(); });
+
   return app;
 }
 

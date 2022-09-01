@@ -99,6 +99,7 @@ AppWindow::AppWindow(BaseObjectType *cobject,
     }
     set_title(title);
   }
+
 }
 
 void AppWindow::choose_file_impl(const Glib::ustring &title,
