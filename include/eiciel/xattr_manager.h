@@ -20,7 +20,9 @@
 #ifndef EICIEL_XATTR_MANAGER_H
 #define EICIEL_XATTR_MANAGER_H
 
-#include <config.h>
+#include "config.h"
+
+#include "eiciel/i18n.h"
 
 #include <sys/stat.h>
 #include <sys/types.h>
@@ -32,7 +34,6 @@
 #endif
 
 #include <cstring>
-#include <glib/gi18n-lib.h>
 #include <glibmm.h>
 #include <iostream>
 #include <map>

@@ -21,6 +21,10 @@
 #ifndef EICIEL_ACL_LIST_WIDGET_H
 #define EICIEL_ACL_LIST_WIDGET_H
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include <unordered_map>
 #include <gtkmm/box.h>
 #include <gtkmm/button.h>

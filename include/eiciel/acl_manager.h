@@ -19,14 +19,15 @@
 #ifndef EICIEL_ACL_MANAGER_HPP
 #define EICIEL_ACL_MANAGER_HPP
 
-#include <config.h>
+#include "config.h"
+
+#include "eiciel/i18n.h"
 
 #include <cstring>
 #include <iostream>
 #include <string>
 #include <vector>
 
-#include <glib/gi18n-lib.h>
 #include <glibmm.h>
 #include <sys/acl.h>
 #include <sys/stat.h>

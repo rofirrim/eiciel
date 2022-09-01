@@ -15,8 +15,12 @@ conf_data = configuration_data()
 conf_data.set_quoted('VERSION', meson.project_version())
 conf_data.set_quoted('PACKAGE_VERSION', meson.project_version())
 conf_data.set_quoted('PACKAGE', package_name)
-pkgdatadir = get_option('prefix') / get_option('datadir') / package_name
+datadir = get_option('prefix') / get_option('datadir')
+conf_data.set_quoted('DATADIR', datadir)
+pkgdatadir = datadir / package_name
 conf_data.set_quoted('PKGDATADIR', pkgdatadir)
+localedir = datadir / 'locale'
+conf_data.set_quoted('LOCALEDIR', localedir)
 
 # Dependencies
 gtkmm4 = dependency('gtkmm-4.0', version: '>= 4.6')
@@ -53,9 +57,7 @@ has_acl_get_perm_np = compiler.has_function('acl_get_perm_np',
 conf_data.set('HAVE_ACL_GET_PERM_NP', has_acl_get_perm_np)
 
 # Internationalization
-i18n = import('i18n')
 subdir('po')
-conf_data.set_quoted('GETTEXT_PACKAGE', package_name)
 
 # Include dirs
 

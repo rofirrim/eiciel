@@ -19,7 +19,10 @@
 */
 #ifndef EICIEL_ACL_ELEMENT_KIND_H
 #define EICIEL_ACL_ELEMENT_KIND_H
+
 #include "config.h"
+
+#include "eiciel/i18n.h"
 
 namespace eiciel {
 

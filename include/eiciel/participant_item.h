@@ -21,6 +21,10 @@
 #ifndef EICIEL_PARTICIPANT_ITEM_H
 #define EICIEL_PARTICIPANT_ITEM_H
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include <giomm/liststore.h>
 #include <glibmm/binding.h>
 #include <glibmm/object.h>

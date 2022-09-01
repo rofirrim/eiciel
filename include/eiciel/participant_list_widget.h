@@ -21,6 +21,10 @@
 #ifndef EICIEL_PARTICIPANT_LIST_WIDGET_H
 #define EICIEL_PARTICIPANT_LIST_WIDGET_H
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include "eiciel/participant_item.h"
 #include "eiciel/participant_list_controller.h"
 #include <gtkmm/box.h>

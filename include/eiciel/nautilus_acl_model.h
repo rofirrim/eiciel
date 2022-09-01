@@ -21,6 +21,10 @@
 #ifndef EICIEL_NAUTILUS_ACL_MODEL_H
 #define EICIEL_NAUTILUS_ACL_MODEL_H
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 // This seems unnecessary but glib-typeof.h uses C++, so make sure we pull that
 // stuff first in before we include nautilus-extension.h
 #include <glib-object.h>

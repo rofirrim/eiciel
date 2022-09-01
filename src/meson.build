@@ -43,6 +43,7 @@ eiciel_resources = gnome.compile_resources(
 # Standalone binary
 standalone_sources = common_sources
 standalone_sources += [
+  'i18n.cpp',
   'app_window.cpp',
   'application.cpp',
   'main.cpp',

@@ -97,7 +97,7 @@ ACLListWidget::ACLListWidget(ACLListController *cont, ACLListWidgetMode widget_m
         name_expr->bind(label->property_label(), li);
       });
 
-  column = Gtk::ColumnViewColumn::create("Participant", factory_name);
+  column = Gtk::ColumnViewColumn::create(_("Participant"), factory_name);
   column_view->append_column(column);
 
   auto factory_permission_maker = [this](Glib::ustring permission,
@@ -162,13 +162,13 @@ ACLListWidget::ACLListWidget(ACLListController *cont, ACLListWidgetMode widget_m
   };
 
   auto factory_r = factory_permission_maker("r", "masked_r");
-  column = Gtk::ColumnViewColumn::create("Read", factory_r);
+  column = Gtk::ColumnViewColumn::create(_("Read"), factory_r);
   column_view->append_column(column);
   auto factory_w = factory_permission_maker("w", "masked_w");
-  column = Gtk::ColumnViewColumn::create("Write", factory_w);
+  column = Gtk::ColumnViewColumn::create(_("Write"), factory_w);
   column_view->append_column(column);
   auto factory_x = factory_permission_maker("x", "masked_x");
-  column = Gtk::ColumnViewColumn::create("Execute", factory_x);
+  column = Gtk::ColumnViewColumn::create(_("Execute"), factory_x);
   column_view->append_column(column);
 
   auto factory_remove_button = Gtk::SignalListItemFactory::create();

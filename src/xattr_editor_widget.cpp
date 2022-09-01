@@ -99,7 +99,7 @@ XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
             XAttrItem::get_type(), text_expr, "name");
         name_expr->bind(label->property_label(), li);
       });
-  column = Gtk::ColumnViewColumn::create("Name", factory_name);
+  column = Gtk::ColumnViewColumn::create(_("Name"), factory_name);
   column_view->append_column(column);
 
   auto factory_value = Gtk::SignalListItemFactory::create();
@@ -142,7 +142,7 @@ XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
         }
       });
 
-  column = Gtk::ColumnViewColumn::create("Value", factory_value);
+  column = Gtk::ColumnViewColumn::create(_("Value"), factory_value);
   column_view->append_column(column);
 
   auto factory_remove_icon = Gtk::SignalListItemFactory::create();
@@ -196,7 +196,7 @@ XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
             used ? "dialog-error-symbolic" : "",
             Gtk::Entry::IconPosition::SECONDARY);
         entry_name->set_icon_tooltip_text(
-            used ? "Attribute with this name is already present" : "",
+            used ? _("There is already an attribute with this name") : "",
             Gtk::Entry::IconPosition::SECONDARY);
         return !name.empty() && !used;
       });

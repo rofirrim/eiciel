@@ -21,6 +21,10 @@
 #ifndef EICIEL_APP_WINDOW_HPP
 #define EICIEL_APP_WINDOW_HPP
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include "eiciel/acl_editor_controller.h"
 #include "eiciel/application.h"
 #include "eiciel/xattr_editor_controller.h"

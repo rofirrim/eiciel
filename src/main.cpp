@@ -18,10 +18,12 @@
    USA
 */
 #include "eiciel/application.h"
+#include "eiciel/i18n.h"
 #include <iostream>
 
 int main(int argc, char *argv[]) {
-  Glib::RefPtr<eiciel::Application> app = eiciel::Application::create();
+  eiciel::enable_i18n();
 
+  Glib::RefPtr<eiciel::Application> app = eiciel::Application::create();
   return app->run(argc, argv);
 }

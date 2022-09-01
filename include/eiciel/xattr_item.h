@@ -22,6 +22,9 @@
 #define EICIEL_XATTR_ITEM_H
 
 #include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include <giomm/liststore.h>
 #include <glibmm/object.h>
 #include <glibmm/property.h>

@@ -24,12 +24,12 @@
         <property name="spacing">8</property>
         <child>
           <object class="GtkEntry" id="attr-name">
-            <property name="placeholder-text">Name of the new attribute</property>
+            <property name="placeholder-text" translatable="yes">Name of the new attribute</property>
           </object>
         </child>
         <child>
           <object class="GtkEntry" id="attr-value">
-            <property name="placeholder-text">Value of the new attribute</property>
+            <property name="placeholder-text" translatable="yes">Value of the new attribute</property>
           </object>
         </child>
         <child>

@@ -24,7 +24,6 @@
 #include <gtkmm/window.h>
 #include <gtkmm/dialog.h>
 #include <gtkmm/builder.h>
-#include <glib/gi18n-lib.h>
 #include "eiciel/acl_list_widget.h"
 #include "eiciel/participant_list_widget.h"
 

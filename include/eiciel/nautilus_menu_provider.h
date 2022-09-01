@@ -21,6 +21,10 @@
 #ifndef EICIEL_NAUTILUS_MENU_PROVIDER_H
 #define EICIEL_NAUTILUS_MENU_PROVIDER_H
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include <glib-object.h>
 
 G_BEGIN_DECLS

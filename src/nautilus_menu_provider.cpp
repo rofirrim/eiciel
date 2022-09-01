@@ -66,8 +66,8 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
   GList *result = nullptr;
   NautilusMenuItem *new_menu_item;
   new_menu_item = nautilus_menu_item_new(
-      "access_control_list", "Edit Access Control Lists…",
-      "Allows editing Access Control Lists", nullptr);
+      "access_control_list", _("Edit Access Control Lists…"),
+      _("Allows editing Access Control Lists"), nullptr);
 
   // ACL
   auto cb_acl = [](NautilusMenuItem *instance, NautilusFileInfo *file_info) {
@@ -97,8 +97,8 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
 
   // XAttr
   new_menu_item =
-      nautilus_menu_item_new("extended_attributes", "Edit extended attributes…",
-                             "Allows editing Access Control Lists", nullptr);
+      nautilus_menu_item_new("extended_attributes", _("Edit extended attributes…"),
+                             _("Allows editing Access Control Lists"), nullptr);
   auto cb_xattr = [](NautilusMenuItem *instance, NautilusFileInfo *file_info) {
     GFile *location = nautilus_file_info_get_location(file_info);
     char *local_file = g_file_get_path(location);

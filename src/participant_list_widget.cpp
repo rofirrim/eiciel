@@ -19,7 +19,6 @@
 */
 
 #include "eiciel/participant_list_widget.h"
-#include <glib/gi18n-lib.h>
 #include <glibmm/binding.h>
 #include <grp.h>
 #include <gtkmm/builder.h>
@@ -363,7 +362,7 @@ void ParticipantListWidget::do_search_participant() {
   bool found = highlight_entry(searched_name, current_model);
   if (found) {
     searched_participant->unset_icon(icon_position);
-    searched_participant->set_icon_tooltip_text(_(""), icon_position);
+    searched_participant->set_icon_tooltip_text("", icon_position);
     return;
   }
 
@@ -396,7 +395,7 @@ void ParticipantListWidget::do_search_participant() {
     searched_participant->set_icon_tooltip_text(_("Participant not found"), icon_position);
   } else {
     searched_participant->unset_icon(icon_position);
-    searched_participant->set_icon_tooltip_text(_(""), icon_position);
+    searched_participant->set_icon_tooltip_text("", icon_position);
     highlight_entry(searched_name, current_model);
   }
 }

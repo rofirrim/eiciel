@@ -20,6 +20,10 @@
 #ifndef EICIEL_PARTICIPANT_LIST_CONTROLLER_H
 #define EICIEL_PARTICIPANT_LIST_CONTROLLER_H
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include "eiciel/acl_element_kind.h"
 #include "eiciel/participant_target.h"
 #include "eiciel/participant_list_widget.h"

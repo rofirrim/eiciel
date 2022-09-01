@@ -21,6 +21,10 @@
 #ifndef XATTR_EDITOR_CONTROLLER_H
 #define XATTR_EDITOR_CONTROLLER_H
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include "eiciel/xattr_manager.h"
 
 namespace eiciel {

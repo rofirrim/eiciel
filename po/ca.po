@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Eiciel 0.9\n"
-"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2020-08-24 15:11+0200\n"
-"PO-Revision-Date: 2018-10-22 18:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-01 21:42+0200\n"
+"PO-Revision-Date: 2022-09-01 21:40+0200\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/eiciel/master/ca/"
 ">\n"
@@ -17,243 +17,421 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Poedit 2.4.2\n"
 
-#: src/eiciel_xattr_window.cpp:40
-msgid "Name"
-msgstr "Nom"
-
-#: src/eiciel_xattr_window.cpp:55
-msgid "Value"
-msgstr "Valor"
-
-#: src/eiciel_xattr_window.cpp:163
-msgid "Could not rename attribute name: "
-msgstr "No s'ha pogut canviar el nom de l'atribut: "
-
-#: src/eiciel_xattr_window.cpp:190
-msgid "Could not change attribute value: "
-msgstr "No s'ha pogut canviar el valor de l'atribut: "
-
-#: src/eiciel_xattr_window.cpp:217
-msgid "Could not remove attribute: "
-msgstr "No s'ha pogut suprimir l'atribut: "
-
-#: src/eiciel_xattr_window.cpp:242 src/eiciel_xattr_window.cpp:249
-msgid "New attribute"
-msgstr "Atribut nou"
-
-#: src/eiciel_xattr_window.cpp:275
-msgid "New value"
-msgstr "Valor nou"
-
-#: src/eiciel_xattr_window.cpp:287
-msgid "Could not add attribute: "
-msgstr "No s'ha pogut afegir l'atribut: "
-
-#: src/eiciel_main_window_controller.cpp:118 src/eiciel_acl_list.cpp:366
-msgid "Mask"
-msgstr "Màscara"
-
-#: src/eiciel_main_window_controller.cpp:125
-msgid "Other"
-msgstr "Altres"
-
-#: src/eiciel_main_window_controller.cpp:182 src/eiciel_acl_list.cpp:399
-msgid "Default Mask"
-msgstr "Màscara per defecte"
-
-#: src/eiciel_main_window_controller.cpp:190 src/eiciel_acl_list.cpp:393
-msgid "Default Other"
-msgstr "Altres per defecte"
-
-#: src/eiciel_main_window_controller.cpp:267
+#: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
 msgstr "No s'ha pogut afegir l'entrada ACL: "
 
-#: src/eiciel_main_window_controller.cpp:314
+#: src/acl_editor_controller.cpp:195
 msgid "Could not remove ACL entry: "
 msgstr "No es pot suprimir l'entrada ACL: "
 
-#: src/eiciel_main_window_controller.cpp:393
+#: src/acl_editor_controller.cpp:262
 msgid "Could not modify ACL entry: "
 msgstr "No es pot modificar l'entrada ACL: "
 
-#: src/eiciel_main_window_controller.cpp:548
-#: src/eiciel_enclosed_editor_window_controller.cpp:33
+#. FIXME: Can't do much here
+#: src/acl_editor_controller.cpp:350
+#, c-format
+msgid "Exception when setting ACL of file '%s': '%s'"
+msgstr "Excepció mentre s'establia l'ACL del fitxer '%s': '%s'"
+
+#. Catch-all to avoid crashing nautilus
+#: src/acl_editor_controller.cpp:354
+#, c-format
+msgid "Unknown exception when setting ACL of file '%s'"
+msgstr "Excepció desconeguda mentre s'establia l'ACL del fitxer '%s'"
+
+#: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Segur que voleu suprimir totes les entrades per defecte d'ACL?"
 
-#: src/eiciel_container.cpp:26
-msgid "<b>File name</b>"
-msgstr "<b>Nom de fitxer</b>"
-
-#: src/eiciel_container.cpp:27 src/eiciel_container.cpp:168
-msgid "No file opened"
-msgstr "No hi ha cap fitxer obert"
-
-#: src/eiciel_container.cpp:30 src/eiciel_container.cpp:177
-#: src/eiciel_container.cpp:180
-msgid "About..."
-msgstr "Quant a..."
-
-#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:129
-msgid "Access Control List"
-msgstr "Llista de control d'accés"
-
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:145
-msgid "Extended user attributes"
-msgstr "Atributs d'usuari ampliats"
-
-#: src/eiciel_container.cpp:97
-#, c-format
-msgid "Could not show the help file: %s"
-msgstr "No s'ha pogut mostrar l'ajuda: %s"
-
-#: src/eiciel_container.cpp:120
-msgid "Choose a file or a directory"
-msgstr "Trieu un fitxer o directori"
-
-#: src/eiciel_container.cpp:137
-msgid "Could not open the file \""
-msgstr "No es pot obrir el fitxer \""
-
-#: src/eiciel_standalone.cpp:46
-msgid "Print version information"
-msgstr "Mostra la informació de la versió"
-
-#: src/eiciel_standalone.cpp:48
-msgid "Access control list editor"
-msgstr "Llista de control d'accés"
-
-#: src/eiciel_enclosed_editor_window.cpp:24
-msgid "Edit ACLs for enclosed files"
+#: src/acl_editor_widget.ui:15
+msgid "Applying ACLs to enclosed files"
 msgstr "Edita ACLs dels fitxers continguts"
 
-#: src/eiciel_enclosed_editor_window.cpp:25
-msgid "_Cancel"
-msgstr "Anul·la"
+#: src/acl_editor_widget.ui:34
+msgid "Current participants in ACL"
+msgstr "Participants actuals a l'ACL"
 
-#: src/eiciel_enclosed_editor_window.cpp:26
-msgid "_Apply"
-msgstr "Aplica"
+#: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
+msgid "Available participants"
+msgstr "Participants disponibles"
 
-#: src/eiciel_enclosed_editor_window.cpp:30
-msgid "<b>Participants in ACL for enclosed directories</b>"
-msgstr "<b>Participants a l'ACL dels directoris continguts</b>"
-
-#: src/eiciel_enclosed_editor_window.cpp:33
-msgid "<b>Participants in ACL for enclosed files</b>"
-msgstr "<b>Participants a l'ACL dels fitxers continguts</b>"
-
-#: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
-msgid "<b>Available participants</b>"
-msgstr "<b>Participants disponibles</b>"
-
-#: src/acl_manager.cpp:46 src/xattr_manager.cpp:32
-msgid "Only regular files or directories supported"
-msgstr "Només s'admeten fitxers o directoris ordinaris"
-
-#: src/acl_manager.cpp:463
-msgid "Textual representation of the ACL is wrong"
-msgstr "La representació textual de l'ACL és incorrecta"
-
-#: src/acl_manager.cpp:484
-msgid "Default textual representation of the ACL is wrong"
-msgstr "La representació textual de l'ACL per omissió és incorrecta"
-
-#: src/eiciel_main_window.cpp:30
-msgid "<b>Current participants in ACL</b>"
-msgstr "<b>Participants actuals a l'ACL</b>"
-
-#: src/eiciel_main_window.cpp:34
+#: src/acl_editor_widget.ui:65
 msgid "Edit ACLs for enclosed files..."
 msgstr "Edita els ACL dels fitxers continguts..."
 
-#: src/eiciel_participant_list.cpp:30
-msgid "User"
-msgstr "Usuari"
+#: src/acl_list_controller.cpp:144 src/acl_list_widget.cpp:317
+msgid "Mask"
+msgstr "Màscara"
 
-#: src/eiciel_participant_list.cpp:31
-msgid "Group"
-msgstr "Grup"
+#: src/acl_list_controller.cpp:149
+msgid "Other"
+msgstr "Altres"
 
-#: src/eiciel_participant_list.cpp:32
-msgid "Default participant"
-msgstr "Participant per defecte"
+#. reading
+#. writing
+#. execution
+#: src/acl_list_controller.cpp:198 src/acl_list_widget.cpp:347
+msgid "Default Mask"
+msgstr "Màscara per defecte"
 
-#: src/eiciel_participant_list.cpp:37
-msgid "Add participant to ACL"
-msgstr "Afegeix el participant a l'ACL"
+#. ElementKind::default_others must be the last, so we handle it here manually
+#: src/acl_list_controller.cpp:205 src/acl_list_widget.cpp:342
+msgid "Default Other"
+msgstr "Altres per defecte"
 
-#: src/eiciel_participant_list.cpp:38
-msgid "Add participant to directory ACL"
-msgstr "Afegeix el participant a l'ACL dels directoris"
-
-#: src/eiciel_participant_list.cpp:39
-msgid "Add participant to file ACL"
-msgstr "Afegeix el participant a l'ACL dels fitxers"
-
-#: src/eiciel_participant_list.cpp:40
-msgid "Advanced features"
-msgstr "Opcions avançades"
-
-#: src/eiciel_participant_list.cpp:42
-msgid "Name of participant"
-msgstr "Nom del participant"
-
-#: src/eiciel_participant_list.cpp:44
-msgid "Also show system participants"
-msgstr "Mostra també participants del sistema"
-
-#: src/eiciel_participant_list.cpp:80
-msgid "Filter participants"
-msgstr "Filtra els participants"
-
-#: src/eiciel_participant_list.cpp:105
+#: src/acl_list_widget.cpp:100
 msgid "Participant"
 msgstr "Participant"
 
-#: src/eiciel_participant_list.cpp:422
-msgid "Participant not found"
-msgstr "No s'ha trobat el participant"
-
-#: src/eiciel_acl_list.cpp:33
-msgid "There are ineffective permissions"
-msgstr "Hi ha permisos no efectius"
-
-#: src/eiciel_acl_list.cpp:35
-msgid "Remove participant from ACL"
-msgstr "Suprimeix el participant de l'ACL"
-
-#: src/eiciel_acl_list.cpp:36
-msgid "Edit default participants"
-msgstr "Edita els participants per defecte"
-
-#: src/eiciel_acl_list.cpp:79
-msgid "Entry"
-msgstr "Entrada"
-
-#: src/eiciel_acl_list.cpp:82
+#: src/acl_list_widget.cpp:165
 msgid "Read"
 msgstr "Llegeix"
 
-#: src/eiciel_acl_list.cpp:95
+#: src/acl_list_widget.cpp:168
 msgid "Write"
 msgstr "Escriu"
 
-#: src/eiciel_acl_list.cpp:107
+#: src/acl_list_widget.cpp:171
 msgid "Execute"
 msgstr "Executa"
 
+#: src/acl_list_widget.ui:33
+msgid "There are ineffective permissions"
+msgstr "Hi ha permisos no efectius"
+
+#: src/acl_list_widget.ui:46
+msgid "Edit default participants"
+msgstr "Edita els participants per defecte"
+
+#: src/acl_manager.cpp:48 src/xattr_manager.cpp:34
+msgid "Only regular files or directories supported"
+msgstr "Només s'admeten fitxers o directoris ordinaris"
+
+#: src/acl_manager.cpp:465
+msgid "Textual representation of the ACL is wrong"
+msgstr "La representació textual de l'ACL és incorrecta"
+
+#: src/acl_manager.cpp:486
+msgid "Default textual representation of the ACL is wrong"
+msgstr "La representació textual de l'ACL per omissió és incorrecta"
+
+#: src/application.cpp:44
+msgid "Initial edit mode (default mode otherwise)"
+msgstr "Mode d'edició inicial (mode per omissió altrament)"
+
+#: src/application.cpp:56
+msgid ""
+"Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
+msgstr ""
+"Valor incorrecte per a l'opció 'edit-mode'. Els valors correctes són 'acl' o "
+"'xattr'\n"
+
+#: src/application.cpp:96
+msgid "Graphical editor of file ACLs and extended attributes"
+msgstr "Editor gràfic d'ACLs de fitxers i atributs d'usuari ampliats"
+
+#: src/application.cpp:100
+msgid "translator-credits"
+msgstr ""
+
+#: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
+msgid "Access Control List"
+msgstr "Llista de control d'accés"
+
+#: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
+msgid "Extended attributes"
+msgstr "Atributs d'usuari ampliats"
+
+#: src/app_window.cpp:129
+msgid "Select file"
+msgstr "Escull fitxer"
+
+#: src/app_window.cpp:133
+msgid "Select directory"
+msgstr "Escull directori"
+
+#: src/app_window.cpp:146 src/app_window.ui:37
+msgid "No file opened"
+msgstr "No hi ha cap fitxer obert"
+
+#: src/app_window.ui:16
+msgid "Open file"
+msgstr "Obre fitxer"
+
+#: src/app_window.ui:21
+msgid "Open directory"
+msgstr "Obre directori"
+
+#: src/app_window.ui:78
+msgid "Extended Attributes"
+msgstr "Atributs d'usuari ampliats"
+
+#: src/app_window.ui:99
+#, fuzzy
+msgid "About Eiciel"
+msgstr "Quant a Eiciel"
+
+#: src/app_window.ui:103
+#, fuzzy
+msgid "Quit"
+msgstr "Surt"
+
+#: src/enclosed_acl_editor_widget.ui:5
+msgid "Edit ACLs for enclosed files"
+msgstr "Edita ACLs dels fitxers continguts"
+
+#: src/enclosed_acl_editor_widget.ui:14
+msgid "Cancel"
+msgstr "Anul·la"
+
+#: src/enclosed_acl_editor_widget.ui:19
+msgid "Apply"
+msgstr "Aplica"
+
+#: src/enclosed_acl_editor_widget.ui:44
+msgid "Participants in ACL for enclosed files"
+msgstr "Participants a l'ACL dels fitxers continguts"
+
+#: src/enclosed_acl_editor_widget.ui:59
+msgid "Participants in ACL for enclosed directories"
+msgstr "Participants a l'ACL dels directoris continguts"
+
+#: src/nautilus_acl_model.cpp:31
+msgid "Read, write and execute"
+msgstr "Llegeix, escriu i executa"
+
+#: src/nautilus_acl_model.cpp:33
+msgid "Read and write"
+msgstr "Llegeix i escriu"
+
+#: src/nautilus_acl_model.cpp:35
+msgid "Read and execute"
+msgstr "Llegeix i executa"
+
+#: src/nautilus_acl_model.cpp:37
+msgid "Only read"
+msgstr "Només llegeix"
+
+#: src/nautilus_acl_model.cpp:39
+msgid "Write and execute"
+msgstr "Escriu i executa"
+
+#: src/nautilus_acl_model.cpp:41
+msgid "Only write"
+msgstr "Només escriu"
+
+#: src/nautilus_acl_model.cpp:43
+msgid "Only execute"
+msgstr "Només executa"
+
+#: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
+#: src/nautilus_acl_model.cpp:67
+msgid "No permission"
+msgstr "Sense permís"
+
+#: src/nautilus_acl_model.cpp:53
+msgid "List directory, access, create and remove files"
+msgstr "Llista directori, accedeix, crea i esborra fitxers"
+
+#: src/nautilus_acl_model.cpp:55
+msgid "List directory, no access to files"
+msgstr "Llista directori, sense accés als fitxers"
+
+#: src/nautilus_acl_model.cpp:57
+msgid "List directory and access files"
+msgstr "Llista directori i accedeix als fitxers"
+
+#: src/nautilus_acl_model.cpp:59
+msgid "List directory only, no access to files"
+msgstr "Només llista directori, sense accés als fitxers"
+
+#: src/nautilus_acl_model.cpp:61
+msgid "No list directory but access, create and remove"
+msgstr "Sense llistar el directori però amb accés, escriure i esborrar"
+
+#: src/nautilus_acl_model.cpp:65
+msgid "No list directory and access files"
+msgstr "Sense llistat ni accés als fitxers"
+
+#: src/nautilus_acl_model.cpp:101
+msgid "User owner"
+msgstr "Usuari propietari"
+
+#: src/nautilus_acl_model.cpp:109
+msgid "Group owner"
+msgstr "Grup propietari"
+
+#: src/nautilus_acl_model.cpp:115
+#, c-format
+msgid "User ACL: ‘%s’"
+msgstr "Usuari ACL: ‘%s’"
+
+#: src/nautilus_acl_model.cpp:121
+#, c-format
+msgid "Group ACL: ‘%s’"
+msgstr "Grup ACL: ‘%s’"
+
+#: src/nautilus_acl_model.cpp:127
+msgid "Mask limits Group owner, User ACL and Group ACL to"
+msgstr ""
+"La màscara limita el grup propietari, els usuaris ACL i els grups ACL a"
+
+#: src/nautilus_acl_model.cpp:131
+msgid "Other users"
+msgstr "Altres usuaris"
+
+#: src/nautilus_acl_model.cpp:137
+msgid "New files will have User owner"
+msgstr "Els nous fitxers tindran l'usuari propietari"
+
+#: src/nautilus_acl_model.cpp:147
+msgid "New files will have Group owner"
+msgstr "Els nous fitxers tindran el grup propietari"
+
+#: src/nautilus_acl_model.cpp:155
+#, c-format
+msgid "New files will have User ACL: ‘%s’"
+msgstr "Els nous fitxers tindran l'usuari ACL: ‘%s’"
+
+#: src/nautilus_acl_model.cpp:163
+#, c-format
+msgid "New files will have Group ACL: ‘%s‘"
+msgstr "Els nous fitxers tindran el grup ACL: ‘%s’"
+
+#: src/nautilus_acl_model.cpp:170
+msgid "New files will have Mask"
+msgstr "Els nous fitxers tindran màscara"
+
+#: src/nautilus_acl_model.cpp:175
+msgid "New files will have Other users"
+msgstr "Els nous fitxers tindran altres usuaris"
+
+#: src/nautilus_menu_provider.cpp:69
+msgid "Edit Access Control Lists…"
+msgstr "Llista de control d'accés…"
+
+#: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
+msgid "Allows editing Access Control Lists"
+msgstr "Permet l'edició de la llista de control d'accés"
+
+#: src/nautilus_menu_provider.cpp:100
+msgid "Edit extended attributes…"
+msgstr "Atributs d'usuari ampliats…"
+
+#: src/participant_list_widget.cpp:395
+msgid "Participant not found"
+msgstr "No s'ha trobat el participant"
+
+#: src/participant_list_widget.ui:12
+msgid "User"
+msgstr "Usuari"
+
+#: src/participant_list_widget.ui:17
+msgid "Group"
+msgstr "Grup"
+
+#: src/participant_list_widget.ui:23
+msgid "Default participant"
+msgstr "Participant per defecte"
+
+#: src/participant_list_widget.ui:28
+msgid "Filter participants"
+msgstr "Filtra els participants"
+
+#: src/participant_list_widget.ui:51
+msgid "Advanced features"
+msgstr "Opcions avançades"
+
+#: src/participant_list_widget.ui:61
+msgid "Name of participant"
+msgstr "Nom del participant"
+
+#: src/participant_list_widget.ui:71
+msgid "Search"
+msgstr "Cerca"
+
+#: src/participant_list_widget.ui:80
+msgid "Show system participants"
+msgstr "Mostra també participants del sistema"
+
+#: src/xattr_editor_widget.cpp:102
+msgid "Name"
+msgstr "Nom"
+
+#: src/xattr_editor_widget.cpp:145
+msgid "Value"
+msgstr "Valor"
+
+#: src/xattr_editor_widget.cpp:199
+msgid "There is already an attribute with this name"
+msgstr "Ja hi ha un atribut amb aquest nom"
+
+#: src/xattr_editor_widget.ui:27
+msgid "Name of the new attribute"
+msgstr "Nom de l'atribut nou"
+
+#: src/xattr_editor_widget.ui:32
+msgid "Value of the new attribute"
+msgstr "Valor de l'atribut nou"
+
+#~ msgid "Could not rename attribute name: "
+#~ msgstr "No s'ha pogut canviar el nom de l'atribut: "
+
+#~ msgid "Could not change attribute value: "
+#~ msgstr "No s'ha pogut canviar el valor de l'atribut: "
+
+#~ msgid "Could not remove attribute: "
+#~ msgstr "No s'ha pogut suprimir l'atribut: "
+
+#~ msgid "New value"
+#~ msgstr "Valor nou"
+
+#~ msgid "Could not add attribute: "
+#~ msgstr "No s'ha pogut afegir l'atribut: "
+
+#~ msgid "<b>File name</b>"
+#~ msgstr "<b>Nom de fitxer</b>"
+
+#~ msgid "About..."
+#~ msgstr "Quant a..."
+
+#, c-format
+#~ msgid "Could not show the help file: %s"
+#~ msgstr "No s'ha pogut mostrar l'ajuda: %s"
+
+#~ msgid "Choose a file or a directory"
+#~ msgstr "Trieu un fitxer o directori"
+
+#~ msgid "Could not open the file \""
+#~ msgstr "No es pot obrir el fitxer \""
+
+#~ msgid "Print version information"
+#~ msgstr "Mostra la informació de la versió"
+
+#~ msgid "Access control list editor"
+#~ msgstr "Llista de control d'accés"
+
+#~ msgid "Add participant to ACL"
+#~ msgstr "Afegeix el participant a l'ACL"
+
+#~ msgid "Add participant to directory ACL"
+#~ msgstr "Afegeix el participant a l'ACL dels directoris"
+
+#~ msgid "Add participant to file ACL"
+#~ msgstr "Afegeix el participant a l'ACL dels fitxers"
+
+#~ msgid "Remove participant from ACL"
+#~ msgstr "Suprimeix el participant de l'ACL"
+
+#~ msgid "Entry"
+#~ msgstr "Entrada"
+
 #~ msgid "None"
 #~ msgstr "Cap"
-
-#~ msgid "Only files"
-#~ msgstr "Només fitxers"
-
-#~ msgid "Only directories"
-#~ msgstr "Només directoris"
 
 #~ msgid "Both files and directories"
 #~ msgstr "Fitxers i directoris"

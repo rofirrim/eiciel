@@ -21,6 +21,9 @@
 #define EICIEL_MAIN_WINDOW_CONTROLLER_HPP
 
 #include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include "eiciel/acl_editor_widget.h"
 #include "eiciel/acl_element_kind.h"
 #include "eiciel/acl_list_controller.h"

@@ -2,7 +2,7 @@
 <interface>
   <requires lib="gtk" version="4.0"/>
   <object class="GtkDialog" id="enclosed-acl-editor-dialog">
-    <property name="title">Edit ACLs for enclosed files</property>
+    <property name="title" translatable="yes">Edit ACLs for enclosed files</property>
     <property name="default-width">800</property>
     <property name="default-height">600</property>
     <property name="use-header-bar">1</property>
@@ -11,12 +11,12 @@
     </style>
     <child type="action">
       <object class="GtkButton" id="cancel-button">
-        <property name="label">Cancel</property>
+        <property name="label" translatable="yes">Cancel</property>
       </object>
     </child>
     <child type="action">
       <object class="GtkButton" id="apply-button">
-        <property name="label">Apply</property>
+        <property name="label" translatable="yes">Apply</property>
       </object>
     </child>
     <action-widgets>
@@ -41,7 +41,7 @@
                 <property name="spacing">8</property>
                 <child>
                   <object class="GtkLabel">
-                    <property name="label">Participants in ACL for enclosed files</property>
+                    <property name="label" translatable="yes">Participants in ACL for enclosed files</property>
                     <property name="xalign">0</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -56,7 +56,7 @@
                 <property name="spacing">8</property>
                 <child>
                   <object class="GtkLabel">
-                    <property name="label">Participants in ACL for enclosed directories</property>
+                    <property name="label" translatable="yes">Participants in ACL for enclosed directories</property>
                     <property name="xalign">0</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
@@ -73,7 +73,7 @@
             <property name="spacing">8</property>
             <child>
               <object class="GtkLabel">
-                <property name="label">Available participants</property>
+                <property name="label" translatable="yes">Available participants</property>
                 <property name="xalign">0</property>
                 <attributes>
                   <attribute name="weight" value="bold"/>

@@ -18,6 +18,10 @@
    USA
 */
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include "eiciel/nautilus_menu_provider.h"
 #include "eiciel/nautilus_model_provider.h"
 extern "C" {
@@ -25,6 +29,8 @@ extern "C" {
 }
 
 void nautilus_module_initialize(GTypeModule *module) {
+  eiciel::enable_i18n();
+
   g_debug("Initializing Eiciel extension");
 }
 /**

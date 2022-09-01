@@ -22,6 +22,9 @@
 #define XATTR_EDITOR_WIDGET_H
 
 #include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include "eiciel/xattr_editor_controller.h"
 #include "eiciel/xattr_item.h"
 #include <gtkmm/box.h>

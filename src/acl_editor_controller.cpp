@@ -347,11 +347,11 @@ void ACLEditorController::apply_recursively(
             }
           } catch (ACLManagerException e) {
             // FIXME: Can't do much here
-            g_warning("Exception when setting ACL of file '%s': '%s'",
+            g_warning(_("Exception when setting ACL of file '%s': '%s'"),
                       filename.c_str(), e.getMessage().c_str());
           } catch (...) {
             // Catch-all to avoid crashing nautilus
-            g_warning("Unknown exception when setting ACL of file '%s'",
+            g_warning(_("Unknown exception when setting ACL of file '%s'"),
                       filename.c_str());
           }
 

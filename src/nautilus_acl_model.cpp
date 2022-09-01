@@ -112,13 +112,13 @@ NautilusPropertiesModel *eiciel_acl_model_new(const char *file_name_path) {
 
     for (const auto &entry : access_users) {
       add_to_list(acl_model,
-                  g_strdup_printf("User ACL: ‘%s’", entry.name.c_str()),
+                  g_strdup_printf(_("User ACL: ‘%s’"), entry.name.c_str()),
                   permissions_to_name(acl_manager.is_directory(), entry, mask));
     }
 
     for (const auto &entry : access_groups) {
       add_to_list(acl_model,
-                  g_strdup_printf("Group ACL: ‘%s’", entry.name.c_str()),
+                  g_strdup_printf(_("Group ACL: ‘%s’"), entry.name.c_str()),
                   permissions_to_name(acl_manager.is_directory(), entry, mask));
     }
 
@@ -152,7 +152,7 @@ NautilusPropertiesModel *eiciel_acl_model_new(const char *file_name_path) {
 
       for (const auto &entry : default_users) {
         add_to_list(acl_model,
-                    g_strdup_printf("New files will have User ACL: ‘%s’",
+                    g_strdup_printf(_("New files will have User ACL: ‘%s’"),
                                     entry.name.c_str()),
                     permissions_to_name(acl_manager.is_directory(), entry,
                                         default_mask));
@@ -160,7 +160,7 @@ NautilusPropertiesModel *eiciel_acl_model_new(const char *file_name_path) {
 
       for (const auto &entry : default_groups) {
         add_to_list(acl_model,
-                    g_strdup_printf("New files will have Group ACL: ‘%s‘",
+                    g_strdup_printf(_("New files will have Group ACL: ‘%s‘"),
                                     entry.name.c_str()),
                     permissions_to_name(acl_manager.is_directory(), entry,
                                         default_mask));

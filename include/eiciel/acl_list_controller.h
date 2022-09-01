@@ -21,6 +21,10 @@
 #ifndef EICIEL_ACL_LIST_CONTROLLER_H
 #define EICIEL_ACL_LIST_CONTROLLER_H
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include "eiciel/acl_element_kind.h"
 #include "eiciel/acl_manager.h"
 #include <gtkmm.h>

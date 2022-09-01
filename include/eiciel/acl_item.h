@@ -21,6 +21,10 @@
 #ifndef EICIEL_ACL_ITEM_H
 #define EICIEL_ACL_ITEM_H
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include "eiciel/acl_element_kind.h"
 #include <giomm/liststore.h>
 #include <glibmm/binding.h>

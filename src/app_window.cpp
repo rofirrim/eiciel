@@ -91,10 +91,10 @@ AppWindow::AppWindow(BaseObjectType *cobject,
 
     Glib::ustring title = "Eiciel - ";
     if (mode == Application::EditMode::ACL) {
-      title += "Access Control List";
+      title += _("Access Control List");
       main_stack->get_pages()->select_item(0, true);
     } else if (mode == Application::EditMode::XATTR) {
-      title += "Extended attributes";
+      title += _("Extended attributes");
       main_stack->get_pages()->select_item(1, true);
     }
     set_title(title);

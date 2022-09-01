@@ -22,6 +22,9 @@
 #define EICIEL_APPLICATION_H
 
 #include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include <giomm/application.h>
 #include <glibmm/refptr.h>
 #include <glibmm/ustring.h>

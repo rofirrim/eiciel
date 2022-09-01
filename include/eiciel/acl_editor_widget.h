@@ -21,6 +21,9 @@
 #define EICIEL_MAIN_WINDOW_HPP
 
 #include "config.h"
+
+#include "eiciel/i18n.h"
+
 #include "eiciel/acl_element_kind.h"
 #include "eiciel/acl_list_widget.h"
 #include "eiciel/participant_list_widget.h"

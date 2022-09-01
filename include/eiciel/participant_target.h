@@ -20,6 +20,10 @@
 #ifndef EICIEL_PARTICIPANT_TARGET_H
 #define EICIEL_PARTICIPANT_TARGET_H
 
+#include "config.h"
+
+#include "eiciel/i18n.h"
+
 namespace eiciel {
 
 enum class AddParticipantTarget {

@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
-"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
-"POT-Creation-Date: 2020-08-24 15:11+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-01 21:42+0200\n"
 "PO-Revision-Date: 2018-10-28 14:20+0000\n"
 "Last-Translator: Alex Minton <alex239@gmail.com>\n"
 "Language-Team: Russian <https://l10n.opensuse.org/projects/eiciel/master/ru/"
@@ -18,246 +18,441 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: src/eiciel_xattr_window.cpp:40
-msgid "Name"
-msgstr "Имя"
-
-#: src/eiciel_xattr_window.cpp:55
-msgid "Value"
-msgstr "Значение"
-
-#: src/eiciel_xattr_window.cpp:163
-msgid "Could not rename attribute name: "
-msgstr "Не удалось переименовать атрибут: "
-
-#: src/eiciel_xattr_window.cpp:190
-msgid "Could not change attribute value: "
-msgstr "Не удалось изменить значение атрибута: "
-
-#: src/eiciel_xattr_window.cpp:217
-msgid "Could not remove attribute: "
-msgstr "Не удалось удалить атрибут: "
-
-#: src/eiciel_xattr_window.cpp:242 src/eiciel_xattr_window.cpp:249
-msgid "New attribute"
-msgstr "Создать атрибут"
-
-#: src/eiciel_xattr_window.cpp:275
-msgid "New value"
-msgstr "Новое значение"
-
-#: src/eiciel_xattr_window.cpp:287
-msgid "Could not add attribute: "
-msgstr "Не удалось добавить атрибут: "
-
-#: src/eiciel_main_window_controller.cpp:118 src/eiciel_acl_list.cpp:366
-msgid "Mask"
-msgstr "Маска"
-
-#: src/eiciel_main_window_controller.cpp:125
-msgid "Other"
-msgstr "Другое"
-
-#: src/eiciel_main_window_controller.cpp:182 src/eiciel_acl_list.cpp:399
-msgid "Default Mask"
-msgstr "Маска по умолчанию"
-
-#: src/eiciel_main_window_controller.cpp:190 src/eiciel_acl_list.cpp:393
-msgid "Default Other"
-msgstr "Другое значение по умолчанию"
-
-#: src/eiciel_main_window_controller.cpp:267
+#: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
 msgstr "Не удается добавить запись ACL: "
 
-#: src/eiciel_main_window_controller.cpp:314
+#: src/acl_editor_controller.cpp:195
 msgid "Could not remove ACL entry: "
 msgstr "Не удается удалить запись ACL: "
 
-#: src/eiciel_main_window_controller.cpp:393
+#: src/acl_editor_controller.cpp:262
 msgid "Could not modify ACL entry: "
 msgstr "Не удается изменить запись ACL: "
 
-#: src/eiciel_main_window_controller.cpp:548
-#: src/eiciel_enclosed_editor_window_controller.cpp:33
+#. FIXME: Can't do much here
+#: src/acl_editor_controller.cpp:350
+#, c-format
+msgid "Exception when setting ACL of file '%s': '%s'"
+msgstr ""
+
+#. Catch-all to avoid crashing nautilus
+#: src/acl_editor_controller.cpp:354
+#, c-format
+msgid "Unknown exception when setting ACL of file '%s'"
+msgstr ""
+
+#: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Подтверждаете удаление всех записей ACL по умолчанию?"
 
-#: src/eiciel_container.cpp:26
-msgid "<b>File name</b>"
-msgstr "<b>Имя файла</b>"
-
-#: src/eiciel_container.cpp:27 src/eiciel_container.cpp:168
-msgid "No file opened"
-msgstr "Нет открытых файлов"
-
-#: src/eiciel_container.cpp:30 src/eiciel_container.cpp:177
-#: src/eiciel_container.cpp:180
-msgid "About..."
-msgstr "О программе..."
-
-#: src/eiciel_container.cpp:47 src/eiciel_nautilus_page.cpp:129
-msgid "Access Control List"
-msgstr "Список управления доступом"
-
-#: src/eiciel_container.cpp:56 src/eiciel_nautilus_page.cpp:145
-msgid "Extended user attributes"
-msgstr "Дополнительные атрибуты пользователя"
-
-#: src/eiciel_container.cpp:97
-#, c-format
-msgid "Could not show the help file: %s"
-msgstr "Не удается показать файл справки: %s"
-
-#: src/eiciel_container.cpp:120
-msgid "Choose a file or a directory"
-msgstr "Выберите файл или каталог"
-
-#: src/eiciel_container.cpp:137
-msgid "Could not open the file \""
-msgstr "Не удалось открыть файл \""
-
-#: src/eiciel_standalone.cpp:46
-msgid "Print version information"
-msgstr "Печать сведений о версии"
-
-#: src/eiciel_standalone.cpp:48
-msgid "Access control list editor"
-msgstr "Редактор списка управления доступом"
-
-#: src/eiciel_enclosed_editor_window.cpp:24
-msgid "Edit ACLs for enclosed files"
-msgstr ""
-
-#: src/eiciel_enclosed_editor_window.cpp:25
-msgid "_Cancel"
-msgstr ""
-
-#: src/eiciel_enclosed_editor_window.cpp:26
-msgid "_Apply"
-msgstr ""
-
-#: src/eiciel_enclosed_editor_window.cpp:30
-msgid "<b>Participants in ACL for enclosed directories</b>"
-msgstr ""
-
-#: src/eiciel_enclosed_editor_window.cpp:33
+#: src/acl_editor_widget.ui:15
 #, fuzzy
-msgid "<b>Participants in ACL for enclosed files</b>"
+msgid "Applying ACLs to enclosed files"
 msgstr "<b>Текущие участники ACL</b>"
 
-#: src/eiciel_enclosed_editor_window.cpp:36 src/eiciel_main_window.cpp:32
-msgid "<b>Available participants</b>"
+#: src/acl_editor_widget.ui:34
+#, fuzzy
+msgid "Current participants in ACL"
+msgstr "<b>Текущие участники ACL</b>"
+
+#: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
+#, fuzzy
+msgid "Available participants"
 msgstr "<b>Доступные участники</b>"
 
-#: src/acl_manager.cpp:46 src/xattr_manager.cpp:32
+#: src/acl_editor_widget.ui:65
+#, fuzzy
+msgid "Edit ACLs for enclosed files..."
+msgstr "<b>Текущие участники ACL</b>"
+
+#: src/acl_list_controller.cpp:144 src/acl_list_widget.cpp:317
+msgid "Mask"
+msgstr "Маска"
+
+#: src/acl_list_controller.cpp:149
+msgid "Other"
+msgstr "Другое"
+
+#. reading
+#. writing
+#. execution
+#: src/acl_list_controller.cpp:198 src/acl_list_widget.cpp:347
+msgid "Default Mask"
+msgstr "Маска по умолчанию"
+
+#. ElementKind::default_others must be the last, so we handle it here manually
+#: src/acl_list_controller.cpp:205 src/acl_list_widget.cpp:342
+msgid "Default Other"
+msgstr "Другое значение по умолчанию"
+
+#: src/acl_list_widget.cpp:100
+msgid "Participant"
+msgstr "Участник"
+
+#: src/acl_list_widget.cpp:165
+msgid "Read"
+msgstr "Чтение"
+
+#: src/acl_list_widget.cpp:168
+msgid "Write"
+msgstr "Запись"
+
+#: src/acl_list_widget.cpp:171
+msgid "Execute"
+msgstr "Выполнение"
+
+#: src/acl_list_widget.ui:33
+msgid "There are ineffective permissions"
+msgstr "Существуют недействующие разрешения"
+
+#: src/acl_list_widget.ui:46
+msgid "Edit default participants"
+msgstr "Редактировать участников по умолчанию"
+
+#: src/acl_manager.cpp:48 src/xattr_manager.cpp:34
 msgid "Only regular files or directories supported"
 msgstr "Поддерживаются только обычные файлы или каталоги"
 
-#: src/acl_manager.cpp:463
+#: src/acl_manager.cpp:465
 msgid "Textual representation of the ACL is wrong"
 msgstr "Неверное текстовое представление списков управления доступом (ACL)"
 
-#: src/acl_manager.cpp:484
+#: src/acl_manager.cpp:486
 msgid "Default textual representation of the ACL is wrong"
 msgstr ""
 "Неверное текстовое представление по умолчанию списков управления доступом "
 "(ACL)"
 
-#: src/eiciel_main_window.cpp:30
-msgid "<b>Current participants in ACL</b>"
-msgstr "<b>Текущие участники ACL</b>"
-
-#: src/eiciel_main_window.cpp:34
-msgid "Edit ACLs for enclosed files..."
+#: src/application.cpp:44
+msgid "Initial edit mode (default mode otherwise)"
 msgstr ""
 
-#: src/eiciel_participant_list.cpp:30
-msgid "User"
-msgstr "Пользователь"
+#: src/application.cpp:56
+msgid ""
+"Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
+msgstr ""
 
-#: src/eiciel_participant_list.cpp:31
-msgid "Group"
+#: src/application.cpp:96
+msgid "Graphical editor of file ACLs and extended attributes"
+msgstr ""
+
+#: src/application.cpp:100
+msgid "translator-credits"
+msgstr ""
+
+#: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
+msgid "Access Control List"
+msgstr "Список управления доступом"
+
+#: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
+#, fuzzy
+msgid "Extended attributes"
+msgstr "Дополнительные атрибуты пользователя"
+
+#: src/app_window.cpp:129
+msgid "Select file"
+msgstr ""
+
+#: src/app_window.cpp:133
+#, fuzzy
+msgid "Select directory"
+msgstr "Только каталоги"
+
+#: src/app_window.cpp:146 src/app_window.ui:37
+msgid "No file opened"
+msgstr "Нет открытых файлов"
+
+#: src/app_window.ui:16
+msgid "Open file"
+msgstr ""
+
+#: src/app_window.ui:21
+#, fuzzy
+msgid "Open directory"
+msgstr "Только каталоги"
+
+#: src/app_window.ui:78
+#, fuzzy
+msgid "Extended Attributes"
+msgstr "Дополнительные атрибуты пользователя"
+
+#: src/app_window.ui:99
+msgid "About Eiciel"
+msgstr ""
+
+#: src/app_window.ui:103
+msgid "Quit"
+msgstr ""
+
+#: src/enclosed_acl_editor_widget.ui:5
+#, fuzzy
+msgid "Edit ACLs for enclosed files"
+msgstr "<b>Текущие участники ACL</b>"
+
+#: src/enclosed_acl_editor_widget.ui:14
+msgid "Cancel"
+msgstr ""
+
+#: src/enclosed_acl_editor_widget.ui:19
+msgid "Apply"
+msgstr ""
+
+#: src/enclosed_acl_editor_widget.ui:44
+#, fuzzy
+msgid "Participants in ACL for enclosed files"
+msgstr "<b>Текущие участники ACL</b>"
+
+#: src/enclosed_acl_editor_widget.ui:59
+#, fuzzy
+msgid "Participants in ACL for enclosed directories"
+msgstr "<b>Текущие участники ACL</b>"
+
+#: src/nautilus_acl_model.cpp:31
+msgid "Read, write and execute"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:33
+msgid "Read and write"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:35
+msgid "Read and execute"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:37
+#, fuzzy
+msgid "Only read"
+msgstr "Только файлы"
+
+#: src/nautilus_acl_model.cpp:39
+msgid "Write and execute"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:41
+#, fuzzy
+msgid "Only write"
+msgstr "Только файлы"
+
+#: src/nautilus_acl_model.cpp:43
+#, fuzzy
+msgid "Only execute"
+msgstr "Только каталоги"
+
+#: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
+#: src/nautilus_acl_model.cpp:67
+msgid "No permission"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:53
+msgid "List directory, access, create and remove files"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:55
+msgid "List directory, no access to files"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:57
+msgid "List directory and access files"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:59
+msgid "List directory only, no access to files"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:61
+msgid "No list directory but access, create and remove"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:65
+msgid "No list directory and access files"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:101
+msgid "User owner"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:109
+#, fuzzy
+msgid "Group owner"
 msgstr "Группа"
 
-#: src/eiciel_participant_list.cpp:32
-msgid "Default participant"
-msgstr "Участник по умолчанию"
+#: src/nautilus_acl_model.cpp:115
+#, c-format
+msgid "User ACL: ‘%s’"
+msgstr ""
 
-#: src/eiciel_participant_list.cpp:37
-msgid "Add participant to ACL"
-msgstr "Добавить участника в ACL"
+#: src/nautilus_acl_model.cpp:121
+#, c-format
+msgid "Group ACL: ‘%s’"
+msgstr ""
 
-#: src/eiciel_participant_list.cpp:38
+#: src/nautilus_acl_model.cpp:127
+msgid "Mask limits Group owner, User ACL and Group ACL to"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:131
 #, fuzzy
-msgid "Add participant to directory ACL"
-msgstr "Добавить участника в ACL"
+msgid "Other users"
+msgstr "Другое"
 
-#: src/eiciel_participant_list.cpp:39
+#: src/nautilus_acl_model.cpp:137
+msgid "New files will have User owner"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:147
+msgid "New files will have Group owner"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:155
+#, c-format
+msgid "New files will have User ACL: ‘%s’"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:163
+#, c-format
+msgid "New files will have Group ACL: ‘%s‘"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:170
+msgid "New files will have Mask"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:175
+msgid "New files will have Other users"
+msgstr ""
+
+#: src/nautilus_menu_provider.cpp:69
 #, fuzzy
-msgid "Add participant to file ACL"
-msgstr "Добавить участника в ACL"
+msgid "Edit Access Control Lists…"
+msgstr "Список управления доступом"
 
-#: src/eiciel_participant_list.cpp:40
-msgid "Advanced features"
-msgstr "Дополнительные функции"
+#: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
+#, fuzzy
+msgid "Allows editing Access Control Lists"
+msgstr "Список управления доступом"
 
-#: src/eiciel_participant_list.cpp:42
-msgid "Name of participant"
-msgstr "Имя участника"
+#: src/nautilus_menu_provider.cpp:100
+#, fuzzy
+msgid "Edit extended attributes…"
+msgstr "Дополнительные атрибуты пользователя"
 
-#: src/eiciel_participant_list.cpp:44
-msgid "Also show system participants"
-msgstr "Также показывать системных участников"
-
-#: src/eiciel_participant_list.cpp:80
-msgid "Filter participants"
-msgstr "Фильтр по участникам"
-
-#: src/eiciel_participant_list.cpp:105
-msgid "Participant"
-msgstr "Участник"
-
-#: src/eiciel_participant_list.cpp:422
+#: src/participant_list_widget.cpp:395
 msgid "Participant not found"
 msgstr "Участник не найден"
 
-#: src/eiciel_acl_list.cpp:33
-msgid "There are ineffective permissions"
-msgstr "Существуют недействующие разрешения"
+#: src/participant_list_widget.ui:12
+msgid "User"
+msgstr "Пользователь"
 
-#: src/eiciel_acl_list.cpp:35
-msgid "Remove participant from ACL"
-msgstr "Удалить участника из ACL"
+#: src/participant_list_widget.ui:17
+#, fuzzy
+msgid "Group"
+msgstr "Группа"
 
-#: src/eiciel_acl_list.cpp:36
-msgid "Edit default participants"
-msgstr "Редактировать участников по умолчанию"
+#: src/participant_list_widget.ui:23
+msgid "Default participant"
+msgstr "Участник по умолчанию"
 
-#: src/eiciel_acl_list.cpp:79
-msgid "Entry"
-msgstr "Ввод"
+#: src/participant_list_widget.ui:28
+msgid "Filter participants"
+msgstr "Фильтр по участникам"
 
-#: src/eiciel_acl_list.cpp:82
-msgid "Read"
-msgstr "Чтение"
+#: src/participant_list_widget.ui:51
+msgid "Advanced features"
+msgstr "Дополнительные функции"
 
-#: src/eiciel_acl_list.cpp:95
-msgid "Write"
-msgstr "Запись"
+#: src/participant_list_widget.ui:61
+msgid "Name of participant"
+msgstr "Имя участника"
 
-#: src/eiciel_acl_list.cpp:107
-msgid "Execute"
-msgstr "Выполнение"
+#: src/participant_list_widget.ui:71
+msgid "Search"
+msgstr ""
+
+#: src/participant_list_widget.ui:80
+#, fuzzy
+msgid "Show system participants"
+msgstr "Также показывать системных участников"
+
+#: src/xattr_editor_widget.cpp:102
+msgid "Name"
+msgstr "Имя"
+
+#: src/xattr_editor_widget.cpp:145
+msgid "Value"
+msgstr "Значение"
+
+#: src/xattr_editor_widget.cpp:199
+msgid "There is already an attribute with this name"
+msgstr ""
+
+#: src/xattr_editor_widget.ui:27
+#, fuzzy
+msgid "Name of the new attribute"
+msgstr "Создать атрибут"
+
+#: src/xattr_editor_widget.ui:32
+#, fuzzy
+msgid "Value of the new attribute"
+msgstr "Дополнительные атрибуты пользователя"
+
+#~ msgid "Could not rename attribute name: "
+#~ msgstr "Не удалось переименовать атрибут: "
+
+#~ msgid "Could not change attribute value: "
+#~ msgstr "Не удалось изменить значение атрибута: "
+
+#~ msgid "Could not remove attribute: "
+#~ msgstr "Не удалось удалить атрибут: "
+
+#~ msgid "New value"
+#~ msgstr "Новое значение"
+
+#~ msgid "Could not add attribute: "
+#~ msgstr "Не удалось добавить атрибут: "
+
+#~ msgid "<b>File name</b>"
+#~ msgstr "<b>Имя файла</b>"
+
+#~ msgid "About..."
+#~ msgstr "О программе..."
+
+#, c-format
+#~ msgid "Could not show the help file: %s"
+#~ msgstr "Не удается показать файл справки: %s"
+
+#~ msgid "Choose a file or a directory"
+#~ msgstr "Выберите файл или каталог"
+
+#~ msgid "Could not open the file \""
+#~ msgstr "Не удалось открыть файл \""
+
+#~ msgid "Print version information"
+#~ msgstr "Печать сведений о версии"
+
+#~ msgid "Access control list editor"
+#~ msgstr "Редактор списка управления доступом"
+
+#~ msgid "Add participant to ACL"
+#~ msgstr "Добавить участника в ACL"
+
+#, fuzzy
+#~ msgid "Add participant to directory ACL"
+#~ msgstr "Добавить участника в ACL"
+
+#, fuzzy
+#~ msgid "Add participant to file ACL"
+#~ msgstr "Добавить участника в ACL"
+
+#~ msgid "Remove participant from ACL"
+#~ msgstr "Удалить участника из ACL"
+
+#~ msgid "Entry"
+#~ msgstr "Ввод"
 
 #~ msgid "None"
 #~ msgstr "нет"
-
-#~ msgid "Only files"
-#~ msgstr "Только файлы"
-
-#~ msgid "Only directories"
-#~ msgstr "Только каталоги"
 
 #~ msgid "Both files and directories"
 #~ msgstr "Файлы и каталоги"
