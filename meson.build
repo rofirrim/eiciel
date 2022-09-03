@@ -10,6 +10,8 @@ email = 'rofirrim@gmail.com'
 
 conf_data = configuration_data()
 
+gnome = import('gnome')
+
 # A few configuration variables that autoconf provides
 # FIXME: Do we still need them?
 conf_data.set_quoted('VERSION', meson.project_version())

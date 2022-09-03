@@ -1,43 +1,37 @@
-# This ignores translations but otherwise it seems impossible to tell
-# yelp where to find the help, specially if installed in a nonstandard
-# location.
-eicieldocdir = get_option('datadir') / 'help' / 'C' / 'eiciel'
+pages = [ 'add.page',
+  'concepts.page',
+  'default.page',
+  'edit.page',
+  'index.page',
+  'mask.page',
+  'open.page',
+  'remove.page',
+  'requirements.page',
+  'view.page',
+  'xattr.page']
 
-# Documents
-install_data(
-  'C/add.page',
-  'C/concepts.page',
-  'C/default.page',
-  'C/edit.page',
-  'C/index.page',
-  'C/mask.page',
-  'C/open.page',
-  'C/remove.page',
-  'C/requirements.page',
-  'C/view.page',
-  'C/xattr.page',
-  install_dir : eicieldocdir)
+media = [
+  'figures/acl_entry.png',
+  'figures/acl_permissions.png',
+  'figures/mask_detail.png',
+  'figures/open_file_nautilus.png',
+  'figures/open_file.png',
+  'figures/screen_xattr.png',
+  'figures/ugo_permissions.png',
+  'figures/others-default.png',
+  'figures/others.png',
+  'figures/group-acl-default.png',
+  'figures/group-acl.png',
+  'figures/group-default.png',
+  'figures/group.png',
+  'figures/mask-default.png',
+  'figures/mask.png',
+  'figures/user-acl-default.png',
+  'figures/user-acl.png',
+  'figures/user-default.png',
+  'figures/user.png']
 
-eicieldocfiguresdir = eicieldocdir / 'figures'
-
-install_data(
-  'C/figures/acl_entry.png',
-  'C/figures/acl_permissions.png',
-  'C/figures/mask_detail.png',
-  'C/figures/open_file_nautilus.png',
-  'C/figures/open_file.png',
-  'C/figures/screen_xattr.png',
-  'C/figures/ugo_permissions.png',
-  '../img/others-default.png',
-  '../img/others.png',
-  '../img/group-acl-default.png',
-  '../img/group-acl.png',
-  '../img/group-default.png',
-  '../img/group.png',
-  '../img/mask-default.png',
-  '../img/mask.png',
-  '../img/user-acl-default.png',
-  '../img/user-acl.png',
-  '../img/user-default.png',
-  '../img/user.png',
-  install_dir : eicieldocfiguresdir)
+gnome.yelp(meson.project_name(),
+           sources: pages,
+           media: media,
+           symlink_media: false)

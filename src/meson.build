@@ -34,7 +34,6 @@ if user_attributes_feature.enabled()
   common_sources += xattr_sources
 endif
 
-gnome = import('gnome')
 eiciel_resources = gnome.compile_resources(
   'eiciel-resources',
   'eiciel.gresource.xml',
