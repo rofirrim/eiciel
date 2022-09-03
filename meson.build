@@ -28,7 +28,7 @@ conf_data.set_quoted('LOCALEDIR', localedir)
 gtkmm4 = dependency('gtkmm-4.0', version: '>= 4.6')
 giomm = dependency('giomm-2.68', version: '>= 2.68')
 libnautilus_extensions4 = dependency('libnautilus-extension-4',
-                                      version: '>= 43.rc')
+                                      version: '>= 43')
 thread_dep = dependency('threads')
 
 # Compiler
