@@ -1,8 +1,7 @@
 # This ignores translations but otherwise it seems impossible to tell
 # yelp where to find the help, specially if installed in a nonstandard
 # location.
-eicieldocdir = get_option('datadir') / 'gnome' / 'help' / 'eiciel' / 'C'
-abs_eicieldocdir =  get_option('prefix') / eicieldocdir
+eicieldocdir = get_option('datadir') / 'help' / 'C' / 'eiciel'
 
 # Documents
 install_data(
@@ -19,7 +18,7 @@ install_data(
   'C/xattr.page',
   install_dir : eicieldocdir)
 
-eicieldocfiguresdir = get_option('datadir') / 'gnome' / 'help' / 'eiciel' / 'C' / 'figures'
+eicieldocfiguresdir = eicieldocdir / 'figures'
 
 install_data(
   'C/figures/acl_entry.png',

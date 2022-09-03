@@ -17,7 +17,7 @@
     <tbody>
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/user.png"/>
+            <media type="image" src="figures/user.png"/>
         </p></td>
         <td><p>
           <em>Owner user.</em> Is the UGO User. 
@@ -26,7 +26,7 @@
       </tr>
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/group.png"/>
+            <media type="image" src="figures/group.png"/>
         </p></td>
         <td><p><em>Owner group.</em> Is the UGO Group.
             There is always this entry and cannot be removed.
@@ -34,7 +34,7 @@
       </tr>
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/others.png"/>
+            <media type="image" src="figures/others.png"/>
         </p></td>
         <td><p><em>Other.</em> Is the UGO Other.
 There is always this entry and cannot be removed.
@@ -42,21 +42,21 @@ There is always this entry and cannot be removed.
       </tr>
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/user-acl.png"/>
+            <media type="image" src="figures/user-acl.png"/>
         </p></td>
         <td><p><em>User.</em> A file can have zero or more entries of this kind.
 </p></td>
       </tr>
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/group-acl.png"/>
+            <media type="image" src="figures/group-acl.png"/>
         </p></td>
         <td><p><em>Group.</em> A file can have zero or more entries of this kind.
 </p></td>
       </tr>
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/mask.png"/>
+            <media type="image" src="figures/mask.png"/>
         </p></td>
         <td><p><em>Mask.</em> Contains the maximum permissions that an ACL entry will effectively have.
 This entry only is available if there are any User or Group entries.
@@ -67,7 +67,7 @@ This entry only is available if there are any User or Group entries.
       <!-- DEFAULT -->
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/user-default.png"/>
+            <media type="image" src="figures/user-default.png"/>
         </p></td>
         <td><p><em>Default owner user.</em> Is the User UGO by default in the new files of the directory.
 There is always this entry and cannot be removed. 
@@ -76,7 +76,7 @@ This entry only can be found in a directory.
       </tr>
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/group-default.png"/>
+            <media type="image" src="figures/group-default.png"/>
         </p></td>
         <td><p><em>Default owner group.</em> Is the Group UGO by default in the new files of the directory.
 There is always this entry and cannot be removed. 
@@ -85,7 +85,7 @@ This entry only can be found in a directory.
       </tr>
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/others-default.png"/>
+            <media type="image" src="figures/others-default.png"/>
         </p></td>
         <td><p><em>Default Other</em> Is the Other UGO by default in the new files of the directory.
 There is always this entry and cannot be removed. 
@@ -94,7 +94,7 @@ This entry only can be found in a directory.
       </tr>
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/user-acl-default.png"/>
+            <media type="image" src="figures/user-acl-default.png"/>
         </p></td>
         <td><p><em>Default User.</em> A directory can have zero or more entries of this kind. 
 New files in the directory will have this entry by default.
@@ -103,7 +103,7 @@ This entry only can be found in a directory.
       </tr>
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/group-acl-default.png"/>
+            <media type="image" src="figures/group-acl-default.png"/>
         </p></td>
         <td><p><em>Default group.</em> A directory can have zero ore more entries of this kind.
 New files in the directory will have this entry by default.
@@ -112,7 +112,7 @@ This entry only can be found in a directory.
       </tr>
       <tr>
         <td><p>
-            <media type="image" mime="image/png" src="figures/mask-default.png"/>
+            <media type="image" src="figures/mask-default.png"/>
         </p></td>
         <td><p><em>Default Mask.</em> Contains the maximum permissions that a default ACL entry will effectively have.
 This entry only is available if there are any Default User or Default Group entries.

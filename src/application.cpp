@@ -78,47 +78,14 @@ Glib::RefPtr<Application> Application::create() {
       /* after */ false);
 
   Glib::RefPtr<Gio::SimpleAction> about_action = app->add_action("about");
+  about_action->signal_activate().connect(
+      [app](const Glib::VariantBase &) { app->on_about(); });
 
-  about_action->signal_activate().connect([app](const Glib::VariantBase &) {
-    Gtk::Window *win = app->get_active_window();
-    if (!win)
-      return;
-
-    auto about = new Gtk::AboutDialog();
-
-    about->set_program_name("Eiciel");
-    Glib::RefPtr<Gdk::Texture> logo = Gdk::Texture::create_from_resource(
-        "/org/roger_ferrer/eiciel/icon_eiciel_128.png");
-    about->set_logo(logo);
-
-    about->set_version(VERSION);
-    about->set_copyright("Copyright 2004-2022 - Roger Ferrer Ibáñez");
-    about->set_comments(_("Graphical editor of file ACLs and extended attributes"));
-    about->set_website_label("https://rofi.roger-ferrer.org/eiciel");
-    about->set_website("https://rofi.roger-ferrer.org/eiciel");
-
-    about->set_translator_credits(_("translator-credits"));
-    about->set_license_type(Gtk::License::GPL_2_0);
-    about->set_hide_on_close();
-
-    about->signal_hide().connect(
-        [about, logo]() mutable {
-          if (logo) {
-            logo->unreference();
-            logo = nullptr;
-          }
-          delete about;
-          about = nullptr;
-        },
-        false);
-
-    about->set_modal();
-    about->set_transient_for(*win);
-    about->present();
-  });
+  Glib::RefPtr<Gio::SimpleAction> help_action = app->add_action("help");
+  help_action->signal_activate().connect(
+      [app](const Glib::VariantBase &) { app->on_help(); });
 
   Glib::RefPtr<Gio::SimpleAction> quit_action = app->add_action("quit");
-
   quit_action->signal_activate().connect(
       [app](const Glib::VariantBase &) { app->quit(); });
 
@@ -195,4 +162,49 @@ void Application::on_open(const Gio::Application::type_vec_files &files,
 
 void Application::on_hide_window(Gtk::Window *window) { delete window; }
 
+void Application::on_about() {
+    Gtk::Window *win = get_active_window();
+    if (!win)
+      return;
+
+    auto about = new Gtk::AboutDialog();
+
+    about->set_program_name("Eiciel");
+    Glib::RefPtr<Gdk::Texture> logo = Gdk::Texture::create_from_resource(
+        "/org/roger_ferrer/eiciel/icon_eiciel_128.png");
+    about->set_logo(logo);
+
+    about->set_version(VERSION);
+    about->set_copyright("Copyright 2004-2022 - Roger Ferrer Ibáñez");
+    about->set_comments(_("Graphical editor of file ACLs and extended attributes"));
+    about->set_website_label("https://rofi.roger-ferrer.org/eiciel");
+    about->set_website("https://rofi.roger-ferrer.org/eiciel");
+
+    about->set_translator_credits(_("translator-credits"));
+    about->set_license_type(Gtk::License::GPL_2_0);
+    about->set_hide_on_close();
+
+    about->signal_hide().connect(
+        [about, logo]() mutable {
+          if (logo) {
+            logo->unreference();
+            logo = nullptr;
+          }
+          delete about;
+          about = nullptr;
+        },
+        false);
+
+    about->set_modal();
+    about->set_transient_for(*win);
+    about->present();
+}
+
+void Application::on_help() {
+  Gtk::Window *win = get_active_window();
+  if (!win)
+    return;
+  // This function is not wrapped by gtkmm, so let's call the C counterpart.
+  gtk_show_uri(win->gobj(), "help:eiciel", GDK_CURRENT_TIME);
+}
 }
