@@ -10,7 +10,14 @@
   </info>
   <title>Visualizing ACLs</title>
 
-  <p>An ACL is a set of entries. Each entry has a kind and each kind is represented by a different icon.</p>
+  <p>An ACL is a set of entries. Each entry has a kind and each kind is represented by a different icon both in the ACL entry list and in the Participant list.</p>
+
+   <figure>
+   	<title>ACL Editor Window</title>
+       <media type="image" src="figures/acl_editor_window.png"/>
+   </figure>
+
+   <p>The meaning of the icons is described in the table below.</p>
 
   <table frame="all" rules="rows">
     <title>Icons used in <app>Eiciel</app></title>
@@ -121,4 +128,5 @@ This entry only is available if there are any Default User or Default Group entr
       </tr>
     </tbody>
   </table>
+
 </page>

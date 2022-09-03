@@ -25,9 +25,14 @@ page.
 <section id="add-xattr">
 <title>Adding an attribute</title>
 <p>
-You can add an attribute with <gui>Add</gui>. A default attribute name and value will be created.
-You can edit them by clicking on the attribute list.
+To add an attribute, type its name and the associated piece of text (called the value) in the two text boxes found at the bottom of the extended attributes list.
+You can press the rightmost button to add the entry to the list.
 </p>
+
+<p>Pressing return in the edit box for the name will take you to the value edit box. Pressing return in the value edit box will add the attribute.</p>
+
+<p>Two attributes cannot have the same name. One or more attribute can have the
+same content as their value which can even be empty.</p>
 
 
 <note style="warning">
@@ -45,7 +50,7 @@ attribute values.
 <section id="remove-xattr">
 <title>Removing an attribute</title>
 <p>
-To remove an attribute, select it from the list and press <gui>Remove</gui>.
+Use the rightmost bottom on the row of the attribute you want to remove.
 </p>
 
 </section>

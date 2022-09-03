@@ -1,0 +1,30 @@
+<page xmlns="http://projectmallard.org/1.0/"
+        type="topic"
+        id="properties">
+  <info>
+    <link type="guide" xref="edit#ops"/>
+    <link type="seealso" xref="concepts"/>
+    <desc>
+	It is possible to visualize (but not edit) the ACLs and extended properties in <app>GNOME Files</app>.
+    </desc>
+  </info>
+  <title>Properties in Files</title>
+
+   <p>
+   In <app>GNOME Files</app> right-click on the file or directory. Then press <gui style="menuitem">Properties</gui>. For files that contain ACLs or Extended Attributes, you can visualize them (but not edit).
+   </p>
+   
+   <figure>
+   	<title>Properties of ACLs and Extended Attributes in <app>GNOME Files</app> Property page</title>
+       <media type="image" src="figures/properties_nautilus.png"/>
+   </figure>
+
+   <figure>
+   	<title>Visualizing ACLs in <app>GNOME Files</app> Property page</title>
+       <media type="image" src="figures/properties_nautilus_acl.png"/>
+   </figure>
+   <figure>
+   	<title>Visualizing Extended Attributes in <app>GNOME Files</app> Property page</title>
+       <media type="image" src="figures/properties_nautilus_xattr.png"/>
+   </figure>
+</page>

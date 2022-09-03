@@ -10,7 +10,7 @@
 <title>Open a file</title>
 
 <p>
-<app>Eiciel</app> can be used either in the <app>Nautilus</app> file explorer 
+<app>Eiciel</app> can be open from the <app>Files</app> application
 or standalone. Both scenarios only differ in the way the files are opened.
 For the rest they are the same.
 </p>
@@ -19,9 +19,10 @@ For the rest they are the same.
 
 <title>Standalone application</title>
 <p>
-When you start <app>Eiciel</app> no file is opened. You can open a file pressing 
-<gui>Open</gui>. A file selection dialog will appear
-where you can choose a file or a directory.
+When you start <app>Eiciel</app> no file is opened. You can open a file
+pressing <gui style="button">Open file</gui>. If you want to open a directory
+use <gui style="button">Open directory</gui>. I both cases a selection dialog will
+appear where you can choose a file or a directory.
 </p>
 
 <figure>
@@ -32,13 +33,13 @@ where you can choose a file or a directory.
 </section>
 
 <section id="open-nautilus">
-<title>Nautilus</title>
+<title><app>GNOME Files</app></title>
 <p>
-In Nautilus right-click on the file or directory. Then press <gui>Properties</gui> and activate the <gui>Access Control List</gui> tab.
+In <app>GNOME Files</app> right-click on the file or directory. Then press <gui style="menuitem">Edit Access Control List…</gui>. This will start Eiciel directly in ACL editing mode.
 </p>
 
 <figure>
-	<title>Opening a file in Nautilus</title>
+	<title>Opening a file in <app>GNOME Files</app></title>
     <media type="image" src="figures/open_file_nautilus.png"/>
 </figure>
 
@@ -52,7 +53,6 @@ for further information about the ACL support needed in your system.
 </p>
 </note>
 </section>
-
 
 </page>
 

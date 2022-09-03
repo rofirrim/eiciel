@@ -9,8 +9,9 @@
 <title>Editing default ACL entries</title>
 
 <p>
-Opening a directory instead of a file enables <gui>Default ACL</gui>
-and <gui>Default</gui> buttons.
+Opening a directory instead of a file enables <gui style="button">Edit default
+participants</gui> toggle button and the <gui style="checkbox">Default</gui>
+checkbox.
 </p>
 
 <note>
@@ -24,16 +25,21 @@ different icons for default ACL entries.
 </note>
 
 <p>
-<gui>Edit default ACL</gui> can be used to add or remove 
+<gui style="button">Edit default participants</gui> can be used to add or remove 
 default ACL entries. When there are no ACL default entries this
 button remains deactivated. Activating it adds basic default ACL entries.
 It will be always activated if there is any default ACL entry. Deactivating
 it implies removing all default ACL entries.
 </p>
 
+<p>
+In the list of participants, you can add a default participant activating the
+<gui style="checkbox">Default</gui> checkbox.
+</p>
+
 <note style="warning">
 <p>
-If you deactivate the <gui>Edit default ACL</gui> you wil be
+If you deactivate the <gui style="button">Edit default participants</gui> you wil be
 asked if you want to remove all default ACL entries. If you answer
 affirmatively <em>all</em> default ACL entries will be
 removed.

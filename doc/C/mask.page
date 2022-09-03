@@ -15,7 +15,7 @@ group owner and group entries.
 </p>
 
 <p>
-If the mask disallows a permission to be effective <app>Eiciel</app> puts an exclamation
+If the mask disallows a permission to be effective <app>Eiciel</app> puts a warning sign
 mark next to the uneffective permission.
 </p>
 

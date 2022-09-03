@@ -15,9 +15,15 @@
 To be useful <app>Eiciel</app> needs an ACL-enabled system.
 </p>
 
+<note style="tip">
+Most Linux distributions now contain default ACL and extended attribute enabled
+by default, so the following section contains information that requires no
+immediate action for most users.
+</note>
+
 <note style="advanced">
 <p>
-ACL support is given by the operating system. Nowadays only Linux 2.6 (or 2.4
+ACL support is given by the operating system. Currently, only Linux 2.6 (or 2.4
 with the proper patch) and FreeBSD 5 support ACL. However not all the filesystems
 that can be used on those systems have support for ACL.
 </p>

@@ -9,15 +9,16 @@
 
 <p>
 Users or groups, called collectively as <em>Participants</em> of your system can be added as ACL entries.
-Choose the kind of entry selecting <gui style="button">User</gui> or <gui>Groups</gui>.
+Choose the kind of entry selecting <gui style="button">User</gui> or <gui style="button">Groups</gui>.
 Depending on this the bottom list will show the users or groups of your system.
 </p>
 
 <p>
-You can add the user or group by selecting on the list and pressing <gui
-style="button">Add participant to ACL</gui>. After this, the participant, will
-appear as a new entry in the top list.
+You can add the user or group by pressing the button at the rightmost column in the row of the participant. on the list and pressing.
 </p>
 
+<p>
+If the file whose ACLs you are editing is a directory, the checkbox <gui style="checkbox">Default</gui> can be activated to add Default participants.
+</p>
 
 </page>

@@ -7,6 +7,7 @@ pages = [ 'add.page',
   'open.page',
   'remove.page',
   'requirements.page',
+  'properties.page',
   'view.page',
   'xattr.page']
 
