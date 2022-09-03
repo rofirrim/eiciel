@@ -4,9 +4,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2019-06-17 00:49+0000\n"
+"PO-Revision-Date: 2022-09-03 13:21+0000\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/eiciel/master/ja/"
 ">\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -33,32 +33,29 @@ msgstr "ACLエントリを変更できませんでした: "
 #: src/acl_editor_controller.cpp:350
 #, c-format
 msgid "Exception when setting ACL of file '%s': '%s'"
-msgstr ""
+msgstr "ファイル '%s' の ACL 設定時に例外が発生しました: '%s'"
 
 #. Catch-all to avoid crashing nautilus
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr ""
+msgstr "ファイル '%s' の ACL 設定時に不明な例外が発生しました"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "ACLデフォルトエントリをすべて削除しますか?"
 
 #: src/acl_editor_widget.ui:15
-#, fuzzy
 msgid "Applying ACLs to enclosed files"
-msgstr "同封されているファイルに対する ACL の編集"
+msgstr "同封されているファイルに対して ACL を適用しています"
 
 #: src/acl_editor_widget.ui:34
-#, fuzzy
 msgid "Current participants in ACL"
-msgstr "<b>ACL 内に書かれている現在の参加者</b>"
+msgstr "ACL 内に書かれている現在の参加者"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
-#, fuzzy
 msgid "Available participants"
-msgstr "<b>利用可能な参加者</b>"
+msgstr "利用可能な参加者"
 
 #: src/acl_editor_widget.ui:65
 msgid "Edit ACLs for enclosed files..."
@@ -122,38 +119,36 @@ msgstr "デフォルトのACL記述が誤っています"
 
 #: src/application.cpp:44
 msgid "Initial edit mode (default mode otherwise)"
-msgstr ""
+msgstr "初期編集モード (他の場合は既定のモード)"
 
 #: src/application.cpp:56
 msgid ""
 "Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
-msgstr ""
+msgstr "'edit-mode' オプションに対する値が正しくありません。指定可能な値は 'acl' もしくは 'xattr' です\n"
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "ファイルの ACL と拡張属性に対するグラフィカルエディタ"
 
 #: src/application.cpp:100
 msgid "translator-credits"
-msgstr ""
+msgstr "翻訳者一覧"
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
 msgstr "アクセス制御リスト"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
-#, fuzzy
 msgid "Extended attributes"
-msgstr "拡張ユーザ属性"
+msgstr "拡張属性"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "ファイルの選択"
 
 #: src/app_window.cpp:133
-#, fuzzy
 msgid "Select directory"
-msgstr "ディレクトリのみ"
+msgstr "ディレクトリの選択"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
@@ -161,178 +156,164 @@ msgstr "開かれているファイルはありません"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "ファイルを開く"
 
 #: src/app_window.ui:21
-#, fuzzy
 msgid "Open directory"
-msgstr "ディレクトリのみ"
+msgstr "ディレクトリを開く"
 
 #: src/app_window.ui:78
-#, fuzzy
 msgid "Extended Attributes"
-msgstr "拡張ユーザ属性"
+msgstr "拡張属性"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "Eiciel について"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "終了 (_q)"
 
 #: src/enclosed_acl_editor_widget.ui:5
 msgid "Edit ACLs for enclosed files"
 msgstr "同封されているファイルに対する ACL の編集"
 
 #: src/enclosed_acl_editor_widget.ui:14
-#, fuzzy
 msgid "Cancel"
 msgstr "キャンセル (_c)"
 
 #: src/enclosed_acl_editor_widget.ui:19
-#, fuzzy
 msgid "Apply"
 msgstr "適用 (_a)"
 
 #: src/enclosed_acl_editor_widget.ui:44
-#, fuzzy
 msgid "Participants in ACL for enclosed files"
-msgstr "<b>同封されているファイルに対する ACL の参加者</b>"
+msgstr "同封されているファイルに対する ACL の参加者"
 
 #: src/enclosed_acl_editor_widget.ui:59
-#, fuzzy
 msgid "Participants in ACL for enclosed directories"
-msgstr "<b>同封されているディレクトリに対する ACL の参加者</b>"
+msgstr "同封されているディレクトリに対する ACL の参加者"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
-msgstr ""
+msgstr "読み込み／書き込み／実行"
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "読み込み／書き込み"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
-msgstr ""
+msgstr "読み込み／実行"
 
 #: src/nautilus_acl_model.cpp:37
-#, fuzzy
 msgid "Only read"
-msgstr "ファイルのみ"
+msgstr "読み込みのみ"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
-msgstr ""
+msgstr "書き込み／実行"
 
 #: src/nautilus_acl_model.cpp:41
-#, fuzzy
 msgid "Only write"
-msgstr "ファイルのみ"
+msgstr "書き込みのみ"
 
 #: src/nautilus_acl_model.cpp:43
-#, fuzzy
 msgid "Only execute"
-msgstr "ディレクトリのみ"
+msgstr "実行のみ"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
 msgid "No permission"
-msgstr ""
+msgstr "許可無し"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr ""
+msgstr "ディレクトリの一覧表示／ファイルへのアクセス／ファイルの削除"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "ディレクトリの一覧表示 (ファイルへのアクセス無し)"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "ディレクトリの一覧表示とファイルへのアクセス"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "ディレクトリの一覧表示のみ (ファイルへのアクセス無し)"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
-msgstr ""
+msgstr "ファイルへのアクセスと作成／削除のみ (ディレクトリの一覧表示無し)"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "ディレクトリの一覧表示無し／ファイルへのアクセス無し"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "ユーザ所有者"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "グループ"
+msgstr "グループ所有者"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "ユーザ ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "グループ ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
-msgstr ""
+msgstr "グループ所有者／ユーザ ACL／グループ ACL にマスクが設定されています"
 
 #: src/nautilus_acl_model.cpp:131
-#, fuzzy
 msgid "Other users"
-msgstr "その他"
+msgstr "その他のユーザ"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "新規ファイルに対してユーザ所有者になる"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "新規ファイルに対してグルーブ所有者になる"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "新規ファイルに適用するユーザ ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "新規ファイルに適用するグループ ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "新規ファイルに対してマスクを設定する"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
-msgstr ""
+msgstr "新規ファイルに対してその他のユーザを設定する"
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "アクセス制御リスト"
+msgstr "アクセス制御リストの編集…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "アクセス制御リスト"
+msgstr "アクセス制御リストの編集を許可"
 
 #: src/nautilus_menu_provider.cpp:100
-#, fuzzy
 msgid "Edit extended attributes…"
-msgstr "拡張ユーザ属性"
+msgstr "拡張属性の編集…"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
@@ -343,7 +324,6 @@ msgid "User"
 msgstr "ユーザ"
 
 #: src/participant_list_widget.ui:17
-#, fuzzy
 msgid "Group"
 msgstr "グループ"
 
@@ -365,12 +345,11 @@ msgstr "参加者の名前"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "検索"
 
 #: src/participant_list_widget.ui:80
-#, fuzzy
 msgid "Show system participants"
-msgstr "システム参加者も表示"
+msgstr "システム参加者の表示"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
@@ -382,17 +361,15 @@ msgstr "値"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
-msgstr ""
+msgstr "その名前の属性は既に存在しています"
 
 #: src/xattr_editor_widget.ui:27
-#, fuzzy
 msgid "Name of the new attribute"
-msgstr "新しい属性"
+msgstr "新しい属性の名前"
 
 #: src/xattr_editor_widget.ui:32
-#, fuzzy
 msgid "Value of the new attribute"
-msgstr "拡張ユーザ属性"
+msgstr "新しい属性の値"
 
 #~ msgid "Could not rename attribute name: "
 #~ msgstr "属性名を変更できません: "
