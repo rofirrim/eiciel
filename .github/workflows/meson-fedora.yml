@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: fedora:37
-      options: --cpus 1
+      options: --security-opt seccomp=unconfined
     steps:
     - uses: actions/checkout@v3
       with:
