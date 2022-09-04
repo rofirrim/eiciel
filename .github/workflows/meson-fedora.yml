@@ -1,0 +1,28 @@
+name: C/C++ CI Meson
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: fedora:37
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup dependencies
+      run: |
+        id
+        dnf -y install git gcc-c++ gtkmm4.0-devel nautilus-devel libacl-devel libattr-devel meson itstool
+    - name: Setup meson
+      run: |
+        mkdir build
+        cd build && meson ..
+    - name: Build
+      working-directory: ./build
+      run: meson compile
+    - name: Test distributable
+      working-directory: ./build
+      run: meson dist
