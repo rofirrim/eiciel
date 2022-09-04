@@ -40,4 +40,5 @@ jobs:
     - name: Dist
       working-directory: /home/user/eiciel-src/builddir
       run: |
+        sudo -u user -- git status
         sudo -u user -- meson dist
