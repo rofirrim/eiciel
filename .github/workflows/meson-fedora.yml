@@ -15,6 +15,7 @@ jobs:
       options: --security-opt seccomp=unconfined
     steps:
     - name: Setup git
+      run: |
         id
         ls -la
         dnf -y install git
