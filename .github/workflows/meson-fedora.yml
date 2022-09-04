@@ -1,10 +1,11 @@
-name: C/C++ CI Meson
+name: C/C++ CI Fedora 37
 
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build:
