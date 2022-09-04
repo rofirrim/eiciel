@@ -14,21 +14,26 @@ jobs:
       image: fedora:37
       options: --cpus 1
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+      with:
+        path: 'eiciel-src'
     - name: Setup dependencies
       run: |
         id
         ls -l
         dnf -y install git gcc-c++ gtkmm4.0-devel nautilus-devel libacl-devel libattr-devel meson itstool
-        adduser user
+        adduser -m -U -d /home/user  user
+        mv eiciel-src /home/user
+        chown -R user:user eiciel-src
     - name: Configure
+      working-directory: ./eiciel-src
       run: |
         sudo -i -u user -- meson setup builddir
     - name: Build
-      working-directory: ./builddir
+      working-directory: ./eicel-src/builddir
       run: |
         sudo -i -u user -- meson compile
     - name: Dist
-      working-directory: ./builddir
+      working-directory: ./eicel-src/builddir
       run: |
         sudo -i -u user -- meson dist
