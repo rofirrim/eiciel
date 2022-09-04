@@ -73,8 +73,8 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
   auto cb_acl = [](NautilusMenuItem *instance, NautilusFileInfo *file_info) {
     GFile *location = nautilus_file_info_get_location(file_info);
     char *local_file = g_file_get_path(location);
-    g_return_if_fail(local_file);
     g_object_unref(location);
+    g_return_if_fail(local_file);
 
     gchar* quoted_local_file = g_shell_quote(local_file);
 
@@ -102,8 +102,8 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
   auto cb_xattr = [](NautilusMenuItem *instance, NautilusFileInfo *file_info) {
     GFile *location = nautilus_file_info_get_location(file_info);
     char *local_file = g_file_get_path(location);
-    g_return_if_fail(local_file);
     g_object_unref(location);
+    g_return_if_fail(local_file);
 
     gchar* quoted_local_file = g_shell_quote(local_file);
 
