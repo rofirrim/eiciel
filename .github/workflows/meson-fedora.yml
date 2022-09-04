@@ -16,14 +16,17 @@ jobs:
     - name: Setup dependencies
       run: |
         id
+        ls -l
         dnf -y install git gcc-c++ gtkmm4.0-devel nautilus-devel libacl-devel libattr-devel meson itstool
-    - name: Setup meson
+        adduser user
+    - name: Configure
       run: |
-        mkdir build
-        cd build && meson ..
+        sudo -i -u user -- meson setup builddir
     - name: Build
-      working-directory: ./build
-      run: meson compile
-    - name: Test distributable
-      working-directory: ./build
-      run: meson dist
+      working-directory: ./builddir
+      run: |
+        sudo -i -u user -- meson compile
+    - name: Dist
+      working-directory: ./builddir
+      run: |
+        sudo -i -u user -- meson dist
