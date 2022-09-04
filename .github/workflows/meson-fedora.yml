@@ -11,7 +11,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: fedora:37
-      options: --security-opt seccomp=unconfined
     steps:
     - uses: actions/checkout@v2
     - name: Setup dependencies
