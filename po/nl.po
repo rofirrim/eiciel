@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2022-09-04 00:13+0000\n"
+"PO-Revision-Date: 2022-09-05 00:13+0000\n"
 "Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
 "Language-Team: Dutch <https://l10n.opensuse.org/projects/eiciel/master/nl/>\n"
 "Language: nl\n"
@@ -124,32 +124,32 @@ msgstr "Initiële modus van bewerken (anders standaard modus)"
 msgid ""
 "Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
 msgstr ""
+"Ongeldige waarde voor optie bewerkingsmodus'. Geldige opties zijn 'acl' of "
+"'xattr'\n"
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "Grafische editor van ACL's van bestanden en uitgebreide attributen"
 
 #: src/application.cpp:100
 msgid "translator-credits"
-msgstr ""
+msgstr "vertaler-credits"
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
 msgstr "Toegangscontrolelijst"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
-#, fuzzy
 msgid "Extended attributes"
-msgstr "Uitgebreide gebruikersattributen"
+msgstr "Uitgebreide attributen"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "Bestand selecteren"
 
 #: src/app_window.cpp:133
-#, fuzzy
 msgid "Select directory"
-msgstr "Alleen directory's"
+msgstr "Map selecteren"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
@@ -157,178 +157,165 @@ msgstr "Geen bestand geopend"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "Bestand openen"
 
 #: src/app_window.ui:21
-#, fuzzy
 msgid "Open directory"
-msgstr "Alleen directory's"
+msgstr "Map openen"
 
 #: src/app_window.ui:78
-#, fuzzy
 msgid "Extended Attributes"
-msgstr "Uitgebreide gebruikersattributen"
+msgstr "Uitgebreide attributen"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "Info over Eiciel"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "Afsluiten"
 
 #: src/enclosed_acl_editor_widget.ui:5
 msgid "Edit ACLs for enclosed files"
 msgstr "ACL's voor ingesloten bestanden bewerken"
 
 #: src/enclosed_acl_editor_widget.ui:14
-#, fuzzy
 msgid "Cancel"
-msgstr "_Annuleren"
+msgstr "Annuleren"
 
 #: src/enclosed_acl_editor_widget.ui:19
-#, fuzzy
 msgid "Apply"
-msgstr "Toep_assen"
+msgstr "Toepassen"
 
 #: src/enclosed_acl_editor_widget.ui:44
-#, fuzzy
 msgid "Participants in ACL for enclosed files"
-msgstr "<b>Deelnemers in ACL voor ingesloten bestanden</b>"
+msgstr "Deelnemers in ACL voor ingesloten bestanden"
 
 #: src/enclosed_acl_editor_widget.ui:59
-#, fuzzy
 msgid "Participants in ACL for enclosed directories"
-msgstr "<b>Deelnemers in ACL voor ingesloten mappen</b>"
+msgstr "Deelnemers in ACL voor ingesloten mappen"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
-msgstr ""
+msgstr "Lezen, schrijven en uitvoeren"
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "Lezen en schrijven"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
-msgstr ""
+msgstr "Lezen en uitvoeren"
 
 #: src/nautilus_acl_model.cpp:37
-#, fuzzy
 msgid "Only read"
-msgstr "Alleen bestanden"
+msgstr "Alleen lezen"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
-msgstr ""
+msgstr "Schrijven en uitvoeren"
 
 #: src/nautilus_acl_model.cpp:41
-#, fuzzy
 msgid "Only write"
-msgstr "Alleen bestanden"
+msgstr "Alleen schrijven"
 
 #: src/nautilus_acl_model.cpp:43
-#, fuzzy
 msgid "Only execute"
-msgstr "Alleen directory's"
+msgstr "Alleen uitvoeren"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
 msgid "No permission"
-msgstr ""
+msgstr "Geen rechten"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr ""
+msgstr "Lijst van map maken, toegang, aanmaken en verwijderen van bestanden"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "Lijst van map maken, geen toegang tot bestanden"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "Lijst van map maken en toegang tot bestanden"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "Alleen lijst van map maken, geen toegang tot bestanden"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
-msgstr ""
+msgstr "Geen lijst van map maken maar toegang, aanmaken en verwijderen"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "Geen lijst van map maken en toegang tot bestanden"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "Eigenaar is gebruiker"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "Groep"
+msgstr "Eigenaar is groep"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "ACL van gebruiker: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "ACL van groep: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
 msgstr ""
+"Masker beperkt tot eigenaar van groep, ACL van gebruiker en ACL van groep"
 
 #: src/nautilus_acl_model.cpp:131
-#, fuzzy
 msgid "Other users"
-msgstr "Overig"
+msgstr "Overige gebruikers"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "Nieuwe bestanden zullen gebruiker als eigenaar hebben"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "Nieuwe bestanden zullen als eigenaar groep hebben"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "Nieuwe bestanden zullen ACLvan gebruiker hebben: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "Nieuwe bestanden zullen ACL van groep hebben: ‘%s‘"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "Nieuwe bestanden zullen een masker hebben"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
-msgstr ""
+msgstr "Nieuwe bestanden zullen overige gebruikers hebben"
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "Toegangscontrolelijst"
+msgstr "Toegangscontrolelijsten (ACL's) bewerken…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "Toegangscontrolelijst"
+msgstr "Toegangscontrolelijsten bewerken is toegestaan"
 
 #: src/nautilus_menu_provider.cpp:100
-#, fuzzy
 msgid "Edit extended attributes…"
-msgstr "Uitgebreide gebruikersattributen"
+msgstr "Uitgebreide attributen bewerken…"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
@@ -339,7 +326,6 @@ msgid "User"
 msgstr "Gebruiker"
 
 #: src/participant_list_widget.ui:17
-#, fuzzy
 msgid "Group"
 msgstr "Groep"
 
@@ -361,12 +347,11 @@ msgstr "Naam van deelnemer"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "Zoeken"
 
 #: src/participant_list_widget.ui:80
-#, fuzzy
 msgid "Show system participants"
-msgstr "Ook systeemdeelnemers weergeven"
+msgstr "Systeemdeelnemers tonen"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
@@ -378,17 +363,15 @@ msgstr "Waarde"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
-msgstr ""
+msgstr "Er is al een attribuut met deze naam"
 
 #: src/xattr_editor_widget.ui:27
-#, fuzzy
 msgid "Name of the new attribute"
-msgstr "Nieuw attribuut"
+msgstr "Naam van het nieuwe attribuut"
 
 #: src/xattr_editor_widget.ui:32
-#, fuzzy
 msgid "Value of the new attribute"
-msgstr "Uitgebreide gebruikersattributen"
+msgstr "Waarde van het nieuwe attribuut"
 
 #~ msgid "Could not rename attribute name: "
 #~ msgstr "Kan de naam van het attribuut niet wijzigen: "
