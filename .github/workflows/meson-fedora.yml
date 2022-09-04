@@ -20,7 +20,8 @@ jobs:
     - name: Setup dependencies
       run: |
         id
-        ls -l
+        ls -la
+        ls -la eiciel-src
         adduser -m -U -d /home/user  user
         mv eiciel-src /home/user
         chown -R user:user /home/user/eiciel-src
