@@ -26,14 +26,14 @@ jobs:
         chown -R user:user /home/user/eiciel-src
         dnf -y install git gcc-c++ gtkmm4.0-devel nautilus-devel libacl-devel libattr-devel meson itstool
     - name: Configure
-      working-directory: ./eiciel-src
+      working-directory: /home/user/eiciel-src
       run: |
         sudo -i -u user -- meson setup builddir
     - name: Build
-      working-directory: ./eicel-src/builddir
+      working-directory: /home/user/eicel-src/builddir
       run: |
         sudo -i -u user -- meson compile
     - name: Dist
-      working-directory: ./eicel-src/builddir
+      working-directory: /home/user/eicel-src/builddir
       run: |
         sudo -i -u user -- meson dist
