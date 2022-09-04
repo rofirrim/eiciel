@@ -1,4 +1,4 @@
-[![C/C++ CI Meson](https://github.com/rofirrim/eiciel/actions/workflows/meson.yml/badge.svg)](https://github.com/rofirrim/eiciel/actions/workflows/meson.yml)
+[![C/C++ CI Meson Fedora 37](https://github.com/rofirrim/eiciel/actions/workflows/meson-fedora.yml/badge.svg)](https://github.com/rofirrim/eiciel/actions/workflows/meson-fedora.yml)
 
 # About
 
