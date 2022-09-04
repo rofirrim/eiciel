@@ -30,10 +30,10 @@ jobs:
       run: |
         sudo -u user -- meson setup builddir
     - name: Build
-      working-directory: /home/user/eicel-src/builddir
+      working-directory: /home/user/eiciel-src/builddir
       run: |
         sudo -u user -- meson compile
     - name: Dist
-      working-directory: /home/user/eicel-src/builddir
+      working-directory: /home/user/eiciel-src/builddir
       run: |
         sudo -u user -- meson dist
