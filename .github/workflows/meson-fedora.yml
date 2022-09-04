@@ -10,7 +10,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: fedora:37
+    container:
+      image: fedora:37
+      options: --cpus 1
     steps:
     - uses: actions/checkout@v2
     - name: Setup dependencies
