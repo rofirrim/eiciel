@@ -21,10 +21,10 @@ jobs:
       run: |
         id
         ls -l
-        dnf -y install git gcc-c++ gtkmm4.0-devel nautilus-devel libacl-devel libattr-devel meson itstool
         adduser -m -U -d /home/user  user
         mv eiciel-src /home/user
-        chown -R user:user eiciel-src
+        chown -R user:user /home/user/eiciel-src
+        dnf -y install git gcc-c++ gtkmm4.0-devel nautilus-devel libacl-devel libattr-devel meson itstool
     - name: Configure
       working-directory: ./eiciel-src
       run: |
