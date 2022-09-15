@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2022-09-12 23:13+0000\n"
+"PO-Revision-Date: 2022-09-15 21:13+0000\n"
 "Last-Translator: Aleš Kastner <alkas@volny.cz>\n"
 "Language-Team: Czech <https://l10n.opensuse.org/projects/eiciel/master/cs/>\n"
 "Language: cs\n"
@@ -229,96 +229,91 @@ msgstr "Žádná oprávnění"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr ""
+msgstr "Seznam adresářů, přístup, vytváření a odstraňování souborů"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "Seznam adresářů, žádný přístup k souborům"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "Seznam adresářů a přístup k souborům"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "Pouze seznam adresářů, žádný přístup k souborům"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
-msgstr ""
+msgstr "Žádný seznam adresářů, ale přístup, vytvoření a odstranění"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "Žádný seznam adresářů a přístup k souborům"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "Vlastník uživatel"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "Skupina"
+msgstr "Vlastník skupina"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "Uživatel ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "Skupina ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
-msgstr ""
+msgstr "Maska omezení vlastníka skupiny, uživatelského ACL a skupinového ACL na"
 
 #: src/nautilus_acl_model.cpp:131
-#, fuzzy
 msgid "Other users"
-msgstr "Ostatní"
+msgstr "Ostatní uživatelé"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "Nové soubory budou mít vlastníka uživatele"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "Nové soubory budou mít vlastníka skupinu"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "Nové soubory budou mít uživatelský ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "Nové soubory budou mít skupinové ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "Nové soubory budou mít masku"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
-msgstr ""
+msgstr "Nové soubory budou mít ostatní uživatele"
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "Seznam řízení přístupu (ACL)"
+msgstr "Upravit Seznam řízení přístupu (ACL)…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "Seznam řízení přístupu (ACL)"
+msgstr "Umožnit úpravy Seznamů řízení přístupu (ACL)"
 
 #: src/nautilus_menu_provider.cpp:100
-#, fuzzy
 msgid "Edit extended attributes…"
-msgstr "Rozšířené uživatelské atributy"
+msgstr "Upravit rozšířené atributy…"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
@@ -329,7 +324,6 @@ msgid "User"
 msgstr "Uživatel"
 
 #: src/participant_list_widget.ui:17
-#, fuzzy
 msgid "Group"
 msgstr "Skupina"
 
@@ -351,12 +345,11 @@ msgstr "Jméno účastníka"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "Vyhledat"
 
 #: src/participant_list_widget.ui:80
-#, fuzzy
 msgid "Show system participants"
-msgstr "Zobrazit také systémové účastníky"
+msgstr "Zobrazit systémové účastníky"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
@@ -368,17 +361,15 @@ msgstr "Hodnota"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
-msgstr ""
+msgstr "Atribut s tímto názvem již existuje"
 
 #: src/xattr_editor_widget.ui:27
-#, fuzzy
 msgid "Name of the new attribute"
-msgstr "Nový atribut"
+msgstr "Název nového atributu"
 
 #: src/xattr_editor_widget.ui:32
-#, fuzzy
 msgid "Value of the new attribute"
-msgstr "Rozšířené uživatelské atributy"
+msgstr "Hodnota nového atributu"
 
 #~ msgid "Could not rename attribute name: "
 #~ msgstr "Nedaří se přejmenovat název atributu: "
