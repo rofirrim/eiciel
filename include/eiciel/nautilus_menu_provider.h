@@ -29,10 +29,7 @@
 
 G_BEGIN_DECLS
 
-#define EICIEL_TYPE_MENU_PROVIDER (eiciel_menu_provider_get_type())
-
-G_DECLARE_FINAL_TYPE(EicielMenuProvider, eiciel_menu_provider, EICIEL,
-                     MENU_PROVIDER, GObject)
+GType eiciel_menu_provider_register_in_module(GTypeModule *module);
 
 G_END_DECLS
 

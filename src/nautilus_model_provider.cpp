@@ -25,19 +25,16 @@ extern "C" {
 #include <nautilus-extension.h>
 }
 
-static void eiciel_model_provider_interface_init(
-    NautilusPropertiesModelProviderInterface *iface);
+#define EICIEL_TYPE_MODEL_PROVIDER (eiciel_model_provider_get_type())
+
+G_DECLARE_FINAL_TYPE(EicielModelProvider, eiciel_model_provider, EICIEL,
+                     MODEL_PROVIDER, GObject)
 
 struct _EicielModelProvider {
   GObject parent_instance;
 
   /* Other members, including private data. */
 };
-
-G_DEFINE_TYPE_WITH_CODE(
-    EicielModelProvider, eiciel_model_provider, G_TYPE_OBJECT,
-    G_IMPLEMENT_INTERFACE(NAUTILUS_TYPE_PROPERTIES_MODEL_PROVIDER,
-                          eiciel_model_provider_interface_init))
 
 static GList *eiciel_model_get_models(EicielModelProvider *provider,
                                       GList *files) {
@@ -60,8 +57,8 @@ static GList *eiciel_model_get_models(EicielModelProvider *provider,
   g_object_unref(location);
 
   // Well, some files are local but do not have a real file behind them
-  if (local_file == NULL) {
-    return NULL;
+  if (local_file == nullptr) {
+    return nullptr;
   }
 
   GList *result = nullptr;
@@ -74,12 +71,34 @@ static GList *eiciel_model_get_models(EicielModelProvider *provider,
 }
 
 static void eiciel_model_provider_interface_init(
+    NautilusPropertiesModelProviderInterface *iface);
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED(
+    EicielModelProvider, eiciel_model_provider, G_TYPE_OBJECT, 0,
+    G_IMPLEMENT_INTERFACE_DYNAMIC(NAUTILUS_TYPE_PROPERTIES_MODEL_PROVIDER,
+                                  eiciel_model_provider_interface_init))
+
+static void eiciel_model_provider_init(EicielModelProvider *nautilus) {}
+
+static void eiciel_model_provider_dispose(GObject *object) {
+  G_OBJECT_CLASS(eiciel_model_provider_parent_class)->dispose(object);
+}
+
+static void eiciel_model_provider_class_init(EicielModelProviderClass *klass) {
+  GObjectClass *gobject_class = G_OBJECT_CLASS(klass);
+
+  gobject_class->dispose = eiciel_model_provider_dispose;
+}
+
+static void
+eiciel_model_provider_class_finalize(EicielModelProviderClass *klass) {}
+
+static void eiciel_model_provider_interface_init(
     NautilusPropertiesModelProviderInterface *iface) {
   iface->get_models = (decltype(iface->get_models))eiciel_model_get_models;
 }
 
-static void eiciel_model_provider_class_init(EicielModelProviderClass *self) {
-}
-
-static void eiciel_model_provider_init(EicielModelProvider *self) {
+GType eiciel_model_provider_register_in_module(GTypeModule *module) {
+  eiciel_model_provider_register_type(module);
+  return EICIEL_TYPE_MODEL_PROVIDER;
 }

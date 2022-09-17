@@ -23,8 +23,10 @@ extern "C" {
 #include <nautilus-extension.h>
 }
 
-static void
-eiciel_menu_provider_interface_init(NautilusMenuProviderInterface *iface);
+#define EICIEL_TYPE_MENU_PROVIDER (eiciel_menu_provider_get_type())
+
+G_DECLARE_FINAL_TYPE(EicielMenuProvider, eiciel_menu_provider, EICIEL,
+                     MENU_PROVIDER, GObject)
 
 struct _EicielMenuProvider {
   GObject parent_instance;
@@ -32,12 +34,7 @@ struct _EicielMenuProvider {
   /* Other members, including private data. */
 };
 
-G_DEFINE_TYPE_WITH_CODE(
-    EicielMenuProvider, eiciel_menu_provider, G_TYPE_OBJECT,
-    G_IMPLEMENT_INTERFACE(NAUTILUS_TYPE_MENU_PROVIDER,
-                          eiciel_menu_provider_interface_init))
-
-static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
+GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
                                                   GList *files) {
   if (files == nullptr || files->next != nullptr) {
     return nullptr;
@@ -58,8 +55,8 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
   g_object_unref(location);
 
   // Well, some files are local but do not have a real file behind them
-  if (local_file == NULL) {
-    return NULL;
+  if (local_file == nullptr) {
+    return nullptr;
   }
   g_free(local_file);
 
@@ -83,7 +80,7 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
     g_string_append(cmd, quoted_local_file);
 
     g_print("EXEC: %s\n", cmd->str);
-    g_spawn_command_line_async(cmd->str, NULL);
+    g_spawn_command_line_async(cmd->str, nullptr);
 
     g_string_free(cmd, TRUE);
     g_free(quoted_local_file);
@@ -112,7 +109,7 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
     g_string_append(cmd, quoted_local_file);
     
     g_print ("EXEC: %s\n", cmd->str);
-    g_spawn_command_line_async (cmd->str, NULL);
+    g_spawn_command_line_async (cmd->str, nullptr);
 
     g_string_free(cmd, TRUE);
     g_free(quoted_local_file);
@@ -126,20 +123,39 @@ static GList *eiciel_menu_provider_get_file_items(EicielMenuProvider *provider,
   return result;
 }
 
-GList *
-eiciel_menu_provider_get_background_items(EicielMenuProvider *provider,
-                                          NautilusFileInfo *current_folder) {
-  return nullptr;
+static void
+eiciel_menu_provider_interface_init(NautilusMenuProviderInterface *iface);
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED(
+    EicielMenuProvider, eiciel_menu_provider, G_TYPE_OBJECT, 0,
+    G_IMPLEMENT_INTERFACE_DYNAMIC(NAUTILUS_TYPE_MENU_PROVIDER,
+                                  eiciel_menu_provider_interface_init))
+
+static void eiciel_menu_provider_init(EicielMenuProvider *nautilus) {}
+
+static void eiciel_menu_provider_dispose(GObject *object) {
+  G_OBJECT_CLASS(eiciel_menu_provider_parent_class)->dispose(object);
+}
+
+static void eiciel_menu_provider_class_init(EicielMenuProviderClass *klass) {
+  GObjectClass *gobject_class = G_OBJECT_CLASS(klass);
+
+  gobject_class->dispose = eiciel_menu_provider_dispose;
+}
+
+static void
+eiciel_menu_provider_class_finalize(EicielMenuProviderClass *klass) {
 }
 
 static void
 eiciel_menu_provider_interface_init(NautilusMenuProviderInterface *iface) {
   iface->get_file_items =
       (decltype(iface->get_file_items))eiciel_menu_provider_get_file_items;
-  iface->get_background_items = (decltype(iface->get_background_items))
-      eiciel_menu_provider_get_background_items;
+  iface->get_background_items = nullptr;
 }
 
-static void eiciel_menu_provider_class_init(EicielMenuProviderClass *self) {}
-
-static void eiciel_menu_provider_init(EicielMenuProvider *self) {}
+GType eiciel_menu_provider_register_in_module(GTypeModule *module)
+{
+  eiciel_menu_provider_register_type(module);
+  return EICIEL_TYPE_MENU_PROVIDER;
+}

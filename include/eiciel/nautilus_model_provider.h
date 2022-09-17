@@ -29,10 +29,7 @@
 
 G_BEGIN_DECLS
 
-#define EICIEL_TYPE_MODEL_PROVIDER (eiciel_model_provider_get_type())
-
-G_DECLARE_FINAL_TYPE(EicielModelProvider, eiciel_model_provider, EICIEL,
-                     MODEL_PROVIDER, GObject)
+GType eiciel_model_provider_register_in_module(GTypeModule *module);
 
 G_END_DECLS
 

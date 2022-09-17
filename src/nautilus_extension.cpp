@@ -28,10 +28,13 @@ extern "C" {
 #include <nautilus-extension.h>
 }
 
-void nautilus_module_initialize(GTypeModule *module) {
-  eiciel::enable_i18n();
+static GType type_list[2];
 
+void nautilus_module_initialize(GTypeModule *module) {
   g_debug("Initializing Eiciel extension");
+  eiciel::enable_i18n();
+  type_list[0] = eiciel_menu_provider_register_in_module(module);
+  type_list[1] = eiciel_model_provider_register_in_module(module);
 }
 /**
  * nautilus_module_shutdown: (skip)
@@ -50,7 +53,6 @@ void nautilus_module_shutdown(void) {
  * types it exports, to load them into Nautilus.
  */
 void nautilus_module_list_types(const GType **types, int *num_types) {
-  static GType type_list[] = {EICIEL_TYPE_MENU_PROVIDER, EICIEL_TYPE_MODEL_PROVIDER};
 
   *num_types = sizeof(type_list) / sizeof(*type_list);
   *types = type_list;
