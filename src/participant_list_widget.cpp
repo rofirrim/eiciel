@@ -211,7 +211,10 @@ ParticipantListWidget::ParticipantListWidget(
                   case ParticipantKind::default_group:
                     ek = ElementKind::acl_group;
                     break;
-                  };
+		  default:
+		    g_return_if_reached();
+		    return;
+                  }
                   c->add_acl_entry(target,
                                    participant_item->get_name().c_str(), ek,
                                    is_default);
