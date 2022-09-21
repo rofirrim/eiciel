@@ -49,7 +49,7 @@ conf_data.set('ENABLE_USER_XATTR',
               user_attributes_feature.enabled())
 
 # Libraries
-libacl = compiler.find_library('libacl')
+libacl = compiler.find_library('acl')
 
 has_acl_get_perm = compiler.has_function('acl_get_perm', dependencies: libacl)
 conf_data.set('HAVE_ACL_GET_PERM', has_acl_get_perm)
