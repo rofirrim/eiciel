@@ -56,6 +56,8 @@ executable('eiciel',
 
 
 # Plugin for nautilus
+nautilusextensiondir = get_option('nautilus-extension-dir')
+if nautilus_plugin_feature.enabled()
 plugin_sources = utility_libraries
 plugin_sources += ['nautilus_menu_provider.cpp',
                    'nautilus_acl_model.cpp',
@@ -64,7 +66,6 @@ plugin_sources += ['nautilus_menu_provider.cpp',
                    'nautilus_extension.cpp',
                    'i18n.cpp']
 
-nautilusextensiondir = get_option('nautilus-extension-dir')
 if nautilusextensiondir == '' 
   nautilusextensiondir = libnautilus_extensions4.get_variable(pkgconfig : 'extensiondir')
 endif
@@ -75,6 +76,7 @@ shared_module('eiciel-nautilus',
   install_dir : nautilusextensiondir,
   include_directories : incdir,
   dependencies : [gtkmm4, giomm, libnautilus_extensions4, libacl, thread_dep])
+endif
 
 # Desktop file
 desktop_file_data = configuration_data()

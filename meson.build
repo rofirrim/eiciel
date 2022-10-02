@@ -27,9 +27,12 @@ conf_data.set_quoted('LOCALEDIR', localedir)
 # Dependencies
 gtkmm4 = dependency('gtkmm-4.0', version: '>= 4.6')
 giomm = dependency('giomm-2.68', version: '>= 2.68')
+thread_dep = dependency('threads')
+nautilus_plugin_feature = get_option('nautilus-plugin')
+if nautilus_plugin_feature.enabled()
 libnautilus_extensions4 = dependency('libnautilus-extension-4',
                                       version: '>= 43')
-thread_dep = dependency('threads')
+endif
 
 # Compiler
 compiler = meson.get_compiler('cpp')
