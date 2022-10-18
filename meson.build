@@ -81,6 +81,9 @@ subdir('img')
 # Documentation
 subdir('doc')
 
+# Manpage(s)
+subdir('man')
+
 # GNOME post-install duties
 gnome.post_install(gtk_update_icon_cache : true)
 
