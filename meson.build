@@ -41,8 +41,8 @@ conf_data.set('HAVE_SYS_ACL_H', has_sys_acl_h)
 has_acl_libacl_h = compiler.has_header('acl/libacl.h')
 conf_data.set('HAVE_ACL_LIBACL_H', has_acl_libacl_h)
 
-has_xattr_h = compiler.has_header('attr/xattr.h')
-conf_data.set('HAVE_ATTR_XATTR_H', has_xattr_h)
+has_sys_xattr_h = compiler.has_header('sys/xattr.h')
+conf_data.set('HAVE_SYS_XATTR_H', has_sys_xattr_h)
 
 user_attributes_feature = get_option('user-attributes')
 conf_data.set('ENABLE_USER_XATTR',
