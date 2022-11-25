@@ -4,18 +4,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2020-08-24 00:40+0000\n"
-"Last-Translator: hayyan rostami <hayyan71@yahoo.com>\n"
-"Language-Team: Persian <https://l10n.opensuse.org/projects/eiciel/master/fa/"
-">\n"
+"PO-Revision-Date: 2022-10-28 23:13+0000\n"
+"Last-Translator: Mohammad Rezaei Seresht <securesage@aol.com>\n"
+"Language-Team: Persian <https://l10n.opensuse.org/projects/eiciel/master/fa/>"
+"\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -33,32 +33,29 @@ msgstr "نمیتوان ورودی ACL را دستکاری کرد: "
 #: src/acl_editor_controller.cpp:350
 #, c-format
 msgid "Exception when setting ACL of file '%s': '%s'"
-msgstr ""
+msgstr "استثنا هنگام تنظیم ACL فایل '%s': '%s'"
 
 #. Catch-all to avoid crashing nautilus
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr ""
+msgstr "استثنا ناشناخته هنگام تنظیم ACL فایل '%s'"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "آیا میخواهید که تمامی ورودیهای پیشفرض ACL را حذف کنید؟"
 
 #: src/acl_editor_widget.ui:15
-#, fuzzy
 msgid "Applying ACLs to enclosed files"
-msgstr "ویرایش ACL ها برای پرونده‌های محصور شده"
+msgstr "اعمال ACL ها برای فایل‌های محصور شده"
 
 #: src/acl_editor_widget.ui:34
-#, fuzzy
 msgid "Current participants in ACL"
-msgstr "<b>شرکت کنندگان کنونی در ACL</b>"
+msgstr "شرکت کنندگان فعلی در ACL"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
-#, fuzzy
 msgid "Available participants"
-msgstr "<b>شرکت کنندگان موجود</b>"
+msgstr "شرکت کنندگان موجود"
 
 #: src/acl_editor_widget.ui:65
 msgid "Edit ACLs for enclosed files..."
@@ -122,38 +119,38 @@ msgstr "نمایندگی متنی پیشفرض ACL اشتباه است"
 
 #: src/application.cpp:44
 msgid "Initial edit mode (default mode otherwise)"
-msgstr ""
+msgstr "حالت ویرایش اولیه (در غیر این صورت حالت پیش فرض )"
 
 #: src/application.cpp:56
 msgid ""
 "Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
 msgstr ""
+"مقدار نامعتبر برای گزینه «ویرایش حالت». گزینه های معتبر 'acl' یا 'xattr' "
+"هستند\n"
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "ویرایشگر گرافیکی فایل های ACL و ویژگی های توسعه یافته"
 
 #: src/application.cpp:100
 msgid "translator-credits"
-msgstr ""
+msgstr "گروه-مترجمان"
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
 msgstr "لیست کنترل دسترسی"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
-#, fuzzy
 msgid "Extended attributes"
-msgstr "صفات تمدید شده ی کاربر"
+msgstr "ویژگی های توسعه یافته"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "انتخاب فایل"
 
 #: src/app_window.cpp:133
-#, fuzzy
 msgid "Select directory"
-msgstr "فقط فهرستها"
+msgstr "انتخاب دایرکتوری"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
@@ -161,25 +158,23 @@ msgstr "پرونده ای باز نشده است"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "فایل باز"
 
 #: src/app_window.ui:21
-#, fuzzy
 msgid "Open directory"
-msgstr "فقط فهرستها"
+msgstr "دایرکتوری باز"
 
 #: src/app_window.ui:78
-#, fuzzy
 msgid "Extended Attributes"
-msgstr "صفات تمدید شده ی کاربر"
+msgstr "ویژگی های توسعه یافته"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "درباره Eiciel"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "خروج"
 
 #: src/enclosed_acl_editor_widget.ui:5
 msgid "Edit ACLs for enclosed files"
@@ -196,102 +191,95 @@ msgid "Apply"
 msgstr "اعمال"
 
 #: src/enclosed_acl_editor_widget.ui:44
-#, fuzzy
 msgid "Participants in ACL for enclosed files"
-msgstr "<b>مشارکت‌کنندگان در ACL های پرونده‌های محصور شده</b>"
+msgstr "مشارکت کنندگان در ACL برای فایل های ضمیمه شده"
 
 #: src/enclosed_acl_editor_widget.ui:59
-#, fuzzy
 msgid "Participants in ACL for enclosed directories"
-msgstr "<b>مشارکت کردن در ACL ها برای مسیر‌های محصور شده</b>"
+msgstr "شرکت کنندگان در ACL برای دایرمتوری‌های ضمیمه شده"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
-msgstr ""
+msgstr "خواندن، نوشتن و اجرا"
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "خواندن و نوشتن"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
-msgstr ""
+msgstr "خواندن و اجرا"
 
 #: src/nautilus_acl_model.cpp:37
-#, fuzzy
 msgid "Only read"
-msgstr "فقط پرونده ها"
+msgstr "فقط خواندن"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
-msgstr ""
+msgstr "نوشتن و اجرا"
 
 #: src/nautilus_acl_model.cpp:41
-#, fuzzy
 msgid "Only write"
-msgstr "فقط پرونده ها"
+msgstr "فقط نوشتن"
 
 #: src/nautilus_acl_model.cpp:43
-#, fuzzy
 msgid "Only execute"
-msgstr "فقط فهرستها"
+msgstr "فقط اجرا"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
 msgid "No permission"
-msgstr ""
+msgstr "بدون مجوز"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr ""
+msgstr "لیست گرفتن از دایرکتوری، دسترسی، ساخت و حذف فایل‌ها"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "لیست گرفتن از دایرکتوری، بون دسترسی به فایل‌ها"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "لیست گرفتن از دایرکتوری و دسترسی به فایل‌ها"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "فقط لیست گرفتن از دایرکتوری، بدون دسترسی به فایل‌ها"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
-msgstr ""
+msgstr "دسترسی، ساخت و حذف بدون لیست گرفتن از دایرکتوری"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "بدون امکان لیست گرفتن و دسترسی به فایل‌ها"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "مالک کاربر"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "گروه"
+msgstr "مالک گروه"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "ACL کاربر:'%s'"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "ACL گروه:'%s'"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
 msgstr ""
 
 #: src/nautilus_acl_model.cpp:131
-#, fuzzy
 msgid "Other users"
-msgstr "دیگر"
+msgstr "کاربران دیگر"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
@@ -330,20 +318,18 @@ msgid "Allows editing Access Control Lists"
 msgstr "لیست کنترل دسترسی"
 
 #: src/nautilus_menu_provider.cpp:100
-#, fuzzy
 msgid "Edit extended attributes…"
-msgstr "صفات تمدید شده ی کاربر"
+msgstr "ویرایش ویژگی های توسعه یافته…"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
-msgstr "شرکت کننده یافت نشد"
+msgstr "مشارکت‌کننده یافت نشد"
 
 #: src/participant_list_widget.ui:12
 msgid "User"
 msgstr "کاربر"
 
 #: src/participant_list_widget.ui:17
-#, fuzzy
 msgid "Group"
 msgstr "گروه"
 
@@ -365,7 +351,7 @@ msgstr "نام شرکت کننده"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "جستجو"
 
 #: src/participant_list_widget.ui:80
 #, fuzzy

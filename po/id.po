@@ -5,10 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2020-05-02 19:51+0000\n"
-"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
+"PO-Revision-Date: 2022-11-15 10:13+0000\n"
+"Last-Translator: Bayu Putra <putrabayu0180@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/eiciel/master/"
 "id/>\n"
 "Language: id\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -34,36 +34,33 @@ msgstr "Tidak dapat mengubah ACL entri: "
 #: src/acl_editor_controller.cpp:350
 #, c-format
 msgid "Exception when setting ACL of file '%s': '%s'"
-msgstr ""
+msgstr "Pengecualian saat menyetel ACL file '%s': '%s'"
 
 #. Catch-all to avoid crashing nautilus
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr ""
+msgstr "Pengecualian tidak diketahui saat menyetel ACL file '%s'"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Apakah Anda yakin ingin menghapus semua entri dafault ACL?"
 
 #: src/acl_editor_widget.ui:15
-#, fuzzy
 msgid "Applying ACLs to enclosed files"
-msgstr "Sunting ACL untuk berkas terlampir"
+msgstr "Menerapkan ACL untuk berkas terlampir"
 
 #: src/acl_editor_widget.ui:34
-#, fuzzy
 msgid "Current participants in ACL"
-msgstr "<b>Partisipan saat ini di ACL</b>"
+msgstr "Partisipan saat ini di ACL"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
-#, fuzzy
 msgid "Available participants"
-msgstr "<b>Partisipan yang tersedia</b>"
+msgstr "Partisipan yang tersedia"
 
 #: src/acl_editor_widget.ui:65
 msgid "Edit ACLs for enclosed files..."
-msgstr "Sunting ACL untuk berkas terlampir..."
+msgstr "Edit ACL untuk file terlampir..."
 
 #: src/acl_list_controller.cpp:144 src/acl_list_widget.cpp:317
 msgid "Mask"
