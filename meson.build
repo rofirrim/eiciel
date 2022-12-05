@@ -27,9 +27,12 @@ conf_data.set_quoted('LOCALEDIR', localedir)
 # Dependencies
 gtkmm4 = dependency('gtkmm-4.0', version: '>= 4.6')
 giomm = dependency('giomm-2.68', version: '>= 2.68')
+thread_dep = dependency('threads')
+nautilus_plugin_feature = get_option('nautilus-plugin')
+if nautilus_plugin_feature.enabled()
 libnautilus_extensions4 = dependency('libnautilus-extension-4',
                                       version: '>= 43')
-thread_dep = dependency('threads')
+endif
 
 # Compiler
 compiler = meson.get_compiler('cpp')
@@ -41,15 +44,15 @@ conf_data.set('HAVE_SYS_ACL_H', has_sys_acl_h)
 has_acl_libacl_h = compiler.has_header('acl/libacl.h')
 conf_data.set('HAVE_ACL_LIBACL_H', has_acl_libacl_h)
 
-has_xattr_h = compiler.has_header('attr/xattr.h')
-conf_data.set('HAVE_ATTR_XATTR_H', has_xattr_h)
+has_sys_xattr_h = compiler.has_header('sys/xattr.h')
+conf_data.set('HAVE_SYS_XATTR_H', has_sys_xattr_h)
 
 user_attributes_feature = get_option('user-attributes')
 conf_data.set('ENABLE_USER_XATTR',
               user_attributes_feature.enabled())
 
 # Libraries
-libacl = compiler.find_library('libacl')
+libacl = compiler.find_library('acl')
 
 has_acl_get_perm = compiler.has_function('acl_get_perm', dependencies: libacl)
 conf_data.set('HAVE_ACL_GET_PERM', has_acl_get_perm)

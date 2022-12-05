@@ -5,6 +5,10 @@ option('user-attributes',
     type : 'feature',
     value : 'enabled',
     description : 'Enables support for editing extended user attributes')
+option('nautilus-plugin',
+    type : 'feature',
+    value : 'enabled',
+    description: 'Enable nautilus extension plugin')
 option('nautilus-extension-dir',
     type: 'string',
     value : '',

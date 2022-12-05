@@ -30,4 +30,5 @@ $ meson install
 
 4. I don't want the plugin support in GNOME Files
 
-The GNOME Files plugin support is not optional at the moment.
+The GNOME Files plugin support is optional, pass `-Dnautilus-plugin=disabled`
+to `meson setup` above, to disable it.
