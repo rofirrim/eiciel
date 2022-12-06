@@ -1,3 +1,6 @@
+option('man', type : 'boolean',
+    value : 'true',
+    description : 'Install man page(s)')
 option('user-attributes',
     type : 'feature',
     value : 'enabled',
