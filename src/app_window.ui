@@ -10,7 +10,7 @@
     <object class="GtkBox">
       <property name="orientation">vertical</property>
       <child>
-        <object class="GtkHeaderBar" id="header-bar">
+        <object class="AdwHeaderBar" id="header-bar">
           <child type="start">
             <object class="GtkButton" id="open-file">
               <property name="label" translatable="yes">Open file</property>
