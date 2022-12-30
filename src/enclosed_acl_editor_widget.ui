@@ -6,9 +6,6 @@
     <property name="default-width">800</property>
     <property name="default-height">600</property>
     <property name="use-header-bar">1</property>
-    <style>
-      <class name="devel"/>
-    </style>
     <child type="action">
       <object class="GtkButton" id="cancel-button">
         <property name="label" translatable="yes">Cancel</property>

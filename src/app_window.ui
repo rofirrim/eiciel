@@ -6,9 +6,6 @@
     <property name="default-width">400</property>
     <property name="default-height">600</property>
     <property name="hide-on-close">True</property>
-    <style>
-      <class name="devel"/>
-    </style>
     <child type="titlebar">
       <object class="GtkHeaderBar" id="header-bar">
         <child type="start">
