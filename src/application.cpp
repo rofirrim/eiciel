@@ -25,6 +25,7 @@
 #include "eiciel/confirm_toggle_button.h"
 #include "eiciel/participant_list_widget.h"
 #include "eiciel/xattr_editor_widget.h"
+#include <libadwaitamm/aboutwindow.h>
 #include <exception>
 #include <gtkmm/aboutdialog.h>
 #include <iostream>
@@ -187,29 +188,24 @@ void Application::on_about() {
     if (!win)
       return;
 
-    auto about = new Gtk::AboutDialog();
+    auto about = new Adw::AboutWindow();
 
-    about->set_program_name("Eiciel");
-    Glib::RefPtr<Gdk::Texture> logo = Gdk::Texture::create_from_resource(
-        "/org/roger_ferrer/eiciel/icon_eiciel_128.png");
-    about->set_logo(logo);
+    about->set_application_name("Eiciel");
+    about->set_application_icon("eiciel");
 
     about->set_version(VERSION);
-    about->set_copyright("Copyright 2004-2022 - Roger Ferrer Ibáñez");
+    about->set_developer_name("Roger Ferrer Ibáñez");
+    about->set_copyright("© 2004-2022 Roger Ferrer Ibáñez");
     about->set_comments(_("Graphical editor of file ACLs and extended attributes"));
-    about->set_website_label("https://rofi.roger-ferrer.org/eiciel");
     about->set_website("https://rofi.roger-ferrer.org/eiciel");
+    about->add_link("GitHub", "https://github.com/rofirrim/eiciel");
 
     about->set_translator_credits(_("translator-credits"));
     about->set_license_type(Gtk::License::GPL_2_0);
     about->set_hide_on_close();
 
     about->signal_hide().connect(
-        [about, logo]() mutable {
-          if (logo) {
-            logo->unreference();
-            logo = nullptr;
-          }
+        [about]() mutable {
           delete about;
           about = nullptr;
         },
