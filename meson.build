@@ -27,6 +27,7 @@ conf_data.set_quoted('LOCALEDIR', localedir)
 # Dependencies
 gtkmm4 = dependency('gtkmm-4.0', version: '>= 4.6')
 giomm = dependency('giomm-2.68', version: '>= 2.68')
+libadwaitamm = dependency('libadwaitamm-1', version: '>= 1.2.0')
 thread_dep = dependency('threads')
 nautilus_plugin_feature = get_option('nautilus-plugin')
 if nautilus_plugin_feature.enabled()

@@ -32,7 +32,7 @@
 namespace eiciel {
 
 Application::Application()
-    : Gtk::Application("org.roger_ferrer.Eiciel",
+    : Adw::Application("org.roger_ferrer.Eiciel",
                        Gio::Application::Flags::HANDLES_COMMAND_LINE |
                            Gio::Application::Flags::HANDLES_OPEN) {}
 
@@ -146,7 +146,7 @@ void Application::on_activate() {
 }
 
 void Application::on_startup() {
-  Gtk::Application::on_startup();
+  Adw::Application::on_startup();
 }
 
 void Application::on_open(const Gio::Application::type_vec_files &files,

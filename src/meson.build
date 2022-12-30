@@ -53,7 +53,7 @@ executable('eiciel',
   [standalone_sources, eiciel_resources],
   install : true,
   include_directories : incdir,
-  dependencies : [gtkmm4, giomm, libacl, thread_dep])
+  dependencies : [libadwaitamm, gtkmm4, giomm, libacl, thread_dep])
 
 
 # Plugin for nautilus
@@ -76,7 +76,7 @@ shared_module('eiciel-nautilus',
   install : true,
   install_dir : nautilusextensiondir,
   include_directories : incdir,
-  dependencies : [gtkmm4, giomm, libnautilus_extensions4, libacl, thread_dep])
+  dependencies : [libadwaitamm, gtkmm4, giomm, libnautilus_extensions4, libacl, thread_dep])
 endif
 
 # Desktop file

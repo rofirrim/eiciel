@@ -30,12 +30,12 @@
 #include "eiciel/xattr_editor_controller.h"
 #include <giomm/file.h>
 #include <glibmm/refptr.h>
-#include <gtkmm/applicationwindow.h>
+#include <libadwaitamm/applicationwindow.h>
 #include <gtkmm/builder.h>
 
 namespace eiciel {
 
-class AppWindow : public Gtk::ApplicationWindow {
+class AppWindow : public Adw::ApplicationWindow {
 public:
   AppWindow();
 

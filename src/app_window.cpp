@@ -52,7 +52,7 @@ AppWindow::AppWindow(BaseObjectType *cobject,
                      ACLEditorController *acl_editor_cont,
                      XAttrEditorController *xattr_editor_cont,
                      Application::EditMode mode)
-    : Gtk::ApplicationWindow(cobject), m_refBuilder(refBuilder),
+    : Adw::ApplicationWindow(cobject), m_refBuilder(refBuilder),
       acl_editor_controller(acl_editor_cont),
       xattr_editor_controller(xattr_editor_cont) {
   this->set_icon_name("eiciel");

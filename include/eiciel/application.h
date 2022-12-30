@@ -25,7 +25,8 @@
 
 #include "eiciel/i18n.h"
 
-#include <giomm/application.h>
+#include <libadwaitamm/application.h>
+
 #include <glibmm/refptr.h>
 #include <glibmm/ustring.h>
 #include <gtkmm/application.h>
@@ -35,7 +36,7 @@ namespace eiciel {
 
 class AppWindow;
 
-class Application : public Gtk::Application {
+class Application : public Adw::Application {
 protected:
   Application();
 
