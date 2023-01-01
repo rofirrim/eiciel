@@ -22,6 +22,7 @@
 #include "eiciel/acl_element_kind.h"
 #include "eiciel/enclosed_acl_editor_widget.h"
 #include "eiciel/enclosed_acl_editor_controller.h"
+#include <libadwaitamm.h>
 #include <giomm.h>
 #include <gdkmm/cursor.h>
 #include <thread>
@@ -463,30 +464,30 @@ void ACLEditorController::requested_toggle_edit_default_acl(
     bool requested_new_state) {
   try {
     if (!requested_new_state) {
-      Glib::ustring s(
+      Glib::ustring title(_("Remove ACL default entries"));
+      Glib::ustring body(
           _("Are you sure you want to remove all ACL default entries?"));
       Gtk::Window *toplevel =
           dynamic_cast<Gtk::Window *>(this->view->get_root());
-      Gtk::MessageDialog *remove_acl_message;
-      if (toplevel == NULL) {
-        remove_acl_message = new Gtk::MessageDialog(
-            s, false, Gtk::MessageType::QUESTION, Gtk::ButtonsType::YES_NO);
-      } else {
-        remove_acl_message = new Gtk::MessageDialog(*toplevel, s, false,
-                                                    Gtk::MessageType::QUESTION,
-                                                    Gtk::ButtonsType::YES_NO);
-      }
+      Adw::MessageDialog *remove_acl_message =
+          new Adw::MessageDialog(toplevel, title, body);
+      remove_acl_message->add_response("yes", _("Yes"));
+      remove_acl_message->set_response_appearance(
+          "yes", Adw::ResponseAppearance::DESTRUCTIVE);
+      remove_acl_message->add_response("no", _("No"));
+      remove_acl_message->set_default_response("no");
+      remove_acl_message->set_close_response("no");
       remove_acl_message->set_modal(true);
       remove_acl_message->signal_response().connect(
           [this, remove_acl_message,
-           requested_new_state](int response) mutable {
-            if (response == Gtk::ResponseType::YES) {
+           requested_new_state](const Glib::ustring &response) mutable {
+            if (response == "yes") {
               confirmed_toggle_edit_default_acl(requested_new_state);
             }
             delete remove_acl_message;
             remove_acl_message = nullptr;
           });
-      remove_acl_message->show();
+      remove_acl_message->present();
     } else {
       confirmed_toggle_edit_default_acl(requested_new_state);
     }
