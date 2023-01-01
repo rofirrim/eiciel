@@ -114,9 +114,9 @@ private:
   ACLListController *controller;
 
   Glib::Property<bool> readonly_mode;
-  bool toggling_default_acl;
-
   Glib::Property<bool> exist_ineffective_permissions;
+
+  bool toggling_default_acl;
 
   std::unordered_map<Gtk::Button *, sigc::connection> button_signal_map;
   std::unordered_map<Gtk::CheckButton *, sigc::connection> checkbutton_signal_map;

@@ -41,10 +41,10 @@ GType ACLListWidget::gtype = 0;
 ACLListWidget::ACLListWidget(ACLListController *cont,
                              ACLListWidgetMode widget_mode)
     : Glib::ObjectBase("ACLListWidget"), controller(cont),
-      readonly_mode(*this, "readonly-mode", false), toggling_default_acl(false),
+      readonly_mode(*this, "readonly-mode", false),
       exist_ineffective_permissions(*this, "exist-ineffective-permissions",
                                     false),
-      widget_mode(widget_mode) {
+      toggling_default_acl(false), widget_mode(widget_mode) {
   controller->set_view(this);
 
   // Create UI from Resource
