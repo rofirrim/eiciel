@@ -55,6 +55,7 @@ AppWindow::AppWindow(BaseObjectType *cobject,
     : Gtk::ApplicationWindow(cobject), m_refBuilder(refBuilder),
       acl_editor_controller(acl_editor_cont),
       xattr_editor_controller(xattr_editor_cont) {
+  this->set_icon_name("eiciel");
   auto open_file = refBuilder->get_object<Gtk::Button>("open-file");
   open_file->set_sensitive(true);
   open_file->signal_clicked().connect(
