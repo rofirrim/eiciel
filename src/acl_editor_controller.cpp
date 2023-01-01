@@ -148,22 +148,17 @@ void ACLEditorController::add_acl_entry(AddParticipantTarget target,
   }
 }
 
-void ACLEditorController::show_message_dialog_error(const Glib::ustring &s) {
-  Gtk::MessageDialog *message_dialog;
-  Gtk::Window *w = nullptr;
-  if (this->view && (w = dynamic_cast<Gtk::Window*>(this->view->get_root()))) {
-    message_dialog =
-        new Gtk::MessageDialog(*w, s, false, Gtk::MessageType::ERROR,
-                               Gtk::ButtonsType::OK, /* modal */ true);
-  } else {
-    message_dialog =
-        new Gtk::MessageDialog(s, false, Gtk::MessageType::ERROR,
-                               Gtk::ButtonsType::OK, /* modal */ true);
-  }
-  message_dialog->signal_response().connect([message_dialog](int) mutable {
-    delete message_dialog;
-    message_dialog = nullptr;
-  });
+void ACLEditorController::show_message_dialog_error(const Glib::ustring &body) {
+  Gtk::Window *w = dynamic_cast<Gtk::Window *>(this->view->get_root());
+  Adw::MessageDialog *message_dialog =
+      new Adw::MessageDialog(w, _("Error"), body);
+  message_dialog->set_transient_for(*w);
+  message_dialog->set_modal(true);
+  message_dialog->signal_response().connect(
+      [message_dialog](const Glib::ustring &) mutable {
+        delete message_dialog;
+        message_dialog = nullptr;
+      });
   message_dialog->show();
 }
 
