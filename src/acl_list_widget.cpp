@@ -42,7 +42,9 @@ ACLListWidget::ACLListWidget(ACLListController *cont,
                              ACLListWidgetMode widget_mode)
     : Glib::ObjectBase("ACLListWidget"), controller(cont),
       readonly_mode(*this, "readonly-mode", false), toggling_default_acl(false),
-      exist_ineffective_permissions(false), widget_mode(widget_mode) {
+      exist_ineffective_permissions(*this, "exist-ineffective-permissions",
+                                    false),
+      widget_mode(widget_mode) {
   controller->set_view(this);
 
   // Create UI from Resource
@@ -230,6 +232,12 @@ ACLListWidget::ACLListWidget(ACLListController *cont,
     can_edit_default_acl(true);
     edit_default_participants->set_visible(false);
   }
+
+  exist_ineffective_permissions.get_proxy().signal_changed().connect([this]() {
+    bool b = exist_ineffective_permissions.get_value();
+    warning_label->set_visible(b);
+    warning_icon->set_visible(b);
+  });
 }
 
 ACLListWidget::~ACLListWidget() {}
@@ -524,15 +532,7 @@ void ACLListWidget::update_acl_ineffective(
       break;
     }
   }
-  if (exist_ineffective_permissions != there_are_ineffective_permissions) {
-    exist_ineffective_permissions = there_are_ineffective_permissions;
-    set_exist_ineffective_permissions();
-  }
-}
-
-void ACLListWidget::set_exist_ineffective_permissions() {
-  warning_label->set_visible(exist_ineffective_permissions);
-  warning_icon->set_visible(exist_ineffective_permissions);
+  exist_ineffective_permissions.set_value(there_are_ineffective_permissions);
 }
 
 void ACLListWidget::toggle_edit_default_acl() {

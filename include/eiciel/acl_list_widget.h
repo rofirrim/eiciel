@@ -96,7 +96,6 @@ private:
                           const Glib::ustring &permission);
   void toggle_edit_default_acl();
   void disable_default_acl_editing();
-  void set_exist_ineffective_permissions();
 
   void remove_button_signal(Gtk::Button *btn);
   void keep_button_signal(Gtk::Button *btn, sigc::connection c);
@@ -117,7 +116,7 @@ private:
   Glib::Property<bool> readonly_mode;
   bool toggling_default_acl;
 
-  bool exist_ineffective_permissions;
+  Glib::Property<bool> exist_ineffective_permissions;
 
   std::unordered_map<Gtk::Button *, sigc::connection> button_signal_map;
   std::unordered_map<Gtk::CheckButton *, sigc::connection> checkbutton_signal_map;
