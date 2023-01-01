@@ -2,7 +2,6 @@
 <interface>
   <object class="GtkBox" id="top-level">
     <property name="orientation">vertical</property>
-    <property name="spacing">8</property>
     <child>
       <object class="GtkScrolledWindow">
       <property name="vscrollbar-policy">always</property>
@@ -21,7 +20,6 @@
     <child>
       <object class="GtkBox">
         <property name="orientation">horizontal</property>
-        <property name="spacing">8</property>
         <child>
           <object class="GtkImage" id="warning-icon">
             <property name="icon-name">dialog-warning</property>
@@ -40,12 +38,12 @@
     <child>
       <object class="GtkBox">
         <property name="orientation">horizontal</property>
-        <property name="spacing">8</property>
+        <property name="halign">start</property>
+        <property name="hexpand">0</property>
         <child>
           <object class="GtkToggleButton" id="edit-default-participants">
             <property name="label" translatable="yes">Edit default participants</property>
-            <property name="halign">start</property>
-            <property name="hexpand">0</property>
+            <property name="margin-top">8</property>
           </object>
         </child>
       </object>
