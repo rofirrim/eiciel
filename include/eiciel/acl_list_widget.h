@@ -76,6 +76,13 @@ public:
   void remove_entry(const Glib::ustring &s, ElementKind e);
   void highlight_acl_entry(const Glib::ustring &name, ElementKind kind);
 
+  static GType get_type() {
+    // Let's cache once the type does exist.
+    if (!gtype)
+      gtype = g_type_from_name("gtkmm__CustomObject_ACLItem");
+    return gtype;
+  }
+
 private:
   void add_element(Glib::ustring title, bool reading, bool writing,
                    bool execution, ElementKind e);
@@ -107,7 +114,7 @@ private:
 
   ACLListController *controller;
 
-  bool readonly_mode;
+  Glib::Property<bool> readonly_mode;
   bool toggling_default_acl;
 
   bool exist_ineffective_permissions;
@@ -116,6 +123,8 @@ private:
   std::unordered_map<Gtk::CheckButton *, sigc::connection> checkbutton_signal_map;
 
   ACLListWidgetMode widget_mode;
+
+  static GType gtype;
 };
 
 } // namespace eiciel

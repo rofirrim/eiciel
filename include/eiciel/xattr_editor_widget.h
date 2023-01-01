@@ -47,6 +47,13 @@ public:
   void clear_attributes();
   void add_attribute(const Glib::ustring &name, const Glib::ustring &value);
 
+  static GType get_type() {
+    // Let's cache once the type does exist.
+    if (!gtype)
+      gtype = g_type_from_name("gtkmm__CustomObject_XAttrEditorWidget");
+    return gtype;
+  }
+
 private:
   void remove_button_signal(Gtk::Button *btn);
   void keep_button_signal(Gtk::Button *btn, sigc::connection c);
@@ -68,10 +75,12 @@ private:
   std::unordered_map<Gtk::Button *, sigc::connection> button_signal_map;
   std::unordered_map<Gtk::EditableLabel *, sigc::connection> label_signal_map;
 
-  bool readonly_mode = false;
+  Glib::Property<bool> readonly_mode;
 
   gulong entry_name_signal_activate;
   gulong entry_value_signal_activate;
+
+  static GType gtype;
 };
 } // namespace eiciel
 

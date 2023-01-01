@@ -34,8 +34,10 @@
 
 namespace eiciel {
 
+GType XAttrEditorWidget::gtype = 0;
+
 XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
-    : controller(controller) {
+    : Glib::ObjectBase("XAttrEditorWidget"), controller(controller), readonly_mode(*this, "readonly-mode", false) {
   controller->set_view(this);
 
   // Create UI from Resource
@@ -158,7 +160,9 @@ XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
         if (!button)
           return;
         remove_button_signal(button);
-        button->set_visible(!readonly_mode);
+        Glib::Binding::bind_property(
+            this->readonly_mode.get_proxy(), button->property_visible(),
+            Glib::Binding::Flags::DEFAULT, [](bool b) { return !b; });
         auto item = li->get_item();
         if (auto participant_item =
                 std::dynamic_pointer_cast<XAttrItem>(item)) {
@@ -201,6 +205,13 @@ XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
         return !name.empty() && !used;
       });
 
+  readonly_mode.get_proxy().signal_changed().connect([this]() {
+    bool b = readonly_mode.get_value();
+    button_add->set_sensitive(!b);
+    entry_name->set_sensitive(!b);
+    entry_value->set_sensitive(!b);
+  });
+
   entry_name->set_text("");
   set_active(false);
 }
@@ -215,10 +226,7 @@ XAttrEditorWidget::~XAttrEditorWidget() {
 void XAttrEditorWidget::set_active(bool b) { top_level->set_sensitive(b); }
 
 void XAttrEditorWidget::set_readonly(bool b) {
-  readonly_mode = b;
-  button_add->set_sensitive(!b);
-  entry_name->set_sensitive(!b);
-  entry_value->set_sensitive(!b);
+  readonly_mode.set_value(b);
 }
 
 void XAttrEditorWidget::clear_attributes() { model->remove_all(); }

@@ -36,8 +36,12 @@
 
 namespace eiciel {
 
-ACLListWidget::ACLListWidget(ACLListController *cont, ACLListWidgetMode widget_mode)
-    : controller(cont), readonly_mode(false), toggling_default_acl(false),
+GType ACLListWidget::gtype = 0;
+
+ACLListWidget::ACLListWidget(ACLListController *cont,
+                             ACLListWidgetMode widget_mode)
+    : Glib::ObjectBase("ACLListWidget"), controller(cont),
+      readonly_mode(*this, "readonly-mode", false), toggling_default_acl(false),
       exist_ineffective_permissions(false), widget_mode(widget_mode) {
   controller->set_view(this);
 
@@ -80,6 +84,10 @@ ACLListWidget::ACLListWidget(ACLListController *cont, ACLListWidgetMode widget_m
   column = Gtk::ColumnViewColumn::create("", factory_icon);
   column_view->append_column(column);
 
+  this->readonly_mode.get_proxy().signal_changed().connect([this]() {
+   edit_default_participants->set_sensitive(!this->readonly_mode.get_value());
+  });
+
   auto factory_name = Gtk::SignalListItemFactory::create();
   factory_name->signal_setup().connect(
       [&](const Glib::RefPtr<Gtk::ListItem> &li) {
@@ -104,7 +112,7 @@ ACLListWidget::ACLListWidget(ACLListController *cont, ACLListWidgetMode widget_m
                                          Glib::ustring masked_permission) {
     auto factory_permission = Gtk::SignalListItemFactory::create();
     factory_permission->signal_setup().connect(
-        [permission,
+        [this, permission,
          masked_permission](const Glib::RefPtr<Gtk::ListItem> &li) {
           auto box =
               Gtk::make_managed<Gtk::Box>(Gtk::Orientation::HORIZONTAL, 8);
@@ -117,7 +125,11 @@ ACLListWidget::ACLListWidget(ACLListController *cont, ACLListWidgetMode widget_m
           auto label_expr =
               Gtk::PropertyExpression<Glib::RefPtr<Glib::ObjectBase>>::create(
                   Gtk::ListItem::get_type(), "item");
-          
+
+          Glib::Binding::bind_property(
+              this->readonly_mode.get_proxy(), cb->property_sensitive(),
+              Glib::Binding::Flags::DEFAULT, [](bool b) { return !b; });
+
           // Bind li->"item"->${permission} with cb->"active"
           auto permission_expr = Gtk::PropertyExpression<bool>::create(
               ACLItem::get_type(), label_expr, permission);
@@ -225,10 +237,7 @@ ACLListWidget::~ACLListWidget() {}
 void ACLListWidget::set_active(bool b) { set_sensitive(b); }
 
 void ACLListWidget::set_readonly(bool b) {
-  readonly_mode = b;
-  if (b) {
-    edit_default_participants->set_sensitive(false);
-  }
+  readonly_mode.set_value(b);
 }
 
 void ACLListWidget::highlight_acl_entry(const Glib::ustring &name,
@@ -452,8 +461,8 @@ void ACLListWidget::remove_entry(const Glib::ustring &s, ElementKind e) {
 void ACLListWidget::change_permissions(Glib::RefPtr<ACLItem> item,
                                        Gtk::CheckButton *checkbutton,
                                        const Glib::ustring& permission) {
-  if (readonly_mode)
-    return;
+  // We should not reach here in read only mode.
+  g_return_if_fail(!readonly_mode.get_value());
 
   item->set_property<bool>(permission, checkbutton->get_active());
 
