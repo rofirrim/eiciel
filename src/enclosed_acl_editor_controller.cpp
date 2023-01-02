@@ -56,6 +56,7 @@ void EnclosedACLEditorController::ACLListDirectoryController::
       remove_acl_message->add_response("no", _("No"));
       remove_acl_message->set_default_response("no");
       remove_acl_message->set_close_response("no");
+      remove_acl_message->set_transient_for(*toplevel);
       remove_acl_message->set_modal(true);
       remove_acl_message->signal_response().connect(
           [this, remove_acl_message](const Glib::ustring &response) mutable {
