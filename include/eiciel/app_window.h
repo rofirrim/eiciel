@@ -44,6 +44,7 @@ public:
             ACLEditorController *acl_editor_cont,
             XAttrEditorController *xattr_editor_cont,
             Application::EditMode mode);
+  ~AppWindow();
 
   static AppWindow *create(Application::EditMode mode);
 
@@ -58,7 +59,7 @@ protected:
   Glib::RefPtr<Gtk::Builder> m_refBuilder;
   ACLEditorController *acl_editor_controller;
   XAttrEditorController *xattr_editor_controller;
-  Glib::RefPtr<Gtk::Label> filename_label;
+  Gtk::Label* filename_label;
 };
 
 } // namespace eiciel

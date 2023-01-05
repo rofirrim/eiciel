@@ -66,19 +66,16 @@ private:
 
   Glib::RefPtr<XAttrListItemModel> model;
 
-  Glib::RefPtr<Gtk::Box> top_level;
-  Glib::RefPtr<Gtk::ColumnView> column_view;
-  Glib::RefPtr<Gtk::Entry> entry_name;
-  Glib::RefPtr<Gtk::Entry> entry_value;
-  Glib::RefPtr<Gtk::Button> button_add;
+  Gtk::Box* top_level;
+  Gtk::ColumnView* column_view;
+  Gtk::Entry* entry_name;
+  Gtk::Entry* entry_value;
+  Gtk::Button* button_add;
 
   std::unordered_map<Gtk::Button *, sigc::connection> button_signal_map;
   std::unordered_map<Gtk::EditableLabel *, sigc::connection> label_signal_map;
 
   Glib::Property<bool> readonly_mode;
-
-  gulong entry_name_signal_activate;
-  gulong entry_value_signal_activate;
 
   static GType gtype;
 };

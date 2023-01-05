@@ -104,12 +104,12 @@ private:
   void keep_checkbutton_signal(Gtk::CheckButton *btn, sigc::connection c);
 
   Glib::RefPtr<ACLListItemModel> model;
-  Glib::RefPtr<Gtk::ColumnView> column_view;
+  Gtk::ColumnView* column_view;
 
-  Glib::RefPtr<Gtk::ToggleButton> edit_default_participants;
+  Gtk::ToggleButton* edit_default_participants;
 
-  Glib::RefPtr<Gtk::Image> warning_icon;
-  Glib::RefPtr<Gtk::Label> warning_label;
+  Gtk::Image* warning_icon;
+  Gtk::Label* warning_label;
 
   ACLListController *controller;
 

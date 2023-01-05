@@ -59,11 +59,11 @@ public:
 
 private:
     ACLEditorController* controller;
-    Glib::RefPtr<Gtk::InfoBar> info_bar;
-    Glib::RefPtr<Gtk::Label> info_bar_label;
-    Glib::RefPtr<Gtk::ProgressBar> info_bar_progress;
-    Glib::RefPtr<Gtk::Box> main_box;
-    Glib::RefPtr<Gtk::Button> edit_enclosed_files;
+    Gtk::InfoBar* info_bar;
+    Gtk::Label* info_bar_label;
+    Gtk::ProgressBar* info_bar_progress;
+    Gtk::Box* main_box;
+    Gtk::Button* edit_enclosed_files;
 
     void there_is_no_file();
     void do_edit_enclosed_files();

@@ -44,13 +44,13 @@ XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
   auto refBuilder = Gtk::Builder::create_from_resource(
       "/org/roger_ferrer/eiciel/xattr_editor_widget.ui");
 
-  top_level = refBuilder->get_object<Gtk::Box>("top-level");
+  top_level = refBuilder->get_widget<Gtk::Box>("top-level");
   append(*top_level);
 
-  column_view = refBuilder->get_object<Gtk::ColumnView>("editor-columnview");
-  entry_name = refBuilder->get_object<Gtk::Entry>("attr-name");
-  entry_value = refBuilder->get_object<Gtk::Entry>("attr-value");
-  button_add = refBuilder->get_object<Gtk::Button>("button-add");
+  column_view = refBuilder->get_widget<Gtk::ColumnView>("editor-columnview");
+  entry_name = refBuilder->get_widget<Gtk::Entry>("attr-name");
+  entry_value = refBuilder->get_widget<Gtk::Entry>("attr-value");
+  button_add = refBuilder->get_widget<Gtk::Button>("button-add");
 
   auto entry_name_cb = [](GtkEntry * /* instance */,
                           XAttrEditorWidget *user_data) {
@@ -58,7 +58,7 @@ XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
       user_data->entry_value->grab_focus();
   };
   // We need to disconnect the signal later, so keep the connection around.
-  entry_name_signal_activate = g_signal_connect(
+  g_signal_connect(
       /* instance */ entry_name->gobj(), "activate",
       // Non-capturing lambdas are just functions in disguise
       // so they provide a conversion to a pointer function.
@@ -74,7 +74,7 @@ XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
     }
   };
   // We need to disconnect the signal later, so keep the connection around.
-  entry_value_signal_activate = g_signal_connect(
+  g_signal_connect(
       /* instance */ entry_value->gobj(), "activate",
       // Non-capturing lambdas are just functions in disguise
       // so they provide a conversion to a pointer function.
@@ -216,12 +216,7 @@ XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
   set_active(false);
 }
 
-XAttrEditorWidget::~XAttrEditorWidget() {
-  g_clear_signal_handler(&entry_name_signal_activate,
-                         entry_name->gobj());
-  g_clear_signal_handler(&entry_value_signal_activate,
-                         entry_value->gobj());
-}
+XAttrEditorWidget::~XAttrEditorWidget() {}
 
 void XAttrEditorWidget::set_active(bool b) { top_level->set_sensitive(b); }
 

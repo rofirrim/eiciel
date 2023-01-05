@@ -31,28 +31,28 @@ ACLEditorWidget::ACLEditorWidget(ACLEditorController *cont) : controller(cont) {
   auto refBuilder = Gtk::Builder::create_from_resource(
       "/org/roger_ferrer/eiciel/acl_editor_widget.ui");
 
-  auto top_level = refBuilder->get_object<Gtk::Box>("top-level");
+  auto top_level = refBuilder->get_widget<Gtk::Box>("top-level");
   append(*top_level);
 
-  info_bar = refBuilder->get_object<Gtk::InfoBar>("info-bar");
-  info_bar_label = refBuilder->get_object<Gtk::Label>("info-bar-label");
-  info_bar_progress = refBuilder->get_object<Gtk::ProgressBar>("info-bar-progress");
+  info_bar = refBuilder->get_widget<Gtk::InfoBar>("info-bar");
+  info_bar_label = refBuilder->get_widget<Gtk::Label>("info-bar-label");
+  info_bar_progress = refBuilder->get_widget<Gtk::ProgressBar>("info-bar-progress");
 
-  main_box = refBuilder->get_object<Gtk::Box>("main-editor-box");
+  main_box = refBuilder->get_widget<Gtk::Box>("main-editor-box");
 
   auto *acl_list =
       Gtk::make_managed<ACLListWidget>(controller, ACLListWidgetMode::DEFAULT);
-  auto box_for_acl_list = refBuilder->get_object<Gtk::Box>("box-for-acl-list");
+  auto box_for_acl_list = refBuilder->get_widget<Gtk::Box>("box-for-acl-list");
   box_for_acl_list->append(*acl_list);
 
   auto *participant_list = Gtk::make_managed<ParticipantListWidget>(
       controller, ParticipantListWidgetMode::SINGLE_PANE);
   auto box_for_participant_list =
-      refBuilder->get_object<Gtk::Box>("box-for-participant-list");
+      refBuilder->get_widget<Gtk::Box>("box-for-participant-list");
   box_for_participant_list->append(*participant_list);
 
   edit_enclosed_files =
-      refBuilder->get_object<Gtk::Button>("edit-enclosed-files");
+      refBuilder->get_widget<Gtk::Button>("edit-enclosed-files");
   edit_enclosed_files->signal_clicked().connect(
       [this]() { controller->edit_enclosed_files(); });
 

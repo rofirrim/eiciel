@@ -54,7 +54,7 @@ private:
   ACLListWidget *dirs_acl_list;
   ParticipantListWidget *participants_list;
 
-  Glib::RefPtr<Gtk::Button> apply_button;
+  Gtk::Button *apply_button;
 
   void apply_changes();
 };

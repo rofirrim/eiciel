@@ -44,12 +44,12 @@ ParticipantListWidget::ParticipantListWidget(
   auto refBuilder = Gtk::Builder::create_from_resource(
       "/org/roger_ferrer/eiciel/participant_list_widget.ui");
 
-  auto main_box = refBuilder->get_object<Gtk::Box>("top-level");
+  auto main_box = refBuilder->get_widget<Gtk::Box>("top-level");
   append(*main_box);
 
   // Bind widgets
-  column_view = refBuilder->get_object<Gtk::ColumnView>("column-view");
-  cb_acl_default = refBuilder->get_object<Gtk::CheckButton>("cb-acl-default");
+  column_view = refBuilder->get_widget<Gtk::ColumnView>("column-view");
+  cb_acl_default = refBuilder->get_widget<Gtk::CheckButton>("cb-acl-default");
 
   // Make sure the GType of ParticipantItem has beeen registered.
   { ParticipantItem::create("", ParticipantKind::user); }
@@ -63,7 +63,7 @@ ParticipantListWidget::ParticipantListWidget(
   string_filter->set_match_mode(Gtk::StringFilter::MatchMode::SUBSTRING);
   string_filter->set_search("");
 
-  filter_entry = refBuilder->get_object<Gtk::Entry>("filter-text");
+  filter_entry = refBuilder->get_widget<Gtk::Entry>("filter-text");
   Glib::Binding::bind_property(filter_entry->property_text(),
                                string_filter->property_search());
   filter_entry->signal_icon_press().connect(
@@ -71,7 +71,7 @@ ParticipantListWidget::ParticipantListWidget(
 
   filter_user_model = Gtk::FilterListModel::create(user_model, string_filter);
 
-  cb_user = refBuilder->get_object<Gtk::CheckButton>("participant-kind-user");
+  cb_user = refBuilder->get_widget<Gtk::CheckButton>("participant-kind-user");
   cb_user->signal_toggled().connect([this]() {
     fill_user_list();
     participant_kind = ParticipantKind::user;
@@ -80,7 +80,7 @@ ParticipantListWidget::ParticipantListWidget(
 
   group_model = ParticipantListItemModel::create();
   filter_group_model = Gtk::FilterListModel::create(group_model, string_filter);
-  cb_group = refBuilder->get_object<Gtk::CheckButton>("participant-kind-group");
+  cb_group = refBuilder->get_widget<Gtk::CheckButton>("participant-kind-group");
   cb_group->signal_toggled().connect([this]() {
     fill_group_list();
     participant_kind = ParticipantKind::group;
@@ -94,7 +94,7 @@ ParticipantListWidget::ParticipantListWidget(
   });
 
   cb_show_system_participants =
-      refBuilder->get_object<Gtk::CheckButton>("show-system-participants");
+      refBuilder->get_widget<Gtk::CheckButton>("show-system-participants");
   cb_show_system_participants->signal_toggled().connect([this]() {
     controller->show_system_participants(
         cb_show_system_participants->get_active());
@@ -103,12 +103,12 @@ ParticipantListWidget::ParticipantListWidget(
   });
 
   search_participant =
-      refBuilder->get_object<Gtk::Button>("search-participant");
+      refBuilder->get_widget<Gtk::Button>("search-participant");
   search_participant->signal_clicked().connect(
       [this]() { do_search_participant(); });
 
   searched_participant =
-      refBuilder->get_object<Gtk::Entry>("searched-participant");
+      refBuilder->get_widget<Gtk::Entry>("searched-participant");
   // Workaround: until 4.8, gtkmm did not wrap the activate signal of Gtk::Entry
   // See: https://gitlab.gnome.org/GNOME/gtkmm/-/issues/100
   // Let's do it the low level way.
@@ -116,7 +116,7 @@ ParticipantListWidget::ParticipantListWidget(
     user_data->do_search_participant();
   };
   // We need to disconnect the signal later, so keep the connection around.
-  searched_participant_signal_activate = g_signal_connect(
+  g_signal_connect(
       /* instance */ searched_participant->gobj(), "activate",
       // Non-capturing lambdas are just functions in disguise
       // so they provide a conversion to a pointer function.
@@ -306,11 +306,7 @@ void ParticipantListWidget::fill_group_list() {
                   ParticipantKind::group, ParticipantKind::default_group);
 }
 
-ParticipantListWidget::~ParticipantListWidget() {
-  // Cleanup signal connection.
-  g_clear_signal_handler(&searched_participant_signal_activate,
-                         searched_participant->gobj());
-}
+ParticipantListWidget::~ParticipantListWidget() {}
 
 void ParticipantListWidget::set_readonly(bool b) { set_sensitive(!b); }
 

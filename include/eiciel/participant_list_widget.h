@@ -79,18 +79,18 @@ private:
   Glib::RefPtr<ParticipantListItemModel> group_model;
   Glib::RefPtr<Gtk::FilterListModel> filter_group_model;
 
-  Glib::RefPtr<Gtk::ColumnView> column_view;
-  Glib::RefPtr<Gtk::CheckButton> cb_acl_default;
+  Gtk::ColumnView* column_view;
+  Gtk::CheckButton* cb_acl_default;
 
-  Glib::RefPtr<Gtk::CheckButton> cb_user;
-  Glib::RefPtr<Gtk::CheckButton> cb_group;
+  Gtk::CheckButton* cb_user;
+  Gtk::CheckButton* cb_group;
 
-  Glib::RefPtr<Gtk::CheckButton> cb_show_system_participants;
+  Gtk::CheckButton* cb_show_system_participants;
 
-  Glib::RefPtr<Gtk::Entry> filter_entry;
+  Gtk::Entry* filter_entry;
 
-  Glib::RefPtr<Gtk::Entry> searched_participant;
-  Glib::RefPtr<Gtk::Button> search_participant;
+  Gtk::Entry* searched_participant;
+  Gtk::Button* search_participant;
 
   ParticipantListController *controller;
   std::unordered_map<Gtk::Button*, sigc::connection> button_signal_map;
@@ -98,8 +98,6 @@ private:
   ParticipantKind participant_kind;
   ParticipantListWidgetMode widget_mode;
   bool is_default;
-
-  gulong searched_participant_signal_activate;
 };
 
 } // namespace eiciel

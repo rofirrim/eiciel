@@ -56,34 +56,34 @@ AppWindow::AppWindow(BaseObjectType *cobject,
       acl_editor_controller(acl_editor_cont),
       xattr_editor_controller(xattr_editor_cont) {
   this->set_icon_name("eiciel");
-  auto open_file = refBuilder->get_object<Gtk::Button>("open-file");
+  auto open_file = refBuilder->get_widget<Gtk::Button>("open-file");
   open_file->set_sensitive(true);
   open_file->signal_clicked().connect(
       [this]() { this->choose_file_to_open(); });
 
-  auto open_directory = refBuilder->get_object<Gtk::Button>("open-directory");
+  auto open_directory = refBuilder->get_widget<Gtk::Button>("open-directory");
   open_directory->set_sensitive(true);
   open_directory->signal_clicked().connect(
       [this]() { this->choose_directory_to_open(); });
 
   auto box_for_acl_editor =
-      refBuilder->get_object<Gtk::Box>("box-for-acl-editor");
+      refBuilder->get_widget<Gtk::Box>("box-for-acl-editor");
   auto acl_editor_widget =
       Gtk::make_managed<ACLEditorWidget>(acl_editor_controller);
   box_for_acl_editor->append(*acl_editor_widget);
 
   auto box_for_xattr_editor =
-      refBuilder->get_object<Gtk::Box>("box-for-xattr-editor");
+      refBuilder->get_widget<Gtk::Box>("box-for-xattr-editor");
   auto xattr_editor_widget =
       Gtk::make_managed<XAttrEditorWidget>(xattr_editor_controller);
   box_for_xattr_editor->append(*xattr_editor_widget);
 
-  filename_label = refBuilder->get_object<Gtk::Label>("filename-label");
+  filename_label = refBuilder->get_widget<Gtk::Label>("filename-label");
 
-  Glib::RefPtr<Gtk::Stack> main_stack =
-      refBuilder->get_object<Gtk::Stack>("main-stack");
-  Glib::RefPtr<Gtk::StackSwitcher> stack_switcher =
-      refBuilder->get_object<Gtk::StackSwitcher>("stack-switcher");
+  Gtk::Stack* main_stack =
+      refBuilder->get_widget<Gtk::Stack>("main-stack");
+  Gtk::StackSwitcher* stack_switcher =
+      refBuilder->get_widget<Gtk::StackSwitcher>("stack-switcher");
 
   if (mode != Application::EditMode::DEFAULT) {
     open_file->set_visible(false);
@@ -101,6 +101,11 @@ AppWindow::AppWindow(BaseObjectType *cobject,
     set_title(title);
   }
 
+}
+
+AppWindow::~AppWindow() {
+  delete acl_editor_controller;
+  delete xattr_editor_controller;
 }
 
 void AppWindow::choose_file_impl(const Glib::ustring &title,

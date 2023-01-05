@@ -51,17 +51,17 @@ ACLListWidget::ACLListWidget(ACLListController *cont,
   auto refBuilder = Gtk::Builder::create_from_resource(
       "/org/roger_ferrer/eiciel/acl_list_widget.ui");
 
-  auto main_box = refBuilder->get_object<Gtk::Box>("top-level");
+  auto main_box = refBuilder->get_widget<Gtk::Box>("top-level");
   append(*main_box);
 
-  column_view = refBuilder->get_object<Gtk::ColumnView>("column-view");
+  column_view = refBuilder->get_widget<Gtk::ColumnView>("column-view");
   edit_default_participants =
-      refBuilder->get_object<Gtk::ToggleButton>("edit-default-participants");
+      refBuilder->get_widget<Gtk::ToggleButton>("edit-default-participants");
   edit_default_participants->signal_toggled().connect(
       [this]() { toggle_edit_default_acl(); });
 
-  warning_icon = refBuilder->get_object<Gtk::Image>("warning-icon");
-  warning_label = refBuilder->get_object<Gtk::Label>("warning-label");
+  warning_icon = refBuilder->get_widget<Gtk::Image>("warning-icon");
+  warning_label = refBuilder->get_widget<Gtk::Label>("warning-label");
 
   // Model
   model = ACLListItemModel::create();

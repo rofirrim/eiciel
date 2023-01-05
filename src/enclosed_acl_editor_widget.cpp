@@ -42,26 +42,26 @@ EnclosedACLEditorWidget::EnclosedACLEditorWidget(
     : Gtk::Dialog(cobject), controller(controller) {
   controller->set_view(this);
 
-  auto files_box = refBuilder->get_object<Gtk::Box>("files-acl-editor-box");
+  auto files_box = refBuilder->get_widget<Gtk::Box>("files-acl-editor-box");
   auto files_acl_list_controller = controller->get_acl_list_file_controller();
   files_acl_list = Gtk::make_managed<ACLListWidget>(
       files_acl_list_controller, ACLListWidgetMode::ONLY_FILE);
   files_box->append(*files_acl_list);
   files_acl_list_controller->can_edit_default_acl(false);
 
-  auto dirs_box = refBuilder->get_object<Gtk::Box>("dirs-acl-editor-box");
+  auto dirs_box = refBuilder->get_widget<Gtk::Box>("dirs-acl-editor-box");
   dirs_acl_list = Gtk::make_managed<ACLListWidget>(
       controller->get_acl_list_directory_controller(),
       ACLListWidgetMode::ONLY_DIRECTORY);
   dirs_box->append(*dirs_acl_list);
 
-  auto participants_box = refBuilder->get_object<Gtk::Box>("participants-box");
+  auto participants_box = refBuilder->get_widget<Gtk::Box>("participants-box");
   participants_list = Gtk::make_managed<ParticipantListWidget>(
       controller->get_participant_list_controller(),
       ParticipantListWidgetMode::DUAL_PANE);
   participants_box->append(*participants_list);
 
-  apply_button = refBuilder->get_object<Gtk::Button>("apply-button");
+  apply_button = refBuilder->get_widget<Gtk::Button>("apply-button");
 }
 
 EnclosedACLEditorWidget::~EnclosedACLEditorWidget() {}
