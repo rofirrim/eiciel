@@ -38,8 +38,8 @@ private:
 
     virtual ~ACLListDirectoryController() {}
 
-    void toggle_edit_default_acl(bool default_acl_were_being_edited,
-                                 std::function<void(bool)> callback) override;
+    void requested_toggle_edit_default_acl(bool default_acl_were_being_edited) override;
+    void confirmed_toggle_edit_default_acl(bool new_state);
     bool remove_acl(const Glib::ustring &entry_name, ElementKind e) override;
     void update_acl_entry(ElementKind e, const Glib::ustring &name,
                           bool reading, bool writing, bool execution) override;
@@ -55,8 +55,7 @@ private:
 
     virtual ~ACLListFileController() {}
 
-    void toggle_edit_default_acl(bool default_acl_were_being_edited,
-                                 std::function<void(bool)> callback) override;
+    void requested_toggle_edit_default_acl(bool default_acl_were_being_edited) override;
     bool remove_acl(const Glib::ustring &entry_name, ElementKind e) override;
     void update_acl_entry(ElementKind e, const Glib::ustring &name,
                           bool reading, bool writing, bool execution) override;

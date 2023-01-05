@@ -26,11 +26,22 @@ EnclosedACLEditorController::EnclosedACLEditorController()
     : acl_list_file_controller(this), acl_list_directory_controller(this),
       participant_list_controller(this) {}
 
-void EnclosedACLEditorController::ACLListDirectoryController::toggle_edit_default_acl(
-    bool default_acl_were_being_edited,
-    std::function<void(bool)> callback) {
+void EnclosedACLEditorController::ACLListDirectoryController::
+    confirmed_toggle_edit_default_acl(bool new_state) {
+  default_acl_are_being_edited(new_state);
+  if (!new_state) {
+    remove_all_default_entries();
+    update_acl_ineffective(get_mask_permissions(),
+                           get_default_mask_permissions());
+  } else {
+    populate_required_default_entries();
+  }
+}
+
+void EnclosedACLEditorController::ACLListDirectoryController::
+    requested_toggle_edit_default_acl(bool requested_new_state) {
   try {
-    if (default_acl_were_being_edited) {
+    if (!requested_new_state) {
       Glib::ustring s(
           _("Are you sure you want to remove all ACL default entries?"));
       Gtk::Window *toplevel =
@@ -46,19 +57,16 @@ void EnclosedACLEditorController::ACLListDirectoryController::toggle_edit_defaul
       }
       remove_acl_message->set_modal(true);
       remove_acl_message->signal_response().connect(
-          [this, remove_acl_message, callback](int response) mutable {
+          [this, remove_acl_message](int response) mutable {
             if (response == Gtk::ResponseType::YES) {
-              remove_all_default_entries();
-              update_acl_ineffective(get_mask_permissions(),
-                                     get_default_mask_permissions());
+              confirmed_toggle_edit_default_acl(false);
             }
-            callback(response == Gtk::ResponseType::YES);
             delete remove_acl_message;
             remove_acl_message = nullptr;
           });
       remove_acl_message->show();
     } else {
-      populate_required_default_entries();
+      confirmed_toggle_edit_default_acl(true);
     }
   } catch (ACLManagerException e) {
   }
@@ -77,7 +85,7 @@ void EnclosedACLEditorController::ACLListDirectoryController::update_acl_entry(
 }
 
 void EnclosedACLEditorController::ACLListFileController::
-    toggle_edit_default_acl(bool, std::function<void(bool)>) {
+    requested_toggle_edit_default_acl(bool) {
   g_warn_if_reached();
 }
 

@@ -69,8 +69,7 @@ public:
   void fill_acl_list(ACLManager&, bool include_default_entries);
 
   // Events
-  virtual void toggle_edit_default_acl(bool default_acl_were_being_edited,
-                                       std::function<void(bool)> callback) = 0;
+  virtual void requested_toggle_edit_default_acl(bool requested_new_state) = 0;
   virtual bool remove_acl(const Glib::ustring &entry_name, ElementKind e) = 0;
   virtual void update_acl_entry(ElementKind e, const Glib::ustring &name,
                                 bool reading, bool writing, bool execution) = 0;

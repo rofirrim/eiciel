@@ -44,7 +44,7 @@ ACLListWidget::ACLListWidget(ACLListController *cont,
       readonly_mode(*this, "readonly-mode", false),
       exist_ineffective_permissions(*this, "exist-ineffective-permissions",
                                     false),
-      toggling_default_acl(false), widget_mode(widget_mode) {
+      widget_mode(widget_mode) {
   controller->set_view(this);
 
   // Create UI from Resource
@@ -56,9 +56,11 @@ ACLListWidget::ACLListWidget(ACLListController *cont,
 
   column_view = refBuilder->get_widget<Gtk::ColumnView>("column-view");
   edit_default_participants =
-      refBuilder->get_widget<Gtk::ToggleButton>("edit-default-participants");
-  edit_default_participants->signal_toggled().connect(
-      [this]() { toggle_edit_default_acl(); });
+      Gtk::Builder::get_widget_derived<eiciel::ConfirmToggleButton>(refBuilder, "edit-default-participants");
+  edit_default_participants->signal_toggle_requested.connect(
+      [this](bool requested_new_state) {
+        controller->requested_toggle_edit_default_acl(requested_new_state);
+      });
 
   warning_icon = refBuilder->get_widget<Gtk::Image>("warning-icon");
   warning_label = refBuilder->get_widget<Gtk::Label>("warning-label");
@@ -480,14 +482,12 @@ void ACLListWidget::change_permissions(Glib::RefPtr<ACLItem> item,
 }
 
 void ACLListWidget::can_edit_default_acl(bool b) {
-  // Show we hide it instead?
+  // Should we hide it, instead?
   edit_default_participants->set_sensitive(b);
 }
 
 void ACLListWidget::default_acl_are_being_edited(bool b) {
-  toggling_default_acl = true;
   edit_default_participants->set_active(b);
-  toggling_default_acl = false;
 }
 
 void ACLListWidget::update_acl_ineffective(
@@ -533,24 +533,6 @@ void ACLListWidget::update_acl_ineffective(
     }
   }
   exist_ineffective_permissions.set_value(there_are_ineffective_permissions);
-}
-
-void ACLListWidget::toggle_edit_default_acl() {
-  // This triggers some nasty reentrancy that we can stop here.
-  if (toggling_default_acl)
-    return;
-  toggling_default_acl = true;
-
-  // Because this is fired after the button has been pressed and released, the
-  // value read is always the opposite. Perhaps there is a better way.
-  controller->toggle_edit_default_acl(
-      !edit_default_participants->get_active(), [this](bool changed) {
-        if (!changed) {
-          edit_default_participants->set_active(
-              !edit_default_participants->get_active());
-        }
-        toggling_default_acl = false;
-      });
 }
 
 void ACLListWidget::disable_default_acl_editing() {

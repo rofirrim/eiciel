@@ -36,6 +36,7 @@
 #include "eiciel/acl_manager.h"
 #include "eiciel/acl_element_kind.h"
 #include "eiciel/acl_list_controller.h"
+#include "eiciel/confirm_toggle_button.h"
 
 namespace eiciel {
 
@@ -94,7 +95,6 @@ private:
   void change_permissions(Glib::RefPtr<ACLItem> item,
                           Gtk::CheckButton *checkbutton,
                           const Glib::ustring &permission);
-  void toggle_edit_default_acl();
   void disable_default_acl_editing();
 
   void remove_button_signal(Gtk::Button *btn);
@@ -106,7 +106,7 @@ private:
   Glib::RefPtr<ACLListItemModel> model;
   Gtk::ColumnView* column_view;
 
-  Gtk::ToggleButton* edit_default_participants;
+  eiciel::ConfirmToggleButton* edit_default_participants;
 
   Gtk::Image* warning_icon;
   Gtk::Label* warning_label;
@@ -115,8 +115,6 @@ private:
 
   Glib::Property<bool> readonly_mode;
   Glib::Property<bool> exist_ineffective_permissions;
-
-  bool toggling_default_acl;
 
   std::unordered_map<Gtk::Button *, sigc::connection> button_signal_map;
   std::unordered_map<Gtk::CheckButton *, sigc::connection> checkbutton_signal_map;

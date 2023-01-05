@@ -22,6 +22,7 @@ common_sources = [
   'enclosed_acl_editor_controller.cpp',
   'participant_list_widget.cpp',
   'participant_list_controller.cpp',
+  'confirm_toggle_button.cpp',
 ]
 
 if user_attributes_feature.enabled()

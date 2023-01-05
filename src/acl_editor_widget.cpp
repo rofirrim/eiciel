@@ -40,10 +40,10 @@ ACLEditorWidget::ACLEditorWidget(ACLEditorController *cont) : controller(cont) {
 
   main_box = refBuilder->get_widget<Gtk::Box>("main-editor-box");
 
-  auto *acl_list =
+  ACLListWidget* acl_list_widget =
       Gtk::make_managed<ACLListWidget>(controller, ACLListWidgetMode::DEFAULT);
   auto box_for_acl_list = refBuilder->get_widget<Gtk::Box>("box-for-acl-list");
-  box_for_acl_list->append(*acl_list);
+  box_for_acl_list->append(*acl_list_widget);
 
   auto *participant_list = Gtk::make_managed<ParticipantListWidget>(
       controller, ParticipantListWidgetMode::SINGLE_PANE);

@@ -448,12 +448,21 @@ void ACLEditorController::edit_enclosed_files() {
   enclosed_editor->show();
 }
 
+void ACLEditorController::confirmed_toggle_edit_default_acl(bool new_state) {
+  default_acl_are_being_edited(new_state);
+  if (!new_state) {
+    acl_manager->clear_default_acl();
+  } else {
+    acl_manager->create_default_acl();
+  }
+  redraw_acl_list();
+}
+
 // Returns true if the changed happened
-void ACLEditorController::toggle_edit_default_acl(
-    bool default_acl_were_being_edited,
-    std::function<void(bool)> callback) {
+void ACLEditorController::requested_toggle_edit_default_acl(
+    bool requested_new_state) {
   try {
-    if (default_acl_were_being_edited) {
+    if (!requested_new_state) {
       Glib::ustring s(
           _("Are you sure you want to remove all ACL default entries?"));
       Gtk::Window *toplevel =
@@ -469,19 +478,17 @@ void ACLEditorController::toggle_edit_default_acl(
       }
       remove_acl_message->set_modal(true);
       remove_acl_message->signal_response().connect(
-          [this, remove_acl_message, callback](int response) mutable {
+          [this, remove_acl_message,
+           requested_new_state](int response) mutable {
             if (response == Gtk::ResponseType::YES) {
-              acl_manager->clear_default_acl();
-              redraw_acl_list();
+              confirmed_toggle_edit_default_acl(requested_new_state);
             }
-            callback(response == Gtk::ResponseType::YES);
             delete remove_acl_message;
             remove_acl_message = nullptr;
           });
       remove_acl_message->show();
     } else {
-      acl_manager->create_default_acl();
-      redraw_acl_list();
+      confirmed_toggle_edit_default_acl(requested_new_state);
     }
   } catch (ACLManagerException e) {
   }
