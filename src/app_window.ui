@@ -61,10 +61,8 @@
                     <property name="name">acl-page</property>
                     <property name="title" translatable="yes">Access Control List</property>
                     <property name="child">
-                      <object class="GtkBox" id="box-for-acl-editor">
+                      <object class="gtkmm__CustomObject_ACLEditorWidget" id="acl-editor-widget">
                         <property name="orientation">vertical</property>
-                        <!-- We fill this programmatically as GtkBuilder
-                        templates are not easily useable in gtkmm, yet -->
                       </object>
                     </property>
                   </object>
@@ -74,10 +72,8 @@
                     <property name="name">end</property>
                     <property name="title" translatable="yes">Extended Attributes</property>
                     <property name="child">
-                      <object class="GtkBox" id="box-for-xattr-editor">
+                      <object class="gtkmm__CustomObject_XAttrEditorWidget" id="xattr-editor-widget">
                         <property name="orientation">vertical</property>
-                        <!-- We fill this programmatically as GtkBuilder
-                        templates are not easily useable in gtkmm, yet -->
                       </object>
                     </property>
                   </object>

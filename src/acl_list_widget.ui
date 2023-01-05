@@ -18,9 +18,10 @@
       </object>
     </child>
     <child>
-      <object class="GtkBox">
+      <object class="GtkBox" id="warning-ineffective-box">
         <property name="orientation">horizontal</property>
         <property name="margin-top">8</property>
+        <property name="margin-bottom">8</property>
         <child>
           <object class="GtkImage" id="warning-icon">
             <property name="icon-name">dialog-warning</property>
@@ -43,9 +44,10 @@
         <property name="halign">start</property>
         <property name="hexpand">0</property>
         <child>
-          <object class="GtkToggleButton" id="edit-default-participants">
-            <property name="label" translatable="yes">Edit default participants</property>
+          <object class="gtkmm__CustomObject_ConfirmToggleButton" id="edit-default-participants">
             <property name="margin-top">8</property>
+            <property name="margin-bottom">8</property>
+            <property name="label" translatable="yes">Edit default participants</property>
           </object>
         </child>
       </object>

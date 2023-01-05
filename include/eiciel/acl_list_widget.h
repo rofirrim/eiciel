@@ -26,6 +26,7 @@
 #include "eiciel/i18n.h"
 
 #include <unordered_map>
+#include <gtkmm/builder.h>
 #include <gtkmm/box.h>
 #include <gtkmm/button.h>
 #include <gtkmm/checkbutton.h>
@@ -48,7 +49,9 @@ enum class ACLListWidgetMode {
 
 class ACLListWidget : public Gtk::Box {
 public:
-  ACLListWidget(ACLListController *, ACLListWidgetMode);
+  ACLListWidget();
+  ACLListWidget(BaseObjectType *obj, const Glib::RefPtr<Gtk::Builder> &,
+                ACLListController *, ACLListWidgetMode);
   virtual ~ACLListWidget();
 
   void remove_all_default_entries();
@@ -80,7 +83,7 @@ public:
   static GType get_type() {
     // Let's cache once the type does exist.
     if (!gtype)
-      gtype = g_type_from_name("gtkmm__CustomObject_ACLItem");
+      gtype = g_type_from_name("gtkmm__CustomObject_ACLListWidget");
     return gtype;
   }
 
@@ -95,7 +98,6 @@ private:
   void change_permissions(Glib::RefPtr<ACLItem> item,
                           Gtk::CheckButton *checkbutton,
                           const Glib::ustring &permission);
-  void disable_default_acl_editing();
 
   void remove_button_signal(Gtk::Button *btn);
   void keep_button_signal(Gtk::Button *btn, sigc::connection c);
@@ -108,18 +110,22 @@ private:
 
   eiciel::ConfirmToggleButton* edit_default_participants;
 
+  Gtk::Box* warning_ineffective_box;
   Gtk::Image* warning_icon;
   Gtk::Label* warning_label;
 
   ACLListController *controller;
 
-  Glib::Property<bool> readonly_mode;
-  Glib::Property<bool> exist_ineffective_permissions;
+  ACLListWidgetMode widget_mode;
 
   std::unordered_map<Gtk::Button *, sigc::connection> button_signal_map;
   std::unordered_map<Gtk::CheckButton *, sigc::connection> checkbutton_signal_map;
 
-  ACLListWidgetMode widget_mode;
+  Glib::Property<bool> readonly_mode{*this, "readonly-mode", false};
+  Glib::Property<bool> allow_editing_default_acls{
+      *this, "allow-editing-default-acls", false};
+  Glib::Property<bool> exist_ineffective_permissions{
+      *this, "exist-ineffective-permissions", false};
 
   static GType gtype;
 };

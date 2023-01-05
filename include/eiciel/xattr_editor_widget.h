@@ -28,6 +28,7 @@
 #include "eiciel/xattr_editor_controller.h"
 #include "eiciel/xattr_item.h"
 #include <gtkmm/box.h>
+#include <gtkmm/builder.h>
 #include <gtkmm/button.h>
 #include <gtkmm/columnview.h>
 #include <gtkmm/entry.h>
@@ -38,7 +39,10 @@ namespace eiciel {
 
 class XAttrEditorWidget : public Gtk::Box {
 public:
-  XAttrEditorWidget(XAttrEditorController *controller);
+  XAttrEditorWidget();
+  XAttrEditorWidget(BaseObjectType *obj,
+                    const Glib::RefPtr<Gtk::Builder> &builder,
+                    XAttrEditorController *controller);
   virtual ~XAttrEditorWidget();
   void set_active(bool b);
 
@@ -75,7 +79,7 @@ private:
   std::unordered_map<Gtk::Button *, sigc::connection> button_signal_map;
   std::unordered_map<Gtk::EditableLabel *, sigc::connection> label_signal_map;
 
-  Glib::Property<bool> readonly_mode;
+  Glib::Property<bool> readonly_mode{*this, "readonly-mode", false};
 
   static GType gtype;
 };

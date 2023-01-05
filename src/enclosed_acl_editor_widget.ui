@@ -23,7 +23,6 @@
     <child>
       <object class="GtkBox" id="dialog-main-box">
         <property name="orientation">vertical</property>
-        <property name="spacing">8</property>
         <property name="margin-top">12</property>
         <property name="margin-bottom">12</property>
         <property name="margin-start">12</property>
@@ -32,17 +31,22 @@
           <object class="GtkBox" id="acl_editors">
             <property name="orientation">horizontal</property>
             <property name="spacing">8</property>
+            <property name="margin-bottom">8</property>
             <child>
               <object class="GtkBox" id="files-acl-editor-box">
                 <property name="orientation">vertical</property>
-                <property name="spacing">8</property>
                 <child>
                   <object class="GtkLabel">
                     <property name="label" translatable="yes">Participants in ACL for enclosed files</property>
                     <property name="xalign">0</property>
+                    <property name="margin-bottom">8</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
                     </attributes>
+                  </object>
+                </child>
+                <child>
+                  <object class="gtkmm__CustomObject_ACLListWidget" id="files-acl-list-widget">
                   </object>
                 </child>
               </object>
@@ -50,14 +54,18 @@
             <child>
               <object class="GtkBox" id="dirs-acl-editor-box">
                 <property name="orientation">vertical</property>
-                <property name="spacing">8</property>
                 <child>
                   <object class="GtkLabel">
                     <property name="label" translatable="yes">Participants in ACL for enclosed directories</property>
                     <property name="xalign">0</property>
+                    <property name="margin-bottom">8</property>
                     <attributes>
                       <attribute name="weight" value="bold"/>
                     </attributes>
+                  </object>
+                </child>
+                <child>
+                  <object class="gtkmm__CustomObject_ACLListWidget" id="dirs-acl-list-widget">
                   </object>
                 </child>
               </object>
@@ -67,14 +75,18 @@
         <child>
           <object class="GtkBox" id="participants-box">
             <property name="orientation">vertical</property>
-            <property name="spacing">8</property>
             <child>
               <object class="GtkLabel">
                 <property name="label" translatable="yes">Available participants</property>
                 <property name="xalign">0</property>
+                <property name="margin-bottom">8</property>
                 <attributes>
                   <attribute name="weight" value="bold"/>
                 </attributes>
+              </object>
+            </child>
+            <child>
+              <object class="gtkmm__CustomObject_ParticipantListWidget" id="participant-list-widget">
               </object>
             </child>
           </object>

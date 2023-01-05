@@ -38,13 +38,15 @@ namespace eiciel {
 
 GType ACLListWidget::gtype = 0;
 
-ACLListWidget::ACLListWidget(ACLListController *cont,
+// Required for all GType the machinery to work.
+ACLListWidget::ACLListWidget()
+    : Glib::ObjectBase("ACLListWidget") {}
+
+ACLListWidget::ACLListWidget(BaseObjectType *obj,
+                             const Glib::RefPtr<Gtk::Builder> &,
+                             ACLListController *cont,
                              ACLListWidgetMode widget_mode)
-    : Glib::ObjectBase("ACLListWidget"), controller(cont),
-      readonly_mode(*this, "readonly-mode", false),
-      exist_ineffective_permissions(*this, "exist-ineffective-permissions",
-                                    false),
-      widget_mode(widget_mode) {
+    : Glib::ObjectBase("ACLListWidget"), Gtk::Box(obj), controller(cont) {
   controller->set_view(this);
 
   // Create UI from Resource
@@ -62,6 +64,7 @@ ACLListWidget::ACLListWidget(ACLListController *cont,
         controller->requested_toggle_edit_default_acl(requested_new_state);
       });
 
+  warning_ineffective_box = refBuilder->get_widget<Gtk::Box>("warning-ineffective-box");
   warning_icon = refBuilder->get_widget<Gtk::Image>("warning-icon");
   warning_label = refBuilder->get_widget<Gtk::Label>("warning-label");
 
@@ -89,8 +92,14 @@ ACLListWidget::ACLListWidget(ACLListController *cont,
   column_view->append_column(column);
 
   this->readonly_mode.get_proxy().signal_changed().connect([this]() {
-   edit_default_participants->set_sensitive(!this->readonly_mode.get_value());
+    edit_default_participants->set_sensitive(!this->readonly_mode.get_value());
   });
+
+  this->allow_editing_default_acls.get_proxy().signal_changed().connect(
+      [this]() {
+        edit_default_participants->set_visible(
+            this->allow_editing_default_acls.get_value());
+      });
 
   auto factory_name = Gtk::SignalListItemFactory::create();
   factory_name->signal_setup().connect(
@@ -231,7 +240,7 @@ ACLListWidget::ACLListWidget(ACLListController *cont,
   if (widget_mode == ACLListWidgetMode::ONLY_DIRECTORY) {
     can_edit_default_acl(true);
   } else if (widget_mode == ACLListWidgetMode::ONLY_FILE) {
-    can_edit_default_acl(true);
+    can_edit_default_acl(false);
     edit_default_participants->set_visible(false);
   }
 
@@ -239,6 +248,7 @@ ACLListWidget::ACLListWidget(ACLListController *cont,
     bool b = exist_ineffective_permissions.get_value();
     warning_label->set_visible(b);
     warning_icon->set_visible(b);
+    warning_ineffective_box->set_visible(b);
   });
 }
 
@@ -482,8 +492,7 @@ void ACLListWidget::change_permissions(Glib::RefPtr<ACLItem> item,
 }
 
 void ACLListWidget::can_edit_default_acl(bool b) {
-  // Should we hide it, instead?
-  edit_default_participants->set_sensitive(b);
+  allow_editing_default_acls.set_value(b);
 }
 
 void ACLListWidget::default_acl_are_being_edited(bool b) {
@@ -533,10 +542,6 @@ void ACLListWidget::update_acl_ineffective(
     }
   }
   exist_ineffective_permissions.set_value(there_are_ineffective_permissions);
-}
-
-void ACLListWidget::disable_default_acl_editing() {
-  edit_default_participants->set_visible(false);
 }
 
 void ACLListWidget::get_textual_representation(Glib::ustring &access_acl,

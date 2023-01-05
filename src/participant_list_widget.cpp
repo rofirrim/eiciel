@@ -35,9 +35,17 @@
 
 namespace eiciel {
 
+GType ParticipantListWidget::gtype = 0;
+
+// Required for all GType the machinery to work.
+ParticipantListWidget::ParticipantListWidget()
+    : Glib::ObjectBase("ParticipantListWidget") {}
+
 ParticipantListWidget::ParticipantListWidget(
+    BaseObjectType *obj, const Glib::RefPtr<Gtk::Builder> &,
     ParticipantListController *cont, ParticipantListWidgetMode widget_mode)
-    : controller(cont), widget_mode(widget_mode) {
+    : Glib::ObjectBase("ParticipantListWidget"), Gtk::Box(obj),
+      controller(cont), widget_mode(widget_mode) {
   controller->set_view(this);
 
   // Create UI from Resource
@@ -178,9 +186,8 @@ ParticipantListWidget::ParticipantListWidget(
             auto label_expr =
                 Gtk::PropertyExpression<Glib::RefPtr<Glib::ObjectBase>>::create(
                     Gtk::ListItem::get_type(), "item");
-            auto kind_expr =
-                Gtk::PropertyExpression<ParticipantKind>::create(
-                    ParticipantItem::get_type(), label_expr, "kind");
+            auto kind_expr = Gtk::PropertyExpression<ParticipantKind>::create(
+                ParticipantItem::get_type(), label_expr, "kind");
             auto false_if_default = Gtk::ClosureExpression<bool>::create(
                 [](Glib::RefPtr<Glib::ObjectBase> this_, ParticipantKind k) {
                   return !(k == ParticipantKind::default_user ||
@@ -199,8 +206,8 @@ ParticipantListWidget::ParticipantListWidget(
           auto item = li->get_item();
           if (auto participant_item =
                   std::dynamic_pointer_cast<ParticipantItem>(item)) {
-            auto sig =
-                button->signal_clicked().connect([this, participant_item, c, target]() {
+            auto sig = button->signal_clicked().connect(
+                [this, participant_item, c, target]() {
                   ElementKind ek;
                   switch (this->participant_kind) {
                   case ParticipantKind::user:
@@ -211,13 +218,12 @@ ParticipantListWidget::ParticipantListWidget(
                   case ParticipantKind::default_group:
                     ek = ElementKind::acl_group;
                     break;
-		  default:
-		    g_return_if_reached();
-		    return;
+                  default:
+                    g_return_if_reached();
+                    return;
                   }
-                  c->add_acl_entry(target,
-                                   participant_item->get_name().c_str(), ek,
-                                   is_default);
+                  c->add_acl_entry(target, participant_item->get_name().c_str(),
+                                   ek, is_default);
                 });
             keep_button_signal(button, sig);
           }

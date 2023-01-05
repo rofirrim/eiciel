@@ -2,13 +2,13 @@
 <interface>
   <object class="GtkBox" id="top-level">
     <property name="orientation">vertical</property>
-    <property name="spacing">8</property>
     <child>
       <object class="GtkInfoBar" id="info-bar">
         <property name="visible">false</property>
         <child>
           <object class="GtkBox">
              <property name="orientation">vertical</property>
+             <property name="margin-bottom">8</property>
              <child>
                 <object class="GtkLabel" id="info-bar-label">
                   <property name="xalign">0</property>
@@ -28,21 +28,21 @@
     <child>
       <object class="GtkBox" id="main-editor-box">
         <property name="orientation">vertical</property>
-        <property name="spacing">8</property>
         <child>
           <object class="GtkLabel">
             <property name="label" translatable="yes">Current participants in ACL</property>
             <property name="xalign">0</property>
+            <property name="margin-bottom">8</property>
             <attributes>
               <attribute name="weight" value="bold"/>
             </attributes>
           </object>
         </child>
         <child>
-          <object class="GtkBox" id="box-for-acl-list">
+          <object class="gtkmm__CustomObject_ACLListWidget" id="acl-list-widget">
             <property name="orientation">vertical</property>
             <property name="vexpand">True</property>
-            <!-- We fill this manually during the creation of the editor -->
+            <property name="margin-bottom">8</property>
           </object>
         </child>
         <child>
@@ -55,9 +55,8 @@
           </object>
         </child>
         <child>
-          <object class="GtkBox" id="box-for-participant-list">
+          <object class="gtkmm__CustomObject_ParticipantListWidget" id="participant-list-widget">
             <property name="orientation">vertical</property>
-            <!-- We fill this manually during the creation of the editor -->
           </object>
         </child>
         <child>

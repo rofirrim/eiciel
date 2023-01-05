@@ -39,27 +39,25 @@ EnclosedACLEditorWidget::create(EnclosedACLEditorController *controller) {
 EnclosedACLEditorWidget::EnclosedACLEditorWidget(
     BaseObjectType *cobject, const Glib::RefPtr<Gtk::Builder> &refBuilder,
     EnclosedACLEditorController *controller)
-    : Gtk::Dialog(cobject), controller(controller) {
+    : Glib::ObjectBase("EnclosedACLEditorWidget"), Gtk::Dialog(cobject),
+      controller(controller) {
   controller->set_view(this);
 
-  auto files_box = refBuilder->get_widget<Gtk::Box>("files-acl-editor-box");
   auto files_acl_list_controller = controller->get_acl_list_file_controller();
-  files_acl_list = Gtk::make_managed<ACLListWidget>(
-      files_acl_list_controller, ACLListWidgetMode::ONLY_FILE);
-  files_box->append(*files_acl_list);
+  files_acl_list = Gtk::Builder::get_widget_derived<ACLListWidget>(
+      refBuilder, "files-acl-list-widget", files_acl_list_controller,
+      ACLListWidgetMode::ONLY_FILE);
   files_acl_list_controller->can_edit_default_acl(false);
 
-  auto dirs_box = refBuilder->get_widget<Gtk::Box>("dirs-acl-editor-box");
-  dirs_acl_list = Gtk::make_managed<ACLListWidget>(
+  dirs_acl_list = Gtk::Builder::get_widget_derived<ACLListWidget>(
+      refBuilder, "dirs-acl-list-widget",
       controller->get_acl_list_directory_controller(),
       ACLListWidgetMode::ONLY_DIRECTORY);
-  dirs_box->append(*dirs_acl_list);
 
-  auto participants_box = refBuilder->get_widget<Gtk::Box>("participants-box");
-  participants_list = Gtk::make_managed<ParticipantListWidget>(
+  participants_list = Gtk::Builder::get_widget_derived<ParticipantListWidget>(
+      refBuilder, "participant-list-widget",
       controller->get_participant_list_controller(),
       ParticipantListWidgetMode::DUAL_PANE);
-  participants_box->append(*participants_list);
 
   apply_button = refBuilder->get_widget<Gtk::Button>("apply-button");
 }

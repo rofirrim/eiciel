@@ -54,10 +54,11 @@ protected:
 private:
   AppWindow *create_appwindow(EditMode edit_mode);
   void on_hide_window(Gtk::Window *window);
-
   void on_about();
   void on_help();
 };
+
+void register_types();
 
 } // namespace eiciel
 

@@ -36,8 +36,15 @@ namespace eiciel {
 
 GType XAttrEditorWidget::gtype = 0;
 
-XAttrEditorWidget::XAttrEditorWidget(XAttrEditorController *controller)
-    : Glib::ObjectBase("XAttrEditorWidget"), controller(controller), readonly_mode(*this, "readonly-mode", false) {
+// Required for all GType the machinery to work.
+XAttrEditorWidget::XAttrEditorWidget()
+    : Glib::ObjectBase("XAttrEditorWidget") {}
+
+XAttrEditorWidget::XAttrEditorWidget(BaseObjectType *obj,
+                                     const Glib::RefPtr<Gtk::Builder> &,
+                                     XAttrEditorController *controller)
+    : Glib::ObjectBase("XAttrEditorWidget"), Gtk::Box(obj),
+      controller(controller), readonly_mode(*this, "readonly-mode", false) {
   controller->set_view(this);
 
   // Create UI from Resource

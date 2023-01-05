@@ -24,8 +24,16 @@
 
 namespace eiciel {
 
+GType ACLEditorWidget::gtype = 0;
+
+// Required for all GType the machinery to work.
+ACLEditorWidget::ACLEditorWidget() : Glib::ObjectBase("ACLEditorWidget") {}
+
 // Constructor
-ACLEditorWidget::ACLEditorWidget(ACLEditorController *cont) : controller(cont) {
+ACLEditorWidget::ACLEditorWidget(BaseObjectType *obj,
+                                 const Glib::RefPtr<Gtk::Builder> &,
+                                 ACLEditorController *cont)
+    : Glib::ObjectBase("ACLEditorWidget"), Gtk::Box(obj), controller(cont) {
   controller->set_view(this);
 
   auto refBuilder = Gtk::Builder::create_from_resource(
@@ -40,16 +48,16 @@ ACLEditorWidget::ACLEditorWidget(ACLEditorController *cont) : controller(cont) {
 
   main_box = refBuilder->get_widget<Gtk::Box>("main-editor-box");
 
-  ACLListWidget* acl_list_widget =
-      Gtk::make_managed<ACLListWidget>(controller, ACLListWidgetMode::DEFAULT);
-  auto box_for_acl_list = refBuilder->get_widget<Gtk::Box>("box-for-acl-list");
-  box_for_acl_list->append(*acl_list_widget);
+  ACLListWidget *acl_list_widget =
+      Gtk::Builder::get_widget_derived<ACLListWidget>(
+          refBuilder, "acl-list-widget", controller, ACLListWidgetMode::DEFAULT);
+  (void)acl_list_widget;
 
-  auto *participant_list = Gtk::make_managed<ParticipantListWidget>(
-      controller, ParticipantListWidgetMode::SINGLE_PANE);
-  auto box_for_participant_list =
-      refBuilder->get_widget<Gtk::Box>("box-for-participant-list");
-  box_for_participant_list->append(*participant_list);
+  ParticipantListWidget *participant_list_widget =
+      Gtk::Builder::get_widget_derived<ParticipantListWidget>(
+          refBuilder, "participant-list-widget", controller,
+          ParticipantListWidgetMode::SINGLE_PANE);
+  (void)participant_list_widget;
 
   edit_enclosed_files =
       refBuilder->get_widget<Gtk::Button>("edit-enclosed-files");

@@ -28,6 +28,7 @@
 #include "eiciel/acl_list_widget.h"
 #include "eiciel/participant_list_widget.h"
 #include <gtkmm/box.h>
+#include <gtkmm/builder.h>
 #include <gtkmm/button.h>
 #include <gtkmm/infobar.h>
 #include <gtkmm/label.h>
@@ -41,21 +42,31 @@ class ACLEditorController;
 
 class ACLEditorWidget : public Gtk::Box {
 public:
-    ACLEditorWidget(ACLEditorController* cont);
-    virtual ~ACLEditorWidget();
+  ACLEditorWidget();
+  ACLEditorWidget(BaseObjectType *obj,
+                  const Glib::RefPtr<Gtk::Builder> &builder,
+                  ACLEditorController *cont);
+  virtual ~ACLEditorWidget();
 
-    void initialize(const Glib::ustring& s);
-    bool opened_file();
+  void initialize(const Glib::ustring &s);
+  bool opened_file();
 
-    void set_active(bool b);
+  void set_active(bool b);
 
-    Glib::ustring last_error();
+  Glib::ustring last_error();
 
-    void show_info_bar();
-    void hide_info_bar();
+  void show_info_bar();
+  void hide_info_bar();
 
-    void can_edit_enclosed_files(bool b);
-    void set_recursive_progress(double);
+  void can_edit_enclosed_files(bool b);
+  void set_recursive_progress(double);
+
+  static GType get_type() {
+    // Let's cache once the type does exist.
+    if (!gtype)
+      gtype = g_type_from_name("gtkmm__CustomObject_ACLEditorWidget");
+    return gtype;
+  }
 
 private:
     ACLEditorController* controller;
@@ -67,6 +78,8 @@ private:
 
     void there_is_no_file();
     void do_edit_enclosed_files();
+
+    static GType gtype;
 };
 
 }

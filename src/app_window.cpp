@@ -66,17 +66,14 @@ AppWindow::AppWindow(BaseObjectType *cobject,
   open_directory->signal_clicked().connect(
       [this]() { this->choose_directory_to_open(); });
 
-  auto box_for_acl_editor =
-      refBuilder->get_widget<Gtk::Box>("box-for-acl-editor");
-  auto acl_editor_widget =
-      Gtk::make_managed<ACLEditorWidget>(acl_editor_controller);
-  box_for_acl_editor->append(*acl_editor_widget);
+  ACLEditorWidget *acl_editor_widget =
+      Gtk::Builder::get_widget_derived<ACLEditorWidget>(
+          refBuilder, "acl-editor-widget", acl_editor_controller);
+  (void)acl_editor_widget;
 
-  auto box_for_xattr_editor =
-      refBuilder->get_widget<Gtk::Box>("box-for-xattr-editor");
-  auto xattr_editor_widget =
-      Gtk::make_managed<XAttrEditorWidget>(xattr_editor_controller);
-  box_for_xattr_editor->append(*xattr_editor_widget);
+  XAttrEditorWidget* xattr_editor_widget = Gtk::Builder::get_widget_derived<XAttrEditorWidget>(
+    refBuilder, "xattr-editor-widget", xattr_editor_controller);
+  (void)xattr_editor_widget;
 
   filename_label = refBuilder->get_widget<Gtk::Label>("filename-label");
 

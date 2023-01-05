@@ -2,10 +2,10 @@
 <interface>
   <object class="GtkBox" id="top-level">
     <property name="orientation">vertical</property>
-    <property name="spacing">8</property>
     <child>
       <object class="GtkBox">
         <property name="orientation">horizontal</property>
+        <property name="margin-bottom">8</property>
         <property name="spacing">8</property>
         <child>
           <object class="GtkCheckButton" id="participant-kind-user">
@@ -42,6 +42,7 @@
             <property name="reorderable">False</property>
             <property name="hexpand">True</property>
             <property name="vexpand">False</property>
+            <property name="margin-bottom">8</property>
           </object>
         </child>
       </object>
@@ -49,6 +50,7 @@
     <child>
       <object class="GtkExpander">
         <property name="label" translatable="yes">Advanced features</property>
+        <property name="margin-bottom">8</property>
         <child>
           <object class="GtkBox">
             <property name="orientation">vertical</property>

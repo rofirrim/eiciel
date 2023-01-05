@@ -28,6 +28,7 @@
 #include "eiciel/participant_item.h"
 #include "eiciel/participant_list_controller.h"
 #include <gtkmm/box.h>
+#include <gtkmm/builder.h>
 #include <gtkmm/button.h>
 #include <gtkmm/checkbutton.h>
 #include <gtkmm/columnview.h>
@@ -47,11 +48,22 @@ enum class ParticipantListWidgetMode {
 
 class ParticipantListWidget : public Gtk::Box {
 public:
-  ParticipantListWidget(ParticipantListController *, ParticipantListWidgetMode);
+  ParticipantListWidget();
+  ParticipantListWidget(BaseObjectType *obj,
+                        const Glib::RefPtr<Gtk::Builder> &builder,
+                        ParticipantListController *, ParticipantListWidgetMode);
   virtual ~ParticipantListWidget();
 
   void set_readonly(bool b);
   void can_edit_default_acl(bool b);
+
+  static GType get_type() {
+    // Let's cache once the type does exist.
+    if (!gtype)
+      gtype = g_type_from_name("gtkmm__CustomObject_ParticipantListWidget");
+    return gtype;
+  }
+
 private:
   void fill_models(bool system_participants);
 
@@ -98,6 +110,8 @@ private:
   ParticipantKind participant_kind;
   ParticipantListWidgetMode widget_mode;
   bool is_default;
+
+  static GType gtype;
 };
 
 } // namespace eiciel

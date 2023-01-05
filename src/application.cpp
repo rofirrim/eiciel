@@ -19,11 +19,14 @@
 */
 
 #include "eiciel/application.h"
-#include "eiciel/app_window.h"
+#include "eiciel/acl_editor_widget.h"
 #include "eiciel/acl_list_widget.h"
+#include "eiciel/app_window.h"
+#include "eiciel/confirm_toggle_button.h"
 #include "eiciel/participant_list_widget.h"
-#include <gtkmm/aboutdialog.h>
+#include "eiciel/xattr_editor_widget.h"
 #include <exception>
+#include <gtkmm/aboutdialog.h>
 #include <iostream>
 
 namespace eiciel {
@@ -110,7 +113,22 @@ AppWindow *Application::create_appwindow(EditMode mode) {
   return appwindow;
 }
 
+void register_types() {
+  static bool initialized = false;
+  
+  if (!initialized) {
+    initialized = true;
+
+    static_cast<void>(eiciel::ACLEditorWidget());
+    static_cast<void>(eiciel::ACLListWidget());
+    static_cast<void>(eiciel::ParticipantListWidget());
+    static_cast<void>(eiciel::XAttrEditorWidget());
+    static_cast<void>(eiciel::ConfirmToggleButton());
+  }
+}
+
 void Application::on_activate() {
+  eiciel::register_types();
 
   try {
     // The application has been started, so let's show a window.
@@ -133,6 +151,8 @@ void Application::on_startup() {
 
 void Application::on_open(const Gio::Application::type_vec_files &files,
                                 const Glib::ustring & hint) {
+  eiciel::register_types();
+
   // The application has been asked to open some files,
   // so let's open a new view for each one.
   AppWindow *appwindow = nullptr;

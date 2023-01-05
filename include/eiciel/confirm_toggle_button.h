@@ -28,6 +28,7 @@ namespace eiciel {
 
 class ConfirmToggleButton final : public Gtk::ToggleButton {
 public:
+  ConfirmToggleButton() : Glib::ObjectBase("ConfirmToggleButton") {}
   ConfirmToggleButton(BaseObjectType *obj,
                       const Glib::RefPtr<Gtk::Builder> &builder)
       : Glib::ObjectBase("ConfirmToggleButton"), Gtk::ToggleButton(obj) {}
