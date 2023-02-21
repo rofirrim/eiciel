@@ -1,0 +1,371 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the eiciel package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: eiciel\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-01 21:42+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/acl_editor_controller.cpp:145
+msgid "Could not add ACL entry: "
+msgstr ""
+
+#: src/acl_editor_controller.cpp:195
+msgid "Could not remove ACL entry: "
+msgstr ""
+
+#: src/acl_editor_controller.cpp:262
+msgid "Could not modify ACL entry: "
+msgstr ""
+
+#. FIXME: Can't do much here
+#: src/acl_editor_controller.cpp:350
+#, c-format
+msgid "Exception when setting ACL of file '%s': '%s'"
+msgstr ""
+
+#. Catch-all to avoid crashing nautilus
+#: src/acl_editor_controller.cpp:354
+#, c-format
+msgid "Unknown exception when setting ACL of file '%s'"
+msgstr ""
+
+#: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
+msgid "Are you sure you want to remove all ACL default entries?"
+msgstr ""
+
+#: src/acl_editor_widget.ui:15
+msgid "Applying ACLs to enclosed files"
+msgstr ""
+
+#: src/acl_editor_widget.ui:34
+msgid "Current participants in ACL"
+msgstr ""
+
+#: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
+msgid "Available participants"
+msgstr ""
+
+#: src/acl_editor_widget.ui:65
+msgid "Edit ACLs for enclosed files..."
+msgstr ""
+
+#: src/acl_list_controller.cpp:144 src/acl_list_widget.cpp:317
+msgid "Mask"
+msgstr ""
+
+#: src/acl_list_controller.cpp:149
+msgid "Other"
+msgstr ""
+
+#. reading
+#. writing
+#. execution
+#: src/acl_list_controller.cpp:198 src/acl_list_widget.cpp:347
+msgid "Default Mask"
+msgstr ""
+
+#. ElementKind::default_others must be the last, so we handle it here manually
+#: src/acl_list_controller.cpp:205 src/acl_list_widget.cpp:342
+msgid "Default Other"
+msgstr ""
+
+#: src/acl_list_widget.cpp:100
+msgid "Participant"
+msgstr ""
+
+#: src/acl_list_widget.cpp:165
+msgid "Read"
+msgstr ""
+
+#: src/acl_list_widget.cpp:168
+msgid "Write"
+msgstr ""
+
+#: src/acl_list_widget.cpp:171
+msgid "Execute"
+msgstr ""
+
+#: src/acl_list_widget.ui:33
+msgid "There are ineffective permissions"
+msgstr ""
+
+#: src/acl_list_widget.ui:46
+msgid "Edit default participants"
+msgstr ""
+
+#: src/acl_manager.cpp:48 src/xattr_manager.cpp:34
+msgid "Only regular files or directories supported"
+msgstr ""
+
+#: src/acl_manager.cpp:465
+msgid "Textual representation of the ACL is wrong"
+msgstr ""
+
+#: src/acl_manager.cpp:486
+msgid "Default textual representation of the ACL is wrong"
+msgstr ""
+
+#: src/application.cpp:44
+msgid "Initial edit mode (default mode otherwise)"
+msgstr ""
+
+#: src/application.cpp:56
+msgid ""
+"Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
+msgstr ""
+
+#: src/application.cpp:96
+msgid "Graphical editor of file ACLs and extended attributes"
+msgstr ""
+
+#: src/application.cpp:100
+msgid "translator-credits"
+msgstr ""
+
+#: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
+msgid "Access Control List"
+msgstr ""
+
+#: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
+msgid "Extended attributes"
+msgstr ""
+
+#: src/app_window.cpp:129
+msgid "Select file"
+msgstr ""
+
+#: src/app_window.cpp:133
+msgid "Select directory"
+msgstr ""
+
+#: src/app_window.cpp:146 src/app_window.ui:37
+msgid "No file opened"
+msgstr ""
+
+#: src/app_window.ui:16
+msgid "Open file"
+msgstr ""
+
+#: src/app_window.ui:21
+msgid "Open directory"
+msgstr ""
+
+#: src/app_window.ui:78
+msgid "Extended Attributes"
+msgstr ""
+
+#: src/app_window.ui:99
+msgid "About Eiciel"
+msgstr ""
+
+#: src/app_window.ui:103
+msgid "Quit"
+msgstr ""
+
+#: src/enclosed_acl_editor_widget.ui:5
+msgid "Edit ACLs for enclosed files"
+msgstr ""
+
+#: src/enclosed_acl_editor_widget.ui:14
+msgid "Cancel"
+msgstr ""
+
+#: src/enclosed_acl_editor_widget.ui:19
+msgid "Apply"
+msgstr ""
+
+#: src/enclosed_acl_editor_widget.ui:44
+msgid "Participants in ACL for enclosed files"
+msgstr ""
+
+#: src/enclosed_acl_editor_widget.ui:59
+msgid "Participants in ACL for enclosed directories"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:31
+msgid "Read, write and execute"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:33
+msgid "Read and write"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:35
+msgid "Read and execute"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:37
+msgid "Only read"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:39
+msgid "Write and execute"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:41
+msgid "Only write"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:43
+msgid "Only execute"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
+#: src/nautilus_acl_model.cpp:67
+msgid "No permission"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:53
+msgid "List directory, access, create and remove files"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:55
+msgid "List directory, no access to files"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:57
+msgid "List directory and access files"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:59
+msgid "List directory only, no access to files"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:61
+msgid "No list directory but access, create and remove"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:65
+msgid "No list directory and access files"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:101
+msgid "User owner"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:109
+msgid "Group owner"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:115
+#, c-format
+msgid "User ACL: ‘%s’"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:121
+#, c-format
+msgid "Group ACL: ‘%s’"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:127
+msgid "Mask limits Group owner, User ACL and Group ACL to"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:131
+msgid "Other users"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:137
+msgid "New files will have User owner"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:147
+msgid "New files will have Group owner"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:155
+#, c-format
+msgid "New files will have User ACL: ‘%s’"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:163
+#, c-format
+msgid "New files will have Group ACL: ‘%s‘"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:170
+msgid "New files will have Mask"
+msgstr ""
+
+#: src/nautilus_acl_model.cpp:175
+msgid "New files will have Other users"
+msgstr ""
+
+#: src/nautilus_menu_provider.cpp:69
+msgid "Edit Access Control Lists…"
+msgstr ""
+
+#: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
+msgid "Allows editing Access Control Lists"
+msgstr ""
+
+#: src/nautilus_menu_provider.cpp:100
+msgid "Edit extended attributes…"
+msgstr ""
+
+#: src/participant_list_widget.cpp:395
+msgid "Participant not found"
+msgstr ""
+
+#: src/participant_list_widget.ui:12
+msgid "User"
+msgstr ""
+
+#: src/participant_list_widget.ui:17
+msgid "Group"
+msgstr ""
+
+#: src/participant_list_widget.ui:23
+msgid "Default participant"
+msgstr ""
+
+#: src/participant_list_widget.ui:28
+msgid "Filter participants"
+msgstr ""
+
+#: src/participant_list_widget.ui:51
+msgid "Advanced features"
+msgstr ""
+
+#: src/participant_list_widget.ui:61
+msgid "Name of participant"
+msgstr ""
+
+#: src/participant_list_widget.ui:71
+msgid "Search"
+msgstr ""
+
+#: src/participant_list_widget.ui:80
+msgid "Show system participants"
+msgstr ""
+
+#: src/xattr_editor_widget.cpp:102
+msgid "Name"
+msgstr ""
+
+#: src/xattr_editor_widget.cpp:145
+msgid "Value"
+msgstr ""
+
+#: src/xattr_editor_widget.cpp:199
+msgid "There is already an attribute with this name"
+msgstr ""
+
+#: src/xattr_editor_widget.ui:27
+msgid "Name of the new attribute"
+msgstr ""
+
+#: src/xattr_editor_widget.ui:32
+msgid "Value of the new attribute"
+msgstr ""
