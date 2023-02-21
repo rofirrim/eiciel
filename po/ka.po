@@ -6,27 +6,30 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-02-21 21:14+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://l10n.opensuse.org/projects/eiciel/master/ka/"
+">\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
-msgstr ""
+msgstr "ACL-ის ჩანაწერის დამატება შეუძლებელია: "
 
 #: src/acl_editor_controller.cpp:195
 msgid "Could not remove ACL entry: "
-msgstr ""
+msgstr "ACL-ის ჩანაწერის წაშლა შეუძლებელია: "
 
 #: src/acl_editor_controller.cpp:262
 msgid "Could not modify ACL entry: "
-msgstr ""
+msgstr "ACL-ის ჩანაწერის ჩასწორება შეუძლებელია: "
 
 #. FIXME: Can't do much here
 #: src/acl_editor_controller.cpp:350
@@ -54,7 +57,7 @@ msgstr ""
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
 msgid "Available participants"
-msgstr ""
+msgstr "ხელმისაწვდომი მონაწილეები"
 
 #: src/acl_editor_widget.ui:65
 msgid "Edit ACLs for enclosed files..."
@@ -62,39 +65,39 @@ msgstr ""
 
 #: src/acl_list_controller.cpp:144 src/acl_list_widget.cpp:317
 msgid "Mask"
-msgstr ""
+msgstr "ნიღაბი"
 
 #: src/acl_list_controller.cpp:149
 msgid "Other"
-msgstr ""
+msgstr "სხვა"
 
 #. reading
 #. writing
 #. execution
 #: src/acl_list_controller.cpp:198 src/acl_list_widget.cpp:347
 msgid "Default Mask"
-msgstr ""
+msgstr "ნაგულისხმები ნიღაბი"
 
 #. ElementKind::default_others must be the last, so we handle it here manually
 #: src/acl_list_controller.cpp:205 src/acl_list_widget.cpp:342
 msgid "Default Other"
-msgstr ""
+msgstr "ნაგულისხმები სხვა"
 
 #: src/acl_list_widget.cpp:100
 msgid "Participant"
-msgstr ""
+msgstr "მონაწილე"
 
 #: src/acl_list_widget.cpp:165
 msgid "Read"
-msgstr ""
+msgstr "წაკითხვა"
 
 #: src/acl_list_widget.cpp:168
 msgid "Write"
-msgstr ""
+msgstr "ჩასწორება"
 
 #: src/acl_list_widget.cpp:171
 msgid "Execute"
-msgstr ""
+msgstr "შესრულება"
 
 #: src/acl_list_widget.ui:33
 msgid "There are ineffective permissions"
@@ -102,7 +105,7 @@ msgstr ""
 
 #: src/acl_list_widget.ui:46
 msgid "Edit default participants"
-msgstr ""
+msgstr "ნაგულისხმევი მონაწილეების ჩასწორება"
 
 #: src/acl_manager.cpp:48 src/xattr_manager.cpp:34
 msgid "Only regular files or directories supported"
@@ -131,47 +134,47 @@ msgstr ""
 
 #: src/application.cpp:100
 msgid "translator-credits"
-msgstr ""
+msgstr "temuri Doghonadze"
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
-msgstr ""
+msgstr "წვდომის კონტროლის სია"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
 msgid "Extended attributes"
-msgstr ""
+msgstr "გაფართოებული ატრიბუტები"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "აირჩიეთ ფაილი"
 
 #: src/app_window.cpp:133
 msgid "Select directory"
-msgstr ""
+msgstr "უჯრის ამორჩევა"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
-msgstr ""
+msgstr "ფაილი ღია არაა"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "ფაილის გახსნა"
 
 #: src/app_window.ui:21
 msgid "Open directory"
-msgstr ""
+msgstr "საქაღალდის გახსნა"
 
 #: src/app_window.ui:78
 msgid "Extended Attributes"
-msgstr ""
+msgstr "გაფართოებული ატრიბუტები"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "Eiciel-ის შესახებ"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "გასვლა"
 
 #: src/enclosed_acl_editor_widget.ui:5
 msgid "Edit ACLs for enclosed files"
@@ -179,11 +182,11 @@ msgstr ""
 
 #: src/enclosed_acl_editor_widget.ui:14
 msgid "Cancel"
-msgstr ""
+msgstr "გაუქმება"
 
 #: src/enclosed_acl_editor_widget.ui:19
 msgid "Apply"
-msgstr ""
+msgstr "გადატარება"
 
 #: src/enclosed_acl_editor_widget.ui:44
 msgid "Participants in ACL for enclosed files"
@@ -195,36 +198,36 @@ msgstr ""
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
-msgstr ""
+msgstr "წაკითხვა, ჩაწერა და გაშვება"
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "კითხვა და ჩაწერა"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
-msgstr ""
+msgstr "წაკითხვა და გაშვება"
 
 #: src/nautilus_acl_model.cpp:37
 msgid "Only read"
-msgstr ""
+msgstr "მხოლოდ წაკითხვა"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
-msgstr ""
+msgstr "ჩაწერა და გაშვება"
 
 #: src/nautilus_acl_model.cpp:41
 msgid "Only write"
-msgstr ""
+msgstr "მხოლოდ ჩაწერა"
 
 #: src/nautilus_acl_model.cpp:43
 msgid "Only execute"
-msgstr ""
+msgstr "მხოლოდ გაშვება"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
 msgid "No permission"
-msgstr ""
+msgstr "წვდომების გარეშე"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
@@ -252,21 +255,21 @@ msgstr ""
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "მფლობელი მომხმარებელი"
 
 #: src/nautilus_acl_model.cpp:109
 msgid "Group owner"
-msgstr ""
+msgstr "მფლობელი ჯგუფი"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "მომხმარებლის ACL: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "ჯგუფის ACL: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
@@ -274,7 +277,7 @@ msgstr ""
 
 #: src/nautilus_acl_model.cpp:131
 msgid "Other users"
-msgstr ""
+msgstr "სხვა მომხმარებლები"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
@@ -304,7 +307,7 @@ msgstr ""
 
 #: src/nautilus_menu_provider.cpp:69
 msgid "Edit Access Control Lists…"
-msgstr ""
+msgstr "წვდომის კონტროლის სიები ჩასწორება…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
 msgid "Allows editing Access Control Lists"
@@ -312,7 +315,7 @@ msgstr ""
 
 #: src/nautilus_menu_provider.cpp:100
 msgid "Edit extended attributes…"
-msgstr ""
+msgstr "გაფართოებული ატრიბუტების ჩასწორება…"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
@@ -320,11 +323,11 @@ msgstr ""
 
 #: src/participant_list_widget.ui:12
 msgid "User"
-msgstr ""
+msgstr "მომხმარებელი"
 
 #: src/participant_list_widget.ui:17
 msgid "Group"
-msgstr ""
+msgstr "ჯგუფი"
 
 #: src/participant_list_widget.ui:23
 msgid "Default participant"
@@ -336,15 +339,15 @@ msgstr ""
 
 #: src/participant_list_widget.ui:51
 msgid "Advanced features"
-msgstr ""
+msgstr "დამატებითი ფუნქციები"
 
 #: src/participant_list_widget.ui:61
 msgid "Name of participant"
-msgstr ""
+msgstr "მონაწილის სახელი"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "ძებნა"
 
 #: src/participant_list_widget.ui:80
 msgid "Show system participants"
@@ -352,11 +355,11 @@ msgstr ""
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
-msgstr ""
+msgstr "სახელი"
 
 #: src/xattr_editor_widget.cpp:145
 msgid "Value"
-msgstr ""
+msgstr "მნიშვნელობა"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
@@ -364,8 +367,8 @@ msgstr ""
 
 #: src/xattr_editor_widget.ui:27
 msgid "Name of the new attribute"
-msgstr ""
+msgstr "ახალი ატრიბუტის სახელი"
 
 #: src/xattr_editor_widget.ui:32
 msgid "Value of the new attribute"
-msgstr ""
+msgstr "ახალი ატრიბუტის მნიშვნელობა"
