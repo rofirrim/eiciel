@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2022-10-28 23:13+0000\n"
-"Last-Translator: Mohammad Rezaei Seresht <securesage@aol.com>\n"
+"PO-Revision-Date: 2023-03-01 23:14+0000\n"
+"Last-Translator: Mohammad Rezaei Seresht <m.networking@gmail.com>\n"
 "Language-Team: Persian <https://l10n.opensuse.org/projects/eiciel/master/fa/>"
 "\n"
 "Language: fa\n"
@@ -181,12 +181,10 @@ msgid "Edit ACLs for enclosed files"
 msgstr "ویرایش ACL ها برای پرونده‌های محصور شده"
 
 #: src/enclosed_acl_editor_widget.ui:14
-#, fuzzy
 msgid "Cancel"
 msgstr "لغو"
 
 #: src/enclosed_acl_editor_widget.ui:19
-#, fuzzy
 msgid "Apply"
 msgstr "اعمال"
 
@@ -283,11 +281,11 @@ msgstr "کاربران دیگر"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "فایل‌های جدید کاربر مالک خواهند داشت"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "فایل‌های جدید گروه گروه مالک خواهند داشت"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
@@ -301,21 +299,19 @@ msgstr ""
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "فایل های جدید دارای ماسک خواهند بود"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
 msgstr ""
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "لیست کنترل دسترسی"
+msgstr "تغییر لیست کنترل دسترسی…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "لیست کنترل دسترسی"
+msgstr "اجازه تغییر در لیست کنترل دسترسی"
 
 #: src/nautilus_menu_provider.cpp:100
 msgid "Edit extended attributes…"
@@ -354,9 +350,8 @@ msgid "Search"
 msgstr "جستجو"
 
 #: src/participant_list_widget.ui:80
-#, fuzzy
 msgid "Show system participants"
-msgstr "همچنین شرکت کنندگان سیستم را نمایش بده"
+msgstr "نمایش مشارکت کنندگان سیستم"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
