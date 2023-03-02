@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2023-03-01 23:14+0000\n"
+"PO-Revision-Date: 2023-03-03 00:14+0000\n"
 "Last-Translator: Mohammad Rezaei Seresht <m.networking@gmail.com>\n"
 "Language-Team: Persian <https://l10n.opensuse.org/projects/eiciel/master/fa/>"
 "\n"
@@ -273,7 +273,7 @@ msgstr "ACL گروه:'%s'"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
-msgstr ""
+msgstr "ماسک گروه مالک، ACL کاربر و ACL گروه را محدود میکند به"
 
 #: src/nautilus_acl_model.cpp:131
 msgid "Other users"
@@ -290,12 +290,12 @@ msgstr "فایل‌های جدید گروه گروه مالک خواهند دا�
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "فایل‌های جدید این ACL کاربر را خواهند داشت:‘%s’"
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "فایل‌های جدید این ACL گروه را خواهند داشت:‘%s’"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
@@ -303,7 +303,7 @@ msgstr "فایل های جدید دارای ماسک خواهند بود"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
-msgstr ""
+msgstr "فایل‌های جدید این ACL دیگر کاربران را خواهند داشت:‘%s’"
 
 #: src/nautilus_menu_provider.cpp:69
 msgid "Edit Access Control Lists…"
