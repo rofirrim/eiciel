@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2023-03-03 00:14+0000\n"
+"PO-Revision-Date: 2023-03-03 14:14+0000\n"
 "Last-Translator: Mohammad Rezaei Seresht <m.networking@gmail.com>\n"
 "Language-Team: Persian <https://l10n.opensuse.org/projects/eiciel/master/fa/>"
 "\n"
@@ -285,7 +285,7 @@ msgstr "فایل‌های جدید کاربر مالک خواهند داشت"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr "فایل‌های جدید گروه گروه مالک خواهند داشت"
+msgstr "فایل‌های جدید گروه مالک خواهند داشت"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
@@ -363,17 +363,15 @@ msgstr "مقدار"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
-msgstr ""
+msgstr "در حال حاضر یک ویژگی با این نام وجود دارد"
 
 #: src/xattr_editor_widget.ui:27
-#, fuzzy
 msgid "Name of the new attribute"
-msgstr "صفت جدید"
+msgstr "نام صفت جدید"
 
 #: src/xattr_editor_widget.ui:32
-#, fuzzy
 msgid "Value of the new attribute"
-msgstr "صفات تمدید شده ی کاربر"
+msgstr "مقدار ویژگی جدید"
 
 #~ msgid "Could not rename attribute name: "
 #~ msgstr "نمیتوان نام صفت را مجددا نامگذاری کرد: "
