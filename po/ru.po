@@ -4,67 +4,63 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2018-10-28 14:20+0000\n"
-"Last-Translator: Alex Minton <alex239@gmail.com>\n"
-"Language-Team: Russian <https://l10n.opensuse.org/projects/eiciel/master/ru/"
-">\n"
+"PO-Revision-Date: 2023-03-03 14:14+0000\n"
+"Last-Translator: Mariya Shikunova <mariia@basealt.ru>\n"
+"Language-Team: Russian <https://l10n.opensuse.org/projects/eiciel/master/ru/>"
+"\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
-msgstr "Не удается добавить запись ACL: "
+msgstr "Не удаётся добавить запись ACL: "
 
 #: src/acl_editor_controller.cpp:195
 msgid "Could not remove ACL entry: "
-msgstr "Не удается удалить запись ACL: "
+msgstr "Не удаётся удалить запись ACL: "
 
 #: src/acl_editor_controller.cpp:262
 msgid "Could not modify ACL entry: "
-msgstr "Не удается изменить запись ACL: "
+msgstr "Не удаётся изменить запись ACL: "
 
 #. FIXME: Can't do much here
 #: src/acl_editor_controller.cpp:350
 #, c-format
 msgid "Exception when setting ACL of file '%s': '%s'"
-msgstr ""
+msgstr "Исключение при установке ACL для файла «%s»: «%s»"
 
 #. Catch-all to avoid crashing nautilus
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr ""
+msgstr "Неизвестное исключение при установке ACL для файла «%s»"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr "Подтверждаете удаление всех записей ACL по умолчанию?"
+msgstr "Вы действительно хотите удалить все записи ACL по умолчанию?"
 
 #: src/acl_editor_widget.ui:15
-#, fuzzy
 msgid "Applying ACLs to enclosed files"
-msgstr "<b>Текущие участники ACL</b>"
+msgstr "Применение ACL к вложенным файлам"
 
 #: src/acl_editor_widget.ui:34
-#, fuzzy
 msgid "Current participants in ACL"
-msgstr "<b>Текущие участники ACL</b>"
+msgstr "Текущие участники ACL"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
-#, fuzzy
 msgid "Available participants"
-msgstr "<b>Доступные участники</b>"
+msgstr "Доступные участники"
 
 #: src/acl_editor_widget.ui:65
-#, fuzzy
 msgid "Edit ACLs for enclosed files..."
-msgstr "<b>Текущие участники ACL</b>"
+msgstr "Изменить ACL для вложенных файлов..."
 
 #: src/acl_list_controller.cpp:144 src/acl_list_widget.cpp:317
 msgid "Mask"
@@ -127,37 +123,38 @@ msgstr ""
 #: src/application.cpp:44
 msgid "Initial edit mode (default mode otherwise)"
 msgstr ""
+"Начальный режим редактирования (в противном случае — режим по умолчанию)"
 
 #: src/application.cpp:56
 msgid ""
 "Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
 msgstr ""
+"Неверное значение для параметра «edit-mode». Допустимые значения: «acl» или "
+"«xattr»\n"
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "Графический редактор для ACL и расширенных атрибутов"
 
 #: src/application.cpp:100
 msgid "translator-credits"
-msgstr ""
+msgstr "Mariya Shikunova"
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
 msgstr "Список управления доступом"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
-#, fuzzy
 msgid "Extended attributes"
-msgstr "Дополнительные атрибуты пользователя"
+msgstr "Дополнительные атрибуты"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "Выбрать файл"
 
 #: src/app_window.cpp:133
-#, fuzzy
 msgid "Select directory"
-msgstr "Только каталоги"
+msgstr "Выбор каталога"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
@@ -165,177 +162,165 @@ msgstr "Нет открытых файлов"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "Открыть файл"
 
 #: src/app_window.ui:21
-#, fuzzy
 msgid "Open directory"
-msgstr "Только каталоги"
+msgstr "Открытие каталога"
 
 #: src/app_window.ui:78
-#, fuzzy
 msgid "Extended Attributes"
-msgstr "Дополнительные атрибуты пользователя"
+msgstr "Дополнительные атрибуты"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "О программе Eiciel"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "Выход"
 
 #: src/enclosed_acl_editor_widget.ui:5
-#, fuzzy
 msgid "Edit ACLs for enclosed files"
-msgstr "<b>Текущие участники ACL</b>"
+msgstr "Изменить ACL для вложенных файлов"
 
 #: src/enclosed_acl_editor_widget.ui:14
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: src/enclosed_acl_editor_widget.ui:19
 msgid "Apply"
-msgstr ""
+msgstr "Применить"
 
 #: src/enclosed_acl_editor_widget.ui:44
-#, fuzzy
 msgid "Participants in ACL for enclosed files"
-msgstr "<b>Текущие участники ACL</b>"
+msgstr "Участники ACL для вложенных файлов"
 
 #: src/enclosed_acl_editor_widget.ui:59
-#, fuzzy
 msgid "Participants in ACL for enclosed directories"
-msgstr "<b>Текущие участники ACL</b>"
+msgstr "Участники ACL для вложенных каталогов"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
-msgstr ""
+msgstr "Прочитать, записать и выполнить"
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "Прочитать и записать"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
-msgstr ""
+msgstr "Прочитать и выполнить"
 
 #: src/nautilus_acl_model.cpp:37
-#, fuzzy
 msgid "Only read"
-msgstr "Только файлы"
+msgstr "Только прочитать"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
-msgstr ""
+msgstr "Записать и выполнить"
 
 #: src/nautilus_acl_model.cpp:41
-#, fuzzy
 msgid "Only write"
-msgstr "Только файлы"
+msgstr "Только записать"
 
 #: src/nautilus_acl_model.cpp:43
-#, fuzzy
 msgid "Only execute"
-msgstr "Только каталоги"
+msgstr "Только выполнить"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
 msgid "No permission"
-msgstr ""
+msgstr "Без доступа"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr ""
+msgstr "Список каталогов, доступ, создание и удаление файлов"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "Список каталогов без доступа к файлам"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "Список каталогов с доступом к файлам"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "Только список каталогов, без доступа к файлам"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
-msgstr ""
+msgstr "Без списка каталогов, с доступом, созданием и удалением"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "Без списка каталогов и доступа к файлам"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "Владелец «Пользователь»"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "Группа"
+msgstr "Владелец «Группа»"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "ACL пользователя: «%s»"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "ACL группы: «%s»"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
 msgstr ""
+"Маска ограничивает владельца «Группа», ACL пользователя и ACL владельца до"
 
 #: src/nautilus_acl_model.cpp:131
-#, fuzzy
 msgid "Other users"
-msgstr "Другое"
+msgstr "Другие пользователи"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "Новым файлам будет присвоен владелец «Пользователь»"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "Новым файлам будет присвоен владелец «Группа»"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "Новым файлам будет присвоен ACL пользователя: «%s»"
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "Новым файлам будет присвоен ACL группы: «%s»"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "Новым файлам будет присвоена маска"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
-msgstr ""
+msgstr "Новым файлам будут присвоены пользователи категории «Другие»"
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "Список управления доступом"
+msgstr "Изменить списки управления доступом…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "Список управления доступом"
+msgstr "Позволяет изменить списки управления доступом"
 
 #: src/nautilus_menu_provider.cpp:100
-#, fuzzy
 msgid "Edit extended attributes…"
-msgstr "Дополнительные атрибуты пользователя"
+msgstr "Изменить дополнительные атрибуты…"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
@@ -346,7 +331,6 @@ msgid "User"
 msgstr "Пользователь"
 
 #: src/participant_list_widget.ui:17
-#, fuzzy
 msgid "Group"
 msgstr "Группа"
 
@@ -368,12 +352,11 @@ msgstr "Имя участника"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 #: src/participant_list_widget.ui:80
-#, fuzzy
 msgid "Show system participants"
-msgstr "Также показывать системных участников"
+msgstr "Показывать системных участников"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
@@ -385,17 +368,15 @@ msgstr "Значение"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
-msgstr ""
+msgstr "Атрибут с таким именем уже существует"
 
 #: src/xattr_editor_widget.ui:27
-#, fuzzy
 msgid "Name of the new attribute"
-msgstr "Создать атрибут"
+msgstr "Имя нового атрибута"
 
 #: src/xattr_editor_widget.ui:32
-#, fuzzy
 msgid "Value of the new attribute"
-msgstr "Дополнительные атрибуты пользователя"
+msgstr "Значение нового атрибута"
 
 #~ msgid "Could not rename attribute name: "
 #~ msgstr "Не удалось переименовать атрибут: "
