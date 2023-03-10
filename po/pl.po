@@ -4,19 +4,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2018-01-25 12:04+0000\n"
-"Last-Translator: Ewelina Michalowska <ewelina.michalowska@stgambit.com>\n"
-"Language-Team: Polish <https://l10n.opensuse.org/projects/eiciel/master/pl/"
-">\n"
+"PO-Revision-Date: 2023-03-10 22:14+0000\n"
+"Last-Translator: neome <neome@posteo.me>\n"
+"Language-Team: Polish <https://l10n.opensuse.org/projects/eiciel/master/pl/>"
+"\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -40,7 +40,7 @@ msgstr ""
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr ""
+msgstr "Nieznany wyjątek podczas ustawiania ACL pliku '%s'"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
@@ -52,19 +52,16 @@ msgid "Applying ACLs to enclosed files"
 msgstr "<b>Bieżący uczestnicy na liście ACL</b>"
 
 #: src/acl_editor_widget.ui:34
-#, fuzzy
 msgid "Current participants in ACL"
-msgstr "<b>Bieżący uczestnicy na liście ACL</b>"
+msgstr "Bieżący uczestnicy ACL"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
-#, fuzzy
 msgid "Available participants"
-msgstr "<b>Dostępni uczestnicy</b>"
+msgstr "Dostępni uczestnicy"
 
 #: src/acl_editor_widget.ui:65
-#, fuzzy
 msgid "Edit ACLs for enclosed files..."
-msgstr "<b>Bieżący uczestnicy na liście ACL</b>"
+msgstr "Edytuj ACL dla załączonych plików..."
 
 #: src/acl_list_controller.cpp:144 src/acl_list_widget.cpp:317
 msgid "Mask"
@@ -133,7 +130,7 @@ msgstr ""
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "Graficzny edytor ACL plików i rozszerzonych atrybutów"
 
 #: src/application.cpp:100
 msgid "translator-credits"
@@ -150,7 +147,7 @@ msgstr "Atrybuty rozszerzone użytkowników"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "Wybierz plik"
 
 #: src/app_window.cpp:133
 #, fuzzy
@@ -163,7 +160,7 @@ msgstr "Brak otwartych plików"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "Otwórz plik"
 
 #: src/app_window.ui:21
 #, fuzzy
@@ -177,11 +174,11 @@ msgstr "Atrybuty rozszerzone użytkowników"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "O Eiciel"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "Wyjdź"
 
 #: src/enclosed_acl_editor_widget.ui:5
 #, fuzzy
@@ -190,11 +187,11 @@ msgstr "<b>Bieżący uczestnicy na liście ACL</b>"
 
 #: src/enclosed_acl_editor_widget.ui:14
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
 
 #: src/enclosed_acl_editor_widget.ui:19
 msgid "Apply"
-msgstr ""
+msgstr "Zastosuj"
 
 #: src/enclosed_acl_editor_widget.ui:44
 #, fuzzy
@@ -212,7 +209,7 @@ msgstr ""
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "Odczyt i zapis"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
