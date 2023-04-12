@@ -4,18 +4,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2020-05-02 19:51+0000\n"
-"Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
-"Language-Team: Swedish <https://l10n.opensuse.org/projects/eiciel/master/sv/"
-">\n"
+"PO-Revision-Date: 2023-04-12 12:14+0000\n"
+"Last-Translator: Luna  Jernberg <bittin@opensuse.org>\n"
+"Language-Team: Swedish <https://l10n.opensuse.org/projects/eiciel/master/sv/>"
+"\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -33,13 +33,13 @@ msgstr "Det gick inte att ändra ACL-post: "
 #: src/acl_editor_controller.cpp:350
 #, c-format
 msgid "Exception when setting ACL of file '%s': '%s'"
-msgstr ""
+msgstr "Undantag vid inställning av ACL för fil '%s': '%s'"
 
 #. Catch-all to avoid crashing nautilus
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr ""
+msgstr "Okänt undantag vid inställning av ACL av fil '%s'"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
@@ -51,14 +51,12 @@ msgid "Applying ACLs to enclosed files"
 msgstr "<b>Aktuella deltagare i ACL</b>"
 
 #: src/acl_editor_widget.ui:34
-#, fuzzy
 msgid "Current participants in ACL"
-msgstr "<b>Aktuella deltagare i ACL</b>"
+msgstr "Aktuella deltagare i ACL"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
-#, fuzzy
 msgid "Available participants"
-msgstr "<b>Tillgängliga deltagare</b>"
+msgstr "Tillgängliga deltagare"
 
 #: src/acl_editor_widget.ui:65
 #, fuzzy
@@ -123,7 +121,7 @@ msgstr "Standardtextrepresentationen av ACL är felaktig"
 
 #: src/application.cpp:44
 msgid "Initial edit mode (default mode otherwise)"
-msgstr ""
+msgstr "Inledande redigeringsläge (standardläge annars)"
 
 #: src/application.cpp:56
 msgid ""
@@ -132,29 +130,27 @@ msgstr ""
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "Grafisk redigerare för fil-ACL och utökade attribut"
 
 #: src/application.cpp:100
 msgid "translator-credits"
-msgstr ""
+msgstr "Luna Jernberg"
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
 msgstr "Åtkomstkontrollista (ACL)"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
-#, fuzzy
 msgid "Extended attributes"
-msgstr "Utökade användarattribut"
+msgstr "Utökade attribut"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "Välj fil"
 
 #: src/app_window.cpp:133
-#, fuzzy
 msgid "Select directory"
-msgstr "Endast kataloger"
+msgstr "Välj katalog"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
@@ -162,25 +158,23 @@ msgstr "Ingen fil har öppnats"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "Öppna fil"
 
 #: src/app_window.ui:21
-#, fuzzy
 msgid "Open directory"
-msgstr "Endast kataloger"
+msgstr "Öppna katalog"
 
 #: src/app_window.ui:78
-#, fuzzy
 msgid "Extended Attributes"
-msgstr "Utökade användarattribut"
+msgstr "Utökade attribut"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "Om Eiciel"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "Avsluta"
 
 #: src/enclosed_acl_editor_widget.ui:5
 #, fuzzy
@@ -188,14 +182,12 @@ msgid "Edit ACLs for enclosed files"
 msgstr "<b>Aktuella deltagare i ACL</b>"
 
 #: src/enclosed_acl_editor_widget.ui:14
-#, fuzzy
 msgid "Cancel"
-msgstr "_Avbryt"
+msgstr "Avbryt"
 
 #: src/enclosed_acl_editor_widget.ui:19
-#, fuzzy
 msgid "Apply"
-msgstr "_Verkställ"
+msgstr "Verkställ"
 
 #: src/enclosed_acl_editor_widget.ui:44
 #, fuzzy
@@ -209,132 +201,124 @@ msgstr "<b>Aktuella deltagare i ACL</b>"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
-msgstr ""
+msgstr "Läs, skriv och exekvera"
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "Läs och skriv"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
-msgstr ""
+msgstr "Läs och exekvera"
 
 #: src/nautilus_acl_model.cpp:37
-#, fuzzy
 msgid "Only read"
-msgstr "Endast filer"
+msgstr "Läs endast"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
-msgstr ""
+msgstr "Skriv och exekvera"
 
 #: src/nautilus_acl_model.cpp:41
-#, fuzzy
 msgid "Only write"
-msgstr "Endast filer"
+msgstr "Endast skriv"
 
 #: src/nautilus_acl_model.cpp:43
-#, fuzzy
 msgid "Only execute"
-msgstr "Endast kataloger"
+msgstr "Endast exekvera"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
 msgid "No permission"
-msgstr ""
+msgstr "Inget tillstånd"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr ""
+msgstr "Lista katalog, få tillgång till, skapa och ta bort filer"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "Lista kataloger, ingen tillgång till filer"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "Lista katalog och åtkomst till filer"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "Lista endast katalog, ingen tillgång till filer"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
-msgstr ""
+msgstr "Ingen listning av kataloger men öppna, skapa och ta bort"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "Ingen listning av kataloger och åtkomst till filer"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "Användare ägare"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "Grupp"
+msgstr "Gruppägare"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "Användar ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "Grupp ACL '%s'"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
-msgstr ""
+msgstr "Mask begränsar gruppägare, användares ACL och grupp ACL till"
 
 #: src/nautilus_acl_model.cpp:131
-#, fuzzy
 msgid "Other users"
-msgstr "Övriga"
+msgstr "Andra användare"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "Nya filer kommer att ha användare ägare"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "Nya filer kommer att ha gruppägare"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "Nya filer kommer att ha användar ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "Ny filer kommer att ha grupp ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "Nya filer kommer att ha Mask"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
-msgstr ""
+msgstr "Nya filer kommer att ha andra användare"
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "Åtkomstkontrollista (ACL)"
+msgstr "Redigera åtkomstkontrollistor…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "Åtkomstkontrollista (ACL)"
+msgstr "Tillåter redigering av åtkomstkontrollistor"
 
 #: src/nautilus_menu_provider.cpp:100
-#, fuzzy
 msgid "Edit extended attributes…"
-msgstr "Utökade användarattribut"
+msgstr "Redigera utökade användarattribut"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
@@ -345,7 +329,6 @@ msgid "User"
 msgstr "Användare"
 
 #: src/participant_list_widget.ui:17
-#, fuzzy
 msgid "Group"
 msgstr "Grupp"
 
@@ -367,12 +350,11 @@ msgstr "Deltagarens namn"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "Sök"
 
 #: src/participant_list_widget.ui:80
-#, fuzzy
 msgid "Show system participants"
-msgstr "Visa även systemdeltagare"
+msgstr "Visa systemdeltagare"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
@@ -384,17 +366,15 @@ msgstr "Värde"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
-msgstr ""
+msgstr "Det finns redan ett attribut med detta namn"
 
 #: src/xattr_editor_widget.ui:27
-#, fuzzy
 msgid "Name of the new attribute"
-msgstr "Nytt attribut"
+msgstr "Namn på det nya attributet"
 
 #: src/xattr_editor_widget.ui:32
-#, fuzzy
 msgid "Value of the new attribute"
-msgstr "Utökade användarattribut"
+msgstr "Värde på det nya attributet"
 
 #~ msgid "Could not rename attribute name: "
 #~ msgstr "Det gick inte att byta namn på attributnamnet: "
