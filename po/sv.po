@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2023-04-12 12:14+0000\n"
+"PO-Revision-Date: 2023-04-26 10:14+0000\n"
 "Last-Translator: Luna  Jernberg <bittin@opensuse.org>\n"
 "Language-Team: Swedish <https://l10n.opensuse.org/projects/eiciel/master/sv/>"
 "\n"
@@ -46,9 +46,8 @@ msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Är du säker på att du vill ta bort alla ACL-standardposter?"
 
 #: src/acl_editor_widget.ui:15
-#, fuzzy
 msgid "Applying ACLs to enclosed files"
-msgstr "<b>Aktuella deltagare i ACL</b>"
+msgstr "Tillämpa ACL:er på medföljande filer"
 
 #: src/acl_editor_widget.ui:34
 msgid "Current participants in ACL"
@@ -59,9 +58,8 @@ msgid "Available participants"
 msgstr "Tillgängliga deltagare"
 
 #: src/acl_editor_widget.ui:65
-#, fuzzy
 msgid "Edit ACLs for enclosed files..."
-msgstr "<b>Aktuella deltagare i ACL</b>"
+msgstr "Redigera ACLs för medföljande filer..."
 
 #: src/acl_list_controller.cpp:144 src/acl_list_widget.cpp:317
 msgid "Mask"
@@ -127,6 +125,8 @@ msgstr "Inledande redigeringsläge (standardläge annars)"
 msgid ""
 "Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
 msgstr ""
+"Ogiltigt värde för alternativet \"redigera-läge\". Giltiga alternativ är "
+"'acl' eller 'xattr'\n"
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
@@ -177,9 +177,8 @@ msgid "Quit"
 msgstr "Avsluta"
 
 #: src/enclosed_acl_editor_widget.ui:5
-#, fuzzy
 msgid "Edit ACLs for enclosed files"
-msgstr "<b>Aktuella deltagare i ACL</b>"
+msgstr "Redigera ACLs för medföljande filer"
 
 #: src/enclosed_acl_editor_widget.ui:14
 msgid "Cancel"
@@ -190,14 +189,12 @@ msgid "Apply"
 msgstr "Verkställ"
 
 #: src/enclosed_acl_editor_widget.ui:44
-#, fuzzy
 msgid "Participants in ACL for enclosed files"
-msgstr "<b>Aktuella deltagare i ACL</b>"
+msgstr "Deltagare i ACL för medföljande filer"
 
 #: src/enclosed_acl_editor_widget.ui:59
-#, fuzzy
 msgid "Participants in ACL for enclosed directories"
-msgstr "<b>Aktuella deltagare i ACL</b>"
+msgstr "Deltagre i ACL för medföljande kataloger"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
