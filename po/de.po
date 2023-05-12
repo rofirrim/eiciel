@@ -4,18 +4,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2019-06-16 19:10+0000\n"
-"Last-Translator: Sarah Kriesch <ada.lovelace@gmx.de>\n"
-"Language-Team: German <https://l10n.opensuse.org/projects/eiciel/master/de/"
-">\n"
+"PO-Revision-Date: 2023-05-13 02:14+0000\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
+"Language-Team: German <https://l10n.opensuse.org/projects/eiciel/master/de/>"
+"\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -33,13 +33,13 @@ msgstr "ACL-Eintrag konnte nicht bearbeitet werden: "
 #: src/acl_editor_controller.cpp:350
 #, c-format
 msgid "Exception when setting ACL of file '%s': '%s'"
-msgstr ""
+msgstr "Ausnahme beim Festlegen der ACL der Datei '%s': '%s'"
 
 #. Catch-all to avoid crashing nautilus
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr ""
+msgstr "Unbekannte Ausnahme beim Festlegen der ACL der Datei „%s“"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
@@ -52,14 +52,12 @@ msgid "Applying ACLs to enclosed files"
 msgstr "ACLs für angeschlossene Dateien editieren"
 
 #: src/acl_editor_widget.ui:34
-#, fuzzy
 msgid "Current participants in ACL"
-msgstr "<b>Bisherige Teilnehmer in ACL</b>"
+msgstr "Derzeitige Teilnehmer an ACL"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
-#, fuzzy
 msgid "Available participants"
-msgstr "<b>Verfügbare Teilnehmer</b>"
+msgstr "Verfügbare Teilnehmer"
 
 #: src/acl_editor_widget.ui:65
 msgid "Edit ACLs for enclosed files..."
@@ -123,38 +121,38 @@ msgstr "Standardmäßige Textdarstellung der ACL ist falsch"
 
 #: src/application.cpp:44
 msgid "Initial edit mode (default mode otherwise)"
-msgstr ""
+msgstr "Erstbearbeitungsmodus (sonst Standardmodus)"
 
 #: src/application.cpp:56
 msgid ""
 "Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
 msgstr ""
+"Ungültiger Wert für die Option 'edit-mode'. Gültige Optionen sind 'acl' oder "
+"'xattr'.\n"
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "Grafischer Editor für Datei-ACLs und erweiterte Attribute"
 
 #: src/application.cpp:100
 msgid "translator-credits"
-msgstr ""
+msgstr "Übersetzer-Danksagung"
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
 msgstr "Zugriffssteuerungsliste"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
-#, fuzzy
 msgid "Extended attributes"
-msgstr "Erweiterte Benutzerattribute"
+msgstr "Erweiterte Attribute"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "Datei auswählen"
 
 #: src/app_window.cpp:133
-#, fuzzy
 msgid "Select directory"
-msgstr "Nur Verzeichnisse"
+msgstr "Verzeichnis auswählen"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
@@ -162,178 +160,167 @@ msgstr "Keine Datei geöffnet"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "Datei öffnen"
 
 #: src/app_window.ui:21
-#, fuzzy
 msgid "Open directory"
-msgstr "Nur Verzeichnisse"
+msgstr "Verzeichnis öffnen"
 
 #: src/app_window.ui:78
-#, fuzzy
 msgid "Extended Attributes"
-msgstr "Erweiterte Benutzerattribute"
+msgstr "Erweiterte Attribute"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "Über Eiciel"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "Beenden"
 
 #: src/enclosed_acl_editor_widget.ui:5
 msgid "Edit ACLs for enclosed files"
 msgstr "ACLs für angeschlossene Dateien editieren"
 
 #: src/enclosed_acl_editor_widget.ui:14
-#, fuzzy
 msgid "Cancel"
-msgstr "_Abbrechen"
+msgstr "Abbrechen"
 
 #: src/enclosed_acl_editor_widget.ui:19
-#, fuzzy
 msgid "Apply"
-msgstr "A_nwenden"
+msgstr "Anwenden"
 
 #: src/enclosed_acl_editor_widget.ui:44
-#, fuzzy
 msgid "Participants in ACL for enclosed files"
-msgstr "<b>Teilnehmer in ACL für angeschlossene Dateien</b>"
+msgstr "Teilnehmer in ACL für angeschlossene Dateien"
 
 #: src/enclosed_acl_editor_widget.ui:59
-#, fuzzy
 msgid "Participants in ACL for enclosed directories"
-msgstr "<b>Teilnehmer in ACL für angeschlossene Verzeichnisse</b>"
+msgstr "Teilnehmer in ACL für angeschlossene Verzeichnisse"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
-msgstr ""
+msgstr "Lesen, Schreiben und Ausführen"
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "Lesen und Schreiben"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
-msgstr ""
+msgstr "Lesen und Ausführen"
 
 #: src/nautilus_acl_model.cpp:37
-#, fuzzy
 msgid "Only read"
-msgstr "Nur Dateien"
+msgstr "Nur Lesen"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
-msgstr ""
+msgstr "Schreiben und Ausführen"
 
 #: src/nautilus_acl_model.cpp:41
-#, fuzzy
 msgid "Only write"
-msgstr "Nur Dateien"
+msgstr "Nur Schreiben"
 
 #: src/nautilus_acl_model.cpp:43
-#, fuzzy
 msgid "Only execute"
-msgstr "Nur Verzeichnisse"
+msgstr "Nur Ausführen"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
 msgid "No permission"
-msgstr ""
+msgstr "Keine Berechtigung"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
 msgstr ""
+"Verzeichnis auflisten, auf Dateien zugreifen, sie erstellen und entfernen"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "Verzeichnis auflisten, kein Zugriff auf Dateien"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "Verzeichnis auflisten und auf Dateien zugreifen"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "Nur Verzeichnis auflisten, kein Zugriff auf Dateien"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
-msgstr ""
+msgstr "Kein Verzeichnis auflisten, aber Zugriff, Erstellen und Entfernen"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "Kein Verzeichnis auflisten und auf Dateien zugreifen"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "Benutzereigentümer"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "Gruppe"
+msgstr "Gruppeneigentümer"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "Benutzer-ACL: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "Gruppen-ACL: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
 msgstr ""
+"Maske begrenzt den Eigentümer der Gruppe, die Benutzer-ACL und die Gruppen-"
+"ACL auf"
 
 #: src/nautilus_acl_model.cpp:131
-#, fuzzy
 msgid "Other users"
-msgstr "Andere"
+msgstr "Andere Benutzer"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "Neue Dateien haben einen Benutzer als Eigentümer"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "Neue Dateien haben eine Gruppe als Eigentümer"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "Neue Dateien haben eine Benutzer-ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "Neue Dateien haben eine Gruppen-ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "Neue Dateien haben eine Maske"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
-msgstr ""
+msgstr "Neue Dateien haben andere Benutzer"
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "Zugriffssteuerungsliste"
+msgstr "Zugriffssteuerungsliste bearbeiten…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "Zugriffssteuerungsliste"
+msgstr "Erlaubt die Bearbeitung von Zugriffssteuerungslisten"
 
 #: src/nautilus_menu_provider.cpp:100
-#, fuzzy
 msgid "Edit extended attributes…"
-msgstr "Erweiterte Benutzerattribute"
+msgstr "Erweiterte Attribute bearbeiten…"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
@@ -344,7 +331,6 @@ msgid "User"
 msgstr "Benutzer"
 
 #: src/participant_list_widget.ui:17
-#, fuzzy
 msgid "Group"
 msgstr "Gruppe"
 
@@ -366,12 +352,11 @@ msgstr "Name des Teilnehmers"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "Suchen"
 
 #: src/participant_list_widget.ui:80
-#, fuzzy
 msgid "Show system participants"
-msgstr "Auch Systemteilnehmer anzeigen"
+msgstr "Systemteilnehmer anzeigen"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
@@ -383,17 +368,15 @@ msgstr "Wert"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
-msgstr ""
+msgstr "Es gibt bereits ein Attribut mit diesem Namen"
 
 #: src/xattr_editor_widget.ui:27
-#, fuzzy
 msgid "Name of the new attribute"
-msgstr "Neues Attribut"
+msgstr "Name des neuen Attributs"
 
 #: src/xattr_editor_widget.ui:32
-#, fuzzy
 msgid "Value of the new attribute"
-msgstr "Erweiterte Benutzerattribute"
+msgstr "Wert des neuen Attributs"
 
 #~ msgid "Could not rename attribute name: "
 #~ msgstr "Es konnte kein anderer Attributname vergeben werden: "
