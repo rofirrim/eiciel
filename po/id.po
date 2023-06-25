@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2022-11-15 10:13+0000\n"
-"Last-Translator: Bayu Putra <putrabayu0180@gmail.com>\n"
+"PO-Revision-Date: 2023-06-25 09:15+0000\n"
+"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/eiciel/master/"
 "id/>\n"
 "Language: id\n"
@@ -120,38 +120,38 @@ msgstr "Representasi tekstual bawaan ACL salah"
 
 #: src/application.cpp:44
 msgid "Initial edit mode (default mode otherwise)"
-msgstr ""
+msgstr "Mode edit awal (jika tidak, mode default)"
 
 #: src/application.cpp:56
 msgid ""
 "Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
 msgstr ""
+"Nilai tidak valid untuk opsi 'edit-mode'. Opsi yang valid adalah 'acl' atau "
+"'xattr'\n"
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "Editor grafis untuk ACL file dan atribut yang diperluas"
 
 #: src/application.cpp:100
 msgid "translator-credits"
-msgstr ""
+msgstr "translator-credits"
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
 msgstr "Daftar Kontrol Akses"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
-#, fuzzy
 msgid "Extended attributes"
-msgstr "Atribut pengguna yang diperluas"
+msgstr "Atribut yang diperluas"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "Pilih file"
 
 #: src/app_window.cpp:133
-#, fuzzy
 msgid "Select directory"
-msgstr "Hanya direktori"
+msgstr "Pilih direktori"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
@@ -159,128 +159,120 @@ msgstr "Tidak ada berkas yang terbuka"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "Buka file"
 
 #: src/app_window.ui:21
-#, fuzzy
 msgid "Open directory"
-msgstr "Hanya direktori"
+msgstr "Buka direktori"
 
 #: src/app_window.ui:78
-#, fuzzy
 msgid "Extended Attributes"
-msgstr "Atribut pengguna yang diperluas"
+msgstr "Atribut yang diperluas"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "Tentang Eiciel"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "Keluar"
 
 #: src/enclosed_acl_editor_widget.ui:5
 msgid "Edit ACLs for enclosed files"
 msgstr "Sunting ACL untuk berkas terlampir"
 
 #: src/enclosed_acl_editor_widget.ui:14
-#, fuzzy
 msgid "Cancel"
-msgstr "_Batal"
+msgstr "Batal"
 
 #: src/enclosed_acl_editor_widget.ui:19
-#, fuzzy
 msgid "Apply"
-msgstr "Ter_apkan"
+msgstr "Terapkan"
 
 #: src/enclosed_acl_editor_widget.ui:44
-#, fuzzy
 msgid "Participants in ACL for enclosed files"
-msgstr "<b>Partisipan ACL untuk berkas terlampir</b>"
+msgstr "Peserta dalam ACL untuk file terlampir"
 
 #: src/enclosed_acl_editor_widget.ui:59
-#, fuzzy
 msgid "Participants in ACL for enclosed directories"
-msgstr "<b>Pasrtisipan ACL untuk direktori terlampir</b>"
+msgstr "Peserta dalam ACL untuk direktori terlampir"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
-msgstr ""
+msgstr "Baca, tulis, dan eksekusi"
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "Baca dan tulis"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
-msgstr ""
+msgstr "Baca dan eksekusi"
 
 #: src/nautilus_acl_model.cpp:37
-#, fuzzy
 msgid "Only read"
-msgstr "Hanya berkas"
+msgstr "Hanya baca"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
-msgstr ""
+msgstr "Tulis dan eksekusi"
 
 #: src/nautilus_acl_model.cpp:41
-#, fuzzy
 msgid "Only write"
-msgstr "Hanya berkas"
+msgstr "Hanya tulis"
 
 #: src/nautilus_acl_model.cpp:43
-#, fuzzy
 msgid "Only execute"
-msgstr "Hanya direktori"
+msgstr "Hanya eksekusi"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
 msgid "No permission"
-msgstr ""
+msgstr "Tanda perizinan"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr ""
+msgstr "Melihat daftar direktori, mengakses, membuat, dan menghapus file"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "Melihat daftar direktori, tidak ada akses ke file"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "Melihat daftar direktori dan mengakses file"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "Melihat daftar direktori saja, tidak ada akses ke file"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
 msgstr ""
+"Tidak dapat melihat daftar direktori tetapi dapat mengakses, membuat dan "
+"menghapus"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "Tidak dapat melihat daftar direktori dan akses file"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "Pemilik user"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "Grup"
+msgstr "Pemilik group"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "User ACL: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "Group ACL: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
