@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2023-09-13 08:15+0000\n"
+"PO-Revision-Date: 2023-12-05 15:01+0000\n"
 "Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/eiciel/master/"
 "id/>\n"
@@ -20,27 +20,27 @@ msgstr ""
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
-msgstr "Tidak dapat menambahkan ACL entri: "
+msgstr "Tidak dapat menambahkan entri ACL: "
 
 #: src/acl_editor_controller.cpp:195
 msgid "Could not remove ACL entry: "
-msgstr "Tidak dapat menghapus ACL entri: "
+msgstr "Tidak dapat menghapus entri ACL: "
 
 #: src/acl_editor_controller.cpp:262
 msgid "Could not modify ACL entry: "
-msgstr "Tidak dapat mengubah ACL entri: "
+msgstr "Tidak dapat mengubah entri ACL: "
 
 #. FIXME: Can't do much here
 #: src/acl_editor_controller.cpp:350
 #, c-format
 msgid "Exception when setting ACL of file '%s': '%s'"
-msgstr "Pengecualian saat menyetel ACL file '%s': '%s'"
+msgstr "Pengecualian saat menyetel ACL dari berkas '%s': '%s'"
 
 #. Catch-all to avoid crashing nautilus
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr "Pengecualian tidak diketahui saat menyetel ACL file '%s'"
+msgstr "Pengecualian tidak diketahui saat menyetel ACL berkas '%s'"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
@@ -60,7 +60,7 @@ msgstr "Partisipan yang tersedia"
 
 #: src/acl_editor_widget.ui:65
 msgid "Edit ACLs for enclosed files..."
-msgstr "Edit ACL untuk file terlampir..."
+msgstr "Edit ACL untuk berkas terlampir..."
 
 #: src/acl_list_controller.cpp:144 src/acl_list_widget.cpp:317
 msgid "Mask"
@@ -131,7 +131,7 @@ msgstr ""
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr "Editor grafis untuk ACL file dan atribut yang diperluas"
+msgstr "Editor grafis untuk ACL berkas dan atribut yang diperluas"
 
 #: src/application.cpp:100
 msgid "translator-credits"
@@ -147,7 +147,7 @@ msgstr "Atribut yang diperluas"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr "Pilih file"
+msgstr "Pilih berkas"
 
 #: src/app_window.cpp:133
 msgid "Select directory"
@@ -159,7 +159,7 @@ msgstr "Tidak ada berkas yang terbuka"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr "Buka file"
+msgstr "Buka berkas"
 
 #: src/app_window.ui:21
 msgid "Open directory"
@@ -191,7 +191,7 @@ msgstr "Terapkan"
 
 #: src/enclosed_acl_editor_widget.ui:44
 msgid "Participants in ACL for enclosed files"
-msgstr "Peserta dalam ACL untuk file terlampir"
+msgstr "Peserta dalam ACL untuk berkas terlampir"
 
 #: src/enclosed_acl_editor_widget.ui:59
 msgid "Participants in ACL for enclosed directories"
@@ -232,19 +232,19 @@ msgstr "Tanda perizinan"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr "Melihat daftar direktori, mengakses, membuat, dan menghapus file"
+msgstr "Melihat daftar direktori, mengakses, membuat, dan menghapus berkas"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr "Melihat daftar direktori, tidak ada akses ke file"
+msgstr "Melihat daftar direktori, tidak ada akses ke berkas"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr "Melihat daftar direktori dan mengakses file"
+msgstr "Melihat daftar direktori dan mengakses berkas"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr "Melihat daftar direktori saja, tidak ada akses ke file"
+msgstr "Melihat daftar direktori saja, tidak ada akses ke berkas"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
@@ -254,7 +254,7 @@ msgstr ""
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr "Tidak dapat melihat daftar direktori dan akses file"
+msgstr "Tidak dapat melihat daftar direktori dan akses berkas"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
@@ -284,44 +284,41 @@ msgstr "Pengguna lainnya"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "Berkas baru akan memiliki pemilik User"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "Berkas baru akan memiliki pemilik Group"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "Berkas baru akan memiliki ACL User: '%s'"
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "Berkas baru akan memiliki ACL Group: '%s'"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "Berkas baru akan memiliki Topeng"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
-msgstr ""
+msgstr "Berkas baru akan memiliki pengguna Lainnya"
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "Daftar Kontrol Akses"
+msgstr "Edit Daftar Kontrol Akses…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "Daftar Kontrol Akses"
+msgstr "Mengizinkan pengeditan Daftar Kontrol Akses"
 
 #: src/nautilus_menu_provider.cpp:100
-#, fuzzy
 msgid "Edit extended attributes…"
-msgstr "Atribut pengguna yang diperluas"
+msgstr "Mengedit atribut yang diperluas…"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
@@ -332,9 +329,8 @@ msgid "User"
 msgstr "Pengguna"
 
 #: src/participant_list_widget.ui:17
-#, fuzzy
 msgid "Group"
-msgstr "Grup"
+msgstr "Group"
 
 #: src/participant_list_widget.ui:23
 msgid "Default participant"
@@ -354,12 +350,11 @@ msgstr "Nama partisipan"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "Cari"
 
 #: src/participant_list_widget.ui:80
-#, fuzzy
 msgid "Show system participants"
-msgstr "Tampilkan partisipan sistem juga"
+msgstr "Tampilkan partisipan sistem"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
@@ -371,17 +366,15 @@ msgstr "Nilai"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
-msgstr ""
+msgstr "Sudah ada atribut dengan nama ini"
 
 #: src/xattr_editor_widget.ui:27
-#, fuzzy
 msgid "Name of the new attribute"
-msgstr "Atribut baru"
+msgstr "Nama atribut baru"
 
 #: src/xattr_editor_widget.ui:32
-#, fuzzy
 msgid "Value of the new attribute"
-msgstr "Atribut pengguna yang diperluas"
+msgstr "Nilai atribut baru"
 
 #~ msgid "Could not rename attribute name: "
 #~ msgstr "Tidak dapat mengubah nama atribut: "
