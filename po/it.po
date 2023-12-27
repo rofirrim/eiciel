@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2023-12-26 18:02+0000\n"
+"PO-Revision-Date: 2023-12-27 19:02+0000\n"
 "Last-Translator: Francesco Saltori <francescosaltori@gmail.com>\n"
 "Language-Team: Italian <https://l10n.opensuse.org/projects/eiciel/master/it/>"
 "\n"
@@ -46,14 +46,12 @@ msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Rimuovere tutte le voci ACL predefinite?"
 
 #: src/acl_editor_widget.ui:15
-#, fuzzy
 msgid "Applying ACLs to enclosed files"
-msgstr "Modifica gli ACL per i file acclusi"
+msgstr "Applicazione delle ACL ai file contenuti"
 
 #: src/acl_editor_widget.ui:34
-#, fuzzy
 msgid "Current participants in ACL"
-msgstr "<b>Attuali partecipanti all'ACL</b>"
+msgstr "Attuali partecipanti dell'ACL"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
 msgid "Available participants"
@@ -81,7 +79,7 @@ msgstr "Maschera predefinita"
 #. ElementKind::default_others must be the last, so we handle it here manually
 #: src/acl_list_controller.cpp:205 src/acl_list_widget.cpp:342
 msgid "Default Other"
-msgstr "Altri predefinito"
+msgstr "Altri (predefinito)"
 
 #: src/acl_list_widget.cpp:100
 msgid "Participant"
@@ -109,15 +107,15 @@ msgstr "Modifica partecipanti predefiniti"
 
 #: src/acl_manager.cpp:48 src/xattr_manager.cpp:34
 msgid "Only regular files or directories supported"
-msgstr "Sono supportati solo le directory o i file normali"
+msgstr "Sono supportate solo le cartelle o i file normali"
 
 #: src/acl_manager.cpp:465
 msgid "Textual representation of the ACL is wrong"
-msgstr "La rappresentazione di testo dell'ACL non è valida"
+msgstr "La rappresentazione testuale dell'ACL non è valida"
 
 #: src/acl_manager.cpp:486
 msgid "Default textual representation of the ACL is wrong"
-msgstr "La rappresentazione di testo predefinita dell'ACL non è valida"
+msgstr "La rappresentazione testuale predefinita dell'ACL non è valida"
 
 #: src/application.cpp:44
 msgid "Initial edit mode (default mode otherwise)"
@@ -130,7 +128,7 @@ msgstr ""
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "Editor grafico delle ACL e degli attributi estesi dei file"
 
 #: src/application.cpp:100
 msgid "translator-credits"
@@ -138,7 +136,7 @@ msgstr ""
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
-msgstr "Lista di controllo degli accessi"
+msgstr "Lista di controllo degli accessi (ACL)"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
 msgid "Extended attributes"
@@ -189,14 +187,12 @@ msgid "Apply"
 msgstr "Applica"
 
 #: src/enclosed_acl_editor_widget.ui:44
-#, fuzzy
 msgid "Participants in ACL for enclosed files"
-msgstr "<b>Attuali partecipanti all'ACL</b>"
+msgstr "Partecipanti dell'ACL per i file contenuti"
 
 #: src/enclosed_acl_editor_widget.ui:59
-#, fuzzy
 msgid "Participants in ACL for enclosed directories"
-msgstr "<b>Attuali partecipanti all'ACL</b>"
+msgstr "Partecipanti dell'ACL per le cartelle contenute"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
@@ -257,26 +253,26 @@ msgstr ""
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "Utente proprietario"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "Gruppo"
+msgstr "Gruppo proprietario"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "ACL utente: \"%s\""
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "ACL gruppo: \"%s\""
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
 msgstr ""
+"La maschera limita il gruppo proprietario, l'ACL utente e l'ACL gruppo a"
 
 #: src/nautilus_acl_model.cpp:131
 msgid "Other users"
@@ -284,39 +280,37 @@ msgstr "Altri utenti"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "Nuovi file – Utente proprietario"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "Nuovi file – Gruppo proprietario"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "Nuovi file – ACL utente: \"%s\""
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "Nuovi file – ACL gruppo: \"%s\""
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "Nuovi file – Maschera"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
-msgstr ""
+msgstr "Nuovi file – Altri utenti"
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "Elenco di controllo dell'accesso"
+msgstr "Modifica ACL…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "Elenco di controllo dell'accesso"
+msgstr "Consente la modifica delle liste di controllo degli accessi (ACL)"
 
 #: src/nautilus_menu_provider.cpp:100
 msgid "Edit extended attributes…"
