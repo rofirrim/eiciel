@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2023-12-27 19:02+0000\n"
+"PO-Revision-Date: 2023-12-28 18:02+0000\n"
 "Last-Translator: Francesco Saltori <francescosaltori@gmail.com>\n"
 "Language-Team: Italian <https://l10n.opensuse.org/projects/eiciel/master/it/>"
 "\n"
@@ -229,27 +229,27 @@ msgstr "Nessun permesso"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr ""
+msgstr "Elencare il contenuto, accedere, creare e rimuovere file"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "Elencare il contenuto, senza accesso ai file"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "Elencare il contenuto e accedere ai file"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "Solo elencare il contenuto, senza accesso ai file"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
-msgstr ""
+msgstr "Accedere, creare e rimuovere file, ma non elencare il contenuto"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "Accedere ai file, ma non elencare il contenuto"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
