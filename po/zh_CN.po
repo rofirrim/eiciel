@@ -4,10 +4,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2019-06-20 13:49+0000\n"
-"Last-Translator: Marguerite Su <i@marguerite.su>\n"
+"PO-Revision-Date: 2024-01-25 05:59+0000\n"
+"Last-Translator: Foo Bar <foobarcc@segfault.net>\n"
 "Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/eiciel/"
 "master/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -33,13 +33,13 @@ msgstr "无法修改访问控制列表项： "
 #: src/acl_editor_controller.cpp:350
 #, c-format
 msgid "Exception when setting ACL of file '%s': '%s'"
-msgstr ""
+msgstr "为文件'%s'设置 ACL 时出现异常：'%s'"
 
 #. Catch-all to avoid crashing nautilus
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr ""
+msgstr "为文件 '%s' 设置 ACL 时出现未知异常"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
@@ -48,7 +48,7 @@ msgstr "您确定您想要要移除全部访问控制列表默认项吗？"
 #: src/acl_editor_widget.ui:15
 #, fuzzy
 msgid "Applying ACLs to enclosed files"
-msgstr "编辑隔离文件的访问控制列表"
+msgstr "对所附文件应用 ACL"
 
 #: src/acl_editor_widget.ui:34
 #, fuzzy
