@@ -205,13 +205,8 @@ void Application::on_about() {
     about->set_hide_on_close();
 
     about->signal_hide().connect(
-        [about, logo]() mutable {
-          if (logo) {
-            logo->unreference();
-            logo = nullptr;
-          }
+        [about]() mutable {
           delete about;
-          about = nullptr;
         },
         false);
 
