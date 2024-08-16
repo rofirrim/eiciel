@@ -39,3 +39,5 @@ build
 .flatpak
 .flatpak-builder
 img/svg/png
+compile_commands.json
+.cache
