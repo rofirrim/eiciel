@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2025-04-07 22:56+0000\n"
+"PO-Revision-Date: 2025-04-09 14:56+0000\n"
 "Last-Translator: Fran Serrador <serrador@proton.me>\n"
 "Language-Team: Spanish <https://l10n.opensuse.org/projects/eiciel/master/es/>"
 "\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -309,7 +309,7 @@ msgstr "Los nuevos archivos tendrán Otros usuarios"
 
 #: src/nautilus_menu_provider.cpp:69
 msgid "Edit Access Control Lists…"
-msgstr "Editar las Listas de control de acceso (ACLs) …"
+msgstr "Editar las Listas de control de acceso (ACLs)…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
 msgid "Allows editing Access Control Lists"
