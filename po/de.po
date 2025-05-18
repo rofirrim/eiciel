@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2023-05-13 02:14+0000\n"
+"PO-Revision-Date: 2025-05-18 09:59+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://l10n.opensuse.org/projects/eiciel/master/de/>"
 "\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -47,9 +47,8 @@ msgstr ""
 "Sind Sie sicher, dass alle ACL-Standardeinträge entfernt werden sollen?"
 
 #: src/acl_editor_widget.ui:15
-#, fuzzy
 msgid "Applying ACLs to enclosed files"
-msgstr "ACLs für angeschlossene Dateien editieren"
+msgstr "ACLs auf enthaltene Dateien anwenden"
 
 #: src/acl_editor_widget.ui:34
 msgid "Current participants in ACL"
