@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2025-08-24 17:59+0000\n"
+"PO-Revision-Date: 2025-08-26 09:59+0000\n"
 "Last-Translator: David D <dadu042@mailo.com>\n"
 "Language-Team: French <https://l10n.opensuse.org/projects/eiciel/master/fr/>"
 "\n"
@@ -33,32 +33,29 @@ msgstr "Impossible de modifier une entrée ACL : "
 #: src/acl_editor_controller.cpp:350
 #, c-format
 msgid "Exception when setting ACL of file '%s': '%s'"
-msgstr ""
+msgstr "Exception lors de la configuration de l’ACL du fichier '%s' : '%s’"
 
 #. Catch-all to avoid crashing nautilus
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr ""
+msgstr "Exception inconnue lors de la configuration de l’ACL du fichier '%s'"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Voulez-vous vraiment supprimer toutes les entrées ACL par défaut ?"
 
 #: src/acl_editor_widget.ui:15
-#, fuzzy
 msgid "Applying ACLs to enclosed files"
-msgstr "Modifier les ACL pour les fichiers joints"
+msgstr "Application des ACL aux fichiers joints"
 
 #: src/acl_editor_widget.ui:34
-#, fuzzy
 msgid "Current participants in ACL"
-msgstr "<b>Participants actuels de l'ACL</b>"
+msgstr "Participants actuels de l'ACL"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
-#, fuzzy
 msgid "Available participants"
-msgstr "<b>Participants disponibles</b>"
+msgstr "Participants disponibles"
 
 #: src/acl_editor_widget.ui:65
 msgid "Edit ACLs for enclosed files..."
@@ -144,18 +141,16 @@ msgid "Access Control List"
 msgstr "liste de contrôle d'accès"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
-#, fuzzy
 msgid "Extended attributes"
-msgstr "Attributs étendus de l'utilisateur"
+msgstr "Attributs étendus"
 
 #: src/app_window.cpp:129
 msgid "Select file"
 msgstr "Sélection fichier"
 
 #: src/app_window.cpp:133
-#, fuzzy
 msgid "Select directory"
-msgstr "Uniquement les répertoires"
+msgstr "Sélection répertoire"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
@@ -166,14 +161,12 @@ msgid "Open file"
 msgstr "Ouvrir fichier"
 
 #: src/app_window.ui:21
-#, fuzzy
 msgid "Open directory"
-msgstr "Uniquement les répertoires"
+msgstr "Ouvrir répertoire"
 
 #: src/app_window.ui:78
-#, fuzzy
 msgid "Extended Attributes"
-msgstr "Attributs étendus de l'utilisateur"
+msgstr "Attributs étendus"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
@@ -188,24 +181,22 @@ msgid "Edit ACLs for enclosed files"
 msgstr "Modifier les ACL pour les fichiers joints"
 
 #: src/enclosed_acl_editor_widget.ui:14
-#, fuzzy
 msgid "Cancel"
-msgstr "_Annuler"
+msgstr "Annuler"
 
 #: src/enclosed_acl_editor_widget.ui:19
-#, fuzzy
 msgid "Apply"
-msgstr "_Appliquer"
+msgstr "Appliquer"
 
 #: src/enclosed_acl_editor_widget.ui:44
 #, fuzzy
 msgid "Participants in ACL for enclosed files"
-msgstr "<b>Participants à l'ACL pour les répertoires fermés</b>"
+msgstr "Participants à l'ACL pour les fichiers joints"
 
 #: src/enclosed_acl_editor_widget.ui:59
 #, fuzzy
 msgid "Participants in ACL for enclosed directories"
-msgstr "<b>Participants à l'ACL pour les répertoires fermés</b>"
+msgstr "Participants à l'ACL pour les répertoires fermés"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
@@ -220,23 +211,20 @@ msgid "Read and execute"
 msgstr "Lire et exécuter"
 
 #: src/nautilus_acl_model.cpp:37
-#, fuzzy
 msgid "Only read"
-msgstr "Uniquement les fichiers"
+msgstr "Lecture seulement"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
 msgstr "Écrire et exécuter"
 
 #: src/nautilus_acl_model.cpp:41
-#, fuzzy
 msgid "Only write"
-msgstr "Uniquement les fichiers"
+msgstr "Écriture seulement"
 
 #: src/nautilus_acl_model.cpp:43
-#, fuzzy
 msgid "Only execute"
-msgstr "Uniquement les répertoires"
+msgstr "Exécution seulement"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
@@ -272,9 +260,8 @@ msgid "User owner"
 msgstr "Utilisateur propriétaire"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "Groupe"
+msgstr "Propriétaire groupe"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
@@ -291,9 +278,8 @@ msgid "Mask limits Group owner, User ACL and Group ACL to"
 msgstr ""
 
 #: src/nautilus_acl_model.cpp:131
-#, fuzzy
 msgid "Other users"
-msgstr "Autre"
+msgstr "Autres utilisateurs"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
@@ -315,26 +301,23 @@ msgstr "Nouveaux fichiers auront le Groupe ACL : « %s »"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "Nouveaux fichiers auront un masque"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
 msgstr "Nouveaux fichiers auront utilisateurs Autres"
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "liste de contrôle d'accès"
+msgstr "Modifier listes de contrôle d’accès…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "liste de contrôle d'accès"
+msgstr "Permet de modifier listes de contrôle d’accès"
 
 #: src/nautilus_menu_provider.cpp:100
-#, fuzzy
 msgid "Edit extended attributes…"
-msgstr "Attributs étendus de l'utilisateur"
+msgstr "Modifier attributs étendus…"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
@@ -370,9 +353,8 @@ msgid "Search"
 msgstr "Recherche"
 
 #: src/participant_list_widget.ui:80
-#, fuzzy
 msgid "Show system participants"
-msgstr "Afficher également les participants du système"
+msgstr "Montrer participants du système"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
@@ -387,14 +369,12 @@ msgid "There is already an attribute with this name"
 msgstr "Il y a déjà un attribut avec ce nom"
 
 #: src/xattr_editor_widget.ui:27
-#, fuzzy
 msgid "Name of the new attribute"
-msgstr "Nouvel attribut"
+msgstr "Nom du nouvel attribut"
 
 #: src/xattr_editor_widget.ui:32
-#, fuzzy
 msgid "Value of the new attribute"
-msgstr "Attributs étendus de l'utilisateur"
+msgstr "Valeur du nouvel attribut"
 
 #~ msgid "Could not rename attribute name: "
 #~ msgstr "Impossible de modifier le nom de l'attribut : "
