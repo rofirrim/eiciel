@@ -6,17 +6,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-12-16 22:04+0000\n"
+"Last-Translator: \"Omer I.S.\" <omeritzicschwartz@gmail.com>\n"
+"Language-Team: Hebrew <https://l10n.opensuse.org/projects/eiciel/master/he/>"
+"\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.15\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -24,11 +26,11 @@ msgstr ""
 
 #: src/acl_editor_controller.cpp:195
 msgid "Could not remove ACL entry: "
-msgstr ""
+msgstr "לא היה ניתן להסיר רשומת ACL:‏ "
 
 #: src/acl_editor_controller.cpp:262
 msgid "Could not modify ACL entry: "
-msgstr ""
+msgstr "לא היה ניתן לשנות רשומת ACL:‏ "
 
 #. FIXME: Can't do much here
 #: src/acl_editor_controller.cpp:350
@@ -64,18 +66,18 @@ msgstr ""
 
 #: src/acl_list_controller.cpp:144 src/acl_list_widget.cpp:317
 msgid "Mask"
-msgstr ""
+msgstr "מסכה"
 
 #: src/acl_list_controller.cpp:149
 msgid "Other"
-msgstr ""
+msgstr "שונות"
 
 #. reading
 #. writing
 #. execution
 #: src/acl_list_controller.cpp:198 src/acl_list_widget.cpp:347
 msgid "Default Mask"
-msgstr ""
+msgstr "מסכת ברירת מחדל"
 
 #. ElementKind::default_others must be the last, so we handle it here manually
 #: src/acl_list_controller.cpp:205 src/acl_list_widget.cpp:342
@@ -88,15 +90,15 @@ msgstr ""
 
 #: src/acl_list_widget.cpp:165
 msgid "Read"
-msgstr ""
+msgstr "קריאה"
 
 #: src/acl_list_widget.cpp:168
 msgid "Write"
-msgstr ""
+msgstr "כתיבה"
 
 #: src/acl_list_widget.cpp:171
 msgid "Execute"
-msgstr ""
+msgstr "הרצה"
 
 #: src/acl_list_widget.ui:33
 msgid "There are ineffective permissions"
@@ -276,7 +278,7 @@ msgstr ""
 
 #: src/nautilus_acl_model.cpp:131
 msgid "Other users"
-msgstr ""
+msgstr "משתמשים אחרים"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
@@ -322,11 +324,11 @@ msgstr ""
 
 #: src/participant_list_widget.ui:12
 msgid "User"
-msgstr ""
+msgstr "משתמש"
 
 #: src/participant_list_widget.ui:17
 msgid "Group"
-msgstr ""
+msgstr "קבוצה"
 
 #: src/participant_list_widget.ui:23
 msgid "Default participant"
@@ -338,7 +340,7 @@ msgstr ""
 
 #: src/participant_list_widget.ui:51
 msgid "Advanced features"
-msgstr ""
+msgstr "תכונות מתקדמות"
 
 #: src/participant_list_widget.ui:61
 msgid "Name of participant"
@@ -346,7 +348,7 @@ msgstr ""
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "חיפוש"
 
 #: src/participant_list_widget.ui:80
 msgid "Show system participants"
@@ -354,11 +356,11 @@ msgstr ""
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
-msgstr ""
+msgstr "שם"
 
 #: src/xattr_editor_widget.cpp:145
 msgid "Value"
-msgstr ""
+msgstr "ערך"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
