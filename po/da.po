@@ -6,18 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel 0.9.11\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2020-05-02 19:50+0000\n"
-"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
-"Language-Team: Danish <https://l10n.opensuse.org/projects/eiciel/master/da/"
-">\n"
+"PO-Revision-Date: 2026-02-03 12:04+0000\n"
+"Last-Translator: Peter Andreasen <noesgaard@gmail.com>\n"
+"Language-Team: Danish <https://l10n.opensuse.org/projects/eiciel/master/da/>"
+"\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -35,32 +35,29 @@ msgstr "Kunne ikke redigere ACL-post: "
 #: src/acl_editor_controller.cpp:350
 #, c-format
 msgid "Exception when setting ACL of file '%s': '%s'"
-msgstr ""
+msgstr "Fejl ved indstilling af ACL på fil '%s': '%s'"
 
 #. Catch-all to avoid crashing nautilus
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr ""
+msgstr "Ukendt fejl opstået ved indstilling af ACL på filen '%s'"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "Er du sikker på, at du vil fjerne alle standardposter for ACL?"
 
 #: src/acl_editor_widget.ui:15
-#, fuzzy
 msgid "Applying ACLs to enclosed files"
-msgstr "Rediger ACL'er for vedlagte filer"
+msgstr "Tilføjer ACL'er på vedlagte filer"
 
 #: src/acl_editor_widget.ui:34
-#, fuzzy
 msgid "Current participants in ACL"
-msgstr "<b>Nuværende deltagere i ACL</b>"
+msgstr "Nuværende deltagere i ACL"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
-#, fuzzy
 msgid "Available participants"
-msgstr "<b>Tilgængelige deltagere</b>"
+msgstr "Tilgængelige deltagere"
 
 #: src/acl_editor_widget.ui:65
 msgid "Edit ACLs for enclosed files..."
@@ -124,38 +121,38 @@ msgstr "Standard tekstrepræsentation af ACL'en er forkert"
 
 #: src/application.cpp:44
 msgid "Initial edit mode (default mode otherwise)"
-msgstr ""
+msgstr "Første redigeringstilstand (forskellig fra standard tilstanden)"
 
 #: src/application.cpp:56
 msgid ""
 "Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
 msgstr ""
+"Ulovlig værdi for 'edit-mode' valget. Gyldige værdier er 'acl' eller "
+"'xattr'\n"
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "Grafisk værktøj til at redigere ACL og udvidede attributter på filer"
 
 #: src/application.cpp:100
 msgid "translator-credits"
-msgstr ""
+msgstr "Tak til oversætterne"
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
 msgstr "Adgangskontrolliste"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
-#, fuzzy
 msgid "Extended attributes"
-msgstr "Udvidede brugerattributter"
+msgstr "Udvidede attributter"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "Vælg fil"
 
 #: src/app_window.cpp:133
-#, fuzzy
 msgid "Select directory"
-msgstr "Kun mapper"
+msgstr "Vælg mappe"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
@@ -163,178 +160,164 @@ msgstr "Ingen fil åbnet"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "Åbn fil"
 
 #: src/app_window.ui:21
-#, fuzzy
 msgid "Open directory"
-msgstr "Kun mapper"
+msgstr "Åbn mappe"
 
 #: src/app_window.ui:78
-#, fuzzy
 msgid "Extended Attributes"
-msgstr "Udvidede brugerattributter"
+msgstr "Udvidede attributter"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "Om Eiciel"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "Afslut"
 
 #: src/enclosed_acl_editor_widget.ui:5
 msgid "Edit ACLs for enclosed files"
 msgstr "Rediger ACL'er for vedlagte filer"
 
 #: src/enclosed_acl_editor_widget.ui:14
-#, fuzzy
 msgid "Cancel"
-msgstr "_Annuller"
+msgstr "Annuller"
 
 #: src/enclosed_acl_editor_widget.ui:19
-#, fuzzy
 msgid "Apply"
-msgstr "_Anvend"
+msgstr "Anvend"
 
 #: src/enclosed_acl_editor_widget.ui:44
-#, fuzzy
 msgid "Participants in ACL for enclosed files"
-msgstr "<b>Deltagere i ACL for vedlagte filer</b>"
+msgstr "Deltagere i ACL for vedlagte filer"
 
 #: src/enclosed_acl_editor_widget.ui:59
-#, fuzzy
 msgid "Participants in ACL for enclosed directories"
-msgstr "<b>Deltagere i ACL for vedlagte mapper</b>"
+msgstr "Deltagere i ACL for indeholdte mapper"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
-msgstr ""
+msgstr "Læse, skrive og køre"
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "Læse og skrive"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
-msgstr ""
+msgstr "Læse og køre"
 
 #: src/nautilus_acl_model.cpp:37
-#, fuzzy
 msgid "Only read"
-msgstr "Kun filer"
+msgstr "Kun læse"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
-msgstr ""
+msgstr "Skrive og køre"
 
 #: src/nautilus_acl_model.cpp:41
-#, fuzzy
 msgid "Only write"
-msgstr "Kun filer"
+msgstr "Kun skrive"
 
 #: src/nautilus_acl_model.cpp:43
-#, fuzzy
 msgid "Only execute"
-msgstr "Kun mapper"
+msgstr "Kun køre"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
 msgid "No permission"
-msgstr ""
+msgstr "Ingen rettigheder"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr ""
+msgstr "Vis mappe, tilgå, opret og fjern filer"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "Vis mappe, ingen adgang til filer"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "Vis mappe og tilgå filer"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "Vis kun mappe, ingen adgang til filer"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
-msgstr ""
+msgstr "Ingen visning af mappe, men tilgå, opret og fjern"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "Ingen visning af mappe og adgang til filer"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "Bruger ejer"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "Gruppe"
+msgstr "Gruppe ejer"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "Bruger ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "Gruppe ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
-msgstr ""
+msgstr "Maske begrænser Gruppe ejer, Bruger ACL og Gruppe ACL til"
 
 #: src/nautilus_acl_model.cpp:131
-#, fuzzy
 msgid "Other users"
-msgstr "Andet"
+msgstr "Andre brugere"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "Nye filer vil have Bruger ejer"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "Nye filer vil have Gruppe ejer"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "Nye filer vil have Bruger ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "Nye filer vil have Gruppe ACL: '%s'"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "Nye filer vil have maske"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
-msgstr ""
+msgstr "Nye filer vil have Andre brugere"
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "Adgangskontrolliste"
+msgstr "Rediger Adgangskontrol-liste"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "Adgangskontrolliste"
+msgstr "Tillad redigering af Adgangskontrol-liste"
 
 #: src/nautilus_menu_provider.cpp:100
-#, fuzzy
 msgid "Edit extended attributes…"
-msgstr "Udvidede brugerattributter"
+msgstr "Rediger udvidede attributter…"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
@@ -345,7 +328,6 @@ msgid "User"
 msgstr "Bruger"
 
 #: src/participant_list_widget.ui:17
-#, fuzzy
 msgid "Group"
 msgstr "Gruppe"
 
@@ -367,12 +349,11 @@ msgstr "Navn på deltager"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "Søg"
 
 #: src/participant_list_widget.ui:80
-#, fuzzy
 msgid "Show system participants"
-msgstr "Vis også systemdeltagere"
+msgstr "Vis systemdeltagere"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
@@ -384,17 +365,15 @@ msgstr "Værdi"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
-msgstr ""
+msgstr "Der findes allerede en attribut med det navn"
 
 #: src/xattr_editor_widget.ui:27
-#, fuzzy
 msgid "Name of the new attribute"
-msgstr "Ny attribut"
+msgstr "Navn på den nye attribut"
 
 #: src/xattr_editor_widget.ui:32
-#, fuzzy
 msgid "Value of the new attribute"
-msgstr "Udvidede brugerattributter"
+msgstr "Værdi af den nye attribut"
 
 #~ msgid "Could not rename attribute name: "
 #~ msgstr "Kunne ikke omdøbe attributnavn: "
