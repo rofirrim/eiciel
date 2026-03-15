@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: eiciel\n"
 "Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: 2024-01-25 05:59+0000\n"
-"Last-Translator: Foo Bar <foobarcc@segfault.net>\n"
+"PO-Revision-Date: 2026-03-15 10:04+0000\n"
+"Last-Translator: Zhen-Lin Huo <alrcatraz@gmx.com>\n"
 "Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/eiciel/"
 "master/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
@@ -46,19 +46,16 @@ msgid "Are you sure you want to remove all ACL default entries?"
 msgstr "您确定您想要要移除全部访问控制列表默认项吗？"
 
 #: src/acl_editor_widget.ui:15
-#, fuzzy
 msgid "Applying ACLs to enclosed files"
-msgstr "对所附文件应用 ACL"
+msgstr "将 ACL 应用于包含的文件"
 
 #: src/acl_editor_widget.ui:34
-#, fuzzy
 msgid "Current participants in ACL"
-msgstr "<b>当前访问控制列表中的成员</b>"
+msgstr "ACL 的目前成员"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
-#, fuzzy
 msgid "Available participants"
-msgstr "<b>可用成员</b>"
+msgstr "可用成员"
 
 #: src/acl_editor_widget.ui:65
 msgid "Edit ACLs for enclosed files..."
@@ -122,38 +119,36 @@ msgstr "访问控制列表的默认文本表述错误"
 
 #: src/application.cpp:44
 msgid "Initial edit mode (default mode otherwise)"
-msgstr ""
+msgstr "初始编辑模式（与默认模式不同）"
 
 #: src/application.cpp:56
 msgid ""
 "Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
-msgstr ""
+msgstr "“edit-mode”操作的值无效。有效选项为“acl”或“xattr”。\n"
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "文件 ACL 和扩展属性的图形编辑器"
 
 #: src/application.cpp:100
 msgid "translator-credits"
-msgstr ""
+msgstr "译者署名"
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
 msgstr "访问控制列表"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
-#, fuzzy
 msgid "Extended attributes"
-msgstr "扩展用户属性"
+msgstr "扩展属性"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "选择文件"
 
 #: src/app_window.cpp:133
-#, fuzzy
 msgid "Select directory"
-msgstr "仅文件夹"
+msgstr "选择目录"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
@@ -161,155 +156,144 @@ msgstr "未打开任何文件"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "打开文件"
 
 #: src/app_window.ui:21
-#, fuzzy
 msgid "Open directory"
-msgstr "仅文件夹"
+msgstr "打开目录"
 
 #: src/app_window.ui:78
-#, fuzzy
 msgid "Extended Attributes"
-msgstr "扩展用户属性"
+msgstr "扩展属性"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "关于 Eiciel"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "退出"
 
 #: src/enclosed_acl_editor_widget.ui:5
 msgid "Edit ACLs for enclosed files"
 msgstr "编辑隔离文件的访问控制列表"
 
 #: src/enclosed_acl_editor_widget.ui:14
-#, fuzzy
 msgid "Cancel"
-msgstr "取消(_C)"
+msgstr "取消"
 
 #: src/enclosed_acl_editor_widget.ui:19
-#, fuzzy
 msgid "Apply"
-msgstr "应用(_A)"
+msgstr "应用"
 
 #: src/enclosed_acl_editor_widget.ui:44
-#, fuzzy
 msgid "Participants in ACL for enclosed files"
-msgstr "<b>隔离文件访问控制列表中的成员</b>"
+msgstr "隔离文件 ACL 中的成员"
 
 #: src/enclosed_acl_editor_widget.ui:59
-#, fuzzy
 msgid "Participants in ACL for enclosed directories"
-msgstr "<b>隔离文件夹访问控制列表中的成员</b>"
+msgstr "隔离目录 ACL 中的成员"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
-msgstr ""
+msgstr "读取、写入和执行"
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "读取和写入"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
-msgstr ""
+msgstr "读取和执行"
 
 #: src/nautilus_acl_model.cpp:37
-#, fuzzy
 msgid "Only read"
-msgstr "仅文件"
+msgstr "只读"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
-msgstr ""
+msgstr "写入和执行"
 
 #: src/nautilus_acl_model.cpp:41
-#, fuzzy
 msgid "Only write"
-msgstr "仅文件"
+msgstr "只写"
 
 #: src/nautilus_acl_model.cpp:43
-#, fuzzy
 msgid "Only execute"
-msgstr "仅文件夹"
+msgstr "仅执行"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
 msgid "No permission"
-msgstr ""
+msgstr "没有许可"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr ""
+msgstr "创建目录列表，访问、创建和删除文件"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "创建目录列表，无文件访问权限"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "创建目录列表，和文件访问权限"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "仅列出目录，无文件访问权限"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
-msgstr ""
+msgstr "没有目录列表，但可以访问、创建和删除目录"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "没有目录列表和文件访问权限"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "所有者为用户"
 
 #: src/nautilus_acl_model.cpp:109
-#, fuzzy
 msgid "Group owner"
-msgstr "组"
+msgstr "所有者为组"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "用户 ACL: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "组 ACL: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
 msgstr ""
 
 #: src/nautilus_acl_model.cpp:131
-#, fuzzy
 msgid "Other users"
-msgstr "其它"
+msgstr "其它用户"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "新文件会将用户设为其所有者"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "新文件将会将组设为其所有者"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "新文件将具有以下用户 ACL：‘ %s’"
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "新文件将具有以下组 ACL：‘%s’"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
@@ -320,19 +304,16 @@ msgid "New files will have Other users"
 msgstr ""
 
 #: src/nautilus_menu_provider.cpp:69
-#, fuzzy
 msgid "Edit Access Control Lists…"
-msgstr "访问控制列表"
+msgstr "编辑访问控制列表……"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
-#, fuzzy
 msgid "Allows editing Access Control Lists"
-msgstr "访问控制列表"
+msgstr "允许编辑访问控制列表"
 
 #: src/nautilus_menu_provider.cpp:100
-#, fuzzy
 msgid "Edit extended attributes…"
-msgstr "扩展用户属性"
+msgstr "编辑扩展属性……"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
@@ -343,7 +324,6 @@ msgid "User"
 msgstr "用户"
 
 #: src/participant_list_widget.ui:17
-#, fuzzy
 msgid "Group"
 msgstr "组"
 
@@ -365,12 +345,11 @@ msgstr "成员名称"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #: src/participant_list_widget.ui:80
-#, fuzzy
 msgid "Show system participants"
-msgstr "也显示系统成员"
+msgstr "显示系统成员"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
@@ -382,17 +361,15 @@ msgstr "值"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
-msgstr ""
+msgstr "具有此名称的属性已存在"
 
 #: src/xattr_editor_widget.ui:27
-#, fuzzy
 msgid "Name of the new attribute"
-msgstr "新属性"
+msgstr "新属性的名称"
 
 #: src/xattr_editor_widget.ui:32
-#, fuzzy
 msgid "Value of the new attribute"
-msgstr "扩展用户属性"
+msgstr "新属性的值"
 
 #~ msgid "Could not rename attribute name: "
 #~ msgstr "无法重命名属性名称： "
