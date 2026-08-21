@@ -6,367 +6,369 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eiciel\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: rofirrim@gmail.com\n"
 "POT-Creation-Date: 2022-09-01 21:42+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-08-21 02:13+0000\n"
+"Last-Translator: Bone NI <bounkirdni@gmail.com>\n"
+"Language-Team: Lao <https://l10n.opensuse.org/projects/eiciel/master/lo/>\n"
 "Language: lo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.8.1\n"
 
 #: src/acl_editor_controller.cpp:145
 msgid "Could not add ACL entry: "
-msgstr ""
+msgstr "ບໍ່ສາມາດເພີ່ມລາຍການ ACL: "
 
 #: src/acl_editor_controller.cpp:195
 msgid "Could not remove ACL entry: "
-msgstr ""
+msgstr "ບໍ່ສາມາດລຶບລາຍການ ACL: "
 
 #: src/acl_editor_controller.cpp:262
 msgid "Could not modify ACL entry: "
-msgstr ""
+msgstr "ບໍ່ສາມາດແກ້ໄຂລາຍການ ACL: "
 
 #. FIXME: Can't do much here
 #: src/acl_editor_controller.cpp:350
 #, c-format
 msgid "Exception when setting ACL of file '%s': '%s'"
-msgstr ""
+msgstr "ເກີດຂໍ້ຜິດພາດໃນຂະນະທີ່ກຳນົດ ACL ຂອງໄຟລ໌ '%s': '%s'"
 
 #. Catch-all to avoid crashing nautilus
 #: src/acl_editor_controller.cpp:354
 #, c-format
 msgid "Unknown exception when setting ACL of file '%s'"
-msgstr ""
+msgstr "ເກີດຂໍ້ຜິດພາດທີ່ບໍ່ຮູ້ຈັກໃນຂະນະທີ່ກຳນົດ ACL ຂອງໄຟລ໌ '%s'"
 
 #: src/acl_editor_controller.cpp:458 src/enclosed_acl_editor_controller.cpp:35
 msgid "Are you sure you want to remove all ACL default entries?"
-msgstr ""
+msgstr "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບລາຍການ ACL ເລີ່ມຕົ້ນທັງໝົດ?"
 
 #: src/acl_editor_widget.ui:15
 msgid "Applying ACLs to enclosed files"
-msgstr ""
+msgstr "ກຳລັງນຳໃຊ້ ACL ໃຫ້ກັບໄຟລ໌ທີ່ຢູ່ພາຍໃນ"
 
 #: src/acl_editor_widget.ui:34
 msgid "Current participants in ACL"
-msgstr ""
+msgstr "ຜູ້ເຂົ້າຮ່ວມໃນ ACL ປັດຈຸບັນ"
 
 #: src/acl_editor_widget.ui:50 src/enclosed_acl_editor_widget.ui:76
 msgid "Available participants"
-msgstr ""
+msgstr "ຜູ້ເຂົ້າຮ່ວມທີ່ມີຢູ່"
 
 #: src/acl_editor_widget.ui:65
 msgid "Edit ACLs for enclosed files..."
-msgstr ""
+msgstr "ແກ້ໄຂ ACL ສຳລັບໄຟລ໌ທີ່ຢູ່ພາຍໃນ..."
 
 #: src/acl_list_controller.cpp:144 src/acl_list_widget.cpp:317
 msgid "Mask"
-msgstr ""
+msgstr "ມາກ (Mask)"
 
 #: src/acl_list_controller.cpp:149
 msgid "Other"
-msgstr ""
+msgstr "ອື່ນໆ"
 
 #. reading
 #. writing
 #. execution
 #: src/acl_list_controller.cpp:198 src/acl_list_widget.cpp:347
 msgid "Default Mask"
-msgstr ""
+msgstr "ມາກເລີ່ມຕົ້ນ"
 
 #. ElementKind::default_others must be the last, so we handle it here manually
 #: src/acl_list_controller.cpp:205 src/acl_list_widget.cpp:342
 msgid "Default Other"
-msgstr ""
+msgstr "ອື່ນໆເລີ່ມຕົ້ນ"
 
 #: src/acl_list_widget.cpp:100
 msgid "Participant"
-msgstr ""
+msgstr "ຜູ້ເຂົ້າຮ່ວມ"
 
 #: src/acl_list_widget.cpp:165
 msgid "Read"
-msgstr ""
+msgstr "ອ່ານ"
 
 #: src/acl_list_widget.cpp:168
 msgid "Write"
-msgstr ""
+msgstr "ຂຽນ"
 
 #: src/acl_list_widget.cpp:171
 msgid "Execute"
-msgstr ""
+msgstr "ປະຕິບັດການ"
 
 #: src/acl_list_widget.ui:33
 msgid "There are ineffective permissions"
-msgstr ""
+msgstr "ມີການອະນຸຍາດທີ່ບໍ່ມີຜົນສັກສິດ"
 
 #: src/acl_list_widget.ui:46
 msgid "Edit default participants"
-msgstr ""
+msgstr "ແກ້ໄຂຜູ້ເຂົ້າຮ່ວມເລີ່ມຕົ້ນ"
 
 #: src/acl_manager.cpp:48 src/xattr_manager.cpp:34
 msgid "Only regular files or directories supported"
-msgstr ""
+msgstr "ຮອງຮັບສະເພາະໄຟລ໌ປົກກະຕິ ຫຼື ໂຟນເດີເທົ່ານັ້ນ"
 
 #: src/acl_manager.cpp:465
 msgid "Textual representation of the ACL is wrong"
-msgstr ""
+msgstr "ຮູບແບບຂໍ້ຄວາມຂອງ ACL ບໍ່ຖືກຕ້ອງ"
 
 #: src/acl_manager.cpp:486
 msgid "Default textual representation of the ACL is wrong"
-msgstr ""
+msgstr "ຮູບແບບຂໍ້ຄວາມເລີ່ມຕົ້ນຂອງ ACL ບໍ່ຖືກຕ້ອງ"
 
 #: src/application.cpp:44
 msgid "Initial edit mode (default mode otherwise)"
-msgstr ""
+msgstr "ໂໝດການແກ້ໄຂເລີ່ມຕົ້ນ (ຖ້າບໍ່ດັ່ງນັ້ນຈະເປັນໂໝດມາດຕະຖານ)"
 
 #: src/application.cpp:56
 msgid ""
 "Invalid value for 'edit-mode' option. Valid options are 'acl' or 'xattr'\n"
 msgstr ""
+"ຄ່າສຳລັບຕົວເລືອກ 'edit-mode' ບໍ່ຖືກຕ້ອງ. ຕົວເລືອກທີ່ໃຊ້ໄດ້ແມ່ນ 'acl' ຫຼື 'xattr'\n"
 
 #: src/application.cpp:96
 msgid "Graphical editor of file ACLs and extended attributes"
-msgstr ""
+msgstr "ເຄື່ອງມືແກ້ໄຂຮູບແບບກຣາຟິກສຳລັບ ACL ແລະ ຄຸນລັກສະນະເສີມຂອງໄຟລ໌"
 
 #: src/application.cpp:100
 msgid "translator-credits"
-msgstr ""
+msgstr "ທີມງານແປພາສາລາວ (Lao Translation Team)"
 
 #: src/app_window.cpp:94 src/app_window.ui:65 src/nautilus_acl_model.cpp:181
 msgid "Access Control List"
-msgstr ""
+msgstr "ລາຍຊື່ຄວບຄຸມການເຂົ້າເຖິງ"
 
 #: src/app_window.cpp:97 src/nautilus_xattr_model.cpp:46
 msgid "Extended attributes"
-msgstr ""
+msgstr "ຄຸນລັກສະນະເສີມ"
 
 #: src/app_window.cpp:129
 msgid "Select file"
-msgstr ""
+msgstr "ເລືອກໄຟລ໌"
 
 #: src/app_window.cpp:133
 msgid "Select directory"
-msgstr ""
+msgstr "ເລືອກໂຟນເດີ"
 
 #: src/app_window.cpp:146 src/app_window.ui:37
 msgid "No file opened"
-msgstr ""
+msgstr "ບໍ່ມີໄຟລ໌ທີ່ເປີດຢູ່"
 
 #: src/app_window.ui:16
 msgid "Open file"
-msgstr ""
+msgstr "ເປີດໄຟລ໌"
 
 #: src/app_window.ui:21
 msgid "Open directory"
-msgstr ""
+msgstr "ເປີດໂຟນເດີ"
 
 #: src/app_window.ui:78
 msgid "Extended Attributes"
-msgstr ""
+msgstr "ຄຸນລັກສະນະເສີມ"
 
 #: src/app_window.ui:99
 msgid "About Eiciel"
-msgstr ""
+msgstr "ກ່ຽວກັບ Eiciel"
 
 #: src/app_window.ui:103
 msgid "Quit"
-msgstr ""
+msgstr "ອອກ"
 
 #: src/enclosed_acl_editor_widget.ui:5
 msgid "Edit ACLs for enclosed files"
-msgstr ""
+msgstr "ແກ້ໄຂ ACL ສຳລັບໄຟລ໌ທີ່ຢູ່ພາຍໃນ"
 
 #: src/enclosed_acl_editor_widget.ui:14
 msgid "Cancel"
-msgstr ""
+msgstr "ຍົກເລີກ"
 
 #: src/enclosed_acl_editor_widget.ui:19
 msgid "Apply"
-msgstr ""
+msgstr "ນຳໃຊ້"
 
 #: src/enclosed_acl_editor_widget.ui:44
 msgid "Participants in ACL for enclosed files"
-msgstr ""
+msgstr "ຜູ້ເຂົ້າຮ່ວມໃນ ACL ສຳລັບໄຟລ໌ທີ່ຢູ່ພາຍໃນ"
 
 #: src/enclosed_acl_editor_widget.ui:59
 msgid "Participants in ACL for enclosed directories"
-msgstr ""
+msgstr "ຜູ້ເຂົ້າຮ່ວມໃນ ACL ສຳລັບໂຟນເດີທີ່ຢູ່ພາຍໃນ"
 
 #: src/nautilus_acl_model.cpp:31
 msgid "Read, write and execute"
-msgstr ""
+msgstr "ອ່ານ, ຂຽນ ແລະ ປະຕິບັດການ"
 
 #: src/nautilus_acl_model.cpp:33
 msgid "Read and write"
-msgstr ""
+msgstr "ອ່ານ ແລະ ຂຽນ"
 
 #: src/nautilus_acl_model.cpp:35
 msgid "Read and execute"
-msgstr ""
+msgstr "ອ່ານ ແລະ ປະຕິບັດການ"
 
 #: src/nautilus_acl_model.cpp:37
 msgid "Only read"
-msgstr ""
+msgstr "ອ່ານເທົ່ານັ້ນ"
 
 #: src/nautilus_acl_model.cpp:39
 msgid "Write and execute"
-msgstr ""
+msgstr "ຂຽນ ແລະ ປະຕິບັດການ"
 
 #: src/nautilus_acl_model.cpp:41
 msgid "Only write"
-msgstr ""
+msgstr "ຂຽນເທົ່ານັ້ນ"
 
 #: src/nautilus_acl_model.cpp:43
 msgid "Only execute"
-msgstr ""
+msgstr "ປະຕິບັດການເທົ່ານັ້ນ"
 
 #: src/nautilus_acl_model.cpp:45 src/nautilus_acl_model.cpp:63
 #: src/nautilus_acl_model.cpp:67
 msgid "No permission"
-msgstr ""
+msgstr "ບໍ່ມີການອະນຸຍາດ"
 
 #: src/nautilus_acl_model.cpp:53
 msgid "List directory, access, create and remove files"
-msgstr ""
+msgstr "ສະແດງລາຍຊື່ໂຟນເດີ, ເຂົ້າເຖິງ, ສ້າງ ແລະ ລຶບໄຟລ໌"
 
 #: src/nautilus_acl_model.cpp:55
 msgid "List directory, no access to files"
-msgstr ""
+msgstr "ສະແດງລາຍຊື່ໂຟນເດີ, ບໍ່ມີສິດເຂົ້າເຖິງໄຟລ໌"
 
 #: src/nautilus_acl_model.cpp:57
 msgid "List directory and access files"
-msgstr ""
+msgstr "ສະແດງລາຍຊື່ໂຟນເດີ ແລະ ເຂົ້າເຖິງໄຟລ໌"
 
 #: src/nautilus_acl_model.cpp:59
 msgid "List directory only, no access to files"
-msgstr ""
+msgstr "ສະແດງລາຍຊື່ໂຟນເດີເທົ່ານັ້ນ, ບໍ່ມີສິດເຂົ້າເຖິງໄຟລ໌"
 
 #: src/nautilus_acl_model.cpp:61
 msgid "No list directory but access, create and remove"
-msgstr ""
+msgstr "ບໍ່ສະແດງລາຍຊື່ໂຟນເດີ ແຕ່ສາມາດເຂົ້າເຖິງ, ສ້າງ ແລະ ລຶບໄດ້"
 
 #: src/nautilus_acl_model.cpp:65
 msgid "No list directory and access files"
-msgstr ""
+msgstr "ບໍ່ສະແດງລາຍຊື່ໂຟນເດີ ແລະ ເຂົ້າເຖິງໄຟລ໌"
 
 #: src/nautilus_acl_model.cpp:101
 msgid "User owner"
-msgstr ""
+msgstr "ຜູ້ໃຊ້ທີ່ເປັນເຈົ້າຂອງ"
 
 #: src/nautilus_acl_model.cpp:109
 msgid "Group owner"
-msgstr ""
+msgstr "ກຸ່ມທີ່ເປັນເຈົ້າຂອງ"
 
 #: src/nautilus_acl_model.cpp:115
 #, c-format
 msgid "User ACL: ‘%s’"
-msgstr ""
+msgstr "ACL ຂອງຜູ້ໃຊ້: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:121
 #, c-format
 msgid "Group ACL: ‘%s’"
-msgstr ""
+msgstr "ACL ຂອງກຸ່ມ: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:127
 msgid "Mask limits Group owner, User ACL and Group ACL to"
-msgstr ""
+msgstr "ມາກຈຳກັດ ກຸ່ມເຈົ້າຂອງ, ACL ຜູ້ໃຊ້ ແລະ ACL ກຸ່ມ ໄວ້ທີ່"
 
 #: src/nautilus_acl_model.cpp:131
 msgid "Other users"
-msgstr ""
+msgstr "ຜູ້ໃຊ້ອື່ນໆ"
 
 #: src/nautilus_acl_model.cpp:137
 msgid "New files will have User owner"
-msgstr ""
+msgstr "ໄຟລ໌ໃໝ່ຈະມີ ຜູ້ໃຊ້ທີ່ເປັນເຈົ້າຂອງ"
 
 #: src/nautilus_acl_model.cpp:147
 msgid "New files will have Group owner"
-msgstr ""
+msgstr "ໄຟລ໌ໃໝ່ຈະມີ ກຸ່ມທີ່ເປັນເຈົ້າຂອງ"
 
 #: src/nautilus_acl_model.cpp:155
 #, c-format
 msgid "New files will have User ACL: ‘%s’"
-msgstr ""
+msgstr "ໄຟລ໌ໃໝ່ຈະມີ ACL ຂອງຜູ້ໃຊ້: ‘%s’"
 
 #: src/nautilus_acl_model.cpp:163
 #, c-format
 msgid "New files will have Group ACL: ‘%s‘"
-msgstr ""
+msgstr "ໄຟລ໌ໃໝ່ຈະມີ ACL ຂອງກຸ່ມ: ‘%s‘"
 
 #: src/nautilus_acl_model.cpp:170
 msgid "New files will have Mask"
-msgstr ""
+msgstr "ໄຟລ໌ໃໝ່ຈະມີ ມາກ"
 
 #: src/nautilus_acl_model.cpp:175
 msgid "New files will have Other users"
-msgstr ""
+msgstr "ໄຟລ໌ໃໝ່ຈະມີ ຜູ້ໃຊ້ອື່ນໆ"
 
 #: src/nautilus_menu_provider.cpp:69
 msgid "Edit Access Control Lists…"
-msgstr ""
+msgstr "ແກ້ໄຂລາຍຊື່ຄວບຄຸມການເຂົ້າເຖິງ…"
 
 #: src/nautilus_menu_provider.cpp:70 src/nautilus_menu_provider.cpp:101
 msgid "Allows editing Access Control Lists"
-msgstr ""
+msgstr "ອະນຸຍາດໃຫ້ແກ້ໄຂລາຍຊື່ຄວບຄຸມການເຂົ້າເຖິງ"
 
 #: src/nautilus_menu_provider.cpp:100
 msgid "Edit extended attributes…"
-msgstr ""
+msgstr "ແກ້ໄຂຄຸນລັກສະນະເສີມ…"
 
 #: src/participant_list_widget.cpp:395
 msgid "Participant not found"
-msgstr ""
+msgstr "ບໍ່ພົບຜູ້ເຂົ້າຮ່ວມ"
 
 #: src/participant_list_widget.ui:12
 msgid "User"
-msgstr ""
+msgstr "ຜູ້ໃຊ້"
 
 #: src/participant_list_widget.ui:17
 msgid "Group"
-msgstr ""
+msgstr "ກຸ່ມ"
 
 #: src/participant_list_widget.ui:23
 msgid "Default participant"
-msgstr ""
+msgstr "ຜູ້ເຂົ້າຮ່ວມເລີ່ມຕົ້ນ"
 
 #: src/participant_list_widget.ui:28
 msgid "Filter participants"
-msgstr ""
+msgstr "ກັ່ນຕອງຜູ້ເຂົ້າຮ່ວມ"
 
 #: src/participant_list_widget.ui:51
 msgid "Advanced features"
-msgstr ""
+msgstr "ຄຸນສົມບັດຂັ້ນສູງ"
 
 #: src/participant_list_widget.ui:61
 msgid "Name of participant"
-msgstr ""
+msgstr "ຊື່ຂອງຜູ້ເຂົ້າຮ່ວມ"
 
 #: src/participant_list_widget.ui:71
 msgid "Search"
-msgstr ""
+msgstr "ຄົ້ນຫາ"
 
 #: src/participant_list_widget.ui:80
 msgid "Show system participants"
-msgstr ""
+msgstr "ສະແດງຜູ້ເຂົ້າຮ່ວມຂອງລະບົບ"
 
 #: src/xattr_editor_widget.cpp:102
 msgid "Name"
-msgstr ""
+msgstr "ຊື່"
 
 #: src/xattr_editor_widget.cpp:145
 msgid "Value"
-msgstr ""
+msgstr "ຄ່າ"
 
 #: src/xattr_editor_widget.cpp:199
 msgid "There is already an attribute with this name"
-msgstr ""
+msgstr "ມີຄຸນລັກສະນະທີ່ມີຊື່ນີ້ຢູ່ແລ້ວ"
 
 #: src/xattr_editor_widget.ui:27
 msgid "Name of the new attribute"
-msgstr ""
+msgstr "ຊື່ຂອງຄຸນລັກສະນະໃໝ່"
 
 #: src/xattr_editor_widget.ui:32
 msgid "Value of the new attribute"
-msgstr ""
+msgstr "ຄ່າຂອງຄຸນລັກສະນະໃໝ່"
